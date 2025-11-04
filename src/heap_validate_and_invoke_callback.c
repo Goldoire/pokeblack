@@ -1,0 +1,52 @@
+#include "types.h"
+
+// External function declarations
+extern u32 FUN_02001c64(void);
+
+// Function pointer type for the callback
+typedef u32 (*CallbackFunc)(u32 param);
+
+// Structure definition for callback registry
+// Located at 0x020AA260
+typedef struct {
+    void* field_0x0;           // Unknown field at offset 0
+    CallbackFunc callback;     // Function pointer at offset +4
+} CallbackRegistry;
+
+// External data - pointer to callback registry structure
+extern CallbackRegistry* DAT_02001d04;
+
+/**
+ * FUN_02001ce0 - Callback validation and invocation
+ * 
+ * This function implements a callback pattern:
+ * 1. Validates system state via FUN_02001c64
+ * 2. Retrieves a function pointer from a structure
+ * 3. Calls the function pointer if valid
+ * 
+ * The structure at DAT_02001d04 appears to be a callback/plugin registry:
+ * offset +0: unknown field
+ * offset +4: function pointer to callback
+ * 
+ * @param param_1 Parameter passed through to the callback function
+ * @return 1 if system state invalid, 0 if callback is NULL, otherwise callback result
+ */
+u32 FUN_02001ce0(u32 param_1) {
+    CallbackFunc callback;
+    
+    // Check system state first
+    if (FUN_02001c64() == 0) {
+        return 1;  // System not ready
+    }
+    
+    // Get function pointer from callback registry
+    callback = DAT_02001d04->callback;
+    
+    // Check if callback is registered
+    if (callback == NULL) {
+        return 0;  // No callback registered
+    }
+    
+    // Call the callback with the parameter
+    return callback(param_1);
+}
