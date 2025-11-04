@@ -4,14 +4,14 @@
 extern u32 DAT_02002114;  // Points to 0x020AA260 (HeapManagerState)
 
 // External function declaration
-extern void SUB_02070658(u32 param);
+extern void sub_02070658(u32 param);
 
-void FUN_0200197c(void) {
+void sub_0200197c(void) {
     u32* heapManagerState = (u32*)DAT_02002114;  // 0x020AA260
     
     // Get halfword at offset +0x26
     u16 halfwordValue = *(u16*)((u8*)heapManagerState + 0x26);
     
     // Call overlay function with the halfword value
-    SUB_02070658(halfwordValue);
+    sub_02070658(halfwordValue);
 }

@@ -1,7 +1,7 @@
 #include "types.h"
 
 /**
- * FUN_0200190C
+ * sub_0200190C
  * 
  * Target assembly:
  *   0200190c: 4803  ldr r0, [pc, #12]   @ Load 0x020AA1AC
@@ -28,7 +28,7 @@ typedef struct HeapBlock {
 
 // This function calculates: &gHeapBlocks[gHeapManager->field_04] + 8
 // Returns a pointer offset 8 bytes into a heap block
-u8 *FUN_0200190C(void) {
+u8 *sub_0200190C(void) {
     u32 index = gHeapManager->field_04;
     return (u8 *)(&gHeapBlocks[index]) + 8;
 }

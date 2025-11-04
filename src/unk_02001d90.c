@@ -11,8 +11,8 @@
 #include "types.h"
 
 // External function declarations
-extern void FUN_02001f90(void);
-extern s32 FUN_02001d34(u32 param_1, s32 param_2, u32 param_3, u32 param_4);
+extern void sub_02001f90(void);
+extern s32 sub_02001d34(u32 param_1, s32 param_2, u32 param_3, u32 param_4);
 
 /**
  * @brief Reset and initialize fade operation
@@ -26,11 +26,11 @@ extern s32 FUN_02001d34(u32 param_1, s32 param_2, u32 param_3, u32 param_4);
  * @note Assembly implementation in asm/unk_02001d90.s (MATCHING)
  * @note This C version is provided for readability and rom hacking
  */
-void FUN_02001d90(u32 param1, u16 param2) {
+void sub_02001d90(u32 param1, u16 param2) {
     // Reset current fade state
-    FUN_02001f90();
+    sub_02001f90();
     
     // Initialize new fade with parameters
     // Note: Only passing 2 params, other params may be uninitialized or default
-    FUN_02001d34(param1, param2, 0, 0);
+    sub_02001d34(param1, param2, 0, 0);
 }

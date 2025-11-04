@@ -11,11 +11,11 @@
 #include "types.h"
 
 // External overlay function declarations (implemented in overlay_stubs.c)
-extern void* SUB_02070450(u32 param);
-extern void* SUB_0207057c(u32 param);
-extern u32 SUB_020705a4(u32 p1, void* p2, void* p3, u32 p4);
-extern void SUB_02086638(void* param);
-extern u32 SUB_0209800c(u32 p1, u32 p2, u32 p3, u32 p4);
+extern void* sub_02070450(u32 param);
+extern void* sub_0207057c(u32 param);
+extern u32 sub_020705a4(u32 p1, void* p2, void* p3, u32 p4);
+extern void sub_02086638(void* param);
+extern u32 sub_0209800c(u32 p1, u32 p2, u32 p3, u32 p4);
 
 // Structure definitions (based on usage patterns)
 typedef struct {
@@ -55,7 +55,7 @@ typedef struct {
  * @note Assembly implementation in asm/unk_020027e0.s (MATCHING)
  * @note This C version is provided for readability and rom hacking
  */
-s32 FUN_020027e0(ResourceObject* obj, u32 param) {
+s32 sub_020027e0(ResourceObject* obj, u32 param) {
     ResourceHeader* header;
     void* data;
     void* resourcePtr;
@@ -69,7 +69,7 @@ s32 FUN_020027e0(ResourceObject* obj, u32 param) {
     u16 height;
     
     // Load resource header
-    header = SUB_02070450(param);
+    header = sub_02070450(param);
     if (header == NULL) {
         return 0;  // Failed to load
     }
@@ -78,7 +78,7 @@ s32 FUN_020027e0(ResourceObject* obj, u32 param) {
     resourceId = header->flags & 0x00FFFFFF;
     
     // Get resource data pointer
-    data = SUB_0207057c(resourceId);
+    data = sub_0207057c(resourceId);
     if (data == NULL) {
         return 0;  // Failed to get data
     }
@@ -87,7 +87,7 @@ s32 FUN_020027e0(ResourceObject* obj, u32 param) {
     resourceId = header->flags & 0x00FFFFFF;
     resourcePtr = obj->field_04;
     
-    result = SUB_020705a4(resourceId, resourcePtr, data, 0);
+    result = sub_020705a4(resourceId, resourcePtr, data, 0);
     
     // Check for error (-1) or already loaded (== data)
     if (result == (u32)-1) {
@@ -104,7 +104,7 @@ s32 FUN_020027e0(ResourceObject* obj, u32 param) {
     dataPtr = (void*)((u32)resData + offset);
     
     // Initialize graphics/resource system
-    SUB_02086638(resData);
+    sub_02086638(resData);
     
     // Calculate size and offsets
     size = resData->field_00[2] - offset;  // field_08 - offset
@@ -120,7 +120,7 @@ s32 FUN_020027e0(ResourceObject* obj, u32 param) {
     
     // Calculate some scaled value using math function
     // Uses constant 0xD87F8000 and value 0x7F
-    obj->field_20 = SUB_0209800c(0xD87F8000, 0x7F, height, (s32)height >> 31);
+    obj->field_20 = sub_0209800c(0xD87F8000, 0x7F, height, (s32)height >> 31);
     
     return 1;  // Success
 }

@@ -20,7 +20,7 @@
  * Returns 0 after cleanup.
  * 
  */
-int FUN_02002e9e(void) {
+int sub_02002e9e(void) {
     // In the actual assembly, r4 and r5 are popped here
     // most likely the calling convention expects this function
     // to clean up those registers before returning
