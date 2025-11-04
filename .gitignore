@@ -1,0 +1,45 @@
+# Build outputs
+*.nds
+*.elf
+*.bin
+*.o
+*.d
+*.map
+*.lst
+
+# ROM
+baserom.nds
+
+# Build directories
+build/
+.cache/
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+*.sublime-*
+
+# OS files
+.DS_Store
+Thumbs.db
+*.log
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.Python
+
+# Tools
+tools/*.exe
+tools/*.o
+
+# Dependencies
+*.a
+
+#Squid's insane diary entries
+PROGRESS.md
+
