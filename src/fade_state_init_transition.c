@@ -1,9 +1,9 @@
 /**
- * @file unk_02005D90.c
+ * @file fade_state_init_transition.c
  * @brief Fade transition helper function
- * 
+ *
  * Original address: 0x02005D90
- * 
+ *
  * This function is part of the fade/transition system.
  * It resets the fade state and then initializes a new fade operation.
  */
@@ -23,7 +23,7 @@ extern s32 sub_02005D34(u32 param_1, s32 param_2, u32 param_3, u32 param_4);
  * @param param1 First parameter for initialization (u32)
  * @param param2 Second parameter for initialization (u16)
  * 
- * @note Assembly implementation in asm/unk_02005D90.s (MATCHING)
+ * @note Assembly implementation in asm/fade_state_init_transition.s (MATCHING)
  * @note This C version is provided for readability and rom hacking
  */
 void FadeState_InitTransition(u32 param1, u16 param2) {

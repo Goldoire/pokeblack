@@ -1,7 +1,7 @@
 /**
- * @file unk_020058D0.c
+ * @file heap_block_get_state_value.c
  * @brief Function at 0x020058D0 - Gets heap block state/mode value
- * 
+ *
  * Address: 0x020058D0
  * Size: ~44 bytes
  */

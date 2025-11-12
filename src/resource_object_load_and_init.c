@@ -1,9 +1,9 @@
 /**
- * @file unk_020067E0.c
+ * @file resource_object_load_and_init.c
  * @brief Resource loading and initialization function
- * 
+ *
  * Original address: 0x020067E0
- * 
+ *
  * This function handles loading and setting up resources (graphics, audio, etc.)
  * It performs validation, memory allocation, and initialization.
  */
@@ -31,7 +31,7 @@ extern u32 sub_0209C00C(u32 p1, u32 p2, u32 p3, u32 p4);
  * @param param Resource parameter/ID
  * @return 1 on success, 0 on failure
  * 
- * @note Assembly implementation in asm/unk_020067E0.s (MATCHING)
+ * @note Assembly implementation in asm/resource_object_load_and_init.s (MATCHING)
  * @note This C version is provided for readability and rom hacking
  */
 s32 ResourceObject_LoadAndInit(ResourceObject* obj, u32 param) {
