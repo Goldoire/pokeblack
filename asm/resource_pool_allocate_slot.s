@@ -2,8 +2,8 @@
 
 	.text
 
-	thumb_func_start sub_02006768
-sub_02006768: ; 0x02006768
+	thumb_func_start ResourcePool_AllocateSlot
+ResourcePool_AllocateSlot: ; 0x02006768
 	push {r4, lr}
 	ldr r0, [pc, #48] ; =0x02140504
 	ldr r2, [pc, #48] ; =0x02140488
@@ -15,7 +15,7 @@ sub_02006768: ; 0x02006768
 	cmp r0, #0x1
 	bne LAB_02006782
 	add r0, r2, r1
-	bl sub_02006948
+	bl ResourceObject_Destroy
 LAB_02006782:
 	ldr r0, [pc, #24] ; =0x02140504
 	ldrh r1, [r0, #0x22]
@@ -37,6 +37,6 @@ DAT_0200679C:
 DAT_020067A0:
 	.word 0x02140488
 
-	thumb_func_end sub_02006768
+	thumb_func_end ResourcePool_AllocateSlot
 
-	.extern sub_02006948
+	.extern ResourceObject_Destroy

@@ -2,8 +2,8 @@
 
 	.text
 
-	thumb_func_start sub_02006BE0
-sub_02006BE0: ; 0x02006BE0
+	thumb_func_start Buffer_Reverse
+Buffer_Reverse: ; 0x02006BE0
 	; Byte-swap/reverse function - reverses byte order in a buffer
 	; Parameters:
 	;   r0 = buffer pointer
@@ -28,4 +28,4 @@ _skip_swap:
 	pop {r3, r4, r5, r6}
 	bx lr
 
-	thumb_func_end sub_02006BE0
+	thumb_func_end Buffer_Reverse

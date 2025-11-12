@@ -2,12 +2,12 @@
 
 	.text
 
-	.global sub_02006394
+	.global AsyncOperation_IsComplete
 
 	.extern sub_0208574C
 
-	thumb_func_start sub_02006394
-sub_02006394: ; 0x02006394
+	thumb_func_start AsyncOperation_IsComplete
+AsyncOperation_IsComplete: ; 0x02006394
 	push {r3, lr}
 	ldr r0, [pc, #20] ; =0x020AA260
 	ldr r0, [r0, #0x14]
@@ -22,4 +22,4 @@ LAB_020063A2:
 	.balign 4, 0
 	.word 0x020AA260
 	.word 0x020AA354
-	thumb_func_end sub_02006394
+	thumb_func_end AsyncOperation_IsComplete

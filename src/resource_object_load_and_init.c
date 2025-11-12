@@ -34,7 +34,7 @@ extern u32 sub_0209C00C(u32 p1, u32 p2, u32 p3, u32 p4);
  * @note Assembly implementation in asm/unk_020067E0.s (MATCHING)
  * @note This C version is provided for readability and rom hacking
  */
-s32 sub_020067E0(ResourceObject* obj, u32 param) {
+s32 ResourceObject_LoadAndInit(ResourceObject* obj, u32 param) {
     ResourceHeader* header;
     void* data;
     void* resourcePtr;

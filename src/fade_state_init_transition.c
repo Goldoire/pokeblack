@@ -26,7 +26,7 @@ extern s32 sub_02005D34(u32 param_1, s32 param_2, u32 param_3, u32 param_4);
  * @note Assembly implementation in asm/unk_02005D90.s (MATCHING)
  * @note This C version is provided for readability and rom hacking
  */
-void sub_02005D90(u32 param1, u16 param2) {
+void FadeState_InitTransition(u32 param1, u16 param2) {
     // Reset current fade state
     sub_02005F90();
     

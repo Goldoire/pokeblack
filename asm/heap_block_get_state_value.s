@@ -2,8 +2,8 @@
 
 .text
 
-thumb_func_start sub_020058D0
-sub_020058D0: ; 0x020058D0
+thumb_func_start HeapBlock_GetStateValue
+HeapBlock_GetStateValue: ; 0x020058D0
 	ldr r0, [pc, #32]   ; Load from literal pool (0x020AA1AC)
 	ldr r2, [pc, #36]   ; Load from literal pool (0x020AA1B8)
 	ldr r1, [r0, #4]
@@ -32,4 +32,4 @@ sub_020058D0: ; 0x020058D0
 	.word 0x020AA1B8    ; DAT_020058F8
 	.word 0x0000FFFF    ; DAT_020058FC
 
-thumb_func_end sub_020058D0
+thumb_func_end HeapBlock_GetStateValue

@@ -15,7 +15,7 @@ extern u32 DAT_020058F8;  // Address of word containing 0x020AA1B8
 extern u32 DAT_020058FC;  // Address of word containing 0xFFFF
 
 /**
- * @brief sub_020058D0 - Gets state/mode value from current heap block
+ * @brief HeapBlock_GetStateValue - Gets state/mode value from current heap block
  * 
  * Accesses the current heap block (based on index at 0x020AA1AC+4)
  * and returns the u16 value at offset +0x4 within that block.
@@ -27,7 +27,7 @@ extern u32 DAT_020058FC;  // Address of word containing 0xFFFF
  * 
  * @return u16 State/mode value from heap block, or 0 if inactive/sentinel
  */
-u32 sub_020058D0(void) {
+u32 HeapBlock_GetStateValue(void) {
     u32* ptr1;
     u32* ptr2;
     u32 index;

@@ -2,7 +2,12 @@
 #include "heap.h"
 
 /**
- * sub_0200590C
+ * HeapManager_GetCurrentBlockPtr
+ *
+ * Returns a pointer to the current heap block at offset +8 bytes.
+ * Calculates: &gHeapBlocks[gHeapManager->field_04] + 8
+ *
+ * Original address: 0x0200590C
  *
  * Target assembly:
  *   0200590c: 4803  ldr r0, [pc, #12]   @ Load 0x020AA1AC
@@ -20,7 +25,7 @@
 
 // This function calculates: &gHeapBlocks[gHeapManager->field_04] + 8
 // Returns a pointer offset 8 bytes into a heap block
-u8 *sub_0200590C(void) {
+u8 *HeapManager_GetCurrentBlockPtr(void) {
     u32 index = gHeapManager->field_04;
     return (u8 *)(&gHeapBlocks[index]) + 8;
 }

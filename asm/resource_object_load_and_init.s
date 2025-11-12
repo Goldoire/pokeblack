@@ -8,8 +8,8 @@
 	.extern sub_0208A638
 	.extern sub_0209C00C
 
-thumb_func_start sub_020067E0
-sub_020067E0: ; 0x020067E0
+thumb_func_start ResourceObject_LoadAndInit
+ResourceObject_LoadAndInit: ; 0x020067E0
 	push {r4, r5, r6, lr}
 	add r5, r0, #0
 	add r0, r1, #0
@@ -77,4 +77,4 @@ sub_020067E0: ; 0x020067E0
 	.balign 4, 0
 .L_literal_pool:
 	.word 0xD87F8000
-thumb_func_end sub_020067E0
+thumb_func_end ResourceObject_LoadAndInit

@@ -2,8 +2,8 @@
 
 	.text
 
-	thumb_func_start sub_020067A4
-sub_020067A4: ; 0x020067A4
+	thumb_func_start ResourceObject_Reset
+ResourceObject_Reset: ; 0x020067A4
 	ldr r1, [pc, #32] ; =0x00003443
 	mov r3, #0x0
 	str r1, [r0, #0xc]
@@ -27,4 +27,4 @@ DAT_020067C8:
 DAT_020067CC:
 	.word 0x000064E1
 
-	thumb_func_end sub_020067A4
+	thumb_func_end ResourceObject_Reset

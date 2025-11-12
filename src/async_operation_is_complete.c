@@ -6,7 +6,7 @@ extern bool32 sub_0208574C(u32* ptr);
 // External data reference
 extern u32 DAT_020AE260;  // HeapManagerState base pointer
 
-// Function: sub_02006394
+// Function: AsyncOperation_IsComplete
 // Address: 0x02006394
 // Description: Checks if async operation is complete
 //              Returns TRUE if HeapManagerState+0x14 is 0, otherwise delegates to overlay
@@ -14,7 +14,7 @@ extern u32 DAT_020AE260;  // HeapManagerState base pointer
 // 
 // Note: Likely AsyncOperation_IsComplete based on behavior, but keeping original name
 //       until confirmed with 100% certainty
-bool32 sub_02006394(void)
+bool32 AsyncOperation_IsComplete(void)
 {
     u32* heap_manager = (u32*)0x020AA260;
     

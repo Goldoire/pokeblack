@@ -1,8 +1,8 @@
 	.text
 	.align 2
-	.global sub_02005900
+	.global HeapManager_GetCurrentIndex
 	.thumb
-sub_02005900:
+HeapManager_GetCurrentIndex:
 	; See src/unk_02005900.c for C equivalent
 	; Returns: gHeapManager->field_04
 	;

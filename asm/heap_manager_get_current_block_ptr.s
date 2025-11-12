@@ -2,8 +2,8 @@
 
 	.text
 
-	thumb_func_start sub_0200590C
-sub_0200590C: ; 0x0200590C
+	thumb_func_start HeapManager_GetCurrentBlockPtr
+HeapManager_GetCurrentBlockPtr: ; 0x0200590C
 	ldr r0, [pc, #12]      ; Load 0x020AA1AC from offset 0x10
 	ldr r2, [pc, #16]      ; Load 0x020AA1B8 from offset 0x14
 	ldr r1, [r0, #4]

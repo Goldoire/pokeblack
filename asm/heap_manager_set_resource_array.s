@@ -3,14 +3,14 @@
 
 	.text
 
-	thumb_func_start sub_020057DC
-sub_020057DC: ; 0x020057DC
+	thumb_func_start HeapManager_SetResourceArray
+HeapManager_SetResourceArray: ; 0x020057DC
 	ldr r1, _020057E4 ; =0x020AA1AC
 	str r0, [r1, #8]
 	bx lr
 	nop
 _020057E4: .word 0x020AA1AC
-	thumb_func_end sub_020057DC
+	thumb_func_end HeapManager_SetResourceArray
 
 	thumb_func_start sub_020057E8
 sub_020057E8: ; 0x020057E8
