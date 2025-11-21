@@ -1,0 +1,12 @@
+/**
+ * @file ov93_021B90E8.c
+ * @brief Nested word getter at offset 0x60
+ * @address 0x021B90E8
+ */
+
+#include "overlay_93.h"
+
+u32 ov93_021B90E8(void* context) {
+    void* ptr = *(void**)context;
+    return *(u32*)((u8*)ptr + 0x60);
+}
