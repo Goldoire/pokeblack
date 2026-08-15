@@ -572,3 +572,163 @@ BOOL sub_02188B58(void *a0, FieldSystem *fieldSystem)
     }
     return FALSE;
 }
+
+/* ---- 0x02188CFC: map-kind lookup, with one kind deferred to the rail code ---- */
+
+extern u8 _021D35A8[];
+u32 sub_021A6DC0(void *a0);
+
+u32 sub_02188CFC(FieldSystem *fieldSystem)
+{
+    u32 kind = _021D35A8[fieldSystem->mode->id];
+
+    if (kind == 2) {
+        kind = sub_021A6DC0(fieldSystem->unk10C);
+    }
+    return kind;
+}
+
+/* ---- 0x02188DA0 ---- */
+
+extern u8 _021D35F4[];
+void *sub_0203FC28(void *a0);
+
+void *sub_02188DA0(void)
+{
+    return sub_0203FC28(_021D35F4);
+}
+
+/* ---- 0x02189140 ---- */
+
+/* Four arguments: that is why CW cannot spare r3 for a tail call here and
+ * emits push/bl/pop where a one-argument forwarder would `bx r3`. */
+
+
+/* The 0/1 argument is an ENUM, not an int. With an int CW canonicalises the
+ * ternary to bne/1/0; the ROM keeps source order (beq-block = 0), and only an
+ * enum (or a pointer) return type makes CW preserve it. */
+typedef enum FieldSysSel {
+    FIELDSYS_SEL_0 = 0,
+    FIELDSYS_SEL_1 = 1
+} FieldSysSel;
+
+void sub_02061CA4(FieldSysSel a0, u32 a1, u32 a2, u32 a3);
+
+void sub_02189140(void *a0, u32 a1, u32 a2, u32 a3)
+{
+    sub_02061CA4(a0 == NULL ? FIELDSYS_SEL_0 : FIELDSYS_SEL_1, a1, a2, a3);
+}
+
+/* ---- 0x021895BC / 0x021895D0 ---- */
+
+void *sub_020127A4(void *a0);
+void sub_02012AC4(void *a0, u16 a1);
+void sub_021895E8(FieldSystem *fieldSystem, u32 a1, u16 heapId);
+
+void sub_021895BC(void *a0, u32 a1)
+{
+    sub_02012AC4(sub_020127A4(a0), a1);
+}
+
+void sub_021895D0(FieldSystem *fieldSystem, u32 a1)
+{
+    sub_021895E8(fieldSystem, a1, fieldSystem->heapId);
+}
+
+/* ---- 0x02189758 / 0x02189764: the {id, buffer} pair at FieldSystem+0x118 ---- */
+
+void sub_02189758(FieldSysBuf *buf)
+{
+    buf->id = -1;
+    buf->data = NULL;
+}
+
+void *sub_02189764(FieldSystem *fieldSystem, int id, u16 heapId, u32 size)
+{
+    FieldSysBuf *buf = &fieldSystem->buf118;
+    void *p;
+
+    if (id == -1) {
+        return NULL;
+    }
+    if (buf->id != -1) {
+        return NULL;
+    }
+    buf->id = id;
+    p = sub_02030734(heapId, size, 1, _021DD9C0, 0xD7C);
+    buf->data = p;
+    return p;
+}
+
+/* ---- 0x02189998 ---- */
+
+void sub_0207DD24(u32 a0, u32 a1, u32 a2, u32 a3, u32 a4);
+void sub_021C1AEC(void);
+void sub_021C1C4C(void *ci3d);
+
+void sub_02189998(FieldSystem *fieldSystem)
+{
+    sub_0207DD24(0, 0, 0x7FFF, 0, 0);
+    sub_021C1AEC();
+    sub_021C1C4C(fieldSystem->ci3d);
+}
+
+/* ---- 0x02189ACC / 0x02189AE8 / 0x02189B04: zone predicates ---- */
+
+BOOL sub_02013BA8(u16 zoneId);
+BOOL sub_02013CE0(u16 zoneId);
+
+u32 sub_02189ACC(u16 zoneId)
+{
+    if (sub_02013BA8(zoneId) == TRUE) {
+        return 0x1EE;
+    }
+    return 0x136;
+}
+
+BOOL sub_02189AE8(u16 zoneId)
+{
+    if (zoneId == 0x3F) {
+        return FALSE;
+    }
+    if (sub_02013CE0(zoneId) == TRUE) {
+        return FALSE;
+    }
+    return TRUE;
+}
+
+BOOL sub_02189B04(u16 zoneId)
+{
+    if (zoneId == 0x3F) {
+        return TRUE;
+    }
+    if (zoneId == 0x8C) {
+        return TRUE;
+    }
+    if (zoneId == 0x8D) {
+        return TRUE;
+    }
+    if (zoneId == 0x8E) {
+        return TRUE;
+    }
+    return FALSE;
+}
+
+/* ---- 0x0218A728 / 0x0218A76C ---- */
+
+void *sub_02012F2C(void *a0);
+void sub_02008DF0(void *a0, u32 a1);
+BOOL sub_0218A8BC(void *a0);
+void sub_0218A784(void *a0, u32 a1);
+
+void sub_0218A728(void *a0)
+{
+    sub_02008DF0(sub_02012F2C(a0), 0);
+}
+
+void sub_0218A76C(void *a0)
+{
+    if (sub_0218A8BC(a0) == 0) {
+        sub_0218A784(a0, 9);
+    }
+}

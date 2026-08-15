@@ -121,6 +121,20 @@ Each of these cost an agent multiple attempts. Reach for them before grinding.
 - A bitfield setter taking a **wider** parameter than the field's base type is
   what reproduces the ROM's truncation (`u32 a` where you expected `u16 a`).
 
+**Argument pre-placement — read this before grinding on a register mismatch**
+
+A call result left in **r1, r2 or r3 instead of r0** is not a register-allocation
+quirk. CodeWarrior parks a value directly in the register the *next* call wants
+it in. So when you see `str r1,[rBase,r0]` where you expected
+`str r0,[rBase,r1]`, that value is also an argument of the following call, and
+your prototype for the callee is wrong — usually missing an argument.
+
+This single reading cracked three walls that had survived two waves of agents,
+including one banked at 150/260 that went straight to 272/272 once the callee
+was declared with its real second parameter. If the instructions all match and
+only the registers are shuffled around a call, suspect the *signature*, not the
+optimiser.
+
 **Placement and allocation**
 - Stack locals are laid out first-declared-highest. Reverse declaration order
   to move a local from `sp+0` to `sp+0x10`.

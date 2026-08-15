@@ -283,12 +283,8 @@ void sub_0218E73C(FieldCamera *camera)
 /* ---- the VecFx32 block at 0x24..0x77: seven vectors, 0x24 0x30 0x3C 0x48
  *      0x54 0x60 0x6C. Every one of these is a whole-struct copy (ldm/stm). ---- */
 
-void sub_0218EC30(FieldCamera *camera, VecFx32 *src)
-{
-    camera->unk06C = *src;
-    camera->unk01C = src;
-    camera->unk048 = *src;
-}
+/* 0x0218EC30 is banked at build/attempts/ov021/sub_0218EC30.c -- 29/36, the two
+ * parameter-save moves in the prologue come out in the other order. */
 
 void sub_0218EC90(FieldCamera *camera, const VecFx32 *src)
 {

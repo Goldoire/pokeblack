@@ -1,7 +1,7 @@
 #include "ov093/battle.h"
 
-// ov093 0x021d3138..0x021d362e: battle-script opcode handlers, ids 72, 73, 76,
-// 77, 78, 79 and 80.  Entries in the {handler, opcode-id} table at 0x021F00E0.
+// ov093 0x021d3138..0x021d362e: battle-script opcode handlers, ids 72, 73, 74,
+// 76, 77, 78, 79 and 80.  Entries in the {handler, opcode-id} table at 0x021F00E0.
 //
 //     int op(BattleScriptCtx *ctx, u32 *state, u32 *args);
 
@@ -14,6 +14,7 @@ u32 sub_021B9F70(BattleSystem *bsys, u8 a1);
 void sub_021B9C50(void *p, u8 a1, u32 a2, u32 a3);
 BOOL sub_021CD9E0(BattleScriptCtx *ctx);
 BOOL sub_021D3558(u16 a0);
+void sub_021D66D0(void *a0, u32 a1);
 void sub_021D66D8(void *a0, u8 a1);
 void sub_021D6C2C(void *a0);
 void sub_021EA3B8(void *a0, void *a1, u16 a2);
@@ -23,6 +24,10 @@ BOOL sub_021EA3F8(void *a0);
 void sub_021EA614(void *a0, u8 *a1);
 void sub_021EA678(void *a0, u32 a1, u32 *a2);
 BOOL sub_021EA710(void *a0);
+void sub_021EA768(void *a0, int a1, u32 a2);
+BOOL sub_021EA778(void *a0, int a1);
+void sub_021EA7A8(void *a0, int a1);
+BOOL sub_021EA7B8(void *a0, int a1);
 void sub_021EA868(void *a0, int a1, BOOL a2);
 BOOL sub_021EA878(void *a0);
 void sub_021EA888(void *a0, void *a1);
@@ -62,7 +67,7 @@ int sub_021D31A0(BattleScriptCtx *ctx, u32 *state, u32 *args)
     u8 v0;
     u8 v1;
     u8 f;
-    u32 msg;
+    u16 msg;
 
     switch (*state) {
     case 0:
@@ -80,19 +85,11 @@ int sub_021D31A0(BattleScriptCtx *ctx, u32 *state, u32 *args)
             }
             f = (u8)sub_021B9F70(ctx->unk_00, (u8)args[0]);
             if (v1 == 3) {
-                if (f != 0) {
-                    msg = 0x26;
-                } else {
-                    msg = 0x27;
-                }
+                msg = f != 0 ? 0x26 : 0x27;
             } else {
-                if (f != 0) {
-                    msg = 0x28;
-                } else {
-                    msg = 0x29;
-                }
+                msg = f != 0 ? 0x28 : 0x29;
             }
-            sub_021EA678(ctx->unk_054, (u16)msg, args);
+            sub_021EA678(ctx->unk_054, msg, args);
             (*state)++;
         }
         break;
@@ -101,6 +98,38 @@ int sub_021D31A0(BattleScriptCtx *ctx, u32 *state, u32 *args)
             return 1;
         }
         break;
+    }
+    return 0;
+}
+
+int sub_021D324C(BattleScriptCtx *ctx, u32 *state, u32 *args)
+{
+    u8 v0 = (u8)args[0];
+    int v = sub_021B8D8C(ctx->unk_00, ctx->unk_04, v0);
+
+    switch (*state) {
+    case 0:
+        if (sub_021CD9E0(ctx) != FALSE) {
+            sub_021D66D0(sub_021B9934(ctx->unk_04, v0), args[1]);
+            return 1;
+        }
+        sub_021EA768(ctx->unk_054, v, 0);
+        (*state)++;
+        break;
+    case 1:
+        if (sub_021EA778(ctx->unk_054, v) != FALSE) {
+            sub_021D66D0(sub_021B9934(ctx->unk_04, v0), args[1]);
+            sub_021EA7A8(ctx->unk_054, v);
+            (*state)++;
+        }
+        break;
+    case 2:
+        if (sub_021EA7B8(ctx->unk_054, v) != FALSE) {
+            (*state)++;
+        }
+        break;
+    default:
+        return 1;
     }
     return 0;
 }

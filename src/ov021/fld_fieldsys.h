@@ -27,6 +27,15 @@ typedef struct FieldSystem FieldSystem;
  * +0x0C from the teardown at 0x02188A7A. Slot +0x00 is an int read by the
  * accessor at 0x02188CF0.
  */
+/*
+ * A claimed scratch buffer. FieldSystem+0x118 holds one; 0x02189764 refuses to
+ * hand it out unless id == -1, and stamps the requester's id into it.
+ */
+typedef struct FieldSysBuf {
+    /* 0x00 */ int id;    // PROVEN 0x02189758 (= -1) / 0x02189764
+    /* 0x04 */ void *data; // PROVEN 0x02189758 (= NULL) / 0x02189764
+} FieldSysBuf;
+
 typedef struct FieldMapMode {
     /* 0x00 */ int id;
     /* 0x04 */ void *unk04;
@@ -115,8 +124,9 @@ struct FieldSystem {
     /* 0x10C */ void *unk10C;    // acc 0x02188CA4 (get) / 0x02188CAC (set)
     /* 0x110 */ void *unk110;    // acc 0x02188D30; = FUN_02030CBC(0x20) in FieldMap init
     /* 0x114 */ void *unk114;    // 0x20-byte allocation in FieldMap init
-    /* 0x118 */ void *unk118;
-    /* 0x11C */ void *unk11C;
+    /* 0x118 */ FieldSysBuf buf118; // PROVEN 0x02189764: {id, data} -- id is -1 when
+                                 // free, data is a heap block of a caller-chosen size
+                                 // allocated at "fieldmap.c":0xD7C. 0x02189758 resets it.
     /* 0x120 */ void *particle; // freed by fld_particle.c 0x021C1AD0
     /* 0x124 */ void *ci3d;      // acc 0x02189A00; fld3d_ci.c 0x021C1C04/0x021C1C4C
     /* 0x128 */ void *sodateya;  // acc 0x02188D50; freed by sodateya.c 0x021C31FC
