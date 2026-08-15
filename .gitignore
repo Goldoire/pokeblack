@@ -43,6 +43,11 @@ tools/*.exe
 tools/*.o
 !tools/scripts/
 tools/*.py
+# ...but the project's own toolchain is not a stray script. verify_functions.py
+# is the judge this whole repo is built around and it was untracked; so were
+# the reference builder, the SDK sweep, and everything added since. A blanket
+# *.py silently excluded all of them.
+!tools/scripts/*.py
 tools/local
 tools/ndstool/
 !tools/PLACE_MWCCARM_HERE.md

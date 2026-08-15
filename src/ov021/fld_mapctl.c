@@ -106,3 +106,66 @@ int sub_021880C8(void *a0, FieldSystem *fieldSystem)
     sub_02035660(0x1E);
     return TRUE;
 }
+
+/* ---- 0x02187F00: FieldMap_Init (the overlay's OverlayManager init proc) ----
+ *
+ * Previously banked at 206/208. Two arg-preplacement idioms fixed it, the same
+ * one that unblocked 0x021880C8: CW leaves a call result in the register the
+ * NEXT call wants it in, so a store that reads `str r1,[r6]` is a value that is
+ * also the second argument of the following call.
+ */
+
+void sub_0203064C(u32 heapParent, u32 heapId, u32 size);
+void sub_02030678(void *a0, u32 size, u32 heapId);
+u32 sub_02189BBC(u16 a0);
+FieldSystem *sub_02188030(void *a2, u32 heapId);
+void *sub_020120F8(void *a0);
+u16 sub_02012AC8(void *a0);
+FieldSystem **sub_0203159C(void *ovyManager, u32 size, u32 heapId);
+void sub_02012110(void *a0, FieldSystem *fieldSystem);
+BOOL sub_0201214C(void *a0);
+void *sub_02012138(void *a0);
+u32 sub_02026454(void *a0);
+void sub_02026400(void *a0);
+
+extern u8 _021DE700[];
+
+BOOL sub_02187F00(void *ovyManager, int *state, void *a2)
+{
+    FieldSystem **work;
+    FieldSystem *fieldSystem;
+    void *v;
+    u32 avail;
+
+    switch (*state) {
+    case 0:
+        avail = sub_02189BBC(sub_02012AC8(sub_020120F8(a2))) - 0xD000;
+        sub_0203064C(1, 0x15, avail);
+        sub_0203064C(1, 0x70, 0xD000);
+        sub_0203064C(0x15, 0x50, 0xC000);
+        sub_02030678(_021DE700, 0x10000, 0x89);
+        sub_0203064C(0x89, 0x92, 0x6400);
+        sub_0203064C(0x89, 0x93, 0x7400);
+        sub_0203064C(0x89, 0x96, 0x500);
+        work = sub_0203159C(ovyManager, 4, 0x15);
+        fieldSystem = sub_02188030(a2, 0x15);
+        *work = fieldSystem;
+        sub_02012110(a2, fieldSystem);
+        (*state)++;
+        break;
+    case 1:
+        if (sub_0201214C(a2) == 0) {
+            v = sub_02012138(a2);
+            /* A switch, not `== 1 || == 2`: the latter range-optimises into
+             * `subs #1 / cmp #1 / bhi`, the ROM has the two compares. */
+            switch (sub_02026454(v)) {
+            case 1:
+            case 2:
+                sub_02026400(v);
+                break;
+            }
+        }
+        return TRUE;
+    }
+    return FALSE;
+}

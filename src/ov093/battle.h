@@ -30,6 +30,7 @@
  */
 
 typedef struct BattleCore BattleCore;
+typedef struct BattleSystem BattleSystem;
 
 /* ---------------------------------------------------------------------------
  * BattleRecord -- 0x18. 0x021BA6C0 copies one whole with three ldm/stm
@@ -92,22 +93,22 @@ typedef struct BattleQueue {
  * +0x04 holds one of BattleSystem::unk_0C8[2].
  * ------------------------------------------------------------------------- */
 typedef struct BattleScriptCtx {
-    u32 unk_00;                     // +0x00 INFERRED (read 4B by 50 handlers)
+    BattleSystem *unk_00;           // +0x00 PROVEN  -- 021D3630, 021D3688, 021D3C44
     BattleQueue *unk_04;            // +0x04 PROVEN  -- 021D36CC and 23 siblings
     u8 filler_08[0x034 - 0x008];    // +0x08 INFERRED
-    void *unk_034;                  // +0x34 INFERRED (021D3B74)
+    void *unk_034;                  // +0x34 PROVEN  -- 021D3B88, 021D3D1C
     u8 filler_038[0x054 - 0x038];   // +0x38 INFERRED
-    void *unk_054;                  // +0x54 INFERRED (44 handlers read it)
+    void *unk_054;                  // +0x54 PROVEN  -- 021D3688, 021D3630
     void *unk_058;                  // +0x58 INFERRED
     u8 filler_05C[0x0AC - 0x05C];   // +0x5C INFERRED
     void *unk_0AC;                  // +0xAC INFERRED (5 handlers)
     u8 filler_0B0[0x134 - 0x0B0];   // +0xB0 INFERRED
-    void *unk_134;                  // +0x134 INFERRED
-    void *unk_138;                  // +0x138 INFERRED
-    void *unk_13C;                  // +0x13C INFERRED (021D3934, as 0x4F << 2)
-    void *unk_140;                  // +0x140 INFERRED
+    u32 unk_134;                    // +0x134 INFERRED
+    u32 unk_138;                    // +0x138 PROVEN  -- 021D3934
+    u32 unk_13C;                    // +0x13C PROVEN  -- 021D3934 (as 0x4F << 2)
+    u32 unk_140;                    // +0x140 PROVEN  -- 021D3934
     u8 filler_144[0x1A6 - 0x144];   // +0x144 INFERRED
-    u8 unk_1A6;                     // +0x1A6 INFERRED
+    u8 unk_1A6;                     // +0x1A6 PROVEN  -- 021D3C44
 } BattleScriptCtx;                  // >= 0x1A7
 
 /*
@@ -129,7 +130,7 @@ typedef struct BattleScriptCtx {
  * 0xC08 and 0xBD0 bytes and none of them writes this shape), so it is built by
  * whichever overlay sets a battle up and hands the pointer in.
  * ------------------------------------------------------------------------- */
-typedef struct BattleSystem {
+struct BattleSystem {
     BattleCore *core;               // +0x000 PROVEN  -- 021B8588 and ~60 more
     void *unk_004;                  // +0x004 INFERRED (read as 4B by 021B6A70)
     void *unk_008;                  // +0x008 PROVEN  -- 021BA238
@@ -182,7 +183,7 @@ typedef struct BattleSystem {
     u8 unk_473_5 : 1;
     u8 unk_473_6 : 1;               // 021B919C
     u8 unk_473_7 : 1;
-} BattleSystem;                     // >= 0x474
+};                                  // >= 0x474
 
 /* ---------------------------------------------------------------------------
  * BattleCore -- >= 0xB4. Hangs off BattleSystem+0x000.
