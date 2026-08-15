@@ -10,7 +10,7 @@
  */
 
 #include "types.h"
-#include "heap.h"
+#include "ghidra_legacy.h"
 
 // External data references (note: uppercase C in assembly)
 extern u32 DAT_02005998;  // 0x020AA1AC

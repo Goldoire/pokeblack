@@ -9,7 +9,7 @@
  */
 
 #include "types.h"
-#include "resource.h"
+#include "ghidra_legacy.h"
 
 // External overlay function declarations (implemented in overlay_stubs.c)
 extern void* sub_02074450(u32 param);

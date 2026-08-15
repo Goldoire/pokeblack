@@ -1,0 +1,36 @@
+/* TwlSDK/TwlSystem lib/TwlSystem/build/libraries/g2d/src/g2d_Image.c
+ * Renamed to sub_<realRAM> per function so verify_functions.py can
+ * place them. The retail ARM9 is built with SDK_FINALROM.
+ */
+#define SDK_FINALROM
+
+/* callees outside this TU, from the claim table */
+#define DC_FlushRange                        sub_020862F0
+#define GX_BeginLoadTex                      sub_0207F754
+#define GX_BeginLoadOBJExtPltt               sub_0207F47C
+#define GXS_BeginLoadOBJExtPltt              sub_0207F6A8
+#define GX_BeginLoadTexPltt                  sub_0207FA0C
+#define NNS_G2dInitImagePaletteProxy     sub_020637D4
+#define NNS_G2dSetImagePaletteLocation   sub_020637F4
+#define NNS_G2dGetImagePaletteLocation   sub_02063800
+/* stripped or unplaced: NNS_G2dInitImageProxy (28B) */
+/* stripped or unplaced: NNS_G2dSetImageLocation (8B) */
+/* stripped or unplaced: NNS_G2dGetImageLocation (8B) */
+/* stripped or unplaced: NNS_G2dIsImageReadyToUse (20B) */
+/* stripped or unplaced: NNS_G2dIsImagePaletteReadyToUse (24B) */
+/* stripped or unplaced: NNS_G2dLoadImage1DMapping (536B) */
+/* stripped or unplaced: NNS_G2dLoadImage2DMapping (536B) */
+/* stripped or unplaced: NNS_G2dLoadImageVramTransfer (448B) */
+/* stripped or unplaced: NNS_G2dLoadPalette (248B) */
+/* stripped or unplaced: NNS_G2dLoadPaletteEx (348B) */
+/* stripped or unplaced: NNSi_G2dInitializeVRamLocation (28B) */
+/* stripped or unplaced: NNSi_G2dSetVramLocation (8B) */
+/* stripped or unplaced: NNSi_G2dGetVramLocation (8B) */
+/* stripped or unplaced: NNSi_G2dIsVramLocationReadyToUse (20B) */
+/* stripped or unplaced: NNSi_G2dDoImageLoadingToVram (124B) */
+/* stripped or unplaced: NNSi_G2dSetupImageProxyPrams (344B) */
+/* stripped or unplaced: NNSi_G2dDoLoadingPaletteToVram (212B) */
+/* stripped or unplaced: NNSi_G2dDoLoadingPaletteToVramEx (312B) */
+/* stripped or unplaced: NNSi_G2dSetupPaletteProxyPrams (44B) */
+
+#include "../../lib/TwlSystem/build/libraries/g2d/src/g2d_Image.c"

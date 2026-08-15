@@ -10,7 +10,7 @@
  */
 
 #include "types.h"
-#include "heap.h"
+#include "ghidra_legacy.h"
 
 // External data references
 extern u32 DAT_02005974;  // 0x020AA1AC

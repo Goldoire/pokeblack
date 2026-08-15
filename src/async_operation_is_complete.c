@@ -1,5 +1,5 @@
 #include "types.h"
-#include "heap.h"
+#include "ghidra_legacy.h"
 
 // External function declarations
 extern u32 sub_0208574C(void* param);

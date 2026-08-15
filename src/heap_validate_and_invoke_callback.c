@@ -1,5 +1,5 @@
 #include "types.h"
-#include "resource.h"
+#include "ghidra_legacy.h"
 
 // External function declarations
 extern u32 sub_02005C64(void);

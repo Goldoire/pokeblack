@@ -17,7 +17,7 @@ void sub_02039548(void);
 
 s32 sub_020365E8(Fifo *b);
 s32 sub_02036624(Fifo *b, s32 idx);
-s32 sub_02036568(Fifo *b, u8 *dst, s32 count, s32 max);
+s32 sub_02036568(Fifo *b, u8 *restrict dst, s32 count, s32 max);
 s32 sub_020364D4(Fifo *b, u8 *dst, s32 count, s32 max);
 u32 sub_02036500(Fifo *b);
 s32 sub_02036640(Fifo *b);
@@ -78,7 +78,7 @@ u16 sub_02036540(Fifo *b)
     return v;
 }
 
-s32 sub_02036568(Fifo *b, u8 *dst, s32 count, s32 max)
+s32 sub_02036568(Fifo *b, u8 *restrict dst, s32 count, s32 max)
 {
     s32 i;
     s32 n = 0;

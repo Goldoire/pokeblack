@@ -1,5 +1,5 @@
 #include "types.h"
-#include "resource.h"
+#include "ghidra_legacy.h"
 
 // External data references
 extern u32 DAT_02006A5C;  // Points to 0x02140504 (function pointer table)

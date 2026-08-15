@@ -1,5 +1,5 @@
 #include "types.h"
-#include "heap.h"
+#include "ghidra_legacy.h"
 
 /**
  * HeapManager_GetCurrentIndex
