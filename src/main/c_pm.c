@@ -10,16 +10,21 @@
 #define OS_GetProcMode                       sub_020879EC
 #define OS_GetCpsrIrq                        sub_020879E0
 #define PXIi_HandlerRecvFifoNotEmpty         sub_02088688
+#define PXI_Init                             sub_02088498
 #define PXI_IsCallbackReady                  sub_020885EC
+#define SVC_WaitByLoop                       sub_02004490
 #define PXI_SetFifoRecvCallback              sub_020885A0
 #define OS_DisableInterrupts                 sub_02087988
 #define OS_RestoreInterrupts                 sub_0208799C
+#define OS_SpinWaitSysCycles                 sub_02087A04
 #define OS_Halt                              sub_020882D0
 #define PXI_SendWordByFifo                   sub_02088610
 #define MI_WaitDma                           sub_02082594
 #define MI_StopDma                           sub_020825F0
+#define OS_DisableIrqMask                    sub_02084998
 #define OS_IsTickAvailable                   sub_02087058
 #define OS_GetBootType                       sub_02087B04
+#define GX_IsDispOn                          sub_0207D41C
 #define GX_DispOff                           sub_0207D42C
 
 #define PMi_WaitBusy                    sub_0208B7BC
@@ -50,8 +55,10 @@
 #define PMi_ExecuteList                 sub_0208C7E0
 #define PM_AppendPreSleepCallback       sub_0208C828
 #define PMi_InsertPreSleepCallbackEx    sub_0208C848
-#define PMi_InsertPostSleepCallbackEx   sub_0208C878
+#define PM_DeletePreSleepCallback       sub_0208C86C
+#define PM_DeletePostSleepCallback      sub_0208C884
 #define PMi_LCDOnAvoidReset             sub_0208C89C
+#define PMi_SetDispOffCount             sub_0208C944
 /* not in shard or dead-stripped: PM_Init (148B) */
 /* not in shard or dead-stripped: PMi_CommonCallback (136B) */
 /* not in shard or dead-stripped: PMi_TryToSendPxiData (132B) */
@@ -78,11 +85,9 @@
 /* not in shard or dead-stripped: PM_AppendPostSleepCallback (32B) */
 /* not in shard or dead-stripped: PM_PrependPostSleepCallback (32B) */
 /* not in shard or dead-stripped: PM_InsertPreSleepCallback (12B) */
+/* not in shard or dead-stripped: PMi_InsertPostSleepCallbackEx (36B) */
 /* not in shard or dead-stripped: PM_InsertPostSleepCallback (12B) */
-/* not in shard or dead-stripped: PM_DeletePreSleepCallback (24B) */
-/* not in shard or dead-stripped: PM_DeletePostSleepCallback (24B) */
 /* not in shard or dead-stripped: PM_ClearPreSleepCallback (20B) */
 /* not in shard or dead-stripped: PM_ClearPostSleepCallback (20B) */
-/* not in shard or dead-stripped: PMi_SetDispOffCount (28B) */
 
 #include "../../lib/NitroSDK/TwlSDK/build/libraries/spi/ARM9/src/pm.c"

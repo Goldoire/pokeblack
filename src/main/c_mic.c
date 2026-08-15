@@ -7,6 +7,7 @@
 #define SDK_FINALROM
 
 /* callees outside this file */
+#define PXI_Init                             sub_02088498
 #define PXI_IsCallbackReady                  sub_020885EC
 #define PXI_SetFifoRecvCallback              sub_020885A0
 #define OS_DisableInterrupts                 sub_02087988
@@ -23,12 +24,12 @@
 #define MicStartAutoSampling        sub_0208B650
 #define MicStopAutoSampling         sub_0208B75C
 #define MicGetResultCallback        sub_0208B788
+#define MicWaitBusy                 sub_0208B798
 /* not in shard or dead-stripped: MIC_DoSamplingAsync (184B) */
 /* not in shard or dead-stripped: MIC_DoSampling (56B) */
 /* not in shard or dead-stripped: MIC_AdjustAutoSamplingAsync (112B) */
 /* not in shard or dead-stripped: MIC_AdjustAutoSampling (56B) */
 /* not in shard or dead-stripped: MicDoSampling (44B) */
 /* not in shard or dead-stripped: MicAdjustAutoSampling (124B) */
-/* not in shard or dead-stripped: MicWaitBusy (24B) */
 
 #include "../../lib/NitroSDK/TwlSDK/build/libraries/spi/ARM9/src/mic.c"

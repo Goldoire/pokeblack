@@ -7,8 +7,8 @@
 #define SDK_FINALROM
 
 /* callees outside this file */
-#define _ll_mod                              sub_0209BE54
-#define _ll_sdiv                             sub_0209BE64
+#define _ll_mod                              sub_0209BE4C
+#define _ll_sdiv                             sub_0209BE5C
 
 #define RTC_ConvertDateToDay        sub_02088F58
 #define RTCi_ConvertTimeToSecond    sub_02088FEC

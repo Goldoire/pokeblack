@@ -11,6 +11,8 @@
 #define FS_InitFile                          sub_020788AC
 #define FS_OpenFileFast                      sub_020789A4
 #define FS_OpenFileEx                        sub_020789FC
+#define FS_SeekFile                          sub_02078B44
+#define FS_ReadFile                          sub_02078B70
 #define NNS_SndHeapAlloc                     sub_0207482C
 #define MIi_CpuCopy32                        sub_02082A90
 #define NNSi_SndSeqArcGetSeqInfo             sub_02075B54
@@ -18,18 +20,23 @@
 #define NNS_SndArcSetCurrent         sub_020742E4
 #define NNS_SndArcGetCurrent         sub_020742FC
 #define NNS_SndArcGetSeqParam        sub_0207430C
+#define NNS_SndArcGetSeqInfo         sub_02074324
+#define NNS_SndArcGetSeqArcInfo      sub_02074388
+#define NNS_SndArcGetBankInfo        sub_020743EC
+#define NNS_SndArcGetWaveArcInfo     sub_02074450
+#define NNS_SndArcGetStrmInfo        sub_020744B4
+#define NNS_SndArcGetPlayerInfo      sub_02074518
+#define NNS_SndArcGetFileOffset      sub_0207457C
+#define NNS_SndArcReadFile           sub_020745A4
+#define NNS_SndArcGetFileAddress     sub_0207466C
+#define NNS_SndArcSetFileAddress     sub_02074694
+#define NNS_SndArcGetLoadBlockSize   sub_020746B0
 #define FatDisposeCallback           sub_020746C4
 /* not in shard or dead-stripped: NNS_SndArcInit (184B) */
 /* not in shard or dead-stripped: NNS_SndArcInitWithResult (144B) */
 /* not in shard or dead-stripped: NNS_SndArcSetup (416B) */
 /* not in shard or dead-stripped: NNS_SndArcInitOnMemory (184B) */
 /* not in shard or dead-stripped: NNS_SndArcGetSeqArcParam (68B) */
-/* not in shard or dead-stripped: NNS_SndArcGetSeqInfo (100B) */
-/* not in shard or dead-stripped: NNS_SndArcGetSeqArcInfo (100B) */
-/* not in shard or dead-stripped: NNS_SndArcGetBankInfo (100B) */
-/* not in shard or dead-stripped: NNS_SndArcGetWaveArcInfo (100B) */
-/* not in shard or dead-stripped: NNS_SndArcGetStrmInfo (100B) */
-/* not in shard or dead-stripped: NNS_SndArcGetPlayerInfo (100B) */
 /* not in shard or dead-stripped: NNS_SndArcGetStrmPlayerInfo (100B) */
 /* not in shard or dead-stripped: NNS_SndArcGetGroupInfo (100B) */
 /* not in shard or dead-stripped: NNS_SndArcGetSeqCount (48B) */
@@ -39,13 +46,8 @@
 /* not in shard or dead-stripped: NNS_SndArcGetStrmCount (48B) */
 /* not in shard or dead-stripped: NNS_SndArcGetGroupCount (48B) */
 /* not in shard or dead-stripped: NNS_SndArcGetSeqArcSeqCount (48B) */
-/* not in shard or dead-stripped: NNS_SndArcGetFileOffset (40B) */
 /* not in shard or dead-stripped: NNS_SndArcGetFileSize (40B) */
-/* not in shard or dead-stripped: NNS_SndArcReadFile (200B) */
 /* not in shard or dead-stripped: NNS_SndArcGetFileID (32B) */
-/* not in shard or dead-stripped: NNS_SndArcGetFileAddress (40B) */
-/* not in shard or dead-stripped: NNS_SndArcSetFileAddress (28B) */
-/* not in shard or dead-stripped: NNS_SndArcGetLoadBlockSize (20B) */
 /* not in shard or dead-stripped: NNS_SndArcSetLoadBlockSize (20B) */
 /* not in shard or dead-stripped: NNS_SndArcGetSeqSymbol (76B) */
 /* not in shard or dead-stripped: NNS_SndArcGetSeqArcSymbol (120B) */

@@ -17,10 +17,10 @@
 #define FS_OpenFileFast                      sub_020789A4
 #define CARD_GetOwnRomHeader                 sub_02075DF8
 #define FS_CreateFileFromRom                 sub_0207ACD4
-#define FS_ReadFile                          sub_02078B78
+#define FS_ReadFile                          sub_02078B70
 #define FS_CloseFile                         sub_02078A80
 #define FS_GetFileLength                     sub_02078A94
-#define OS_Terminate                         sub_0208823C
+#define OS_Terminate                         sub_02088234
 #define DC_FlushRange                        sub_020862F0
 #define OS_DisableInterrupts                 sub_02087988
 #define OS_RestoreInterrupts                 sub_0208799C

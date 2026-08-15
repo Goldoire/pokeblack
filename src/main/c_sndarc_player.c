@@ -8,8 +8,12 @@
 
 /* callees outside this file */
 #define NNS_SndArcGetCurrent                 sub_020742FC
+#define NNS_SndArcGetPlayerInfo              sub_02074518
 #define NNS_SndPlayerSetPlayableSeqCount     sub_02072DB0
 #define NNS_SndPlayerSetAllocatableChannel   sub_02072DD0
+#define NNS_SndArcGetSeqInfo                 sub_02074324
+#define NNS_SndArcGetSeqArcInfo              sub_02074388
+#define NNS_SndArcGetFileAddress             sub_0207466C
 #define NNSi_SndSeqArcGetSeqInfo             sub_02075B54
 #define NNSi_SndArcLoadBank                  sub_02074CD0
 #define NNSi_SndArcLoadSeq                   sub_02074BEC

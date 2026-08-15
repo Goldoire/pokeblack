@@ -1,4 +1,4 @@
-/* lib/NitroSDK/TwlSDK/build/libraries/fx/common/src/fx_atanidx.c, as linked into the retail ARM9.
+/* lib/NitroSDK/TwlSDK/build/libraries/pxi/common/src/pxi_init.c, as linked into the retail ARM9.
  * Each function is renamed to sub_<realRAM> so verify_functions.py can place
  * it. SDK_FINALROM is what the retail build used: without it the merged .bss
  * of a translation unit comes out in a different order and every static
@@ -7,9 +7,8 @@
 #define SDK_FINALROM
 
 /* callees outside this file */
-#define FX_Div                               sub_0207C768
+#define PXI_InitFifo                         sub_020884A4
 
-#define FX_Atan2Idx sub_0207CFB8
-/* not in shard or dead-stripped: FX_AtanIdx (184B) */
+#define PXI_Init sub_02088498
 
-#include "../../lib/NitroSDK/TwlSDK/build/libraries/fx/common/src/fx_atanidx.c"
+#include "../../lib/NitroSDK/TwlSDK/build/libraries/pxi/common/src/pxi_init.c"

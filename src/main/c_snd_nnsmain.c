@@ -8,9 +8,12 @@
 
 /* callees outside this file */
 #define SND_Init                             sub_02089848
+#define PM_PrependPreSleepCallback           sub_0208C808
 #define PM_AppendPostSleepCallback           sub_0208C828
 #define NNSi_SndInitResourceMgr              sub_02072A28
 #define NNSi_SndCaptureInit                  sub_02073D5C
+#define PM_DeletePreSleepCallback            sub_0208C86C
+#define PM_DeletePostSleepCallback           sub_0208C884
 #define SND_RecvCommandReply                 sub_02089978
 #define NNSi_SndPlayerMain                   sub_020731E0
 #define NNSi_SndCaptureMain                  sub_02073D7C

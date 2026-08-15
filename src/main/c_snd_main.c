@@ -14,7 +14,7 @@
 #define OS_UnlockMutex                       sub_02086078
 
 #define SND_Init         sub_02089848
-/* not in shard or dead-stripped: SNDi_LockMutex (20B) */
-/* not in shard or dead-stripped: SNDi_UnlockMutex (20B) */
+#define SNDi_LockMutex   sub_02089880
+#define SNDi_UnlockMutex sub_02089894
 
 #include "../../lib/NitroSDK/TwlSDK/build/libraries/snd/common/src/snd_main.c"

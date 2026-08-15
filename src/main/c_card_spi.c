@@ -7,7 +7,9 @@
 #define SDK_FINALROM
 
 /* callees outside this file */
-#define _ll_udiv                             sub_0209C014
+#define OS_Sleep                             sub_02085A38
+#define OS_GetTickLo                         sub_02087170
+#define _ll_udiv                             sub_0209C00C
 
 #define CARDi_CommandBegin             sub_0205A11C
 /* not in shard or dead-stripped: CARDi_CommandEnd (128B) */

@@ -6,6 +6,9 @@
  */
 #define SDK_FINALROM
 
+/* callees outside this file */
+#define OS_SetIrqFunction                    sub_02084774
+
 #define OS_StopTimer64              sub_02082658
 /* not in shard or dead-stripped: OSi_IsTimerReserved (32B) */
 /* not in shard or dead-stripped: OSi_SetTimerReserved (28B) */

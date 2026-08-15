@@ -7,13 +7,13 @@
 #define SDK_FINALROM
 
 /* callees outside this file */
-#define CARD_IsPulledOut                     sub_020774B8
+#define CARD_IsPulledOut                     sub_020774B0
 #define FS_NotifyArchiveAsyncEnd             sub_02078734
-#define CARDi_ReadRom                        sub_020771BC
+#define CARDi_ReadRom                        sub_020771B4
 #define CARD_LockRom                         sub_02075E10
 #define CARD_UnlockRom                       sub_02075E80
 #define CARD_Init                            sub_02075CAC
-#define OS_GetLockID                         sub_02084EC0
+#define OS_GetLockID                         sub_02084EB8
 #define FS_InitArchive                       sub_02078360
 #define FS_RegisterArchiveName               sub_02078384
 #define OS_GetBootType                       sub_02087B04

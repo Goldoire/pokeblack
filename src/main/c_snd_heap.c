@@ -8,12 +8,14 @@
 
 /* callees outside this file */
 #define NNS_FndCreateFrmHeapEx               sub_020610E0
+#define NNS_FndDestroyFrmHeap                sub_02061118
 #define NNS_FndGetPrevListObject             sub_0206062C
 #define NNS_FndRemoveListObject              sub_020605B4
 #define NNS_FndFreeToFrmHeap                 sub_02061158
 #define NNS_FndAllocFromFrmHeapEx            sub_02061124
 #define NNS_FndAppendListObject              sub_020604AC
 #define NNS_FndRecordStateForFrmHeap         sub_02061184
+#define NNS_FndFreeByStateToFrmHeap          sub_020611D4
 #define NNS_FndInitList                      sub_02060468
 #define SND_GetCurrentCommandTag             sub_02089D40
 #define SND_FlushCommand                     sub_02089B38

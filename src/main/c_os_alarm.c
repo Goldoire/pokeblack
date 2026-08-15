@@ -8,14 +8,14 @@
 
 /* callees outside this file */
 #define OS_GetTick                           sub_020870D0
-#define OSi_EnterTimerCallback               sub_02084900
-#define OS_EnableIrqMask                     sub_02084970
-#define OSi_SetTimerReserved                 sub_02086FCC
-#define OS_DisableIrqMask                    sub_020849A0
+#define OSi_EnterTimerCallback               sub_020848F8
+#define OS_EnableIrqMask                     sub_02084968
+#define OSi_SetTimerReserved                 sub_02086FC4
+#define OS_DisableIrqMask                    sub_02084998
 #define OS_DisableInterrupts                 sub_02087988
 #define OS_RestoreInterrupts                 sub_0208799C
-#define _ll_udiv                             sub_0209C014
-#define OS_Terminate                         sub_0208823C
+#define _ll_udiv                             sub_0209C00C
+#define OS_Terminate                         sub_02088234
 
 #define OSi_SetTimer        sub_02087180
 #define OS_InitAlarm        sub_02087208

@@ -7,6 +7,8 @@
 #define SDK_FINALROM
 
 /* callees outside this file */
+#define SNDi_LockMutex                       sub_02089880
+#define SNDi_UnlockMutex                     sub_02089894
 #define DC_StoreRange                        sub_020862D4
 
 #define SND_AssignWaveArc       sub_0208A2BC

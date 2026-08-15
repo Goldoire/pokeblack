@@ -7,7 +7,7 @@
 #define SDK_FINALROM
 
 /* callees outside this file */
-#define FX_Div                               sub_0207C770
+#define FX_Div                               sub_0207C768
 
 #define SetAnimCtrlCurrentFrameImpl_                     sub_02062D08
 #define NNS_G2dGetAnimCtrlCurrentElement                 sub_02062D40

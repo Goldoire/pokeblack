@@ -12,8 +12,12 @@
 #define OS_RestoreInterrupts                 sub_0208799C
 #define MI_CpuCopy8                          sub_02082D44
 
-#define WBT_SetPacketSize              sub_0207ACB4
-#define WBT_MpChildSendHook            sub_0208C848
+/* WBT_SetPacketSize byte-matches here too, but the ROM copy belongs to the
+   other translation unit; leave this one unplaced. */
+#define WBT_SetPacketSize unplaced_WBT_SetPacketSize
+/* WBT_MpChildSendHook byte-matches here too, but the ROM copy belongs to the
+   other translation unit; leave this one unplaced. */
+#define WBT_MpChildSendHook unplaced_WBT_MpChildSendHook
 /* not in shard or dead-stripped: WBT_PrintBTList (36B) */
 /* not in shard or dead-stripped: WBT_AidbitmapToAid (36B) */
 /* not in shard or dead-stripped: WBT_InitParent (184B) */

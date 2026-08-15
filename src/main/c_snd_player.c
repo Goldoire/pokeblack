@@ -20,6 +20,7 @@
 #define SND_SetTrackModSpeed                 sub_02089470
 #define SND_SetTrackAllocatableChannel       sub_0208948C
 #define SND_SetPlayerTempoRatio              sub_020893B8
+#define SND_SetPlayerGlobalVariable          sub_02079164
 #define NNS_FndInitList                      sub_02060468
 #define SND_GetPlayerStatus                  sub_0208A054
 #define SND_IsFinishedCommandTag             sub_02089D6C
@@ -50,7 +51,9 @@
 #define NNS_SndPlayerSetPlayerPriority          sub_02072F88
 #define NNS_SndPlayerSetTrackVolume             sub_02072FE8
 #define NNS_SndPlayerSetSeqArcNo                sub_020730DC
-#define NNS_SndPlayerWriteGlobalVariable        sub_02079254
+/* NNS_SndPlayerWriteGlobalVariable byte-matches here too, but the ROM copy belongs to the
+   other translation unit; leave this one unplaced. */
+#define NNS_SndPlayerWriteGlobalVariable unplaced_NNS_SndPlayerWriteGlobalVariable
 /* not in shard or dead-stripped: NNS_SndPlayerCreateHeap (132B) */
 /* not in shard or dead-stripped: NNS_SndPlayerStopSeq (16B) */
 /* not in shard or dead-stripped: NNS_SndPlayerStopSeqByPlayerNo (92B) */

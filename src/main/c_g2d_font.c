@@ -7,7 +7,7 @@
 #define SDK_FINALROM
 
 /* callees outside this file */
-#define NNSi_G2dGetUnpackedFont              sub_02069900
+#define NNSi_G2dGetUnpackedFont              sub_020698F8
 
 #define GetGlyphIndex                     sub_02067EB0
 #define NNS_G2dFontInitUTF8               sub_02067F78

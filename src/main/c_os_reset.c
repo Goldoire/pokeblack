@@ -7,9 +7,13 @@
 #define SDK_FINALROM
 
 /* callees outside this file */
+#define PXI_Init                             sub_02088498
 #define PXI_IsCallbackReady                  sub_020885EC
 #define PXI_SetFifoRecvCallback              sub_020885A0
+#define OS_Terminate                         sub_02088234
+#define OS_GetLockID                         sub_02084EB8
 #define CARD_LockRom                         sub_02075E10
+#define OS_ResetRequestIrqMask               sub_020849C8
 #define OSi_SendToPxi                        sub_02084A84
 
 #define OS_InitReset      sub_02087B78

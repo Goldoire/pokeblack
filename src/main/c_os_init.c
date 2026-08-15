@@ -7,6 +7,7 @@
 #define SDK_FINALROM
 
 /* callees outside this file */
+#define PXI_Init                             sub_02088498
 #define OS_InitVAlarm                        sub_02087578
 #define OSi_InitVramExclusive                sub_02087EA8
 #define OS_InitThread                        sub_02085264

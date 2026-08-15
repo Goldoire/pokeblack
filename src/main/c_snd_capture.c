@@ -19,9 +19,10 @@
 #define NNSi_SndFaderIsFinished              sub_02075C20
 #define NNSi_SndFaderGet                     sub_02075BD4
 #define SND_SetChannelVolume                 sub_02089638
-#define _s32_div_f                           sub_0209C0AC
-#define _u32_div_f                           sub_0209C2B8
+#define _u32_div_f                           sub_0209C2B0
+#define NNS_SndAllocAlarm                    sub_020729C0
 #define NNS_SndFreeAlarm                     sub_02072A08
+#define NNS_SndLockChannel                   sub_0207292C
 #define NNS_SndUnlockCapture                 sub_020729A4
 #define SND_SetupChannelPcm                  sub_02089660
 #define SND_SetupAlarm                       sub_02089540

@@ -141,7 +141,9 @@ u32 sub_021F99F0(WorldTradeInput *a0)
     return ret;
 }
 
-u32 sub_021F9EEC(u32 a0, u32 a1)
+/* Signed, not unsigned: the ROM calls the signed divide helper at 0x0209C0A4,
+ * not the unsigned one at 0x0209C2B0. */
+s32 sub_021F9EEC(s32 a0, s32 a1)
 {
     if (a0 == 0)
     {

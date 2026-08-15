@@ -189,6 +189,26 @@ instructions otherwise line up, try another compiler build before assuming the
 C is wrong. **Record the build you used in the file header** — the next person
 to touch the file cannot rediscover it from the source.
 
+## SDK-derived files need `SDK_FINALROM`
+
+The retail ARM9 is built with `-DSDK_FINALROM`, and it is not a codegen switch:
+it changes the order MWCC emits a translation unit's merged `.bss`, so every
+static-variable offset baked into the code is wrong without it. `os_thread.c`
+sits at 26/37 without it and **37/37 with it**, nothing else changed. Put
+`#define SDK_FINALROM` at the top of any file derived from SDK source.
+
+Two more things about the ARM9 tail:
+
+- From 0x020A9E80 onward, `main.bin` is the **ITCM autoload image**: it runs at
+  0x01FF8000, delta 0xB1E80. The bodies match, but branches and literals inside
+  it encode ITCM addresses, so a `sub_020A9xxx` name can never verify them.
+  Callers are still fixable — name the callee at its ITCM address
+  (`#define MIi_DmaSetParameters sub_01FF8020`).
+- Division is a call to a runtime helper, and signed and unsigned are different
+  routines: `_s32_div_f` at 0x0209C0A4, `_u32_div_f` at 0x0209C2B0. If a
+  function differs only at a division call site, you have the signedness of the
+  operands wrong.
+
 ## Settled questions — do not re-investigate
 
 - Game code is Thumb. `cc.py --thumb` is the flag set; it is already correct.

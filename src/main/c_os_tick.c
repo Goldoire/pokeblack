@@ -7,6 +7,10 @@
 #define SDK_FINALROM
 
 /* callees outside this file */
+#define OSi_SetTimerReserved                 sub_02086FC4
+#define OS_SetIrqFunction                    sub_02084774
+#define OS_EnableIrqMask                     sub_02084968
+#define OSi_EnterTimerCallback               sub_020848F8
 #define OS_DisableInterrupts                 sub_02087988
 #define OS_RestoreInterrupts                 sub_0208799C
 

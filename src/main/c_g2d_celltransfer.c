@@ -7,7 +7,7 @@
 #define SDK_FINALROM
 
 /* callees outside this file */
-#define NNSi_G2dInitializeVRamLocation       sub_02063790
+#define NNSi_G2dInitializeVRamLocation       sub_020640B0
 
 #define NNSi_G2dGetCellTransferState          sub_02066878
 #define NNS_G2dSetCellTransferStateRequested  sub_02066ABC

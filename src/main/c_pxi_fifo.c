@@ -8,6 +8,9 @@
 
 /* callees outside this file */
 #define OS_DisableInterrupts                 sub_02087988
+#define OS_ResetRequestIrqMask               sub_020849C8
+#define OS_SetIrqFunction                    sub_02084774
+#define OS_EnableIrqMask                     sub_02084968
 #define OS_RestoreInterrupts                 sub_0208799C
 
 #define PXI_InitFifo                 sub_020884A4

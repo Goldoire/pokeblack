@@ -12,7 +12,7 @@
 
 #define OS_InitContext sub_02085B9C
 #define OS_SaveContext sub_02085C08
-/* not in shard or dead-stripped: OS_LoadContext (68B) */
+#define OS_LoadContext sub_02085C54
 /* not in shard or dead-stripped: OS_DumpContext (4B) */
 
 #include "../../lib/NitroSDK/TwlSDK/build/libraries/os/common/src/os_context.c"

@@ -7,7 +7,10 @@
 #define SDK_FINALROM
 
 /* callees outside this file */
-#define FSi_InitOverlay                      sub_02078C48
+#define FSi_InitRomArchive                   sub_0207AB10
+#define FSi_InitOverlay                      sub_02078C40
+#define OS_DisableInterrupts                 sub_02087988
+#define OS_RestoreInterrupts                 sub_0208799C
 
 #define FS_Init        sub_0207AD04
 /* not in shard or dead-stripped: FS_IsAvailable (16B) */

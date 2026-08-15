@@ -7,9 +7,9 @@
 #define SDK_FINALROM
 
 /* callees outside this file */
-#define MIi_CheckAnotherAutoDMA              sub_02082688
-#define MIi_CheckDma0SourceAddress           sub_02082714
-#define MIi_DmaSetParameters                 sub_020A9EA0
+#define MIi_CheckAnotherAutoDMA              sub_02082680
+#define MIi_CheckDma0SourceAddress           sub_0208270C
+#define MIi_DmaSetParameters                 sub_01FF8020
 
 #define MIi_CardDmaCopy32 sub_020835A0
 

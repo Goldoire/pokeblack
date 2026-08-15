@@ -7,9 +7,14 @@
 #define SDK_FINALROM
 
 /* callees outside this file */
+#define OS_DisableIrqMask                    sub_02084998
 #define OS_DisableInterrupts                 sub_02087988
 #define OS_RestoreInterrupts                 sub_0208799C
+#define OS_Terminate                         sub_02088234
+#define OS_SetIrqFunction                    sub_02084774
 #define GX_SetVCountEqVal                    sub_0207D384
+#define OS_EnableIrqMask                     sub_02084968
+#define OS_ResetRequestIrqMask               sub_020849C8
 
 #define OS_InitVAlarm        sub_02087578
 #define OSi_InsertVAlarm     sub_020875B8

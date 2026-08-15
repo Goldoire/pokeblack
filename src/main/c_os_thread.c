@@ -9,11 +9,13 @@
 /* callees outside this file */
 #define OS_GetProcMode                       sub_020879EC
 #define OS_SaveContext                       sub_02085C08
+#define OS_LoadContext                       sub_02085C54
 #define OS_DisableInterrupts                 sub_02087988
 #define OS_InitContext                       sub_02085B9C
 #define MIi_CpuClear32                       sub_02082A7C
 #define OS_RestoreInterrupts                 sub_0208799C
 #define OSi_UnlockAllMutex                   sub_02086088
+#define OS_Terminate                         sub_02088234
 #define OS_CancelAlarm                       sub_020873F8
 #define OS_CreateAlarm                       sub_02087254
 #define OS_SetAlarm                          sub_0208738C

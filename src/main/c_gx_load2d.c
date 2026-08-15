@@ -27,11 +27,11 @@
 #define G2S_GetBG2CharPtr                    sub_0207E2F0
 #define G2_GetBG3CharPtr                     sub_0207E330
 #define G2S_GetBG3CharPtr                    sub_0207E388
-#define GX_ResetBankForBGExtPltt             sub_02080924
+#define GX_ResetBankForBGExtPltt             sub_0208091C
 #define MIi_DmaCopy32Async                   sub_02082498
 #define MI_WaitDma                           sub_02082594
-#define GX_ResetBankForOBJExtPltt            sub_02080948
-#define GX_ResetBankForSubOBJExtPltt         sub_020809F8
+#define GX_ResetBankForOBJExtPltt            sub_02080940
+#define GX_ResetBankForSubOBJExtPltt         sub_020809F0
 
 #define GX_BeginLoadBGExtPltt   sub_0207F308
 #define GX_BeginLoadOBJExtPltt  sub_0207F47C

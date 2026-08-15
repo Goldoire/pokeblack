@@ -7,10 +7,15 @@
 #define SDK_FINALROM
 
 /* callees outside this file */
-#define OS_Terminate                         sub_0208823C
-#define sub_02086320                         sub_02086320
-#define sub_02086284                         sub_02086284
-#define sub_02086314                         sub_02086314
+#define MI_StopDma                           sub_020825F0
+#define MIi_CardDmaCopy32                    sub_020835A0
+#define OS_Terminate                         sub_02088234
+#define IC_InvalidateAll                     sub_02086320
+#define IC_InvalidateRange                   sub_0208632C
+#define DC_FlushAll                          sub_02086284
+#define DC_StoreRange                        sub_020862D4
+#define DC_InvalidateRange                   sub_020862B8
+#define DC_WaitWriteBufferEmpty              sub_02086314
 
 #define CARDi_ICInvalidateSmart sub_02076344
 #define CARDi_DCInvalidateSmart sub_02076360

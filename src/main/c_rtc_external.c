@@ -7,6 +7,7 @@
 #define SDK_FINALROM
 
 /* callees outside this file */
+#define PXI_Init                             sub_02088498
 #define PXI_IsCallbackReady                  sub_020885EC
 #define PXI_SetFifoRecvCallback              sub_020885A0
 #define OS_DisableInterrupts                 sub_02087988

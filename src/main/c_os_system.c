@@ -8,6 +8,8 @@
 
 /* callees outside this file */
 #define OS_Halt                              sub_020882D0
+#define SVC_WaitByLoop                       sub_02004490
+#define OS_WaitIrq                           sub_0208459C
 
 #define OS_EnableInterrupts            sub_02087974
 #define OS_DisableInterrupts           sub_02087988

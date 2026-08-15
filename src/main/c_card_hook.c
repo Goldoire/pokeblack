@@ -6,6 +6,10 @@
  */
 #define SDK_FINALROM
 
+/* callees outside this file */
+#define OS_DisableInterrupts                 sub_02087988
+#define OS_RestoreInterrupts                 sub_0208799C
+
 #define CARDi_NotifyEvent    sub_02076100
 /* not in shard or dead-stripped: CARDi_RegisterHook (52B) */
 /* not in shard or dead-stripped: CARDi_UnregisterHook (80B) */

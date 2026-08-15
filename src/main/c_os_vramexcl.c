@@ -10,7 +10,9 @@
 #define OS_DisableInterrupts                 sub_02087988
 #define OS_RestoreInterrupts                 sub_0208799C
 
-#define OsCountZeroBits       sub_02087EA0
+/* OsCountZeroBits byte-matches here too, but the ROM copy belongs to the
+   other translation unit; leave this one unplaced. */
+#define OsCountZeroBits unplaced_OsCountZeroBits
 #define OSi_InitVramExclusive sub_02087EA8
 #define OSi_UnlockVram        sub_02087EDC
 /* not in shard or dead-stripped: OSi_TryLockVram (192B) */

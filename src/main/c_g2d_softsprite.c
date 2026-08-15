@@ -14,7 +14,9 @@
 #define G3i_OrthoW_                          sub_0207D760
 #define G3i_LookAt_                          sub_0207D7C4
 
-#define NNS_G2dSetSpriteAttrEnable                sub_0205A11C
+/* NNS_G2dSetSpriteAttrEnable byte-matches here too, but the ROM copy belongs to the
+   other translation unit; leave this one unplaced. */
+#define NNS_G2dSetSpriteAttrEnable unplaced_NNS_G2dSetSpriteAttrEnable
 /* not in shard or dead-stripped: DrawSprite_ (860B) */
 /* not in shard or dead-stripped: SetAffine43 (84B) */
 /* not in shard or dead-stripped: SetBaseMtx_ (52B) */

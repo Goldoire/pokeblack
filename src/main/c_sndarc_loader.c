@@ -7,10 +7,17 @@
 #define SDK_FINALROM
 
 /* callees outside this file */
+#define NNS_SndArcGetSeqInfo                 sub_02074324
+#define NNS_SndArcGetFileAddress             sub_0207466C
+#define NNS_SndArcGetSeqArcInfo              sub_02074388
+#define NNS_SndArcGetBankInfo                sub_020743EC
+#define NNS_SndArcGetWaveArcInfo             sub_02074450
 #define SND_AssignWaveArc                    sub_0208A2BC
 #define NNS_SndHeapAlloc                     sub_0207482C
+#define NNS_SndArcReadFile                   sub_020745A4
 #define DC_StoreRange                        sub_020862D4
 #define NNS_SndArcGetCurrent                 sub_020742FC
+#define NNS_SndArcSetFileAddress             sub_02074694
 #define MI_CpuCopy8                          sub_02082D44
 #define MI_CpuFill8                          sub_02082BCC
 #define OS_DisableInterrupts                 sub_02087988

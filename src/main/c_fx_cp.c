@@ -6,6 +6,7 @@
  */
 #define SDK_FINALROM
 
+#define FX_Div               sub_0207C768
 #define FX_DivFx64c          sub_0207C788
 #define FX_Sqrt              sub_0207C7B4
 #define FX_InvSqrt           sub_0207C7E8
@@ -17,7 +18,6 @@
 #define FX_DivAsync          sub_0207C930
 #define FX_DivS32            sub_0207C958
 #define FX_ModS32            sub_0207C994
-/* not in shard or dead-stripped: FX_Div (16B) */
 /* not in shard or dead-stripped: FX_Inv (16B) */
 /* not in shard or dead-stripped: FX_InvFx64c (44B) */
 /* not in shard or dead-stripped: FX_SqrtAsyncImm (40B) */

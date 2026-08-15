@@ -7,17 +7,18 @@
 #define SDK_FINALROM
 
 /* callees outside this file */
-#define FS_ReadFile                          sub_02078B78
+#define FS_SeekFile                          sub_02078B44
+#define FS_ReadFile                          sub_02078B70
 #define MI_CpuCopy8                          sub_02082D44
 #define FSi_WaitForArchiveCompletion         sub_02077700
 #define FSi_IncrementSjisPositionToSlash     sub_020787E0
 #define FS_InitFile                          sub_020788AC
 #define FS_GetArchiveName                    sub_02078530
-#define STD_GetStringLength                  sub_0208CC80
-#define FSi_IsUnreadableRomOffset            sub_0207A988
+#define STD_GetStringLength                  sub_0208CC78
+#define FSi_IsUnreadableRomOffset            sub_0207A980
 #define MI_CpuFill8                          sub_02082BCC
 #define CARD_GetRomHeader                    sub_02075DEC
-#define OS_Terminate                         sub_0208823C
+#define OS_Terminate                         sub_02088234
 #define FS_MountArchive                      sub_02078540
 #define FS_UnmountArchive                    sub_02078588
 #define FS_OpenFileDirect                    sub_02078964
@@ -60,7 +61,9 @@
 #define FSi_ROMFAT_CloseDirectory     sub_0207A2C8
 #define FSi_ROMFAT_GetPathInfo        sub_0207A2E0
 #define FSi_ROMFAT_GetArchiveResource sub_0207A40C
-#define FSi_SRLArchiveProc            sub_0207AAE4
+/* FSi_SRLArchiveProc byte-matches here too, but the ROM copy belongs to the
+   other translation unit; leave this one unplaced. */
+#define FSi_SRLArchiveProc unplaced_FSi_SRLArchiveProc
 /* not in shard or dead-stripped: FSi_SeekAndReadSRL (56B) */
 /* not in shard or dead-stripped: FSi_ReadSRLCallback (44B) */
 /* not in shard or dead-stripped: FSi_MountSRLFile (344B) */
