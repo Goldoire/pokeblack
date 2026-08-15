@@ -28,6 +28,7 @@ void sub_021C2D3C(void);
 void sub_021C2F14(void);
 void sub_021C315C(void);
 void sub_021C3250(void);
+void sub_021C3298(void);
 void sub_021C3490(void);
 void sub_021C34BC(void);
 void sub_021C3540(void);
@@ -35,6 +36,7 @@ void sub_021C35BC(void);
 void sub_021C36B4(void);
 void sub_021C36F0(void);
 void sub_021C3774(void);
+void sub_021C3794(void);
 void sub_021C3954(void);
 void sub_021C3980(void);
 void sub_021C3A48(void);
@@ -63,6 +65,7 @@ void sub_021C81B4(void);
 void sub_021C8760(void);
 void sub_021C8EA8(void);
 void sub_021CA5D0(void);
+void sub_021CA740(void);
 void sub_021CA930(void);
 void sub_021CA95C(void);
 void sub_021CA980(void);
@@ -90,8 +93,11 @@ void sub_021CC8A0(void);
 void sub_021CCC4C(void);
 void sub_021CCE58(void);
 void sub_021CD3B8(void);
+void sub_021CD3EC(void);
+void sub_021CD40C(void);
 void sub_021CD434(void);
 void sub_021CD658(void);
+void sub_021CDA14(void);
 void sub_021CDB84(void);
 void sub_021CDE0C(void);
 void sub_021CDE48(void);
@@ -137,11 +143,12 @@ void sub_021C2F34();
 void sub_021C3194();
 void sub_021C3214();
 void sub_021C3280();
+void sub_021C32C0();
 void sub_021C3358();
 void sub_021C34E0();
 void sub_021C3560();
 void sub_021C3714();
-void sub_021C3794();
+void sub_021C37D0();
 void sub_021C39A4();
 void sub_021C3A68();
 void sub_021C3C94();
@@ -150,7 +157,11 @@ void sub_021C3F30();
 void sub_021C3FF4();
 void sub_021C42E0();
 void sub_021C4660();
+void sub_021C4BDC();
+void sub_021C4C14();
+void sub_021C4C18();
 void sub_021C4C60();
+void sub_021C4DE4();
 void sub_021C4FD0();
 void sub_021C55B4();
 void sub_021C5B44();
@@ -187,12 +198,12 @@ void sub_021CBB14();
 void sub_021CBFD8();
 void sub_021CCC70();
 void sub_021CCE78();
-void sub_021CD3EC();
 void sub_021CD400();
 void sub_021CD404();
 void sub_021CD408();
 void sub_021CD458();
 void sub_021CD67C();
+void sub_021CDA48();
 void sub_021CDBA8();
 void sub_021CDE6C();
 void sub_021CDF30();
@@ -217,9 +228,12 @@ void sub_021D38C8();
 void sub_021D45A4();
 void sub_021D45E0();
 s32 sub_021D5580();
+void sub_021D55A4();
 void sub_021D5790();
+void sub_021D6414();
 void sub_021D6824();
 void sub_021D75D0();
+void sub_021D7680();
 
 void sub_021C1B90(void)
 {
@@ -395,6 +409,12 @@ void sub_021C3250(void)
     sub_021C0E40(sub_021C3280);
 }
 
+void sub_021C3298(void)
+{
+    sub_021D55A4(3, 0, 21, 8);
+    sub_021C0E40(sub_021C32C0);
+}
+
 void sub_021C3490(void)
 {
     if (sub_021D5580(0) != 0) {
@@ -465,6 +485,17 @@ void sub_021C3774(void)
     sub_021BCB9C();
     sub_021D5790(8);
     sub_021C0E40(sub_021C3794);
+}
+
+void sub_021C3794(void)
+{
+    if (sub_021D5580(1) != 0) {
+        return;
+    }
+
+    sub_021BCAE4();
+    sub_021D55A4(3, 0, 21, 8);
+    sub_021C0E40(sub_021C37D0);
 }
 
 void sub_021C3954(void)
@@ -746,6 +777,17 @@ void sub_021CA5D0(void)
     sub_021C0E40(sub_021CA684);
 }
 
+void sub_021CA740(void)
+{
+    sub_021CA768();
+    sub_021CA76C();
+    if (sub_021D157C() != 0) {
+        return;
+    }
+
+    sub_021C0E40(sub_021CA770);
+}
+
 void sub_021CA930(void)
 {
     if (sub_021D5580(0) != 0) {
@@ -1012,6 +1054,19 @@ void sub_021CD3B8(void)
     sub_021C0E40(sub_021CD3EC);
 }
 
+void sub_021CD3EC(void)
+{
+    sub_021CD400();
+    sub_021CD404();
+    sub_021CD408();
+}
+
+void sub_021CD40C(void)
+{
+    sub_021D55A4(3, 0, 21, 8);
+    sub_021C0E40(sub_021CD434);
+}
+
 void sub_021CD434(void)
 {
     if (sub_021D5580(0) != 0) {
@@ -1028,6 +1083,16 @@ void sub_021CD658(void)
     }
 
     sub_021C0E40(sub_021CD67C);
+}
+
+void sub_021CDA14(void)
+{
+    if (sub_021D157C() != 0) {
+        return;
+    }
+
+    sub_021D55A4(3, 0, 20, 8);
+    sub_021C0E40(sub_021CDA48);
 }
 
 void sub_021CDB84(void)

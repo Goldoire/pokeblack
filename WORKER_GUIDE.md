@@ -64,9 +64,19 @@ python tools/scripts/cc.py src/ov021/field.c --thumb
 python tools/scripts/verify_functions.py ov021/field
 ```
 
-`--thumb` is required for Thumb functions and 81.6% of this game is Thumb.
-Getting it wrong produces a 0% match, not a near-miss. The argument to the
-verifier is any substring of the object path, so you see only your own work.
+**Check the mode before you compile; do not assume Thumb.** Getting it wrong
+produces a 0% match, not a near-miss. 81% of the game is Thumb, but whole
+regions are not, and they are not marked on a map you can guess from:
+
+- `main` 0x02023FD8–0x0204A39C is ARM — 359 of 364 entries. Compile with no
+  `--thumb`. Only 0x02023FD8–0x0202744C at the bottom is Thumb.
+- `ov114` is ARM, 368 of 424 entries: it is linked GameSpy/DWC library code.
+- `ov009` is Thumb only for its first ~8 KB (0x02155160–0x02157170, Game
+  Freak's own code); everything above that is ARM DWC/GameSpy library code.
+
+`fn.py` prints the mode per function, and `triage.json` records it per entry.
+Read one of them first. The argument to the verifier is any substring of the
+object path, so you see only your own work.
 
 Done means `N/N OK`. Anything else is not progress and is never committed to
 `src/`.
@@ -77,6 +87,52 @@ applies: order of evaluation, `do/while` vs `while`, ternary vs `if`, `s16`/`u8`
 casts at assignment, `volatile` for hardware and for loads the compiler wants
 to hoist, early `return` vs a single exit, and struct field offsets. Change one
 thing at a time.
+
+## Matching lore, paid for by wave 1
+
+Each of these cost an agent multiple attempts. Reach for them before grinding.
+
+**Shape of the source**
+- An early `return` compiles to *predicated* instructions. If the ROM branches
+  forward to a shared exit instead, the source is `if (cond) { body } return 0;`
+  — not `if (!cond) return 0;`.
+- `if (x) return FALSE; return TRUE;` never emits `beq/0/1` with an `int`
+  return; CW canonicalises to `bne/1/0`. It preserves source order when the
+  return type is an **enum** or a pointer.
+- `return f(...)` from a frameless function tail-calls as `ldr r3,=target|1;
+  bx r3`, not `bl`. A one-line forwarder with ≤3 args does this; with 4 args
+  CW cannot spare r3 and emits `push/bl/pop`. Those are free 8-byte matches,
+  not linker veneers.
+- An `if/else if` chain and a `switch` over the same cases lower differently.
+  A dead 4th `case` label flips CW from a linear chain to a binary search.
+  Dense switches need every case in `[0..max]` written out, and `default:`
+  is emitted in its source position.
+
+**Types**
+- `lsls #29 / lsrs #31` after `ldrb` is a `u8 x:1` **bitfield** read, not a
+  shift-and-mask. Bitfields are LSB-first and are the only way to get the
+  `bic`/`orr` write idiom. A mask constant materialised fresh at each use
+  instead of hoisted is the tell.
+- `& 0x3FFF` gives an AND with a literal; a `u16 x : 14` bitfield gives the
+  `lsl #18 / lsr #18` pair.
+- One `volatile` field stops CW from CSE-ing a value the ROM re-loads.
+  Store-then-reload of the same field means volatile; no reload across an
+  out-pointer store means the struct pointer is `const`.
+- A bitfield setter taking a **wider** parameter than the field's base type is
+  what reproduces the ROM's truncation (`u32 a` where you expected `u16 a`).
+
+**Placement and allocation**
+- Stack locals are laid out first-declared-highest. Reverse declaration order
+  to move a local from `sp+0` to `sp+0x10`.
+- Declaring a temp inside an inner `{ }` block changes register allocation.
+- Reassigning a *parameter* pins it to a callee-saved register at entry.
+- Globals must be `extern <type> _020AAxxx;`, never `(T *)0x020AAxxx` — a cast
+  constant lets CW fold `base+offset` into the literal.
+- `arr[i].field`, not `((u8 *)p)[i * size + off]`.
+- Split call arguments into sequenced locals when the ROM loads a field before
+  the call: `v = p->x; h = g(a); f(h, v);`.
+- Zeroing a local `VecFx32` before passing its address: the type-punned alias
+  `u32 *q = (u32 *)&v; q[0] = q[1] = q[2] = 0;` is what matches.
 
 ## Rules
 

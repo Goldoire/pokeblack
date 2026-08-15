@@ -11,6 +11,18 @@ u32 sub_021D9038(u32 a0, u32 a1, u32 a2, u32 a3, u32 a4, u32 a5);
 void sub_021D90E8(u8 a0, u32 a1, void *a2, u32 a3, u32 a4);
 u32 sub_020399A8(u32 a0);
 
+void sub_0203D7B0(u32 a0);
+void sub_0203D7BC(u32 a0);
+void sub_0203C554(u32 a0);
+
+void sub_021D89CC(PokemonTradeWork *work)
+{
+    sub_0203D7B0(0);
+    sub_0203D7BC(0);
+    sub_0203C554(0);
+    work->unk_0008[2] = 3;
+}
+
 void sub_021D8980(PokemonTradeWork *work)
 {
     sub_021B65B4(work->unk_09C0, 1);

@@ -39,7 +39,8 @@ void sub_020075B0(void *a0, u32 a1, u32 a2, u32 a3);
 u32 sub_020185F4(void *a0);
 u32 sub_0201AA18(void *a0);
 void *sub_0201AB28(void *a0, u32 a1);
-void sub_021DD314(Ov170Ctx *a0, u32 a1, u32 a2);
+void sub_02007664(void *a0, u32 a1, u32 a2);
+void sub_0201A9C8(void *a0, u32 a1);
 void sub_021EDAB0(Ov170Ctx *a0, u32 a1);
 void sub_021DEC98(Ov170Ctx *a0, u32 a1, u32 a2);
 u32 sub_021DEDCC(Ov170Ctx *a0, u32 a1);
@@ -83,6 +84,15 @@ void sub_021DD16C(Ov170Ctx *a0, u32 a1)
     }
     sub_021EC35C(a0, a0->unk14);
     sub_021DEC98(a0, sub_021DEDCC(a0, a0->unk14), a1);
+}
+
+void sub_021DD314(Ov170Ctx *a0, u32 a1, u32 a2)
+{
+    if (a2 < 0x1E) {
+        sub_02007664(a0->unk00->unk04, a1, a2);
+    } else {
+        sub_0201A9C8(a0->unk00->unk08, a2 - 0x1E);
+    }
 }
 
 void sub_021DD1C4(Ov170Ctx *a0, u32 a1)

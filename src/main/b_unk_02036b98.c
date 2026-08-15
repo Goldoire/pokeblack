@@ -132,35 +132,3 @@ UnkStruct02036D64 *sub_02036BD4(u32 unused0, u32 a1, u32 a2, u32 a3, u32 p5,
     sub_02036F24(sub_02036D64(o), o->unk0C, (u16)a1);
     return o;
 }
-
-void sub_02036CA8(UnkStruct02036D64 *o)
-{
-    u32 d = sub_02036D64(o);
-    u32 x = sub_02036DC8(d, o->unk00);
-    u32 *oam;
-    u32 *q;
-
-    if (d == 1) {
-        oam = (u32 *)0x07000000;
-    } else {
-        oam = (u32 *)0x07000400;
-    }
-    if (o->unk0F == 1) {
-        oam[0] = (o->unk06 & 0xFF) | 0x800 | 0x40000000 | ((o->unk04 & 0x1FF) << 16);
-        *(u16 *)((u8 *)oam + 4) = x | 0xE000;
-    } else {
-        oam[0] = 0x40000200;
-        *(u16 *)((u8 *)oam + 4) = 0;
-    }
-    oam[2] = (o->unk06 & 0xFF) | 0x40000000 | ((o->unk04 & 0x1FF) << 16);
-    *(u16 *)((u8 *)oam + 0xC) = x | 0xE000;
-    if (oam != (u32 *)o->unk10) {
-        q = (u32 *)o->unk10;
-        q[0] = 0x40000200;
-        *(u16 *)((u8 *)q + 4) = 0;
-        q = (u32 *)o->unk10;
-        q[2] = 0x40000200;
-        *(u16 *)((u8 *)q + 0xC) = 0;
-        o->unk10 = (u32)oam;
-    }
-}

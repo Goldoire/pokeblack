@@ -147,6 +147,33 @@ void sub_021F513C(WorldTradeWork *work)
     sub_0200F7C0(0x29);
 }
 
+/* 4-byte (x, y) pair passed by address to 0x0204B404. */
+typedef struct WorldTradePoint
+{
+    u16 x;
+    u16 y;
+} WorldTradePoint;
+
+void sub_0204B404(void *a0, const WorldTradePoint *a1, u32 a2);
+
+void sub_021F4EA0(void *a0, u16 a1, u16 a2)
+{
+    WorldTradePoint p;
+
+    p.x = a1;
+    p.y = a2;
+    sub_0204B404(a0, &p, 1);
+}
+
+void sub_021F4FF4(void *a0, u16 a1, u16 a2)
+{
+    WorldTradePoint p;
+
+    p.x = a1;
+    p.y = a2;
+    sub_0204B404(a0, &p, 0);
+}
+
 u32 sub_021F51F0(WorldTradeWork *work)
 {
     return _02203B0C[work->state](work);

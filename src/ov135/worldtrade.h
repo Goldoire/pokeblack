@@ -51,7 +51,8 @@ typedef struct WorldTradeWork
     u32 state;        /* index into the 0x02203B0C / 0x02203BBC jump tables */
     u32 unk_002C;     /* "next state" latch, written with state by sub_021F4E98 */
     u16 unk_0030;     /* sub_021F8A44 */
-    u8 pad_0032[0xBC - 0x32];
+    u16 unk_0032;     /* sub_02201DC0 / sub_02201DD8 */
+    u8 pad_0034[0xBC - 0x34];
     u16 unk_00BC;     /* sub_021F7CDC / sub_021F7DA8 store 0xFFFF */
     u8 pad_00BE[0xC4 - 0xBE];
     u16 unk_00C4;     /* sub_021F656C */

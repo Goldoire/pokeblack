@@ -7,8 +7,13 @@
 #define SDK_FINALROM
 
 /* callees outside this file */
+#define _u32_div_f                           sub_0209C2B8
 #define GX_BeginLoadTex                      sub_0207F7A0
+#define GX_LoadTex                           sub_0207F804
+#define GX_EndLoadTex                        sub_0207F9BC
 #define GX_BeginLoadTexPltt                  sub_0207FA0C
+#define GX_LoadTexPltt                       sub_0207FA48
+#define GX_EndLoadTexPltt                    sub_0207FAE4
 #define GX_BeginLoadClearImage               sub_0207FB2C
 #define GX_BeginLoadOBJExtPltt               sub_0207F47C
 #define GX_BeginLoadBGExtPltt                sub_0207F308

@@ -35,7 +35,8 @@ typedef struct Ov170Ctx {
  * relocation at all).  Switch back to named externs once triage marks
  * 0x021EF770 as data.
  */
-#define _021EF9B4 ((const u8 *)0x021EF9B4)
+extern const u8 _021EF950[];
+extern const u8 _021EF9B4[];
 
 void sub_0202208C(u32 a0, u32 a1, u32 a2, u32 a3, u32 a4, u32 a5, u32 a6);
 void sub_021DC9A0(Ov170Panel *a0, u32 a1);
@@ -47,6 +48,9 @@ void sub_021EB988(Ov170Ctx *a0, const u8 *a1, u32 a2);
 void sub_021EBC58(Ov170Ctx *a0, u32 a1, u32 a2, u32 a3);
 void sub_021ED588(Ov170Ctx *a0);
 void sub_021EF4E4(void *a0);
+void sub_021EA75C(Ov170Ctx *a0);
+void sub_021ECB20(Ov170Ctx *a0, u32 a1, u32 a2);
+void sub_021ED888(Ov170Panel *a0, u32 a1);
 
 u32 sub_021E8F60(Ov170Ctx *a0, u32 a1)
 {
@@ -113,4 +117,16 @@ u32 sub_021E9938(Ov170Ctx *a0)
     sub_021EBC58(a0, a0->unk16, 1, 0x18);
     sub_021ED588(a0);
     return 0x2C;
+}
+
+u32 sub_021E9968(Ov170Ctx *a0)
+{
+    sub_021EB988(a0, _021EF950, 5);
+    sub_021EF4E4(a0->unk2c->unk74);
+    sub_021EBC58(a0, a0->unk16, 1, 0x18);
+    sub_021ECB20(a0, 1, 1);
+    sub_021ED888(a0->unk2c, 0);
+    sub_021EA75C(a0);
+    sub_021ED588(a0);
+    return 0x31;
 }

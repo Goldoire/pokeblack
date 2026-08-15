@@ -224,6 +224,15 @@ u32 sub_021EF60C(void *a0)
     return ret;
 }
 
+void sub_021EF630(Ov170Ctx *a0)
+{
+    u32 v;
+
+    v = sub_0204162C(0);
+    sub_0202CA3C(a0->unk2c->unk74, 6, 0, 0x20, 3);
+    sub_0202CAC4(a0->unk2c->unk74, 6, v + 0x540);
+}
+
 void sub_021EF660(void *a0)
 {
     sub_0202CB4C(a0, 6, 0, 0x15);
@@ -234,9 +243,19 @@ void sub_021EF670(Ov170Panel *a0)
     sub_0202CB4C(a0->unk74, 0xA, 0, 0x15);
 }
 
+void sub_021EF680(Ov170Panel *a0)
+{
+    sub_0202CC70(a0->unk74, 0xA);
+}
+
 void sub_021EF68C(Ov170Panel *a0)
 {
     sub_0202CB4C(a0->unk74, 0xB, 0, 0x15);
+}
+
+void sub_021EF69C(Ov170Panel *a0)
+{
+    sub_0202CC70(a0->unk74, 0xB);
 }
 
 void sub_021EF6A8(void *a0)

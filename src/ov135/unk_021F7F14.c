@@ -184,6 +184,15 @@ u32 sub_021F8A74(void)
     return 1;
 }
 
+void sub_021C8DA0(WorldTradeWork *work);
+
+u32 sub_021F8AF4(WorldTradeWork *work)
+{
+    sub_021C8DA0(work);
+    work->unk_0F8C = 0;
+    return 1;
+}
+
 u32 sub_021F8A80(void)
 {
     switch (sub_02168124())

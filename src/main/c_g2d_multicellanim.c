@@ -8,11 +8,15 @@
 
 /* callees outside this file */
 #define NNSi_G2dIsAnimCtrlLoopAnim           sub_02063030
+#define _u32_div_f                           sub_0209C2B8
+#define NNS_G2dTickCellAnimation             sub_0206436C
+#define NNS_G2dGetMultiCellDataByIdx         sub_020629F0
 #define NNS_G2dBindAnimCtrl                  sub_02062FF0
 #define NNS_G2dGetAnimCtrlCurrentElement     sub_02062D40
 #define NNSi_G2dSrtcInitControl              sub_02064140
 #define NNS_G2dInitAnimCtrl                  sub_02062F38
 #define NNS_G2dSetAnimCtrlCurrentFrame       sub_02062F00
+#define NNS_G2dSetCellAnimationCurrentFrame  sub_0206438C
 
 #define GetMCBankNumCellAnimRequired_       sub_02064648
 #define NNS_G2dGetMCWorkAreaSize            sub_020648B4

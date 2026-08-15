@@ -7,12 +7,15 @@
 #define SDK_FINALROM
 
 /* callees outside this file */
+#define STD_GetStringLength                  sub_0208CC80
 #define OS_DisableInterrupts                 sub_02087988
 #define OS_RestoreInterrupts                 sub_0208799C
 #define FS_NormalizePath                     sub_02078078
 #define FSi_SendCommand                      sub_02077D80
 #define FS_GetArchiveName                    sub_02078530
 #define MI_CpuMove                           sub_02083194
+#define _u32_div_f                           sub_0209C2B8
+#define FSi_GetFileLengthIfProc              sub_0207A530
 #define FSi_GetFilePositionIfProc            sub_0207A528
 #define MI_CpuFill8                          sub_02082BCC
 #define FS_FindArchive                       sub_02077EB8

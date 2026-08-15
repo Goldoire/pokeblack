@@ -10,6 +10,7 @@ typedef struct Ov170Ctx {
     Ov170Panel *unk2c;
 } Ov170Ctx;
 
+void sub_0207D63C(u32 a0, u32 a1, u32 a2, u32 a3, u32 a4);
 void *sub_02021518(u32 a0);
 void sub_02021540(void *a0);
 void sub_0202155C(void *a0, u32 a1, u32 a2, u32 a3);
@@ -25,4 +26,13 @@ void sub_021DCDD8(Ov170Ctx *a0)
 {
     sub_020215A0(a0->unk2c->unk6c, 0);
     sub_02021540(a0->unk2c->unk6c);
+}
+
+void sub_021DCDF0(u32 a0)
+{
+    if (a0 == 1) {
+        sub_0207D63C(0x04000050, 0, 0x2A, 6, 0xA);
+    } else {
+        *(vu16 *)0x04000050 = 0;
+    }
 }

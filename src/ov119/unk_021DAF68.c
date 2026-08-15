@@ -42,6 +42,34 @@ void sub_021DBC3C(PokemonTradeWork *work);
 void sub_021D4B88(PokemonTradeWork *work);
 void sub_021D59B0(PokemonTradeWork *work);
 
+void sub_020435F4(u32 a0);
+u32 sub_02035C38(PokemonTradeWork *work);
+void sub_0204A5AC(void);
+void sub_020450C8(void);
+void sub_0203F9B4(void);
+void sub_021DBE70(PokemonTradeWork *work);
+
+void sub_021DB278(PokemonTradeWork *work)
+{
+    sub_020435F4(0x1E);
+    sub_021D8E84(work, sub_021DBE70);
+}
+
+void sub_021DB998(PokemonTradeWork *work)
+{
+    if (sub_02035C38(work) == 0)
+    {
+        sub_021D8E84(work, sub_021DBE70);
+    }
+}
+
+void sub_021DC484(void)
+{
+    sub_0204A5AC();
+    sub_020450C8();
+    sub_0203F9B4();
+}
+
 void sub_021DAF68(PokemonTradeWork *work)
 {
     u32 netId = sub_020399A8();

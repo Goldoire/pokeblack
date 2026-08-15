@@ -15,7 +15,7 @@
 typedef struct PokemonTradeWork
 {
     u8 pad_0000[0x08];
-    u32 unk_0008;      /* sub_021D8A24: null => not tradable */
+    u32 *unk_0008;     /* sub_021D8A24 null-checks it; [2] set to 3 by sub_021D89CC */
     u8 pad_000C[0x5E4 - 0x0C];
     u32 unk_05E4[4];   /* per-netId, sub_021D916C; 4 fits exactly up to 0x5F4 */
     u16 unk_05F4;      /* sub_021D9434 */
@@ -29,9 +29,14 @@ typedef struct PokemonTradeWork
     void *unk_082C;    /* sub_021D89A8 */
     u8 pad_0830[0x840 - 0x830];
     void *unk_0840;    /* sub_021DC3EC: message handle */
-    u8 pad_0844[0x9C0 - 0x844];
+    void *unk_0844;    /* sub_021DFD0C */
+    u8 pad_0848[0x854 - 0x848];
+    u32 unk_0854;      /* sub_021DFD0C */
+    u8 pad_0858[0x9C0 - 0x858];
     void *unk_09C0;    /* sub_021D8980: the 0x021B65xx subsystem handle */
-    u8 pad_09C4[0xF2C - 0x9C4];
+    u8 pad_09C4[0xF20 - 0x9C4];
+    void *unk_0F20;    /* sub_021E66E8 */
+    u8 pad_0F24[0xF2C - 0xF24];
     s32 unk_0F2C;      /* sub_021D9BC4: frame/timer, gated on > 0x1E */
     u8 pad_0F30[0xF84 - 0xF30];
     u32 unk_0F84;      /* sub_021DA1B4 */

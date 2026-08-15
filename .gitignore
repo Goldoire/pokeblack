@@ -101,6 +101,12 @@ melonDS_log.txt
 # status the integrator reconciled, triage carries the instruction-set map the
 # verifier depends on, and the history file is the progress record. Losing them
 # to a `git clean` would cost real work that cannot be regenerated.
+# A negation cannot re-include a file whose parent directory is excluded, so
+# the directories have to be walked back in one level at a time.
+!build/
+build/*
+!build/reference/
+build/reference/*
 !build/reference/functions.json
 !build/reference/triage.json
 !build/reference/progress_history.jsonl
