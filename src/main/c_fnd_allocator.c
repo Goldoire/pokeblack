@@ -7,9 +7,7 @@
 #define SDK_FINALROM
 
 /* callees outside this file */
-#define NNS_FndAllocFromFrmHeapEx            sub_02061124
-#define OS_AllocFromHeap                     sub_020868E0
-#define OS_FreeToHeap                        sub_020869E8
+#define NNS_FndAllocFromUnitHeap             sub_02061244
 
 #define AllocatorAllocForUnitHeap       sub_020612C8
 #define NNS_FndAllocFromAllocator       sub_02061330

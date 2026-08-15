@@ -7,6 +7,7 @@
 #define SDK_FINALROM
 
 /* callees outside this file */
+#define OS_Terminate                         sub_0208823C
 #define PXI_SendWordByFifo                   sub_02088610
 
 #define OSi_SendToPxi      sub_02084A84

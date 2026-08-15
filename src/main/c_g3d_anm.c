@@ -10,6 +10,7 @@
 #define NNSi_G3dAnmCalcNsBca                 sub_0206EB7C
 #define MIi_CpuClearFast                     sub_02082AC0
 #define MIi_CpuCopy32                        sub_02082A90
+#define FX_Div                               sub_0207C770
 #define VEC_CrossProduct                     sub_0207CAE8
 #define VEC_Normalize                        sub_0207CCA4
 

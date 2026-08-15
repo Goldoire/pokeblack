@@ -167,6 +167,28 @@ copying them in silently.
 Three hand-written functions verify today; read them for the house style:
 `src/main/unk_02005230.c`, `src/main/unk_0200566C.c`, `src/main/unk_020055F8.c`.
 
+## The ROM was not built with one compiler
+
+`tools/mwccarm` holds 24 builds and **no single one reproduces the whole ROM**.
+The discriminator is one optimisation: `dsi/1.x` hoists a global's address into
+a callee-saved register across a call, while `2.0/*` and `1.2/*` re-materialise
+the literal-pool load each time. The ROM does both, in different regions, and
+from the C side it is unfixable — you are simply using the wrong compiler.
+
+```bash
+python tools/scripts/cc.py src/ov016/glue.c --thumb --cc 2.0/sp2p2
+```
+
+Known so far: `dsi/1.1` (the default) for SDK/NNS library code and the DWC
+middleware; `2.0/sp2p2` for the Game Freak Thumb glue in ov016 from 0x021B6CF0
+on. Verified case: `src/ov016/unk_021B6CF0.c` is 3/5 functions under the
+default and 5/5 under `2.0/sp2p2`, and one function even changes size.
+
+If a function is stubbornly a few bytes off around a global access and the
+instructions otherwise line up, try another compiler build before assuming the
+C is wrong. **Record the build you used in the file header** — the next person
+to touch the file cannot rediscover it from the source.
+
 ## Settled questions — do not re-investigate
 
 - Game code is Thumb. `cc.py --thumb` is the flag set; it is already correct.

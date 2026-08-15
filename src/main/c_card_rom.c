@@ -7,24 +7,13 @@
 #define SDK_FINALROM
 
 /* callees outside this file */
-#define CARDi_WaitForTask                    sub_02076230
-#define CARDi_EndTask                        sub_020762A8
-#define OS_IsAlarmAvailable                  sub_02087244
-#define OS_Sleep                             sub_02085A38
-#define MI_CpuCopy8                          sub_02082D44
-#define OS_DisableInterrupts                 sub_02087988
-#define OS_RestoreInterrupts                 sub_0208799C
-#define OS_GetDTCMAddress                    sub_02086CE0
-#define CARD_CheckEnabled                    sub_02075DB0
-#define CARDi_ICInvalidateSmart              sub_02076344
-#define CARDi_DCInvalidateSmart              sub_02076360
-#define CARDi_ExecuteOldTypeTask             sub_02076170
-#define OS_GetBootType                       sub_02087B04
-#define CARD_GetOwnRomHeader                 sub_02075DF8
-#define CARD_LockRom                         sub_02075E10
-#define CARD_UnlockRom                       sub_02075E80
-#define CARDi_WaitAsync                      sub_02076050
-#define CARDi_TryWaitAsync                   sub_02076070
+#define CARDi_CheckPulledOutCore             sub_02077520
+#define OS_DisableIrqMask                    sub_020849A0
+#define OS_ResetRequestIrqMask               sub_020849D0
+#define OS_SetIrqFunction                    sub_0208477C
+#define OS_EnableIrqMask                     sub_02084970
+#define OS_Terminate                         sub_0208823C
+#define OS_GetLockID                         sub_02084EC0
 
 #define CARDi_SetRomOp             sub_02076BBC
 #define CARDi_ReadRomStatusCore    sub_02076D38

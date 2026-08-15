@@ -7,7 +7,7 @@
 #define SDK_FINALROM
 
 /* callees outside this file */
-#define MI_CpuFill8                          sub_02082BCC
+#define STD_CopyLString                      sub_0208CB18
 
 #define ENV_PrependResourceSet                 sub_020913BC
 /* not in shard or dead-stripped: ENVi_ClearLinkList (44B) */
