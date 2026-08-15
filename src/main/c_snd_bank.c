@@ -5,6 +5,8 @@
 #define SDK_FINALROM
 
 /* callees outside this TU, from the claim table */
+#define SNDi_LockMutex                       sub_02089888
+#define SNDi_UnlockMutex                     sub_0208989C
 #define DC_StoreRange                        sub_020862D4
 #define SND_AssignWaveArc       sub_0208A2BC
 #define SND_DestroyBank         sub_0208A38C

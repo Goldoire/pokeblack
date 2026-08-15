@@ -5,6 +5,7 @@
 #define SDK_FINALROM
 
 /* callees outside this TU, from the claim table */
+#define OS_GetBootType                       sub_02087B04
 #define FS_FindArchive                       sub_02077EB8
 #define IC_InvalidateRange                   sub_0208632C
 #define DC_InvalidateRange                   sub_020862B8
@@ -12,9 +13,12 @@
 #define FS_InitFile                          sub_020788AC
 #define MI_CpuCopy8                          sub_02082D44
 #define FS_OpenFileFast                      sub_020789A4
+#define CARD_GetOwnRomHeader                 sub_02075DF8
 #define FS_CreateFileFromRom                 sub_0207ACD4
+#define FS_ReadFile                          sub_02078B78
 #define FS_CloseFile                         sub_02078A80
 #define FS_GetFileLength                     sub_02078A94
+#define OS_Terminate                         sub_0208823C
 #define DC_FlushRange                        sub_020862F0
 #define OS_DisableInterrupts                 sub_02087988
 #define OS_RestoreInterrupts                 sub_0208799C

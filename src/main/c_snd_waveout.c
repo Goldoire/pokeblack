@@ -5,7 +5,9 @@
 #define SDK_FINALROM
 
 /* callees outside this TU, from the claim table */
+#define NNS_SndLockChannel                   sub_02072934
 #define NNS_SndUnlockChannel                 sub_02072974
+#define _ll_udiv                             sub_0209C014
 #define SND_SetupChannelPcm                  sub_02089660
 #define SND_StartTimer                       sub_020894B4
 #define SND_GetCurrentCommandTag             sub_02089D40

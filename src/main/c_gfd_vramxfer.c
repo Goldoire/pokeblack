@@ -5,9 +5,16 @@
 #define SDK_FINALROM
 
 /* callees outside this TU, from the claim table */
-#define GX_BeginLoadTex                      sub_0207F754
+#define _u32_div_f                           sub_0209C2B8
+#define GX_BeginLoadTex                      sub_0207F7A0
+#define GX_LoadTex                           sub_0207F804
+#define GX_EndLoadTex                        sub_0207F9BC
 #define GX_BeginLoadTexPltt                  sub_0207FA0C
+#define GX_LoadTexPltt                       sub_0207FA48
+#define GX_EndLoadTexPltt                    sub_0207FAE4
 #define GX_BeginLoadClearImage               sub_0207FB2C
+#define GX_LoadClearImageColor               sub_0207FBC4
+#define GX_EndLoadClearImage                 sub_0207FCEC
 #define GX_BeginLoadOBJExtPltt               sub_0207F47C
 #define GX_BeginLoadBGExtPltt                sub_0207F308
 #define GXS_BeginLoadOBJExtPltt              sub_0207F6A8

@@ -5,6 +5,10 @@
 #define SDK_FINALROM
 
 /* callees outside this TU, from the claim table */
+#define OSi_SetTimerReserved                 sub_02086FCC
+#define OS_SetIrqFunction                    sub_0208477C
+#define OS_EnableIrqMask                     sub_02084970
+#define OSi_EnterTimerCallback               sub_02084900
 #define OS_DisableInterrupts                 sub_02087988
 #define OS_RestoreInterrupts                 sub_0208799C
 #define OS_InitTick           sub_02086FE8

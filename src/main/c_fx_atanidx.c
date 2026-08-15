@@ -4,6 +4,8 @@
  */
 #define SDK_FINALROM
 
+/* callees outside this TU, from the claim table */
+#define FX_Div                               sub_0207C770
 #define FX_Atan2Idx sub_0207CFB8
 /* stripped or unplaced: FX_AtanIdx (184B) */
 

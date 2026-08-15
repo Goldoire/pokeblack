@@ -3,96 +3,109 @@
 
 #include "types.h"
 
-/* Global Trade Station ("worldtrade", overlay 135) main work structure.
+/* Overlay 135 is the Global Trade Station.  The original translation units are
+ * named in the overlay's .rodata (assert strings): worldtrade.c,
+ * worldtrade_box.c, worldtrade_demo.c, worldtrade_deposit.c,
+ * worldtrade_enter.c, worldtrade_input.c, worldtrade_search.c,
+ * worldtrade_status.c, worldtrade_sublcd.c, worldtrade_adapter.c.
  *
- * Reconstructed offset-by-offset from the reference bytes; every named field
- * below is constrained by at least one verified function.  Everything else is
- * padding and MUST NOT be assumed to be a single object.
- *
- *   0x0000  pointer to the field/save context (deref'd then +0x40)  [021F513C]
- *   0x0018  u32, set to 1 by the "exit requested" handler           [02200450]
- *   0x0028  u32 state index into the 0x02203B0C jump table          [021F51F0]
- *   0x002C  u32 written alongside 0x28 by sub_021F4E98              [021F4E98]
- *   0x0B6C  pointer consumed by sub_02045EC0                        [0220040C]
- *   0x0B88  pointer                                                 [0220040C]
- *   0x0B8C  pointer                                                 [0220040C]
- *   0x0BF4  pointer                                                 [022004F0]
- *   0x0D40  pointer, arg1 of sub_0202EE30                           [021F4FA4]
- *   0x0D48  pointer                                                 [022003BC]
- *   0x0D50  pointer[3]                                              [022003BC]
- *   0x0DD0  pointer                                                 [022003BC]
- *   0x0DE0  pointer                                                 [022003BC]
- *   0x0DF8  pointer, result of sub_0202EE30                         [021F4FA4]
- *   0x0E04  pointer, freed with sub_02027FD8                        [021F4CE4]
- *   0x0E08  pointer, freed with sub_02027858 / driven by 0x0202797x [021F4CE4]
- *   0x0E18  u16, non-zero == quit requested                         [02200450]
- *   0x0FA0  sub-object passed to sub_02202940                       [022003BC]
+ * Everything below is reconstructed from the reference bytes.  Each named
+ * field is constrained by at least one byte-verified function (listed in the
+ * comment); the pads are unknown and must not be assumed to be single objects.
  */
-/* The sub-object embedded at WorldTradeWork+0x0FA0, driven by the
+
+/* Sub-object embedded at WorldTradeWork+0x0FA0, driven by the
  * worldtrade_adapter.c routines at 0x022028xx-0x022029xx. */
 typedef struct WorldTradeAdapter
 {
     u8 pad_0000[0x10];
-    void *unk_0010;
+    void *unk_0010; /* sub_02202840 */
 } WorldTradeAdapter;
+
+/* 0x128-byte "trade slot" record.  Nine of them live back-to-back at
+ * WorldTradeWork+0x00E4 and exactly fill the gap up to 0x0B4C, which is what
+ * pins both the stride and the count:
+ *   sub_021F7338 returns &slot[0] for selectors 8/10 and
+ *   &slot[1 + work->unk_00D4] (base 0x020C, stride 0x128) for selector 9. */
+typedef struct WorldTradeSlot
+{
+    u8 pad_0000[0xEC];
+    u16 unk_00EC; /* sub_021F8668 copies 0x0B4C..0x0B54 into 0xEC..0xF4 */
+    u16 unk_00EE;
+    u16 unk_00F0;
+    u16 unk_00F2;
+    u16 unk_00F4;
+    u8 pad_00F6[0x128 - 0xF6];
+} WorldTradeSlot;
 
 typedef struct WorldTradeWork
 {
-    void **unk_0000;
-    u8 pad_0004[0x14 - 0x04];
-    u32 unk_0014;
-    u32 unk_0018;
-    u8 pad_001C[0x28 - 0x1C];
-    u32 state;
-    u32 unk_002C;
-    u8 pad_0030[0xBC - 0x30];
-    u16 unk_00BC;
+    void **unk_0000;  /* [2] and [3] are subsystem handles; +0x40 is a save ptr */
+    u8 pad_0004[0x10 - 0x04];
+    u32 unk_0010;     /* sub_021F8A18: zero => return 4 */
+    u32 unk_0014;     /* sub_021F632C / sub_021F7F14: entry-mode selector */
+    u32 unk_0018;     /* sub_02200450 */
+    u8 pad_001C[0x20 - 0x1C];
+    u32 unk_0020;     /* sub_021F89B4: 0x13/0x15 => state 2, 0x14 => state 4 */
+    u8 pad_0024[0x28 - 0x24];
+    u32 state;        /* index into the 0x02203B0C / 0x02203BBC jump tables */
+    u32 unk_002C;     /* "next state" latch, written with state by sub_021F4E98 */
+    u16 unk_0030;     /* sub_021F8A44 */
+    u8 pad_0032[0xBC - 0x32];
+    u16 unk_00BC;     /* sub_021F7CDC / sub_021F7DA8 store 0xFFFF */
     u8 pad_00BE[0xC4 - 0xBE];
-    u16 unk_00C4;
+    u16 unk_00C4;     /* sub_021F656C */
     u16 unk_00C6;
-    u32 unk_00C8;
-    u32 unk_00CC;
+    u32 unk_00C8;     /* sub_021F6E08: box/party count */
+    u32 unk_00CC;     /* sub_021F656C */
     u8 pad_00D0[0xD4 - 0xD0];
-    u32 unk_00D4;
-    void *unk_00D8;
+    u32 unk_00D4;     /* sub_021F7338: slot index */
+    void *unk_00D8;   /* sub_021F7268: ENV resource set */
     u8 pad_00DC[0xE4 - 0xDC];
-    /* 0x0128-byte slots run from 0x00E4; slot 0 is the "own" entry and
-     * slot 1+n (base 0x020C) is indexed by unk_00D4.  See sub_021F7338. */
-    u8 unk_00E4;
-    u8 pad_00E5[0xB6C - 0xE5];
-    void *unk_0B6C;
+    WorldTradeSlot unk_00E4[9];
+    u16 unk_0B4C;     /* sub_021F8668 */
+    u16 unk_0B4E;
+    u16 unk_0B50;
+    u16 unk_0B52;
+    u16 unk_0B54;
+    u8 pad_0B56[0xB6C - 0xB56];
+    void *unk_0B6C;   /* sub_021F5FC0: message/window handle */
     u8 pad_0B70[0xB88 - 0xB70];
-    void *unk_0B88;
+    void *unk_0B88;   /* sub_0220040C */
     void *unk_0B8C;
     u8 pad_0B90[0xBF4 - 0xB90];
-    void *unk_0BF4;
+    void *unk_0BF4;   /* sub_022004F0 */
     u8 pad_0BF8[0xD40 - 0xBF8];
-    void *unk_0D40;
+    void *unk_0D40;   /* sub_021F4FA4 */
     u8 pad_0D44[4];
-    void *unk_0D48;
+    void *unk_0D48;   /* sub_022003BC */
     u8 pad_0D4C[4];
     void *unk_0D50[3];
     u8 pad_0D5C[0xDD0 - 0xD5C];
-    void *unk_0DD0;
+    void *unk_0DD0;   /* sub_021F643C */
     u8 pad_0DD4[0xDE0 - 0xDD4];
     void *unk_0DE0;
-    void *unk_0DE4;
-    void *unk_0DE8;
+    void *unk_0DE4;   /* sub_021F7A70 */
+    void *unk_0DE8;   /* sub_021F5FC0 */
     u8 pad_0DEC[0xDF8 - 0xDEC];
-    void *unk_0DF8;
+    void *unk_0DF8;   /* sub_021F4FA4 */
     u8 pad_0DFC[0xE04 - 0xDFC];
-    void *unk_0E04;
+    void *unk_0E04;   /* sub_021F4CE4 */
     void *unk_0E08;
     u8 pad_0E0C[0xE18 - 0xE0C];
-    u16 unk_0E18;
+    u16 unk_0E18;     /* sub_02200450: quit requested */
     u8 pad_0E1A[0xEA4 - 0xE1A];
-    void *unk_0EA4;
-    u8 pad_0EA8[0xEB4 - 0xEA8];
-    u32 unk_0EB4;
-    u8 pad_0EB8[0xFA0 - 0xEB8];
+    void *unk_0EA4;   /* sub_021F7268 */
+    u8 pad_0EA8[0xEB2 - 0xEA8];
+    u16 unk_0EB2;     /* sub_021F8A44 */
+    u32 unk_0EB4;     /* sub_021F632C / sub_021F7EC0 */
+    u8 pad_0EB8[0xF88 - 0xEB8];
+    u16 unk_0F88;     /* sub_021F89F0 clears on state change */
+    u16 unk_0F8A;
+    u8 pad_0F8C[0xFA0 - 0xF8C];
     WorldTradeAdapter unk_0FA0;
     u8 pad_0FB4[0x10DC - (0xFA0 + sizeof(WorldTradeAdapter))];
-    void *unk_10DC;
+    void *unk_10DC;   /* sub_021F7268 */
     u8 pad_10E0[0x12F8 - 0x10E0];
     u32 unk_12F8;
 } WorldTradeWork;

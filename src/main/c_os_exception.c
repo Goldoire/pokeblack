@@ -5,7 +5,7 @@
 #define SDK_FINALROM
 
 /* callees outside this TU, from the claim table */
-#define OS_EnableProtectionUnit              sub_02086B98
+#define OS_EnableProtectionUnit              sub_02086CF4
 #define OS_DisableProtectionUnit             sub_02086D04
 #define OSi_ExceptionHandler                    sub_02086E40
 #define OSi_GetAndDisplayContext                sub_02086EB4

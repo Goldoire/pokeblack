@@ -5,12 +5,16 @@
 #define SDK_FINALROM
 
 /* callees outside this TU, from the claim table */
+#define CARD_IsPulledOut                     sub_020774B8
 #define FS_NotifyArchiveAsyncEnd             sub_02078734
+#define CARDi_ReadRom                        sub_020771BC
 #define CARD_LockRom                         sub_02075E10
 #define CARD_UnlockRom                       sub_02075E80
 #define CARD_Init                            sub_02075CAC
+#define OS_GetLockID                         sub_02084EC0
 #define FS_InitArchive                       sub_02078360
 #define FS_RegisterArchiveName               sub_02078384
+#define OS_GetBootType                       sub_02087B04
 #define CARD_GetOwnRomHeader                 sub_02075DF8
 #define FS_SetArchiveProc                    sub_0207A5A8
 #define FS_LoadArchive                       sub_0207A4B0

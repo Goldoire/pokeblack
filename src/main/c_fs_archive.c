@@ -10,6 +10,9 @@
 #define OS_RestoreInterrupts                 sub_0208799C
 #define OS_SleepThread                       sub_020857B0
 #define FS_InitFile                          sub_020788AC
+#define OS_Terminate                         sub_0208823C
+#define STD_CompareNString                   sub_0208CE54
+#define STD_CopyLString                      sub_0208CB18
 #define FSi_DecrementSjisPositionToSlash     sub_02078834
 #define FSi_TrimSjisTrailingSlash            sub_02078868
 #define MI_CpuFill8                          sub_02082BCC

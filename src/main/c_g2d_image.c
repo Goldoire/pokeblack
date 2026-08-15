@@ -6,10 +6,14 @@
 
 /* callees outside this TU, from the claim table */
 #define DC_FlushRange                        sub_020862F0
-#define GX_BeginLoadTex                      sub_0207F754
+#define GX_BeginLoadTex                      sub_0207F7A0
+#define GX_LoadTex                           sub_0207F804
+#define GX_EndLoadTex                        sub_0207F9BC
 #define GX_BeginLoadOBJExtPltt               sub_0207F47C
 #define GXS_BeginLoadOBJExtPltt              sub_0207F6A8
 #define GX_BeginLoadTexPltt                  sub_0207FA0C
+#define GX_LoadTexPltt                       sub_0207FA48
+#define GX_EndLoadTexPltt                    sub_0207FAE4
 #define NNS_G2dInitImagePaletteProxy     sub_020637D4
 #define NNS_G2dSetImagePaletteLocation   sub_020637F4
 #define NNS_G2dGetImagePaletteLocation   sub_02063800

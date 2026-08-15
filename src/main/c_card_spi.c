@@ -4,9 +4,6 @@
  */
 #define SDK_FINALROM
 
-/* callees outside this TU, from the claim table */
-#define OS_Sleep                             sub_02085A38
-#define OS_GetTickLo                         sub_02087170
 #define CARDi_CommandBegin             sub_0205A11C
 /* stripped or unplaced: CARDi_CommandEnd (128B) */
 /* stripped or unplaced: CARDi_CommandReadStatus (92B) */

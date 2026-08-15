@@ -4,6 +4,8 @@
  */
 #define SDK_FINALROM
 
+/* callees outside this TU, from the claim table */
+#define OS_SetIrqFunction                    sub_0208477C
 #define OS_StopTimer64              sub_02082658
 /* stripped or unplaced: OSi_IsTimerReserved (32B) */
 /* stripped or unplaced: OSi_SetTimerReserved (28B) */

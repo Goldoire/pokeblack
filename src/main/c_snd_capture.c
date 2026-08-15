@@ -5,7 +5,9 @@
 #define SDK_FINALROM
 
 /* callees outside this TU, from the claim table */
+#define MIi_CpuClear32                       sub_02082A7C
 #define DC_FlushRange                        sub_020862F0
+#define NNSi_SndFaderSet                     sub_02075BAC
 #define OS_InitMessageQueue                  sub_02085D94
 #define OS_CreateThread                      sub_020853C0
 #define OS_WakeupThreadDirect                sub_02085868
@@ -15,7 +17,11 @@
 #define NNSi_SndFaderIsFinished              sub_02075C20
 #define NNSi_SndFaderGet                     sub_02075BD4
 #define SND_SetChannelVolume                 sub_02089638
+#define _s32_div_f                           sub_0209C0AC
+#define _u32_div_f                           sub_0209C2B8
+#define NNS_SndAllocAlarm                    sub_020729C8
 #define NNS_SndFreeAlarm                     sub_02072A08
+#define NNS_SndLockChannel                   sub_02072934
 #define NNS_SndUnlockCapture                 sub_020729A4
 #define SND_SetupChannelPcm                  sub_02089660
 #define SND_SetupAlarm                       sub_02089540
@@ -24,6 +30,7 @@
 #define NNSi_SndFaderInit                    sub_02075B94
 #define SND_StopTimer                        sub_020894DC
 #define SND_GetCurrentCommandTag             sub_02089D40
+#define SND_FlushCommand                     sub_02089B38
 #define SND_WaitForCommandProc               sub_02089CD4
 #define OS_ReceiveMessage                    sub_02085E50
 #define NNS_SndUnlockChannel                 sub_02072974

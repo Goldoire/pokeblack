@@ -7,6 +7,8 @@
 /* callees outside this TU, from the claim table */
 #define OS_DisableInterrupts                 sub_02087988
 #define OS_RestoreInterrupts                 sub_0208799C
+#define OSi_EnterDmaCallback                 sub_020848AC
+#define OS_Terminate                         sub_0208823C
 #define MIi_DmaSetParameters       sub_020A9EA0
 /* stripped or unplaced: MIi_DmaFill32 (132B) */
 /* stripped or unplaced: MIi_DmaCopy32 (164B) */

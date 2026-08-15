@@ -7,6 +7,7 @@
 /* callees outside this TU, from the claim table */
 #define MTX_FrustumW                         sub_0207C1D0
 #define G3_LoadMtx44                         sub_0207D8C4
+#define MTX_PerspectiveW                     sub_0207C410
 #define MTX_OrthoW                           sub_0207C554
 #define MTX_LookAt                           sub_0207BCA0
 #define G3_LoadMtx43                         sub_0207D8E0

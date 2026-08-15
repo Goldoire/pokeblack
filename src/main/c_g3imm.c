@@ -6,7 +6,7 @@
 
 /* callees outside this TU, from the claim table */
 #define GX_SendFifo64B                       sub_02080CA8
-#define GX_SendFifo48B                       sub_02080C64
+#define GX_SendFifo48B                       sub_02080C84
 #define MI_Copy36B                           sub_02082B60
 #define G3_LoadMtx44      sub_0207D8C4
 #define G3_LoadMtx43      sub_0207D8E0

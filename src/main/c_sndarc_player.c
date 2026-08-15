@@ -5,14 +5,16 @@
 #define SDK_FINALROM
 
 /* callees outside this TU, from the claim table */
+#define NNS_SndArcGetCurrent                 sub_020742FC
 #define NNS_SndPlayerSetPlayableSeqCount     sub_02072DB0
 #define NNS_SndPlayerSetAllocatableChannel   sub_02072DD0
-#define NNS_SndPlayerCreateHeap              sub_02072DE8
-#define NNSi_SndSeqArcGetSeqInfo             sub_02075B28
+#define NNS_SndArcGetSeqInfo                 sub_0207432C
+#define NNS_SndArcGetSeqArcInfo              sub_02074390
+#define NNS_SndArcGetFileAddress             sub_02074674
+#define NNSi_SndSeqArcGetSeqInfo             sub_02075B54
 #define NNSi_SndArcLoadBank                  sub_02074CD0
 #define NNSi_SndArcLoadSeq                   sub_02074BEC
 #define NNS_SndPlayerSetInitialVolume        sub_02072F48
-#define NNS_SndPlayerSetChannelPriority      sub_02072FA4
 #define NNS_SndPlayerSetSeqArcNo             sub_020730DC
 #define NNS_SndArcPlayerStartSeq      sub_02075560
 #define NNS_SndArcPlayerStartSeqEx    sub_020755A8

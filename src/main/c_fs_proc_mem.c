@@ -6,10 +6,13 @@
 
 /* callees outside this TU, from the claim table */
 #define FS_GetArchiveName                    sub_02078530
+#define STD_GetStringLength                  sub_0208CC80
+#define STD_TSPrintf                         sub_0208D7E8
 #define OS_DisableInterrupts                 sub_02087988
 #define FS_InitArchive                       sub_02078360
 #define FS_SetArchiveProc                    sub_0207A5A8
 #define FS_LoadArchive                       sub_0207A4B0
+#define OS_Terminate                         sub_0208823C
 #define OS_RestoreInterrupts                 sub_0208799C
 #define FS_OpenFileDirect                    sub_02078964
 #define FS_InitFile                          sub_020788AC

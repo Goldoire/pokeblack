@@ -7,7 +7,7 @@
 /* callees outside this TU, from the claim table */
 #define MIi_CpuSend32                        sub_02082AA8
 #define MI_SendGXCommandAsyncFast            sub_02082960
-#define MI_SendGXCommandAsync                sub_0208270C
+#define MI_SendGXCommandAsync                sub_02082760
 #define MIi_CpuCopyFast                      sub_02082B0C
 #define NNS_G3dGeSetBuffer     sub_0206DB40
 #define NNS_G3dGeReleaseBuffer sub_0206DB60

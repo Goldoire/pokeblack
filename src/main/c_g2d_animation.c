@@ -4,6 +4,8 @@
  */
 #define SDK_FINALROM
 
+/* callees outside this TU, from the claim table */
+#define FX_Div                               sub_0207C770
 #define SetAnimCtrlCurrentFrameImpl_                     sub_02062D08
 #define NNS_G2dGetAnimCtrlCurrentElement                 sub_02062D40
 #define NNS_G2dSetAnimCtrlCurrentFrame                   sub_02062F00

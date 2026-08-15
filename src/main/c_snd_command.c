@@ -9,6 +9,7 @@
 #define OS_DisableInterrupts                 sub_02087988
 #define SNDi_GetFinishedCommandTag           sub_0208A1AC
 #define OS_RestoreInterrupts                 sub_0208799C
+#define OS_SpinWaitSysCycles                 sub_02087A0C
 #define DC_FlushRange                        sub_020862F0
 #define PXI_SendWordByFifo                   sub_02088610
 #define SNDi_CallAlarmHandler                sub_0208A010

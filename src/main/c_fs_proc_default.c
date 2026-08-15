@@ -5,12 +5,17 @@
 #define SDK_FINALROM
 
 /* callees outside this TU, from the claim table */
+#define FS_ReadFile                          sub_02078B78
 #define MI_CpuCopy8                          sub_02082D44
 #define FSi_WaitForArchiveCompletion         sub_02077700
 #define FSi_IncrementSjisPositionToSlash     sub_020787E0
 #define FS_InitFile                          sub_020788AC
 #define FS_GetArchiveName                    sub_02078530
+#define STD_GetStringLength                  sub_0208CC80
+#define FSi_IsUnreadableRomOffset            sub_0207A988
 #define MI_CpuFill8                          sub_02082BCC
+#define CARD_GetRomHeader                    sub_02075DEC
+#define OS_Terminate                         sub_0208823C
 #define FS_MountArchive                      sub_02078540
 #define FS_UnmountArchive                    sub_02078588
 #define FS_OpenFileDirect                    sub_02078964

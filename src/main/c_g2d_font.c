@@ -4,6 +4,8 @@
  */
 #define SDK_FINALROM
 
+/* callees outside this TU, from the claim table */
+#define NNSi_G2dGetUnpackedFont              sub_02069900
 #define GetGlyphIndex                     sub_02067EB0
 #define NNS_G2dFontInitUTF8               sub_02067F78
 #define NNS_G2dFontFindGlyphIndex         sub_02067F9C

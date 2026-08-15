@@ -7,6 +7,7 @@
 /* callees outside this TU, from the claim table */
 #define MI_StopDma                           sub_020825F0
 #define MIi_CardDmaCopy32                    sub_020835A0
+#define OS_Terminate                         sub_0208823C
 #define IC_InvalidateAll                     sub_02086320
 #define IC_InvalidateRange                   sub_0208632C
 #define DC_FlushAll                          sub_02086284

@@ -5,6 +5,8 @@
 #define SDK_FINALROM
 
 /* callees outside this TU, from the claim table */
+#define NNS_FndAllocFromFrmHeapEx            sub_0206112C
+#define NNS_FndAllocFromUnitHeap             sub_02061244
 #define OS_AllocFromHeap                     sub_020868E0
 #define OS_FreeToHeap                        sub_020869E8
 #define AllocatorAllocForUnitHeap       sub_020612C8

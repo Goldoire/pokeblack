@@ -7,6 +7,7 @@
 /* callees outside this TU, from the claim table */
 #define OS_SignalEvent                       sub_02088398
 #define OS_SetVAlarm                         sub_020876B8
+#define OS_GetBootType                       sub_02087B04
 #define MI_CpuCopy8                          sub_02082D44
 #define CARDi_InitResourceLock               sub_0207608C
 #define OS_CreateThread                      sub_020853C0

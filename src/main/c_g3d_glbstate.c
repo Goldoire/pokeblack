@@ -8,6 +8,7 @@
 #define MTX_Identity43_                      sub_0207B598
 #define MTX_Identity44_                      sub_0207BDB4
 #define MTX_Identity33_                      sub_0207ADC4
+#define NNS_G3dGeBufferOP_N                  sub_0206DDAC
 #define MTX_Inverse33                        sub_0207B0A4
 #define MTX_ScaleApply43                     sub_0207B60C
 #define MTX_Inverse43                        sub_0207B67C

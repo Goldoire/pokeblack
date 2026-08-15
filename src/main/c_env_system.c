@@ -6,6 +6,7 @@
 
 /* callees outside this TU, from the claim table */
 #define MI_CpuFill8                          sub_02082BCC
+#define STD_CopyLString                      sub_0208CB18
 #define ENV_PrependResourceSet                 sub_020913BC
 /* stripped or unplaced: ENVi_ClearLinkList (44B) */
 /* stripped or unplaced: ENVi_SearchBlankLink (48B) */

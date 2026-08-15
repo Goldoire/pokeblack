@@ -7,6 +7,8 @@
 /* callees outside this TU, from the claim table */
 #define MIi_CpuClearFast                     sub_02082AC0
 #define MIi_CpuClear32                       sub_02082A7C
+#define NNS_G3dGeBufferOP_N                  sub_0206DDAC
+#define NNS_G3dGeSendDL                      sub_0206DC08
 #define MI_Zero36B                           sub_020834A8
 #define MTX_Copy43To44_                      sub_0207B5C0
 #define MTX_Concat44                         sub_0207BE14

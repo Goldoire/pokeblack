@@ -4,6 +4,8 @@
  */
 #define SDK_FINALROM
 
+/* callees outside this TU, from the claim table */
+#define _s32_div_f                           sub_0209C0AC
 #define NNSi_SndFaderInit       sub_02075B94
 #define NNSi_SndFaderSet        sub_02075BAC
 #define NNSi_SndFaderGet        sub_02075BD4

@@ -90,18 +90,16 @@ void sub_021EE520(Ov170Ctx *a0, u32 a1)
 
 void sub_021EE544(Ov170Ctx *a0, u32 a1)
 {
-    const Ov170Rec12 *p;
+    const Ov170Rec12 *e;
     const u8 *hdr;
 
     hdr = _021F0188;
     if (a1 < 0x1E) {
-        p = _021F0DCC;
+        e = &_021F0DCC[a1];
     } else {
-        p = _021F0370;
-        a1 -= 0x1E;
+        e = &_021F0370[a1 - 0x1E];
     }
-    p = &p[a1];
-    sub_021EEFA4(a0->unk2c, p->unk00, p->unk01, hdr[0], hdr[1]);
+    sub_021EEFA4(a0->unk2c, e->unk00, e->unk01, hdr[0], hdr[1]);
 }
 
 void sub_021EE64C(Ov170Ctx *a0, u32 a1)
