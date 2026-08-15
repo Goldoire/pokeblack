@@ -9,6 +9,8 @@
 /* callees outside this file */
 #define CARDi_WaitForTask                    sub_02076230
 #define CARDi_EndTask                        sub_020762A8
+#define OS_IsAlarmAvailable                  sub_02087244
+#define OS_Sleep                             sub_02085A38
 #define MI_CpuCopy8                          sub_02082D44
 #define OS_DisableInterrupts                 sub_02087988
 #define OS_RestoreInterrupts                 sub_0208799C
@@ -17,6 +19,7 @@
 #define CARDi_ICInvalidateSmart              sub_02076344
 #define CARDi_DCInvalidateSmart              sub_02076360
 #define CARDi_ExecuteOldTypeTask             sub_02076170
+#define OS_GetBootType                       sub_02087B04
 #define CARD_GetOwnRomHeader                 sub_02075DF8
 #define CARD_LockRom                         sub_02075E10
 #define CARD_UnlockRom                       sub_02075E80

@@ -1,6 +1,8 @@
-/* TwlSDK/TwlSystem lib/NitroSDK/TwlSDK/build/libraries/mi/common/src/mi_memory.c
- * Renamed to sub_<realRAM> per function so verify_functions.py can
- * place them. The retail ARM9 is built with SDK_FINALROM.
+/* lib/NitroSDK/TwlSDK/build/libraries/mi/common/src/mi_memory.c, as linked into the retail ARM9.
+ * Each function is renamed to sub_<realRAM> so verify_functions.py can place
+ * it. SDK_FINALROM is what the retail build used: without it the merged .bss
+ * of a translation unit comes out in a different order and every static
+ * variable offset in the generated code is wrong.
  */
 #define SDK_FINALROM
 
@@ -22,28 +24,28 @@
 #define MI_CpuCopy         sub_02082EA4
 #define MI_CpuMove         sub_02083194
 #define MI_Zero36B         sub_020834A8
-/* stripped or unplaced: MIi_CpuSend16 (28B) */
-/* stripped or unplaced: MIi_CpuRecv16 (28B) */
-/* stripped or unplaced: MIi_CpuPipe16 (28B) */
-/* stripped or unplaced: CpuCopy16Reverse (32B) */
-/* stripped or unplaced: MIi_CpuMove16 (36B) */
-/* stripped or unplaced: MIi_CpuFind16 (48B) */
-/* stripped or unplaced: MIi_CpuComp16 (48B) */
-/* stripped or unplaced: MIi_CpuRecv32 (24B) */
-/* stripped or unplaced: MIi_CpuPipe32 (28B) */
-/* stripped or unplaced: CpuCopy32Reverse (32B) */
-/* stripped or unplaced: MIi_CpuMove32 (36B) */
-/* stripped or unplaced: MIi_CpuFind32 (48B) */
-/* stripped or unplaced: MIi_CpuComp32 (64B) */
-/* stripped or unplaced: MIi_CpuSendFast (84B) */
-/* stripped or unplaced: MIi_CpuRecvFast (84B) */
-/* stripped or unplaced: CpuCopyFastReverse (64B) */
-/* stripped or unplaced: MIi_CpuMoveFast (36B) */
-/* stripped or unplaced: MI_Copy16B (20B) */
-/* stripped or unplaced: MI_Copy128B (76B) */
-/* stripped or unplaced: MI_CpuFind8 (148B) */
-/* stripped or unplaced: MI_Zero32B (14B) */
-/* stripped or unplaced: MI_Zero48B (16B) */
-/* stripped or unplaced: MI_Zero64B (20B) */
+/* not in shard or dead-stripped: MIi_CpuSend16 (28B) */
+/* not in shard or dead-stripped: MIi_CpuRecv16 (28B) */
+/* not in shard or dead-stripped: MIi_CpuPipe16 (28B) */
+/* not in shard or dead-stripped: CpuCopy16Reverse (32B) */
+/* not in shard or dead-stripped: MIi_CpuMove16 (36B) */
+/* not in shard or dead-stripped: MIi_CpuFind16 (48B) */
+/* not in shard or dead-stripped: MIi_CpuComp16 (48B) */
+/* not in shard or dead-stripped: MIi_CpuRecv32 (24B) */
+/* not in shard or dead-stripped: MIi_CpuPipe32 (28B) */
+/* not in shard or dead-stripped: CpuCopy32Reverse (32B) */
+/* not in shard or dead-stripped: MIi_CpuMove32 (36B) */
+/* not in shard or dead-stripped: MIi_CpuFind32 (48B) */
+/* not in shard or dead-stripped: MIi_CpuComp32 (64B) */
+/* not in shard or dead-stripped: MIi_CpuSendFast (84B) */
+/* not in shard or dead-stripped: MIi_CpuRecvFast (84B) */
+/* not in shard or dead-stripped: CpuCopyFastReverse (64B) */
+/* not in shard or dead-stripped: MIi_CpuMoveFast (36B) */
+/* not in shard or dead-stripped: MI_Copy16B (20B) */
+/* not in shard or dead-stripped: MI_Copy128B (76B) */
+/* not in shard or dead-stripped: MI_CpuFind8 (148B) */
+/* not in shard or dead-stripped: MI_Zero32B (14B) */
+/* not in shard or dead-stripped: MI_Zero48B (16B) */
+/* not in shard or dead-stripped: MI_Zero64B (20B) */
 
 #include "../../lib/NitroSDK/TwlSDK/build/libraries/mi/common/src/mi_memory.c"

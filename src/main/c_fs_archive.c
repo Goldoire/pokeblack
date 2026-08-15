@@ -10,6 +10,7 @@
 #define OS_DisableInterrupts                 sub_02087988
 #define OS_WakeupThread                      sub_02085800
 #define OS_RestoreInterrupts                 sub_0208799C
+#define OS_SleepThread                       sub_020857B0
 #define FS_InitFile                          sub_020788AC
 #define FSi_DecrementSjisPositionToSlash     sub_02078834
 #define FSi_TrimSjisTrailingSlash            sub_02078868

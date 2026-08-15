@@ -35,7 +35,6 @@ u32 sub_021D8A24(PokemonTradeWork *work);
 u32 sub_02039C68(u32 a0, u32 a1, u32 a2);
 u32 sub_021D8ADC(PokemonTradeWork *work, u8 a1);
 void sub_020307B0(void *a0);
-void sub_021E2A1C(PokemonTradeWork *work);
 s32 sub_0201293C(void *a0);
 s32 sub_021DD21C(PokemonTradeWork *work);
 void *sub_02012934(void *a0);
@@ -142,14 +141,6 @@ void sub_021DD174(PokemonTradeWork *work)
                 work->unk_0FD8[j][i] = NULL;
             }
         }
-    }
-}
-
-void sub_021DD294(PokemonTradeWork *work)
-{
-    if (work->unk_118C == 3)
-    {
-        sub_021E2A1C(work);
     }
 }
 

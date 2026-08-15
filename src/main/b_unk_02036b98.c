@@ -41,7 +41,12 @@ void sub_02036F24(u32 a, u32 b, u32 c);
 u32 sub_02036D64(UnkStruct02036D64 *p);
 u32 sub_02036DC8(u32 mode, u32 v);
 
-extern u16 _021469C8[2];
+typedef struct Unk021469C8 {
+    u16 unk00;
+    u16 unk02 : 14;
+    u16 unk02hi : 2;
+} Unk021469C8;
+extern Unk021469C8 _021469C8;
 
 u32 sub_02036B98(UnkStruct02036B98 *p, u32 id)
 {
@@ -114,9 +119,9 @@ UnkStruct02036D64 *sub_02036BD4(u32 unused0, u32 a1, u32 a2, u32 a3, u32 p5,
     }
     o->unk04 = a2;
     o->unk06 = a3;
-    if (_021469C8[0] != 0) {
-        o->unk04 = _021469C8[0];
-        o->unk06 = _021469C8[1] & 0x3FFF;
+    if (_021469C8.unk00 != 0) {
+        o->unk04 = _021469C8.unk00;
+        o->unk06 = _021469C8.unk02;
     }
     o->unk00 = p9;
     o->unk0C = p5;
@@ -133,8 +138,7 @@ void sub_02036CA8(UnkStruct02036D64 *o)
     u32 d = sub_02036D64(o);
     u32 x = sub_02036DC8(d, o->unk00);
     u32 *oam;
-    u32 a;
-    u32 b;
+    u32 *q;
 
     if (d == 1) {
         oam = (u32 *)0x07000000;
@@ -142,21 +146,21 @@ void sub_02036CA8(UnkStruct02036D64 *o)
         oam = (u32 *)0x07000400;
     }
     if (o->unk0F == 1) {
-        a = (o->unk06 & 0xFF) | 0x800 | 0x40000000 | ((o->unk04 & 0x1FF) << 16);
-        b = x | 0xE000;
+        oam[0] = (o->unk06 & 0xFF) | 0x800 | 0x40000000 | ((o->unk04 & 0x1FF) << 16);
+        *(u16 *)((u8 *)oam + 4) = x | 0xE000;
     } else {
-        a = 0x40000200;
-        b = 0;
+        oam[0] = 0x40000200;
+        *(u16 *)((u8 *)oam + 4) = 0;
     }
-    oam[0] = a;
-    *(u16 *)((u8 *)oam + 4) = b;
     oam[2] = (o->unk06 & 0xFF) | 0x40000000 | ((o->unk04 & 0x1FF) << 16);
     *(u16 *)((u8 *)oam + 0xC) = x | 0xE000;
     if (oam != (u32 *)o->unk10) {
-        *(u32 *)o->unk10 = 0x40000200;
-        *(u16 *)(o->unk10 + 4) = 0;
-        *(u32 *)(o->unk10 + 8) = 0x40000200;
-        *(u16 *)(o->unk10 + 0xC) = 0;
+        q = (u32 *)o->unk10;
+        q[0] = 0x40000200;
+        *(u16 *)((u8 *)q + 4) = 0;
+        q = (u32 *)o->unk10;
+        q[2] = 0x40000200;
+        *(u16 *)((u8 *)q + 0xC) = 0;
         o->unk10 = (u32)oam;
     }
 }

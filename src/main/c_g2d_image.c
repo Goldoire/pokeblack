@@ -8,7 +8,7 @@
 
 /* callees outside this file */
 #define DC_FlushRange                        sub_020862F0
-#define GX_BeginLoadTex                      sub_0207F754
+#define GX_BeginLoadTex                      sub_0207F7A0
 #define GX_BeginLoadOBJExtPltt               sub_0207F47C
 #define GXS_BeginLoadOBJExtPltt              sub_0207F6A8
 #define GX_BeginLoadTexPltt                  sub_0207FA0C

@@ -1,10 +1,12 @@
-/* TwlSDK/TwlSystem lib/TwlSystem/build/libraries/snd/src/main.c
- * Renamed to sub_<realRAM> per function so verify_functions.py can
- * place them. The retail ARM9 is built with SDK_FINALROM.
+/* lib/TwlSystem/build/libraries/snd/src/main.c, as linked into the retail ARM9.
+ * Each function is renamed to sub_<realRAM> so verify_functions.py can place
+ * it. SDK_FINALROM is what the retail build used: without it the merged .bss
+ * of a translation unit comes out in a different order and every static
+ * variable offset in the generated code is wrong.
  */
 #define SDK_FINALROM
 
-/* callees outside this TU, from the claim table */
+/* callees outside this file */
 #define SND_Init                             sub_02089848
 #define PM_AppendPostSleepCallback           sub_0208C828
 #define NNSi_SndInitResourceMgr              sub_02072A28
@@ -24,18 +26,19 @@
 #define DC_InvalidateRange                   sub_020862B8
 #define SND_ReadTrackInfo                    sub_0208A0A4
 #define NNSi_SndCaptureBeginSleep            sub_02073EE4
+
 #define NNS_SndSetMonoFlag           sub_02072794
 #define BeginSleep                   sub_020728E8
-/* stripped or unplaced: NNS_SndInit (124B) */
-/* stripped or unplaced: NNS_SndShutdown (68B) */
-/* stripped or unplaced: NNS_SndMain (48B) */
-/* stripped or unplaced: NNS_SndSetMasterVolume (12B) */
-/* stripped or unplaced: NNS_SndStopSoundAll (88B) */
-/* stripped or unplaced: NNS_SndStopChannelAll (24B) */
-/* stripped or unplaced: NNS_SndUpdateDriverInfo (212B) */
-/* stripped or unplaced: NNS_SndReadDriverChannelInfo (80B) */
-/* stripped or unplaced: NNSi_SndReadDriverPlayerInfo (80B) */
-/* stripped or unplaced: NNSi_SndReadDriverTrackInfo (88B) */
-/* stripped or unplaced: EndSleep (12B) */
+/* not in shard or dead-stripped: NNS_SndInit (124B) */
+/* not in shard or dead-stripped: NNS_SndShutdown (68B) */
+/* not in shard or dead-stripped: NNS_SndMain (48B) */
+/* not in shard or dead-stripped: NNS_SndSetMasterVolume (12B) */
+/* not in shard or dead-stripped: NNS_SndStopSoundAll (88B) */
+/* not in shard or dead-stripped: NNS_SndStopChannelAll (24B) */
+/* not in shard or dead-stripped: NNS_SndUpdateDriverInfo (212B) */
+/* not in shard or dead-stripped: NNS_SndReadDriverChannelInfo (80B) */
+/* not in shard or dead-stripped: NNSi_SndReadDriverPlayerInfo (80B) */
+/* not in shard or dead-stripped: NNSi_SndReadDriverTrackInfo (88B) */
+/* not in shard or dead-stripped: EndSleep (12B) */
 
 #include "../../lib/TwlSystem/build/libraries/snd/src/main.c"

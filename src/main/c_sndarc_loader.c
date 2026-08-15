@@ -1,10 +1,12 @@
-/* TwlSDK/TwlSystem lib/TwlSystem/build/libraries/snd/src/sndarc_loader.c
- * Renamed to sub_<realRAM> per function so verify_functions.py can
- * place them. The retail ARM9 is built with SDK_FINALROM.
+/* lib/TwlSystem/build/libraries/snd/src/sndarc_loader.c, as linked into the retail ARM9.
+ * Each function is renamed to sub_<realRAM> so verify_functions.py can place
+ * it. SDK_FINALROM is what the retail build used: without it the merged .bss
+ * of a translation unit comes out in a different order and every static
+ * variable offset in the generated code is wrong.
  */
 #define SDK_FINALROM
 
-/* callees outside this TU, from the claim table */
+/* callees outside this file */
 #define SND_AssignWaveArc                    sub_0208A2BC
 #define NNS_SndHeapAlloc                     sub_0207482C
 #define DC_StoreRange                        sub_020862D4
@@ -24,6 +26,7 @@
 #define SND_GetWaveDataCount                 sub_0208A638
 #define SND_GetFirstInstDataPos              sub_0208A46C
 #define SND_GetNextInstData                  sub_0208A48C
+
 #define NNSi_SndArcLoadSeq          sub_02074BEC
 #define NNSi_SndArcLoadSeqArc       sub_02074C70
 #define NNSi_SndArcLoadBank         sub_02074CD0
@@ -34,21 +37,21 @@
 #define WaveArcTableDisposeCallback sub_020752D4
 #define SingleWaveDisposeCallback   sub_020752F4
 #define LoadSingleWave              sub_0207533C
-/* stripped or unplaced: NNS_SndArcLoadGroup (24B) */
-/* stripped or unplaced: NNS_SndArcLoadSeq (48B) */
-/* stripped or unplaced: NNS_SndArcLoadSeqArc (48B) */
-/* stripped or unplaced: NNS_SndArcLoadBank (48B) */
-/* stripped or unplaced: NNS_SndArcLoadWaveArc (48B) */
-/* stripped or unplaced: NNS_SndArcLoadSeqEx (40B) */
-/* stripped or unplaced: NNS_SndArcLoadBankEx (40B) */
-/* stripped or unplaced: NNSi_SndArcLoadGroup (252B) */
-/* stripped or unplaced: NNSi_SndArcLoadWaveArc (132B) */
-/* stripped or unplaced: NNSi_SndArcLoadFile (164B) */
-/* stripped or unplaced: LoadSeq (108B) */
-/* stripped or unplaced: LoadSeqArc (108B) */
-/* stripped or unplaced: LoadBank (108B) */
-/* stripped or unplaced: LoadWaveArc (108B) */
-/* stripped or unplaced: LoadWaveArcTable (296B) */
-/* stripped or unplaced: LoadSingleWaves (192B) */
+/* not in shard or dead-stripped: NNS_SndArcLoadGroup (24B) */
+/* not in shard or dead-stripped: NNS_SndArcLoadSeq (48B) */
+/* not in shard or dead-stripped: NNS_SndArcLoadSeqArc (48B) */
+/* not in shard or dead-stripped: NNS_SndArcLoadBank (48B) */
+/* not in shard or dead-stripped: NNS_SndArcLoadWaveArc (48B) */
+/* not in shard or dead-stripped: NNS_SndArcLoadSeqEx (40B) */
+/* not in shard or dead-stripped: NNS_SndArcLoadBankEx (40B) */
+/* not in shard or dead-stripped: NNSi_SndArcLoadGroup (252B) */
+/* not in shard or dead-stripped: NNSi_SndArcLoadWaveArc (132B) */
+/* not in shard or dead-stripped: NNSi_SndArcLoadFile (164B) */
+/* not in shard or dead-stripped: LoadSeq (108B) */
+/* not in shard or dead-stripped: LoadSeqArc (108B) */
+/* not in shard or dead-stripped: LoadBank (108B) */
+/* not in shard or dead-stripped: LoadWaveArc (108B) */
+/* not in shard or dead-stripped: LoadWaveArcTable (296B) */
+/* not in shard or dead-stripped: LoadSingleWaves (192B) */
 
 #include "../../lib/TwlSystem/build/libraries/snd/src/sndarc_loader.c"

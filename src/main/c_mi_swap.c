@@ -1,10 +1,12 @@
-/* TwlSDK/TwlSystem lib/NitroSDK/TwlSDK/build/libraries/mi/common/src/mi_swap.c
- * Renamed to sub_<realRAM> per function so verify_functions.py can
- * place them. The retail ARM9 is built with SDK_FINALROM.
+/* lib/NitroSDK/TwlSDK/build/libraries/mi/common/src/mi_swap.c, as linked into the retail ARM9.
+ * Each function is renamed to sub_<realRAM> so verify_functions.py can place
+ * it. SDK_FINALROM is what the retail build used: without it the merged .bss
+ * of a translation unit comes out in a different order and every static
+ * variable offset in the generated code is wrong.
  */
 #define SDK_FINALROM
 
 #define MI_SwapWord sub_020834B8
-/* stripped or unplaced: MI_SwapByte (8B) */
+/* not in shard or dead-stripped: MI_SwapByte (8B) */
 
 #include "../../lib/NitroSDK/TwlSDK/build/libraries/mi/common/src/mi_swap.c"

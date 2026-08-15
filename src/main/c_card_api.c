@@ -8,6 +8,8 @@
 
 /* callees outside this file */
 #define OS_SignalEvent                       sub_02088398
+#define OS_SetVAlarm                         sub_020876B8
+#define OS_GetBootType                       sub_02087B04
 #define MI_CpuCopy8                          sub_02082D44
 #define CARDi_InitResourceLock               sub_0207608C
 #define OS_CreateThread                      sub_020853C0
@@ -17,9 +19,11 @@
 #define OS_DisableInterrupts                 sub_02087988
 #define OS_SetThreadPriority                 sub_02085988
 #define OS_RestoreInterrupts                 sub_0208799C
+#define CARDi_LockResource                   sub_02075ED4
 #define OS_InitEvent                         sub_020882DC
 #define OS_CreateVAlarm                      sub_020876A4
 #define OS_WaitEventEx                       sub_020882F0
+#define CARDi_UnlockResource                 sub_02075F4C
 
 #define CARDi_PeekEventListener     sub_02075C38
 #define CARDi_LockBusCondition      sub_02075C90

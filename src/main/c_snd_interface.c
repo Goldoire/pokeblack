@@ -1,14 +1,17 @@
-/* TwlSDK/TwlSystem lib/NitroSDK/TwlSDK/build/libraries/snd/ARM9/src/snd_interface.c
- * Renamed to sub_<realRAM> per function so verify_functions.py can
- * place them. The retail ARM9 is built with SDK_FINALROM.
+/* lib/NitroSDK/TwlSDK/build/libraries/snd/ARM9/src/snd_interface.c, as linked into the retail ARM9.
+ * Each function is renamed to sub_<realRAM> so verify_functions.py can place
+ * it. SDK_FINALROM is what the retail build used: without it the merged .bss
+ * of a translation unit comes out in a different order and every static
+ * variable offset in the generated code is wrong.
  */
 #define SDK_FINALROM
 
-/* callees outside this TU, from the claim table */
+/* callees outside this file */
 #define SNDi_IncAlarmId                      sub_02089FC0
 #define SNDi_SetAlarmHandler                 sub_02089FE0
 #define SND_AllocCommand                     sub_02089A78
 #define SND_PushCommand                      sub_02089B00
+
 #define SND_StopSeq                    sub_02089330
 #define SND_PrepareSeq                 sub_02089350
 #define SND_StartPreparedSeq           sub_02089378
@@ -43,16 +46,16 @@
 #define SNDi_SetPlayerParam            sub_020897B4
 #define SNDi_SetTrackParam             sub_020897DC
 #define PushCommand_impl               sub_02089804
-/* stripped or unplaced: SND_StartSeq (40B) */
-/* stripped or unplaced: SND_SetPlayerLocalVariable (40B) */
-/* stripped or unplaced: SND_SetPlayerGlobalVariable (32B) */
-/* stripped or unplaced: SND_SetTrackPanRange (24B) */
-/* stripped or unplaced: SND_SetupCapture (64B) */
-/* stripped or unplaced: SND_StopUnlockedChannel (32B) */
-/* stripped or unplaced: SND_SetChannelPan (32B) */
-/* stripped or unplaced: SND_SetupChannelPsg (40B) */
-/* stripped or unplaced: SND_SetupChannelNoise (52B) */
-/* stripped or unplaced: SNDi_SetSurroundDecay (32B) */
-/* stripped or unplaced: SNDi_SkipSeq (32B) */
+/* not in shard or dead-stripped: SND_StartSeq (40B) */
+/* not in shard or dead-stripped: SND_SetPlayerLocalVariable (40B) */
+/* not in shard or dead-stripped: SND_SetPlayerGlobalVariable (32B) */
+/* not in shard or dead-stripped: SND_SetTrackPanRange (24B) */
+/* not in shard or dead-stripped: SND_SetupCapture (64B) */
+/* not in shard or dead-stripped: SND_StopUnlockedChannel (32B) */
+/* not in shard or dead-stripped: SND_SetChannelPan (32B) */
+/* not in shard or dead-stripped: SND_SetupChannelPsg (40B) */
+/* not in shard or dead-stripped: SND_SetupChannelNoise (52B) */
+/* not in shard or dead-stripped: SNDi_SetSurroundDecay (32B) */
+/* not in shard or dead-stripped: SNDi_SkipSeq (32B) */
 
 #include "../../lib/NitroSDK/TwlSDK/build/libraries/snd/ARM9/src/snd_interface.c"

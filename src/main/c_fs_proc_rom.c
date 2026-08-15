@@ -13,6 +13,7 @@
 #define CARD_Init                            sub_02075CAC
 #define FS_InitArchive                       sub_02078360
 #define FS_RegisterArchiveName               sub_02078384
+#define OS_GetBootType                       sub_02087B04
 #define CARD_GetOwnRomHeader                 sub_02075DF8
 #define FS_SetArchiveProc                    sub_0207A5A8
 #define FS_LoadArchive                       sub_0207A4B0

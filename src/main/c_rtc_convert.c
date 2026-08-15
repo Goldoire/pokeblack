@@ -1,12 +1,11 @@
-/* TwlSDK/TwlSystem lib/NitroSDK/TwlSDK/build/libraries/rtc/ARM9/src/convert.c
- * Renamed to sub_<realRAM> per function so verify_functions.py can
- * place them. The retail ARM9 is built with SDK_FINALROM.
+/* lib/NitroSDK/TwlSDK/build/libraries/rtc/ARM9/src/convert.c, as linked into the retail ARM9.
+ * Each function is renamed to sub_<realRAM> so verify_functions.py can place
+ * it. SDK_FINALROM is what the retail build used: without it the merged .bss
+ * of a translation unit comes out in a different order and every static
+ * variable offset in the generated code is wrong.
  */
 #define SDK_FINALROM
 
-/* callees outside this TU, from the claim table */
-#define _ll_mod                              sub_0209BE54
-#define _ll_sdiv                             sub_0209BE64
 #define RTC_ConvertDateToDay        sub_02088F58
 #define RTCi_ConvertTimeToSecond    sub_02088FEC
 #define RTC_ConvertDateTimeToSecond sub_02089004

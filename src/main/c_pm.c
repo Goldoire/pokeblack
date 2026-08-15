@@ -1,10 +1,12 @@
-/* TwlSDK/TwlSystem lib/NitroSDK/TwlSDK/build/libraries/spi/ARM9/src/pm.c
- * Renamed to sub_<realRAM> per function so verify_functions.py can
- * place them. The retail ARM9 is built with SDK_FINALROM.
+/* lib/NitroSDK/TwlSDK/build/libraries/spi/ARM9/src/pm.c, as linked into the retail ARM9.
+ * Each function is renamed to sub_<realRAM> so verify_functions.py can place
+ * it. SDK_FINALROM is what the retail build used: without it the merged .bss
+ * of a translation unit comes out in a different order and every static
+ * variable offset in the generated code is wrong.
  */
 #define SDK_FINALROM
 
-/* callees outside this TU, from the claim table */
+/* callees outside this file */
 #define OS_GetProcMode                       sub_020879EC
 #define OS_GetCpsrIrq                        sub_020879E0
 #define PXIi_HandlerRecvFifoNotEmpty         sub_02088688
@@ -19,6 +21,7 @@
 #define OS_IsTickAvailable                   sub_02087058
 #define OS_GetBootType                       sub_02087B04
 #define GX_DispOff                           sub_0207D42C
+
 #define PMi_WaitBusy                    sub_0208B7BC
 #define PMi_DummyCallback               sub_0208B840
 #define PMi_CallCallbackAndUnlock       sub_0208B84C
@@ -49,37 +52,37 @@
 #define PMi_InsertPreSleepCallbackEx    sub_0208C848
 #define PMi_InsertPostSleepCallbackEx   sub_0208C878
 #define PMi_LCDOnAvoidReset             sub_0208C89C
-/* stripped or unplaced: PM_Init (148B) */
-/* stripped or unplaced: PMi_CommonCallback (136B) */
-/* stripped or unplaced: PMi_TryToSendPxiData (132B) */
-/* stripped or unplaced: PMi_SetSoundPowerAsync (72B) */
-/* stripped or unplaced: PMi_SetSoundPower (40B) */
-/* stripped or unplaced: PMi_SetSoundVolumeAsync (72B) */
-/* stripped or unplaced: PMi_SetSoundVolume (40B) */
-/* stripped or unplaced: PM_ForceToPowerOffAsync (44B) */
-/* stripped or unplaced: PM_ForceToPowerOff (60B) */
-/* stripped or unplaced: PM_SetAmpAsync (36B) */
-/* stripped or unplaced: PM_SetAmp (24B) */
-/* stripped or unplaced: PM_SetAmpGainAsync (36B) */
-/* stripped or unplaced: PMi_GetSoundPower (80B) */
-/* stripped or unplaced: PMi_GetSoundVolume (80B) */
-/* stripped or unplaced: PM_GetAmpGain (60B) */
-/* stripped or unplaced: PMi_PreSleepForDma (148B) */
-/* stripped or unplaced: PM_GoSleepMode (748B) */
-/* stripped or unplaced: PMi_SetLCDPower (504B) */
-/* stripped or unplaced: PMi_GetLCDOffCount (16B) */
-/* stripped or unplaced: PMi_SendLEDPatternCommandAsync (36B) */
-/* stripped or unplaced: PM_GetLEDPatternAsync (44B) */
-/* stripped or unplaced: PMi_ClearList (4B) */
-/* stripped or unplaced: PM_PrependPreSleepCallback (32B) */
-/* stripped or unplaced: PM_AppendPostSleepCallback (32B) */
-/* stripped or unplaced: PM_PrependPostSleepCallback (32B) */
-/* stripped or unplaced: PM_InsertPreSleepCallback (12B) */
-/* stripped or unplaced: PM_InsertPostSleepCallback (12B) */
-/* stripped or unplaced: PM_DeletePreSleepCallback (24B) */
-/* stripped or unplaced: PM_DeletePostSleepCallback (24B) */
-/* stripped or unplaced: PM_ClearPreSleepCallback (20B) */
-/* stripped or unplaced: PM_ClearPostSleepCallback (20B) */
-/* stripped or unplaced: PMi_SetDispOffCount (28B) */
+/* not in shard or dead-stripped: PM_Init (148B) */
+/* not in shard or dead-stripped: PMi_CommonCallback (136B) */
+/* not in shard or dead-stripped: PMi_TryToSendPxiData (132B) */
+/* not in shard or dead-stripped: PMi_SetSoundPowerAsync (72B) */
+/* not in shard or dead-stripped: PMi_SetSoundPower (40B) */
+/* not in shard or dead-stripped: PMi_SetSoundVolumeAsync (72B) */
+/* not in shard or dead-stripped: PMi_SetSoundVolume (40B) */
+/* not in shard or dead-stripped: PM_ForceToPowerOffAsync (44B) */
+/* not in shard or dead-stripped: PM_ForceToPowerOff (60B) */
+/* not in shard or dead-stripped: PM_SetAmpAsync (36B) */
+/* not in shard or dead-stripped: PM_SetAmp (24B) */
+/* not in shard or dead-stripped: PM_SetAmpGainAsync (36B) */
+/* not in shard or dead-stripped: PMi_GetSoundPower (80B) */
+/* not in shard or dead-stripped: PMi_GetSoundVolume (80B) */
+/* not in shard or dead-stripped: PM_GetAmpGain (60B) */
+/* not in shard or dead-stripped: PMi_PreSleepForDma (148B) */
+/* not in shard or dead-stripped: PM_GoSleepMode (748B) */
+/* not in shard or dead-stripped: PMi_SetLCDPower (504B) */
+/* not in shard or dead-stripped: PMi_GetLCDOffCount (16B) */
+/* not in shard or dead-stripped: PMi_SendLEDPatternCommandAsync (36B) */
+/* not in shard or dead-stripped: PM_GetLEDPatternAsync (44B) */
+/* not in shard or dead-stripped: PMi_ClearList (4B) */
+/* not in shard or dead-stripped: PM_PrependPreSleepCallback (32B) */
+/* not in shard or dead-stripped: PM_AppendPostSleepCallback (32B) */
+/* not in shard or dead-stripped: PM_PrependPostSleepCallback (32B) */
+/* not in shard or dead-stripped: PM_InsertPreSleepCallback (12B) */
+/* not in shard or dead-stripped: PM_InsertPostSleepCallback (12B) */
+/* not in shard or dead-stripped: PM_DeletePreSleepCallback (24B) */
+/* not in shard or dead-stripped: PM_DeletePostSleepCallback (24B) */
+/* not in shard or dead-stripped: PM_ClearPreSleepCallback (20B) */
+/* not in shard or dead-stripped: PM_ClearPostSleepCallback (20B) */
+/* not in shard or dead-stripped: PMi_SetDispOffCount (28B) */
 
 #include "../../lib/NitroSDK/TwlSDK/build/libraries/spi/ARM9/src/pm.c"

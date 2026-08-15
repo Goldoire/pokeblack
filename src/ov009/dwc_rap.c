@@ -74,6 +74,8 @@ void sub_021688FC(void *param0, int param1);
 int sub_0209C0A4(int numerator, int denominator); /* signed divide helper */
 void sub_0216AE88(void);
 void sub_021554C8(void);
+void sub_02155DA4(u32 param0);
+int sub_021AEF44(u32 param0, u8 *param1, int param2);
 void sub_0216B7E0(u8 param0);
 void sub_021567B8(void);
 void sub_021AEE14(int param0);
@@ -873,4 +875,62 @@ void sub_02156344(u16 param0)
     sub_021AF18C((void *)_0215631D);
 
     *(u32 *)(_021A8264 + 0x76C) = 1;
+}
+
+void sub_02155D3C(int param0, int param1, int param2, int param3, int param4)
+{
+#pragma unused(param2, param3)
+    if (param0 == 0) {
+        if (param1 == 0) {
+            sub_02155D2C(param4);
+        } else {
+            sub_02155904();
+        }
+    } else {
+        sub_02155374(14);
+    }
+
+    if (*(u32 *)(_021A8264 + 0x29C) != 0) {
+        (*(void (**)(u32, u32))(_021A8264 + 0x29C))(
+            sub_0216B838(), *(u32 *)(_021A8264 + 0x2A0));
+    }
+}
+
+void sub_02155DCC(u32 param0, u8 *param1, int param2)
+{
+    u32 v0 = param1[0] | (param1[1] << 8 | (param1[3] << 24 | param1[2] << 16));
+
+    if (param0 >= 2) {
+        sub_02034714(_021A1C5C, 0, _021A1C5C);
+    }
+
+    if (param0 < 2) {
+        _021A8264[0x7A8] = 1;
+
+        if ((u8)v0 == 1) {
+            sub_02155DA4(v0);
+            _021A8264[0x79D] = param1[2];
+            _021A8264[0x7A7] = 1;
+        } else if ((u8)v0 == 3) {
+            _021A8264[0x7A6] = 1;
+            return;
+        } else {
+            /* Both arms return, but the comparison is in the ROM. */
+            if (sub_021AEF44(param0, param1, param2) == 0) {
+                return;
+            }
+
+            return;
+        }
+
+        if (sub_0216B838() == 0) {
+            if (*(u32 *)(_021A8264 + 0x27C) != 0) {
+                (*(void (**)(u32, u8 *, u16))(_021A8264 + 0x27C))(
+                    param0, param1 + 4, (u16)(param2 - 4));
+            }
+        } else if (*(u32 *)(_021A8264 + 0x280) != 0) {
+            (*(void (**)(u32, u8 *, u16))(_021A8264 + 0x280))(
+                param0, param1 + 4, (u16)(param2 - 4));
+        }
+    }
 }

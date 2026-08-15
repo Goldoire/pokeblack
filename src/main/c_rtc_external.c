@@ -1,10 +1,12 @@
-/* TwlSDK/TwlSystem lib/NitroSDK/TwlSDK/build/libraries/rtc/ARM9/src/external.c
- * Renamed to sub_<realRAM> per function so verify_functions.py can
- * place them. The retail ARM9 is built with SDK_FINALROM.
+/* lib/NitroSDK/TwlSDK/build/libraries/rtc/ARM9/src/external.c, as linked into the retail ARM9.
+ * Each function is renamed to sub_<realRAM> so verify_functions.py can place
+ * it. SDK_FINALROM is what the retail build used: without it the merged .bss
+ * of a translation unit comes out in a different order and every static
+ * variable offset in the generated code is wrong.
  */
 #define SDK_FINALROM
 
-/* callees outside this TU, from the claim table */
+/* callees outside this file */
 #define PXI_IsCallbackReady                  sub_020885EC
 #define PXI_SetFifoRecvCallback              sub_020885A0
 #define OS_DisableInterrupts                 sub_02087988
@@ -14,6 +16,7 @@
 #define RTCi_ReadRawDateTimeAsync            sub_02088EEC
 #define RTCi_WriteRawStatus2Async            sub_02088F1C
 #define RTC_GetDayOfWeek                     sub_02089274
+
 #define RTC_Init                sub_02088788
 #define RTC_GetDateAsync        sub_020887F4
 #define RTC_GetDate             sub_02088864
@@ -24,30 +27,30 @@
 #define RTC_SetDateTime         sub_02088C14
 #define RtcBCD2HEX              sub_02088E5C
 #define RtcGetResultCallback    sub_02088EC4
-/* stripped or unplaced: RTC_SetDateAsync (132B) */
-/* stripped or unplaced: RTC_SetDate (56B) */
-/* stripped or unplaced: RTC_SetTimeAsync (132B) */
-/* stripped or unplaced: RTC_SetTime (56B) */
-/* stripped or unplaced: RTC_SetDateTimeAsync (164B) */
-/* stripped or unplaced: RTCi_SetRegStatus2Async (204B) */
-/* stripped or unplaced: RTCi_SetRegStatus2 (56B) */
-/* stripped or unplaced: RTCi_SetRegAdjustAsync (148B) */
-/* stripped or unplaced: RTCi_SetRegAdjust (56B) */
-/* stripped or unplaced: RTC_GetAlarmStatusAsync (160B) */
-/* stripped or unplaced: RTC_GetAlarmStatus (56B) */
-/* stripped or unplaced: RTC_GetAlarmParamAsync (164B) */
-/* stripped or unplaced: RTC_GetAlarmParam (56B) */
-/* stripped or unplaced: RTC_SetAlarmInterrupt (16B) */
-/* stripped or unplaced: RTC_SetAlarmStatusAsync (176B) */
-/* stripped or unplaced: RTC_SetAlarmStatus (56B) */
-/* stripped or unplaced: RTC_SetAlarmParamAsync (216B) */
-/* stripped or unplaced: RTC_SetAlarmParam (56B) */
-/* stripped or unplaced: RtcCommonCallback (1088B) */
-/* stripped or unplaced: RtcHEX2BCD (100B) */
-/* stripped or unplaced: RtcCheckAlarmParam (68B) */
-/* stripped or unplaced: RtcMakeAlarmParam (140B) */
-/* stripped or unplaced: RtcCheckDate (200B) */
-/* stripped or unplaced: RtcCheckTime (172B) */
-/* stripped or unplaced: RtcWaitBusy (24B) */
+/* not in shard or dead-stripped: RTC_SetDateAsync (132B) */
+/* not in shard or dead-stripped: RTC_SetDate (56B) */
+/* not in shard or dead-stripped: RTC_SetTimeAsync (132B) */
+/* not in shard or dead-stripped: RTC_SetTime (56B) */
+/* not in shard or dead-stripped: RTC_SetDateTimeAsync (164B) */
+/* not in shard or dead-stripped: RTCi_SetRegStatus2Async (204B) */
+/* not in shard or dead-stripped: RTCi_SetRegStatus2 (56B) */
+/* not in shard or dead-stripped: RTCi_SetRegAdjustAsync (148B) */
+/* not in shard or dead-stripped: RTCi_SetRegAdjust (56B) */
+/* not in shard or dead-stripped: RTC_GetAlarmStatusAsync (160B) */
+/* not in shard or dead-stripped: RTC_GetAlarmStatus (56B) */
+/* not in shard or dead-stripped: RTC_GetAlarmParamAsync (164B) */
+/* not in shard or dead-stripped: RTC_GetAlarmParam (56B) */
+/* not in shard or dead-stripped: RTC_SetAlarmInterrupt (16B) */
+/* not in shard or dead-stripped: RTC_SetAlarmStatusAsync (176B) */
+/* not in shard or dead-stripped: RTC_SetAlarmStatus (56B) */
+/* not in shard or dead-stripped: RTC_SetAlarmParamAsync (216B) */
+/* not in shard or dead-stripped: RTC_SetAlarmParam (56B) */
+/* not in shard or dead-stripped: RtcCommonCallback (1088B) */
+/* not in shard or dead-stripped: RtcHEX2BCD (100B) */
+/* not in shard or dead-stripped: RtcCheckAlarmParam (68B) */
+/* not in shard or dead-stripped: RtcMakeAlarmParam (140B) */
+/* not in shard or dead-stripped: RtcCheckDate (200B) */
+/* not in shard or dead-stripped: RtcCheckTime (172B) */
+/* not in shard or dead-stripped: RtcWaitBusy (24B) */
 
 #include "../../lib/NitroSDK/TwlSDK/build/libraries/rtc/ARM9/src/external.c"

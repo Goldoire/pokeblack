@@ -1,13 +1,14 @@
-/* TwlSDK/TwlSystem lib/TwlSystem/build/libraries/snd/src/stream.c
- * Renamed to sub_<realRAM> per function so verify_functions.py can
- * place them. The retail ARM9 is built with SDK_FINALROM.
+/* lib/TwlSystem/build/libraries/snd/src/stream.c, as linked into the retail ARM9.
+ * Each function is renamed to sub_<realRAM> so verify_functions.py can place
+ * it. SDK_FINALROM is what the retail build used: without it the merged .bss
+ * of a translation unit comes out in a different order and every static
+ * variable offset in the generated code is wrong.
  */
 #define SDK_FINALROM
 
-/* callees outside this TU, from the claim table */
+/* callees outside this file */
 #define NNS_FndInitList                      sub_02060468
 #define NNS_SndUnlockChannel                 sub_02072974
-#define _u32_div_f                           sub_0209C2B8
 #define SND_SetupChannelPcm                  sub_02089660
 #define SND_SetupAlarm                       sub_02089540
 #define NNS_FndAppendListObject              sub_020604AC
@@ -23,6 +24,7 @@
 #define SND_WaitForCommandProc               sub_02089CD4
 #define NNS_SndFreeAlarm                     sub_02072A08
 #define NNS_FndRemoveListObject              sub_020605B4
+
 #define NNS_SndStrmFreeChannel      sub_02073898
 #define NNS_SndStrmSetup            sub_020738C0
 #define NNS_SndStrmStart            sub_02073A60
@@ -34,9 +36,9 @@
 #define StrmCallback                sub_02073BF0
 #define BeginSleep                  sub_02073CA0
 #define EndSleep                    sub_02073CEC
-/* stripped or unplaced: NNS_SndStrmInit (116B) */
-/* stripped or unplaced: NNS_SndStrmAllocChannel (92B) */
-/* stripped or unplaced: NNS_SndStrmSetChannelVolume (84B) */
-/* stripped or unplaced: NNS_SndStrmSetChannelPan (48B) */
+/* not in shard or dead-stripped: NNS_SndStrmInit (116B) */
+/* not in shard or dead-stripped: NNS_SndStrmAllocChannel (92B) */
+/* not in shard or dead-stripped: NNS_SndStrmSetChannelVolume (84B) */
+/* not in shard or dead-stripped: NNS_SndStrmSetChannelPan (48B) */
 
 #include "../../lib/TwlSystem/build/libraries/snd/src/stream.c"

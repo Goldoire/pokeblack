@@ -38,4 +38,18 @@ u32 sub_021E002C(Ov170Ctx *a0)
 {
     Ov170Anim *s = &a0->unk2c->unk58;
 
-    switch 
+    switch (s->unk0c) {
+    case 0:
+        sub_021DE5F8(a0, a0->unk16);
+        s->unk0c++;
+        /* fallthrough */
+    case 1:
+        if (sub_021DD930(a0) == 0) {
+            sub_021DE66C(a0, s->unk08);
+            s->unk0c = 0;
+            return 0;
+        }
+        break;
+    }
+    return 1;
+}

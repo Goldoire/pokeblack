@@ -1,10 +1,12 @@
-/* TwlSDK/TwlSystem lib/NitroSDK/TwlSDK/build/libraries/gx/ARM9/src/gx_load2d.c
- * Renamed to sub_<realRAM> per function so verify_functions.py can
- * place them. The retail ARM9 is built with SDK_FINALROM.
+/* lib/NitroSDK/TwlSDK/build/libraries/gx/ARM9/src/gx_load2d.c, as linked into the retail ARM9.
+ * Each function is renamed to sub_<realRAM> so verify_functions.py can place
+ * it. SDK_FINALROM is what the retail build used: without it the merged .bss
+ * of a translation unit comes out in a different order and every static
+ * variable offset in the generated code is wrong.
  */
 #define SDK_FINALROM
 
-/* callees outside this TU, from the claim table */
+/* callees outside this file */
 #define MIi_DmaCopy16                        sub_020822E8
 #define MIi_CpuCopy16                        sub_02082A60
 #define MIi_DmaCopy32                        sub_02082244
@@ -27,41 +29,42 @@
 #define G2S_GetBG3CharPtr                    sub_0207E388
 #define MIi_DmaCopy32Async                   sub_02082498
 #define MI_WaitDma                           sub_02082594
+
 #define GX_BeginLoadBGExtPltt   sub_0207F308
 #define GX_BeginLoadOBJExtPltt  sub_0207F47C
 #define GXS_BeginLoadOBJExtPltt sub_0207F6A8
-/* stripped or unplaced: GX_LoadBGPltt (100B) */
-/* stripped or unplaced: GXS_LoadBGPltt (92B) */
-/* stripped or unplaced: GX_LoadOBJPltt (92B) */
-/* stripped or unplaced: GXS_LoadOBJPltt (92B) */
-/* stripped or unplaced: GX_LoadOAM (100B) */
-/* stripped or unplaced: GXS_LoadOAM (92B) */
-/* stripped or unplaced: GX_LoadOBJ (100B) */
-/* stripped or unplaced: GXS_LoadOBJ (100B) */
-/* stripped or unplaced: GX_LoadBG0Scr (112B) */
-/* stripped or unplaced: GXS_LoadBG0Scr (112B) */
-/* stripped or unplaced: GX_LoadBG1Scr (112B) */
-/* stripped or unplaced: GXS_LoadBG1Scr (112B) */
-/* stripped or unplaced: GX_LoadBG2Scr (112B) */
-/* stripped or unplaced: GXS_LoadBG2Scr (112B) */
-/* stripped or unplaced: GX_LoadBG3Scr (112B) */
-/* stripped or unplaced: GXS_LoadBG3Scr (112B) */
-/* stripped or unplaced: GX_LoadBG0Char (112B) */
-/* stripped or unplaced: GXS_LoadBG0Char (112B) */
-/* stripped or unplaced: GX_LoadBG1Char (112B) */
-/* stripped or unplaced: GXS_LoadBG1Char (112B) */
-/* stripped or unplaced: GX_LoadBG2Char (112B) */
-/* stripped or unplaced: GXS_LoadBG2Char (112B) */
-/* stripped or unplaced: GX_LoadBG3Char (112B) */
-/* stripped or unplaced: GXS_LoadBG3Char (112B) */
-/* stripped or unplaced: GX_LoadBGExtPltt (116B) */
-/* stripped or unplaced: GX_EndLoadBGExtPltt (64B) */
-/* stripped or unplaced: GX_LoadOBJExtPltt (112B) */
-/* stripped or unplaced: GX_EndLoadOBJExtPltt (60B) */
-/* stripped or unplaced: GXS_BeginLoadBGExtPltt (24B) */
-/* stripped or unplaced: GXS_LoadBGExtPltt (104B) */
-/* stripped or unplaced: GXS_EndLoadBGExtPltt (56B) */
-/* stripped or unplaced: GXS_LoadOBJExtPltt (104B) */
-/* stripped or unplaced: GXS_EndLoadOBJExtPltt (56B) */
+/* not in shard or dead-stripped: GX_LoadBGPltt (100B) */
+/* not in shard or dead-stripped: GXS_LoadBGPltt (92B) */
+/* not in shard or dead-stripped: GX_LoadOBJPltt (92B) */
+/* not in shard or dead-stripped: GXS_LoadOBJPltt (92B) */
+/* not in shard or dead-stripped: GX_LoadOAM (100B) */
+/* not in shard or dead-stripped: GXS_LoadOAM (92B) */
+/* not in shard or dead-stripped: GX_LoadOBJ (100B) */
+/* not in shard or dead-stripped: GXS_LoadOBJ (100B) */
+/* not in shard or dead-stripped: GX_LoadBG0Scr (112B) */
+/* not in shard or dead-stripped: GXS_LoadBG0Scr (112B) */
+/* not in shard or dead-stripped: GX_LoadBG1Scr (112B) */
+/* not in shard or dead-stripped: GXS_LoadBG1Scr (112B) */
+/* not in shard or dead-stripped: GX_LoadBG2Scr (112B) */
+/* not in shard or dead-stripped: GXS_LoadBG2Scr (112B) */
+/* not in shard or dead-stripped: GX_LoadBG3Scr (112B) */
+/* not in shard or dead-stripped: GXS_LoadBG3Scr (112B) */
+/* not in shard or dead-stripped: GX_LoadBG0Char (112B) */
+/* not in shard or dead-stripped: GXS_LoadBG0Char (112B) */
+/* not in shard or dead-stripped: GX_LoadBG1Char (112B) */
+/* not in shard or dead-stripped: GXS_LoadBG1Char (112B) */
+/* not in shard or dead-stripped: GX_LoadBG2Char (112B) */
+/* not in shard or dead-stripped: GXS_LoadBG2Char (112B) */
+/* not in shard or dead-stripped: GX_LoadBG3Char (112B) */
+/* not in shard or dead-stripped: GXS_LoadBG3Char (112B) */
+/* not in shard or dead-stripped: GX_LoadBGExtPltt (116B) */
+/* not in shard or dead-stripped: GX_EndLoadBGExtPltt (64B) */
+/* not in shard or dead-stripped: GX_LoadOBJExtPltt (112B) */
+/* not in shard or dead-stripped: GX_EndLoadOBJExtPltt (60B) */
+/* not in shard or dead-stripped: GXS_BeginLoadBGExtPltt (24B) */
+/* not in shard or dead-stripped: GXS_LoadBGExtPltt (104B) */
+/* not in shard or dead-stripped: GXS_EndLoadBGExtPltt (56B) */
+/* not in shard or dead-stripped: GXS_LoadOBJExtPltt (104B) */
+/* not in shard or dead-stripped: GXS_EndLoadOBJExtPltt (56B) */
 
 #include "../../lib/NitroSDK/TwlSDK/build/libraries/gx/ARM9/src/gx_load2d.c"

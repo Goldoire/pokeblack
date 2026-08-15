@@ -1,12 +1,13 @@
-/* TwlSDK/TwlSystem lib/TwlSystem/build/libraries/snd/src/waveout.c
- * Renamed to sub_<realRAM> per function so verify_functions.py can
- * place them. The retail ARM9 is built with SDK_FINALROM.
+/* lib/TwlSystem/build/libraries/snd/src/waveout.c, as linked into the retail ARM9.
+ * Each function is renamed to sub_<realRAM> so verify_functions.py can place
+ * it. SDK_FINALROM is what the retail build used: without it the merged .bss
+ * of a translation unit comes out in a different order and every static
+ * variable offset in the generated code is wrong.
  */
 #define SDK_FINALROM
 
-/* callees outside this TU, from the claim table */
+/* callees outside this file */
 #define NNS_SndUnlockChannel                 sub_02072974
-#define _ll_udiv                             sub_0209C014
 #define SND_SetupChannelPcm                  sub_02089660
 #define SND_StartTimer                       sub_020894B4
 #define SND_GetCurrentCommandTag             sub_02089D40
@@ -17,14 +18,15 @@
 #define SND_GetChannelStatus                 sub_0208A07C
 #define SND_FlushCommand                     sub_02089B38
 #define SND_WaitForCommandProc               sub_02089CD4
+
 #define NNS_SndWaveOutAllocChannel       sub_02072A44
 #define NNS_SndWaveOutSetVolume          sub_02072C18
 #define NNS_SndWaveOutSetSpeed           sub_02072C40
 #define NNS_SndWaveOutIsPlaying          sub_02072CC4
-/* stripped or unplaced: NNS_SndWaveOutFreeChannel (24B) */
-/* stripped or unplaced: NNS_SndWaveOutStart (300B) */
-/* stripped or unplaced: NNS_SndWaveOutStop (60B) */
-/* stripped or unplaced: NNS_SndWaveOutSetPan (36B) */
-/* stripped or unplaced: NNS_SndWaveOutWaitForChannelStop (120B) */
+/* not in shard or dead-stripped: NNS_SndWaveOutFreeChannel (24B) */
+/* not in shard or dead-stripped: NNS_SndWaveOutStart (300B) */
+/* not in shard or dead-stripped: NNS_SndWaveOutStop (60B) */
+/* not in shard or dead-stripped: NNS_SndWaveOutSetPan (36B) */
+/* not in shard or dead-stripped: NNS_SndWaveOutWaitForChannelStop (120B) */
 
 #include "../../lib/TwlSystem/build/libraries/snd/src/waveout.c"

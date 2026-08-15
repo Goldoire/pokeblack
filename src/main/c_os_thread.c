@@ -1,10 +1,12 @@
-/* TwlSDK/TwlSystem lib/NitroSDK/TwlSDK/build/libraries/os/common/src/os_thread.c
- * Renamed to sub_<realRAM> per function so verify_functions.py can
- * place them. The retail ARM9 is built with SDK_FINALROM.
+/* lib/NitroSDK/TwlSDK/build/libraries/os/common/src/os_thread.c, as linked into the retail ARM9.
+ * Each function is renamed to sub_<realRAM> so verify_functions.py can place
+ * it. SDK_FINALROM is what the retail build used: without it the merged .bss
+ * of a translation unit comes out in a different order and every static
+ * variable offset in the generated code is wrong.
  */
 #define SDK_FINALROM
 
-/* callees outside this TU, from the claim table */
+/* callees outside this file */
 #define OS_GetProcMode                       sub_020879EC
 #define OS_SaveContext                       sub_02085C08
 #define OS_DisableInterrupts                 sub_02087988
@@ -17,6 +19,7 @@
 #define OS_SetAlarm                          sub_0208738C
 #define OS_EnableInterrupts                  sub_02087974
 #define OS_Halt                              sub_020882D0
+
 #define OSi_GetUnusedThreadId               sub_02084FB4
 #define OSi_InsertLinkToQueue               sub_02084FCC
 #define OSi_RemoveLinkFromQueue             sub_02085044
@@ -54,24 +57,24 @@
 #define OS_DisableScheduler                 sub_02085B30
 #define OS_EnableScheduler                  sub_02085B60
 #define OS_SetThreadDestructor              sub_02085B94
-/* stripped or unplaced: OSi_SetSystemCallbackInSwitchThread (16B) */
-/* stripped or unplaced: OS_GetThreadStatus (8B) */
-/* stripped or unplaced: OS_DumpThreadList (4B) */
-/* stripped or unplaced: OS_GetNumberOfThread (60B) */
-/* stripped or unplaced: OS_GetStackStatus (92B) */
-/* stripped or unplaced: OSi_GetSystemStackPointer (20B) */
-/* stripped or unplaced: OSi_GetCurrentStackPointer (8B) */
-/* stripped or unplaced: OS_SetThreadStackWarningOffset (28B) */
-/* stripped or unplaced: OSi_GetIdleThread (32B) */
-/* stripped or unplaced: OS_GetThread (60B) */
-/* stripped or unplaced: OS_GetThreadDestructor (8B) */
-/* stripped or unplaced: OS_SetThreadParameter (8B) */
-/* stripped or unplaced: OS_GetThreadParameter (8B) */
-/* stripped or unplaced: OSi_SetSystemErrno (8B) */
-/* stripped or unplaced: OSi_GetSystemErrno (8B) */
-/* stripped or unplaced: OS_GetErrno (28B) */
-/* stripped or unplaced: OS_IsThreadInList (72B) */
-/* stripped or unplaced: OS_SetThreadDestructorStack (16B) */
-/* stripped or unplaced: OS_GetThreadResource (24B) */
+/* not in shard or dead-stripped: OSi_SetSystemCallbackInSwitchThread (16B) */
+/* not in shard or dead-stripped: OS_GetThreadStatus (8B) */
+/* not in shard or dead-stripped: OS_DumpThreadList (4B) */
+/* not in shard or dead-stripped: OS_GetNumberOfThread (60B) */
+/* not in shard or dead-stripped: OS_GetStackStatus (92B) */
+/* not in shard or dead-stripped: OSi_GetSystemStackPointer (20B) */
+/* not in shard or dead-stripped: OSi_GetCurrentStackPointer (8B) */
+/* not in shard or dead-stripped: OS_SetThreadStackWarningOffset (28B) */
+/* not in shard or dead-stripped: OSi_GetIdleThread (32B) */
+/* not in shard or dead-stripped: OS_GetThread (60B) */
+/* not in shard or dead-stripped: OS_GetThreadDestructor (8B) */
+/* not in shard or dead-stripped: OS_SetThreadParameter (8B) */
+/* not in shard or dead-stripped: OS_GetThreadParameter (8B) */
+/* not in shard or dead-stripped: OSi_SetSystemErrno (8B) */
+/* not in shard or dead-stripped: OSi_GetSystemErrno (8B) */
+/* not in shard or dead-stripped: OS_GetErrno (28B) */
+/* not in shard or dead-stripped: OS_IsThreadInList (72B) */
+/* not in shard or dead-stripped: OS_SetThreadDestructorStack (16B) */
+/* not in shard or dead-stripped: OS_GetThreadResource (24B) */
 
 #include "../../lib/NitroSDK/TwlSDK/build/libraries/os/common/src/os_thread.c"

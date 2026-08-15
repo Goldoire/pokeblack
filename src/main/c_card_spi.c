@@ -7,6 +7,7 @@
 #define SDK_FINALROM
 
 /* callees outside this file */
+#define OS_Sleep                             sub_02085A38
 #define OS_GetTickLo                         sub_02087170
 
 #define CARDi_CommandBegin             sub_0205A11C

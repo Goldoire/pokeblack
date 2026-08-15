@@ -16,6 +16,14 @@ u32 sub_0201134C(ScriptContext *ctx);
 void sub_0207D63C(u32 reg, int plane1, int plane2, int ev1, int ev2); // G2x_SetBlendAlpha_
 void sub_021F8298(u32 a0, u8 a1, u8 a2, u8 a3, u16 a4);
 void sub_021F839C(u32 a0, u32 a1);
+void sub_0204047C(u32 a0, u8 a1);
+
+u32 sub_021FB550(ScriptContext *ctx, BattleAnimScript *work)
+{
+    sub_0204047C(3, (u8)sub_0201134C(ctx));
+    work->unk000 |= 0x10;
+    return work->unk23C;
+}
 
 u32 sub_021FB574(ScriptContext *ctx, BattleAnimScript *work)
 {

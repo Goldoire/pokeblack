@@ -7,7 +7,8 @@
 #define SDK_FINALROM
 
 /* callees outside this file */
-#define GX_BeginLoadTex                      sub_0207F754
+#define MIi_CpuClear32                       sub_02082A7C
+#define GX_BeginLoadTex                      sub_0207F7A0
 #define GX_BeginLoadTexPltt                  sub_0207FA0C
 
 #define NNS_G3dAnmObjCalcSizeRequired sub_02069C14

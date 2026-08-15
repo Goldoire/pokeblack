@@ -1,10 +1,12 @@
-/* TwlSDK/TwlSystem lib/NitroSDK/TwlSDK/build/libraries/snd/common/src/snd_command.c
- * Renamed to sub_<realRAM> per function so verify_functions.py can
- * place them. The retail ARM9 is built with SDK_FINALROM.
+/* lib/NitroSDK/TwlSDK/build/libraries/snd/common/src/snd_command.c, as linked into the retail ARM9.
+ * Each function is renamed to sub_<realRAM> so verify_functions.py can place
+ * it. SDK_FINALROM is what the retail build used: without it the merged .bss
+ * of a translation unit comes out in a different order and every static
+ * variable offset in the generated code is wrong.
  */
 #define SDK_FINALROM
 
-/* callees outside this TU, from the claim table */
+/* callees outside this file */
 #define SNDi_InitSharedWork                  sub_0208A1D0
 #define OS_DisableInterrupts                 sub_02087988
 #define SNDi_GetFinishedCommandTag           sub_0208A1AC
@@ -15,6 +17,7 @@
 #define PXI_SetFifoRecvCallback              sub_020885A0
 #define PXI_IsCallbackReady                  sub_020885EC
 #define OS_IsRunOnEmulator                   sub_02085D24
+
 #define SND_CommandInit          sub_020898A8
 #define SND_RecvCommandReply     sub_02089978
 #define SND_AllocCommand         sub_02089A78
@@ -31,6 +34,6 @@
 #define RequestCommandProc       sub_02089ED8
 #define AllocCommand             sub_02089F00
 #define IsCommandAvailable       sub_02089F48
-/* stripped or unplaced: SND_WaitForFreeCommand (116B) */
+/* not in shard or dead-stripped: SND_WaitForFreeCommand (116B) */
 
 #include "../../lib/NitroSDK/TwlSDK/build/libraries/snd/common/src/snd_command.c"

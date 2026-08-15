@@ -8,8 +8,10 @@
 
 /* callees outside this file */
 #define OS_DisableInterrupts                 sub_02087988
+#define OS_SleepThread                       sub_020857B0
 #define OS_RestoreInterrupts                 sub_0208799C
 #define OS_WakeupThread                      sub_02085800
+#define OS_GetBootType                       sub_02087B04
 #define CARDi_WaitForTask                    sub_02076230
 #define MIi_CpuClearFast                     sub_02082AC0
 #define DC_FlushRange                        sub_020862F0

@@ -1,6 +1,8 @@
-/* TwlSDK/TwlSystem lib/NitroSDK/TwlSDK/build/libraries/os/ARM9/src/os_protectionRegion.c
- * Renamed to sub_<realRAM> per function so verify_functions.py can
- * place them. The retail ARM9 is built with SDK_FINALROM.
+/* lib/NitroSDK/TwlSDK/build/libraries/os/ARM9/src/os_protectionRegion.c, as linked into the retail ARM9.
+ * Each function is renamed to sub_<realRAM> so verify_functions.py can place
+ * it. SDK_FINALROM is what the retail build used: without it the merged .bss
+ * of a translation unit comes out in a different order and every static
+ * variable offset in the generated code is wrong.
  */
 #define SDK_FINALROM
 
@@ -22,19 +24,19 @@
 #define OS_GetProtectionRegion6                         sub_02086DA0
 #define OS_GetProtectionRegion7                         sub_02086DA8
 #define OS_SetProtectionRegionEx                        sub_02086DB0
-/* stripped or unplaced: OS_EnableICacheForProtectionRegion (16B) */
-/* stripped or unplaced: OS_DisableICacheForProtectionRegion (16B) */
-/* stripped or unplaced: OS_GetICacheEnableFlagsForProtectionRegion (8B) */
-/* stripped or unplaced: OS_SetIPermissionsForProtectionRegion (20B) */
-/* stripped or unplaced: OS_GetIPermissionsForProtectionRegion (8B) */
-/* stripped or unplaced: OS_EnableDCacheForProtectionRegion (16B) */
-/* stripped or unplaced: OS_DisableDCacheForProtectionRegion (16B) */
-/* stripped or unplaced: OS_GetDCacheEnableFlagsForProtectionRegion (8B) */
-/* stripped or unplaced: OS_SetDPermissionsForProtectionRegion (20B) */
-/* stripped or unplaced: OS_GetDPermissionsForProtectionRegion (8B) */
-/* stripped or unplaced: OS_EnableWriteBufferForProtectionRegion (16B) */
-/* stripped or unplaced: OS_DisableWriteBufferForProtectionRegion (16B) */
-/* stripped or unplaced: OS_GetWriteBufferEnableFlagsForProtectionRegion (8B) */
-/* stripped or unplaced: OS_GetProtectionRegionParam (24B) */
+/* not in shard or dead-stripped: OS_EnableICacheForProtectionRegion (16B) */
+/* not in shard or dead-stripped: OS_DisableICacheForProtectionRegion (16B) */
+/* not in shard or dead-stripped: OS_GetICacheEnableFlagsForProtectionRegion (8B) */
+/* not in shard or dead-stripped: OS_SetIPermissionsForProtectionRegion (20B) */
+/* not in shard or dead-stripped: OS_GetIPermissionsForProtectionRegion (8B) */
+/* not in shard or dead-stripped: OS_EnableDCacheForProtectionRegion (16B) */
+/* not in shard or dead-stripped: OS_DisableDCacheForProtectionRegion (16B) */
+/* not in shard or dead-stripped: OS_GetDCacheEnableFlagsForProtectionRegion (8B) */
+/* not in shard or dead-stripped: OS_SetDPermissionsForProtectionRegion (20B) */
+/* not in shard or dead-stripped: OS_GetDPermissionsForProtectionRegion (8B) */
+/* not in shard or dead-stripped: OS_EnableWriteBufferForProtectionRegion (16B) */
+/* not in shard or dead-stripped: OS_DisableWriteBufferForProtectionRegion (16B) */
+/* not in shard or dead-stripped: OS_GetWriteBufferEnableFlagsForProtectionRegion (8B) */
+/* not in shard or dead-stripped: OS_GetProtectionRegionParam (24B) */
 
 #include "../../lib/NitroSDK/TwlSDK/build/libraries/os/ARM9/src/os_protectionRegion.c"

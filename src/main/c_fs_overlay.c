@@ -7,6 +7,7 @@
 #define SDK_FINALROM
 
 /* callees outside this file */
+#define OS_GetBootType                       sub_02087B04
 #define FS_FindArchive                       sub_02077EB8
 #define IC_InvalidateRange                   sub_0208632C
 #define DC_InvalidateRange                   sub_020862B8

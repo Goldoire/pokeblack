@@ -10,7 +10,9 @@
 #define OS_DisableInterrupts                 sub_02087988
 #define OS_WakeupThread                      sub_02085800
 #define OS_RestoreInterrupts                 sub_0208799C
+#define OS_GetThreadPriority                 sub_02085A30
 #define OS_SetThreadPriority                 sub_02085988
+#define OS_SleepThread                       sub_020857B0
 #define OS_WakeupThreadDirect                sub_02085868
 
 #define CARDi_ExecuteOldTypeTask  sub_02076170
