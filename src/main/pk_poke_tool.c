@@ -40,9 +40,9 @@ u32 sub_02018DB4(Pokemon *mon, int attr, void *dest);
 u32 sub_02018E34(BoxPokemon *boxMon, int attr, void *dest);
 void sub_02019308(Pokemon *mon, int attr, u32 value);
 void sub_02019388(BoxPokemon *boxMon, int attr, u32 value);
-void sub_02019A50(void *data, u32 size, u32 seed);
+void sub_02019A50(u16 *data, u32 size, u32 seed);
 u16 sub_02019A7C(u32 *seed);
-u16 sub_02019A9C(void *data, u32 size);
+u16 sub_02019A9C(u16 *data, u32 size);
 BOOL sub_02019ABC(BoxPokemon *boxMon);
 void *sub_02019C38(BoxPokemon *boxMon, u32 pid, u8 which);
 
@@ -72,7 +72,7 @@ void sub_02017528(Pokemon *mon)
 {
     MIi_CpuClearFast(0, mon, sizeof(Pokemon));
     sub_02019A50(mon->box.substructs, BOX_BLOCK_SIZE, mon->box.checksum);
-    sub_02019A50(&mon->party, sizeof(PartyPokemon), mon->box.pid);
+    sub_02019A50((u16 *)&mon->party, sizeof(PartyPokemon), mon->box.pid);
 }
 
 void sub_02017550(BoxPokemon *boxMon)
@@ -89,7 +89,7 @@ BOOL sub_02017D30(Pokemon *mon)
         locked = TRUE;
         mon->box.partyDecrypted = locked;
         mon->box.boxDecrypted = TRUE;
-        sub_02019A50(&mon->party, sizeof(PartyPokemon), mon->box.pid);
+        sub_02019A50((u16 *)&mon->party, sizeof(PartyPokemon), mon->box.pid);
         sub_02019A50(mon->box.substructs, BOX_BLOCK_SIZE, mon->box.checksum);
     }
     return locked;
@@ -103,7 +103,7 @@ BOOL sub_02017D70(Pokemon *mon, BOOL locked)
         mon->box.partyDecrypted = FALSE;
         mon->box.boxDecrypted = FALSE;
         prev = TRUE;
-        sub_02019A50(&mon->party, sizeof(PartyPokemon), mon->box.pid);
+        sub_02019A50((u16 *)&mon->party, sizeof(PartyPokemon), mon->box.pid);
         mon->box.checksum = sub_02019A9C(mon->box.substructs, BOX_BLOCK_SIZE);
         sub_02019A50(mon->box.substructs, BOX_BLOCK_SIZE, mon->box.checksum);
     }
@@ -250,7 +250,7 @@ BOOL sub_02018D10(Pokemon *mon)
 {
     BOOL ret = TRUE;
     if (!mon->box.partyDecrypted) {
-        sub_02019A50(&mon->party, sizeof(PartyPokemon), mon->box.pid);
+        sub_02019A50((u16 *)&mon->party, sizeof(PartyPokemon), mon->box.pid);
         ret = sub_02018D34(&mon->box);
     }
     return ret;
@@ -274,7 +274,7 @@ BOOL sub_02018D34(BoxPokemon *boxMon)
 void sub_02018D6C(Pokemon *mon)
 {
     if (!mon->box.partyDecrypted) {
-        sub_02019A50(&mon->party, sizeof(PartyPokemon), mon->box.pid);
+        sub_02019A50((u16 *)&mon->party, sizeof(PartyPokemon), mon->box.pid);
         sub_02018D8C(&mon->box);
     }
 }

@@ -1,5 +1,10 @@
 /*
- * Party container.  main, 0x0201A918..0x0201AB32.
+ * pokeparty.c -- the Party container.  main, 0x0201A918..0x0201AE10.
+ * (main_tu_map.json puts the TU start at 0x0201A944, but that is the address
+ *  of the first *literal-pool word* referencing "pokeparty.c"; the two
+ *  functions before it, 0x0201A918 and 0x0201A920, are Party_GetSize and
+ *  Party_New and the pool word at 0x0201A944 is inside Party_New's own pool.
+ *  Real TU start is 0x0201A918.)
  * Compiler: repo default (dsi/1.1), Thumb.
  */
 #include "types.h"
@@ -16,6 +21,7 @@ void sub_0201A954(Party *party, int maxCount);
 int sub_0201AA18(Party *party);
 Pokemon *sub_0201AB28(Party *party, int idx);
 
+// "pokeparty.c" -- the debug allocator's __FILE__ argument
 extern const char _020A7304[];
 
 u32 sub_0201A918(void)

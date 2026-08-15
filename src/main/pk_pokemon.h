@@ -99,7 +99,7 @@ typedef struct BoxPokemon {
                u16 boxDecrypted : 1;
                u16 checksumFail : 1;
     /* 0x06 */ u16 checksum;
-    /* 0x08 */ u32 substructs[BOX_BLOCK_SIZE / 4];
+    /* 0x08 */ u16 substructs[BOX_BLOCK_SIZE / 2];
 } BoxPokemon;
 
 typedef struct PartyPokemon {
