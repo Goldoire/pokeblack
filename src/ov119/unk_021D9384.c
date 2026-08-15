@@ -45,6 +45,17 @@ void sub_021D93AC(u32 a0, u32 a1, const u8 *a2, PokemonTradeWork *work, u32 a4)
     }
 }
 
+/* Three net handlers whose body is empty but whose netId guard survives.  The
+ * `return;` is load-bearing: with a plain empty `if` body mwcc deletes the
+ * compare and the load of the stack argument and the function is 8 bytes. */
+void sub_021D93D4(u32 a0, u32 a1, const u8 *a2, PokemonTradeWork *work, u32 a4)
+{
+    if (a4 != sub_020399A8())
+    {
+        return;
+    }
+}
+
 void sub_021D93E0(u32 a0, u32 a1, const u8 *a2, PokemonTradeWork *work, u32 a4)
 {
     if (a4 == sub_020399A8())
@@ -53,6 +64,22 @@ void sub_021D93E0(u32 a0, u32 a1, const u8 *a2, PokemonTradeWork *work, u32 a4)
         {
             work->unk_0FA0 = *a2;
         }
+    }
+}
+
+void sub_021D9404(u32 a0, u32 a1, const u8 *a2, PokemonTradeWork *work, u32 a4)
+{
+    if (a4 != sub_020399A8())
+    {
+        return;
+    }
+}
+
+void sub_021D9410(u32 a0, u32 a1, const u8 *a2, PokemonTradeWork *work, u32 a4)
+{
+    if (a4 != sub_020399A8())
+    {
+        return;
     }
 }
 

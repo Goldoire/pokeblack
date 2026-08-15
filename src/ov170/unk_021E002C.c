@@ -53,3 +53,31 @@ u32 sub_021E002C(Ov170Ctx *a0)
     }
     return 1;
 }
+
+/* The `+ 0x1E` has to be folded into the initialiser of `n`, not written at the
+ * call site: with `sub_021DE158(a0, a0->unk16, n + 0x1E)` mwcc schedules
+ * `adds r0,r5,#0` ahead of `adds r2,#0x1e` and the two argument-setup
+ * instructions come out swapped (88/92). */
+u32 sub_021E0068(Ov170Ctx *a0)
+{
+    Ov170Anim *s = &a0->unk2c->unk58;
+    u32 n;
+
+    switch (s->unk0c) {
+    case 0:
+        n = sub_0201AA18(a0->unk00->unk08) + 0x1E;
+        sub_021DE158(a0, a0->unk16, n);
+        sub_021ED6E4(a0, 0);
+        s->unk0c++;
+        break;
+    case 1:
+        if (sub_021DD930(a0) == 0) {
+            sub_021DE66C(a0, s->unk08);
+            sub_020061E4(0x667);
+            s->unk0c = 0;
+            return 0;
+        }
+        break;
+    }
+    return 1;
+}

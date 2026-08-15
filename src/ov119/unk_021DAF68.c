@@ -31,8 +31,6 @@ u32 sub_021DC894(void *a0, u32 a1, PokemonTradeSub *a2, PokemonTradeWork *a3,
                  u32 a4);
 void sub_021DCBA4(PokemonTradeSub *a0, PokemonTradeWork *a1);
 
-s32 sub_021DB4B4(s32 a0);
-
 void sub_021D9C00(PokemonTradeWork *work);
 void sub_021DB164(PokemonTradeWork *work);
 void sub_021DB290(PokemonTradeWork *work);
@@ -107,6 +105,29 @@ void sub_021DB2E8(PokemonTradeWork *work)
     {
         sub_021D8E84(work, sub_021DB290);
     }
+}
+
+/* `t` has to be *reused* for the remainder.  With a separate `r` local mwcc
+ * leaves the remainder in r1 and accumulates in r2; the ROM copies it out with
+ * `adds r5,r1,#0` into t's register and accumulates in r1 (38/54).
+ * Both operands are signed, so this is _s32_div_f (0x0209C0A4), twice. */
+s32 sub_021DB4B4(s32 a0)
+{
+    s32 t;
+    s32 q;
+
+    if (a0 == 0)
+    {
+        return 0;
+    }
+    if (a0 == 1)
+    {
+        return 0x30;
+    }
+    t = a0 - 2;
+    q = t / 6;
+    t = t % 6;
+    return q * 0xA0 + 0x60 + t * 0x1A;
 }
 
 u32 sub_021DB4EC(PokemonTradeWork *work, s32 a1)

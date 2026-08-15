@@ -235,97 +235,174 @@ whose 49 functions all match.
 
 ## Reconciled worker structs
 
-Six struct names were declared in more than one file. All are now single
-definitions; **delete the local copies** and include the header instead.
+Twenty-five struct names were declared in more than one file, across eight
+modules. All are now single definitions. **Delete the local copies and include
+the header**, otherwise the local one wins the quoted-include search and the
+promotion does nothing.
 
-### `include/ov114.h` — socket / connection library (`verify_functions.py ov114`: 49/49 OK)
+| header | what it covers | evidence |
+|---|---|---|
+| `heap.h` | GameFreak heap layer | read-from-ROM, every offset cited |
+| `main_types.h` | `MainRec` `MainSub` `Unk020AA1AC` `Unk020A9E80` `Unk020AA260` `Fifo` | main-A / main-B, all files N/N OK |
+| `ov009.h` | `Ov009RapAlloc` | dwc_rapcommon.c, 64/64 OK |
+| `ov010.h` | `Ov010Record` `Ov010Vtable` `Ov010Sub88` | 4 files, 76 functions, all OK |
+| `ov093.h` | `BattleSystem` `BattleCore` `BattleOrderList` `BattleSlot*` | 61 functions, all OK |
+| `ov094.h` | `AnimMgr` `AnimSprite` `BattleAnimSys` `BattleAnimScript` `AnimVec3` +4 | 21 files |
+| `ov114.h` | `Ov114Mgr` `Ov114Ctx` `Ov114Entry` `Ov114Sock` `Ov114Sess` `Ov114Buffer` +9 | 9 files, 49+ OK |
+| `ov119.h` | `PokemonTradeWork` | promoted verbatim |
+| `ov135.h` | `WorldTradeWork` `WorldTradeSlot` `WorldTradeAdapter` | promoted verbatim |
+| `ov170.h` | `Ov170Ctx` `Ov170Panel` `Ov170Anim` `Ov170Save` `Ov170Sub00` +4 | 40 files, 51/51 OK |
 
-Renamed, because `Lock`/`Mgr`/`Entry`/`Sock`/`Ctx`/`Conn`/`Handle` are far too
-generic for a header shared by 238 modules — ov009 is also networking code and
-will want `Sock`:
+Every size and every load-bearing offset above is checked by a static
+assertion in a scratch TU that compiles clean in **both ARM and Thumb**.
 
-| worker name | header name |
+### The merges that changed something
+
+Most apparent conflicts were not conflicts: one file wrote `u8 unk00[0x70]`
+and another `u8 unk00[0x74]` because they cared about different later fields.
+These are the ones where the merge produced knowledge no single file had.
+
+- **`Ov114Buffer` — three names, one object.** `Node` (unk_021B9D8C.c),
+  `Pool` (unk_021BEC74.c) and the large `Conn` (unk_021BF184.c) all put a
+  32-bit counter at `+0x8048` and contradict each other nowhere. `Node`'s
+  reading explains the whole shape — a 0x40 header, a 0x8000-byte data area,
+  then cursor / available / refcount — and `Conn`'s named fields at
+  `+0x00..+0x18` all land inside `Node`'s opaque header. Three files were each
+  carrying a partial view of the same 32 KB buffer node. (The *small* `Conn`,
+  0x2C, is a genuinely different object and is `Ov114Conn`.)
+- **`AnimMgr` — arithmetic settled it, not the vote.** Six files put
+  `sprites[14]` at `+0x008` behind `u32 unk000; void *unk004`, one at `+0x000`.
+  With the array at `+0x008` it ends at `0x510`, exactly where another file
+  reads a bitfield word, and the layout closes with no unexplained filler; the
+  `+0x000` reading needs a 12-byte hole and leaves `0x510` unaccounted for.
+  The tail is self-checking too: `0x542 + 7*14 == 0x5A4`, the struct end, one
+  byte per sprite per row.
+- **`Ov170Anim` — the merge added a field.** Three files declare
+  `u8 unk00[8]` at the front; `unk_021E2020.c` separately declares
+  `u32 (*unk58)(void *)` on the panel at `+0x58`, which is exactly where that
+  opaque run begins. Both files match, so the first word of the "filler" is a
+  callback.
+- **`Ov010Record` — four files, one record.** The join is
+  `src/ov010/unk_0216D910.c`, which passes one pointer to both accessor
+  families (`sub_0216D4D4` reads `+0x00`, `sub_0216D67C` reads `+0x88`) in the
+  same byte-exact function. Flagged in the header as the one claim here
+  carrying risk: that file spells the parameter `void *`, so the compiler
+  never checked the identification. The offsets themselves are all proven.
+- **`Ov170Ctx+0x00` — left unresolved, on purpose.** Eight files type it
+  `Ov170Sub00 *`, three `Ov170Save *`. Neither pointee contradicts the other,
+  and they are probably the same object read at two depths — but nothing
+  proves it, so the pointer takes the majority type and `Ov170Save` stays a
+  separate declaration. Cast at the three call sites.
+
+### Upgrades: worker byte-runs replaced by SDK types
+
+Each of these turns a layout that rested on transcription into one that is
+verified by construction. All were confirmed by static assertion first.
+
+- `Ov114Lock`: `u8 mutex[0x18]; u32 queueHead; u32 queueTail` **is**
+  `OSMutex` + `OSThreadQueue`, and `&lock->mutex` goes to `OS_InitMutex`.
+- `AnimVec3` / `Vec3` / `UnkVec3`: all three **are** `VecFx32` — the type is
+  passed to `sub_0206DF3C`, i.e.
+  `NNS_G3dWorldPosToScrPos(const VecFx32 *, int *, int *)`.
+- `TPData` in `src/main/b_unk_020358a0.c` is byte-for-byte the SDK's own
+  `TPData`; redeclaring it is a hard compile error once `global.h` is in.
+
+And one upgrade **declined**: `Ov114Worker::thread` is `u8 thread[0xB4]` in the
+matched code, but `sizeof(OSThread)` is `0xC0`. Swapping the type in would
+assert a size the evidence does not support. Recorded, not resolved.
+
+### Actions for workers
+
+| file | change |
 |---|---|
-| `Lock` | `Ov114Lock` |
-| `Mgr` | `Ov114Mgr` |
-| `Entry` | `Ov114Entry` |
-| `Sock` | `Ov114Sock` |
-| `Ctx` | `Ov114Ctx` |
-| `Conn` | `Ov114Conn` |
-| `Handle` | `Ov114Handle` |
+| `src/ov094/btlv_effvm_021FB034.c` | rename `UnkVec3` → `AnimVec3` |
+| `src/main/b_unk_020358a0.c` | delete local `TPData`; the SDK's is in scope |
+| `src/ov135/*.c` | `#include "worldtrade.h"` → `"ov135.h"`, delete the private header |
+| `src/ov119/*.c` | `#include "pokemontrade.h"` → `"ov119.h"`, delete the private header |
+| ov114 | `Lock`→`Ov114Lock`, `Mgr`→`Ov114Mgr`, `Entry`→`Ov114Entry`, `Sock`→`Ov114Sock`, `Ctx`→`Ov114Ctx`, `Handle`→`Ov114Handle`, `Sess`→`Ov114Sess`, `Node`/`Pool`/big `Conn`→`Ov114Buffer`, small `Conn`→`Ov114Conn` |
+| ov170 | four files name fields at panel `+0x60/+0x68/+0x6C`, which fall inside the `Ov170Anim` now embedded at `+0x58`. Reach them through `panel->anim`; do not re-add overlapping fields. |
 
-- **`Lock`** — both files identical, safe merge. *Upgraded*: the workers' `u8
-  mutex[0x18]; u32 queueHead; u32 queueTail;` is exactly the SDK's `OSMutex`
-  (0x18) followed by `OSThreadQueue` (0x08), so the real types are used and the
-  0x24 size is now verified by construction. All four offsets PROVEN.
-- **`Mgr`** — *the one real conflict.* `unk_021BE8E8.c` had `void *ctx` at
-  `+0x04`, `unk_021BEC74.c` had `Ctx *ctx`. Resolved to the **typed** form:
-  `unk_021BEC74.c` is the file that constructs and walks the context
-  (`sub_021BEF08` / `sub_021BEEC4`), so it is the one with information; `void *`
-  was the other file's shrug. Both files still compile, because a typed pointer
-  converts to a `void *` parameter freely.
-- **`Entry`** — length disagreement, not an offset disagreement: 0x24 vs 0x30.
-  Strict superset, longer wins. `unk_10`/`unk_14` typed `Ov114Sock *`.
+## Claim-table reconciliation (wave 2)
 
-### `include/ov170.h` — menu / panel overlay (`verify_functions.py ov170`: 51/51 OK)
+Two tools, both idempotent, both dry-run by default:
 
-- **`Ov170Ctx`** — both files identical. `unk2c` (+0x2C) PROVEN.
-- **`Ov170Panel`** — superset/subset, not a contradiction: the two-field
-  version is `u8 unk00[0x74]; void *unk74;`, i.e. the five-field version with
-  `+0x70` folded back into the leading filler. Five-field form wins; nothing
-  is lost.
-  **`+0x74` is confirmed twice**: by the 51/51 match, and independently by
-  `evidence.py --module ov170`, which reports `run 0x021ef670..0x021ef68c
-  (2 functions) +0x074:4B` — a 4-byte access at a constant `+0x74` off an
-  untouched argument register, inside functions that matched.
-  `+0x70` and `+0xA168` are PROVEN by match only. The 41200-byte `unk78`
-  filler is INFERRED — the claim being made is the `0xA168` offset, not that
-  the region between is one object.
+**`tools/scripts/recover_starts.py`** recovers real function boundaries. The
+claim table came from a prologue heuristic and systematically fuses adjacent
+functions that do not open with a recognisable prologue -- `0x0202FBAC` is one
+116-byte entry and is really four 36-byte accessors. Generalises ov093's
+`build/attempts/ov093/recover_starts.py` to all 238 modules, and grades the
+evidence instead of pooling it:
 
-### `include/ov094.h` — battle animation script commands (`verify_functions.py ov094/anim_scrcmd`: 26/26 OK)
+| tier | evidence | found |
+|---|---|---|
+| `verified` | a byte-exact hand match at that address | 704 |
+| `sdk` | a byte-exact SDK/NNS sweep placement | 84 |
+| `callsite` | a BL/BLX target | 6595 |
+| `ptr` | an odd (Thumb-flagged) word-aligned pointer into the module | 1236 |
 
-- **`BattleAnimScript`** — declared in all four files; a typing difference
-  only, every named offset agreed. Three files had a flat
-  `pad_008[0x238-0x008]`; `anim_scrcmd_021FB6F4.c` split it into
-  `pad_008[0xCC-0x08]` + `void *unk0CC[(0x238-0x0CC)/4]` because that file
-  indexes the pointer table. Split version wins — strictly more informative,
-  identical layout.
-  `unk000`, `unk004`, `unk0CC[]`, `unk23C` PROVEN. **`unk238`/`unk23A` are
-  INFERRED**: nothing touches them, only their combined 4 bytes matter (they
-  place `unk23C` at `0x23C`). Do not build on that split.
-- **`AnimVec3`** — two files agreed on `{s32 x, y, z}`; the third declared the
-  same shape as `UnkVec3` with `u32`. *Upgraded*: `anim_scrcmd_021FB6F4.c`
-  passes one to `sub_0206DF3C`, which is
-  `NNS_G3dWorldPosToScrPos(const VecFx32 *, int *, int *)`. So this type **is**
-  the SDK's `VecFx32`, and the header aliases it — layout verified by
-  construction rather than by two workers agreeing.
-  **Action:** `anim_scrcmd_021FB034.c` should rename `UnkVec3` → `AnimVec3`.
-- **`BattleAnimScript`** was also flagged with "0 fields" in three files —
-  that was the scraper not parsing the `/* 0x000 */` comment style, not a
-  forward declaration.
-- **`ScriptContext`** stays opaque and moved to `gf_fwd.h`: the script VM is in
-  `main` (`sub_0201134C` is `ScriptReadWord`), so it is shared, not ov094's.
+The callsite scan follows `callsite_modes.py`'s discipline, **not** the ov093
+script's: only bytes inside a known code extent are decoded, and only in that
+extent's recorded mode. Scanning a module image linearly as Thumb mines rodata
+for phantom branches, and a phantom start is not free -- it splits a real
+function and makes both halves unmatchable. Three further guards: a candidate
+strictly inside a *verified* function is dropped (we know that extent), a
+candidate inside a `status: "data"` row is dropped, and candidates must be
+2-byte aligned and inside the image.
 
-Single-file types folded into the same headers so each module has one home:
-`Ov170Rec12`, `AnimPoint16`, `AnimParamsA18`, `Ov114Conn`.
+**`tools/scripts/reconcile.py`** sets `status` from verifier output only:
+verified N/N → `matched:<module>/<file>`; a verified address with no row gets
+one; a `matched:` row that stops verifying is demoted to `unclaimed` and
+reported. `matched_sdk`, `claimed:*` and `data` are never touched unless they
+verify. Nothing is marked matched on bookkeeping.
 
-All of the above is compile-checked in both ARM and Thumb with static
-assertions on every size and every load-bearing offset.
+Both shrink a fused parent to end where a new child begins, so the same bytes
+are never double-counted.
 
----
+Result: **23,400 → 32,071 rows**, 3,780 fused rows shrunk, 0 overlapping rows,
+0 rows past a module end, 0 schema violations.
 
-## Claim-table reconciliation
+### Rows marked `data`
 
-`build/reference/functions.json` is rewritten from verifier output only, by
-`build/scratch/reconcile.py` (dry run by default, `--write` to apply):
+`status: "data"` in the claim table is an explicit declaration that a row is
+not code, and `triage.py` now honours it (a three-line change; it previously
+derived `kind` from bytes alone). This is the durable place to record it --
+`triage.json` is regenerated from the claim table, so a correction recorded
+only in `triage.json` is lost on the next run.
 
-- verified N/N → `status: "matched:<module>/<file>"`, naming the source file
-  that produced it;
-- a verified address the table does not list as a function start gets a new
-  row, and the row it was fused into is **shrunk** to end where it begins, so
-  the same bytes are not counted twice;
-- a `matched:` row that stops verifying is demoted to `unclaimed` and reported;
-- `matched_sdk` and `claimed:*` rows are never touched unless they verify.
+- `ov170 0x021EF770` (7376 B)
+- `ov094 0x02209F30` (4080 B) -- its first words are a jump table of odd
+  (Thumb) function pointers, so `classify()` saw clean Thumb and called it
+  code. The verifier was then stamping Thumb bits into ABS32 words pointing
+  into the block.
 
-Nothing is marked matched on bookkeeping. `python tools/scripts/progress.py`
-remains the authority.
+**After any `triage.py` run, re-run `python tools/scripts/callsite_modes.py
+--apply`** -- regeneration drops its derived entries.
+
+### Names corrected in the claim table
+
+`verify_functions.py` resolves friendly names to addresses via `symbols.txt`
+first, then the claim table. A wrong name silently retargets every call that
+uses it -- and the relocation still verifies, against the wrong target. These
+were wrong (found by main-C):
+
+| name | was on | is |
+|---|---|---|
+| `PXI_Init` | only in ov114/ov125 (main's copy was `FUN_02088498`) | `0x02088498` |
+| `FSi_GetFilePositionIfProc` | `0x0207A528` | `0x0207A568` |
+| `FSi_GetFileLengthIfProc` | absent | `0x0207A528` |
+| `RtcSendPxiCommand` | `0x02088F2C` | `0x02084614` |
+| `MicWaitBusy` | `0x02088ED4` | `0x0208B798` |
+| `FX_DivAsync` | `0x0207C930` | `0x0207C8A0` (was `FX_InvAsync`) |
+
+Five stale duplicates were renamed to `sub_XXXXXXXX` so no wrong mapping
+survives.
+
+`PXI_Init` exposed a **whole class** of this bug: overlays link their own
+copies of the SDK under the same names, and `_named()` is one global
+name → address map, so any duplicated SDK name was a coin flip. `symbols.txt`
+is now generated main-first — 24 names deduped to main's copy, and the 2 that
+exist only in overlays are omitted rather than guessed, because the name does
+not identify one address. Call those by `sub_<addr>`.
+
+`0x02004490` is triaged `arm` but the ROM calls it with `BLX`, so it is Thumb;
+`callsite_modes.py --apply` is what fixes that class and it has been re-run.

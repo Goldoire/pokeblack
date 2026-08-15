@@ -37,6 +37,7 @@ u32 sub_021D8ADC(PokemonTradeWork *work, u8 a1);
 void sub_020307B0(void *a0);
 s32 sub_0201293C(void *a0);
 s32 sub_021DD21C(PokemonTradeWork *work);
+void sub_021E2A1C(PokemonTradeWork *work, u32 a1, u32 a2);
 void *sub_02012934(void *a0);
 s32 sub_0201AA18(void *a0);
 s32 sub_02007984(s32 a0);
@@ -141,6 +142,18 @@ void sub_021DD174(PokemonTradeWork *work)
                 work->unk_0FD8[j][i] = NULL;
             }
         }
+    }
+}
+
+/* The two extra arguments have to be forwarded to the callee: only then are r1
+ * and r2 live across the field load, which is what pushes the 0x118C offset
+ * temp into r3.  Dropping them (or declaring sub_021E2A1C with one parameter)
+ * frees r1 and mwcc loads the offset there instead -- 17/20. */
+void sub_021DD294(PokemonTradeWork *work, u32 a1, u32 a2)
+{
+    if (work->unk_118C == 3)
+    {
+        sub_021E2A1C(work, a1, a2);
     }
 }
 

@@ -1,8 +1,9 @@
-#include "types.h"
+#include "ov093/battle.h"
 
-// Small ordered pointer list used by the battle engine: six slots plus a
-// one-byte length at 0x18.  sub_021B9C24 rotates a slot to the end, which is
-// how a finished entry is retired without disturbing the order of the rest.
+// ov093 0x021b9ac8..0x021b9c24: the small ordered pointer list the battle
+// engine keeps per side -- six slots plus a one-byte length at 0x18.
+// sub_021B9C24 rotates a slot to the end, which is how a finished entry is
+// retired without disturbing the order of the rest.
 typedef struct UnkList021B9B40 {
     /* 0x00 */ void *entries[6];
     /* 0x18 */ u8 count;
@@ -17,16 +18,6 @@ typedef struct UnkOwner021B9AEC {
     /* 0x00 */ u32 unk_00;
     /* 0x04 */ UnkItem021B9AEC items[1];
 } UnkOwner021B9AEC;
-
-// Only the two fields this file needs; see src/ov093/unk_021B8548.c for the
-// rest of the layout.
-typedef struct BattleSystem {
-    /* 0x000 */ void *core;
-    /* 0x004 */ u8 unk_004[0x00C];
-    /* 0x010 */ void *unk_010[4];
-    /* 0x020 */ u8 unk_020[0x44E];
-    /* 0x46E */ u8 unk_46E;
-} BattleSystem;
 
 BOOL sub_021B8B9C(BattleSystem *bsys, u8 a1);
 void sub_021CD9F4(void *a0, void *a1);

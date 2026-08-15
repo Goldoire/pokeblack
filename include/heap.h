@@ -130,18 +130,29 @@ typedef struct HeapInfo {
  *                      0x0203016C/0x02030178 compared against 0x194E on free
  *                      0x02030204 strh 0x194D (magic - 1) to poison on free
  *
- * +0x04 .. +0x1B are NOT identified. Twenty-four bytes is a lot of slack --
- * most likely gen 5's alloc tracking (file/line/size/tag) -- but nothing in
- * this file reads or writes them, so do not guess. Leave the filler alone.
+ * +0x04 .. +0x17 RESOLVED (wave 2). The earlier note guessed "most likely gen
+ * 5's alloc tracking"; it is exactly that, and the offsets are now read out of
+ * the ROM rather than guessed. ov009's dwc_rap block calls a five-argument
+ * allocator, Heap_AllocTagged (0x02030734), whose last two arguments are
+ * __FILE__ and __LINE__. It hands them to Heap_SetBlockTag (0x02030880):
+ *
+ *   0x020304C0  sub r0,r0,#0x1c ; add r0,r0,#4 ; bx lr   -- &header->file
+ *   0x02030894  ldrsb/strb loop, `cmp r2,#0x12` bound    -- 18-byte copy
+ *   0x020308B0  strh r4, [r0, #0x12]                     -- line, at tag+0x12
+ *
+ * so the filename occupies header+0x04..+0x15 and the line number sits at
+ * header+0x16. Only +0x18..+0x1B remain unaccounted for.
  * ------------------------------------------------------------------------- */
 #define HEAP_BLOCK_MAGIC       0x194E
 #define HEAP_BLOCK_MAGIC_FREED 0x194D
 
 typedef struct MemBlockHeader {
-    u16 heapID;       // +0x00 VERIFIED
-    u16 magic;        // +0x02 VERIFIED
-    u8 filler_04[24]; // +0x04 UNKNOWN, untouched by the heap layer itself
-} MemBlockHeader;     // 0x1C
+    u16 heapID;        // +0x00 VERIFIED
+    u16 magic;         // +0x02 VERIFIED
+    char file[0x12];   // +0x04 VERIFIED -- __FILE__, 18 bytes, NUL-truncated
+    u16 line;          // +0x16 VERIFIED -- __LINE__
+    u8 filler_18[4];   // +0x18 UNKNOWN -- the only part still unexplained
+} MemBlockHeader;      // 0x1C
 
 /* ---------------------------------------------------------------------------
  * struct HeapParam -- the template table passed to Heap_InitSystem.
@@ -220,6 +231,33 @@ BOOL sub_02030164(void *ptr);
  */
 BOOL sub_02030238(NNSFndAllocator *pAllocator, HeapID heapID, int alignment);
 #define Heap_InitAllocator sub_02030238
+
+/*
+ * The tagged allocator every GameFreak call site actually uses. Found via
+ * ov009's dwc_rap block, which calls it directly:
+ *
+ *   void *Heap_AllocTagged(HeapID heapID, u32 size, BOOL zero,
+ *                          const char *file, u16 line);
+ *
+ * It calls Heap_Alloc, stamps file/line into the block header via
+ * Heap_SetBlockTag, registers the block, and clears it when `zero` is set
+ * (OSi_CpuClear32). `line` is passed on the stack at [sp,#0x18], so it is the
+ * fifth argument -- do not drop it.
+ */
+void *sub_02030734(HeapID heapID, u32 size, BOOL zero, const char *file, u16 line);
+#define Heap_AllocTagged sub_02030734
+
+/* MemBlockHeader *Heap_GetBlockTag(void *ptr) -- ptr - 0x1C + 4 */
+char *sub_020304C0(void *ptr);
+#define Heap_GetBlockTag sub_020304C0
+
+/* void Heap_SetBlockTag(void *ptr, const char *file, u16 line) */
+void sub_02030880(void *ptr, const char *file, u16 line);
+#define Heap_SetBlockTag sub_02030880
+
+/* BOOL Heap_IsValidID(HeapID heapID) -- bounds check + handle lookup */
+BOOL sub_020304CC(HeapID heapID);
+#define Heap_IsValidID sub_020304CC
 
 /*
  * 0x020302A4. Also does `sub r7, r0, #0x1c`, so it takes a user pointer and
