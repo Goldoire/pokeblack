@@ -15,12 +15,16 @@ typedef struct BattleAnimScript
     /* 0x23C */ u32 unk23C;
 } BattleAnimScript;
 
-typedef struct UnkVec3
+/* Same object as every other btlv file's AnimVec3, which include/ov094.h
+ * records as the SDK's VecFx32 (proved by the NNS_G3dWorldPosToScrPos call in
+ * btlv_effvm_021FB6F4.c).  Renamed from AnimVec3 and widened from u32 to s32;
+ * both spellings produce identical code here (plain stores). */
+typedef struct AnimVec3
 {
-    u32 x;
-    u32 y;
-    u32 z;
-} UnkVec3;
+    s32 x;
+    s32 y;
+    s32 z;
+} AnimVec3;
 
 u32 sub_0201134C(ScriptContext *ctx);
 
@@ -34,8 +38,8 @@ u32 sub_021FCF2C(ScriptContext *ctx, u32 a1);
 void sub_021FF304(void *sys, void *sprite, u32 a2);
 void sub_021FF374(void *sys, void *sprite, u32 a2);
 void sub_021FF470(void *sys, void *sprite, u8 a2);
-void sub_021FF4C0(void *sys, void *a1, u32 a2, UnkVec3 *a3, u32 a4, u32 a5, u32 a6);
-void sub_021FF6B0(void *sys, void *sprite, u32 a2, UnkVec3 *a3, u32 a4, u32 a5, u32 a6);
+void sub_021FF4C0(void *sys, void *a1, u32 a2, AnimVec3 *a3, u32 a4, u32 a5, u32 a6);
+void sub_021FF6B0(void *sys, void *sprite, u32 a2, AnimVec3 *a3, u32 a4, u32 a5, u32 a6);
 void sub_021FF870(void *sys, void *sprite, u32 a2, u32 a3, u32 a4);
 void sub_021FFDB4(void *sys, void *sprite, u8 a2, u8 a3, u8 a4, u32 a5);
 u32 sub_0220041C(void *sys, u32 a1, u32 a2);
@@ -162,7 +166,7 @@ u32 sub_021FB1C4(ScriptContext *ctx, BattleAnimScript *work)
 
 u32 sub_021FB214(ScriptContext *ctx, BattleAnimScript *work)
 {
-    UnkVec3 vec;
+    AnimVec3 vec;
     void *sprites[8];
     int count;
     u32 a, b, c, d;
@@ -229,7 +233,7 @@ u32 sub_021FB2D0(ScriptContext *ctx, BattleAnimScript *work)
 
 u32 sub_021FB328(ScriptContext *ctx, BattleAnimScript *work)
 {
-    UnkVec3 vec;
+    AnimVec3 vec;
     void *a;
     u32 b, c, d, e;
 

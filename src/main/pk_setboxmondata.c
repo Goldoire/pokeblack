@@ -24,6 +24,8 @@ void sub_02019388(BoxPokemon *boxMon, int attr, u32 value)
     PokemonDataBlockB *blockB = sub_02019C38(boxMon, boxMon->pid, 1);
     PokemonDataBlockC *blockC = sub_02019C38(boxMon, boxMon->pid, 2);
     PokemonDataBlockD *blockD = sub_02019C38(boxMon, boxMon->pid, 3);
+    int mask;
+    s64 mask64;
 
     switch (attr) {
     case 0:
@@ -181,10 +183,11 @@ void sub_02019388(BoxPokemon *boxMon, int attr, u32 value)
     case 52:
     case 53:
         attr -= 25;
+        mask = 1 << attr;
         if (value) {
-            blockA->ribbonsDS1 |= (1 << attr);
+            blockA->ribbonsDS1 |= mask;
         } else {
-            blockA->ribbonsDS1 &= ~(1 << attr);
+            blockA->ribbonsDS1 &= mask ^ 0xFFFFFFFF;
         }
         break;
     case 54:
@@ -262,10 +265,11 @@ void sub_02019388(BoxPokemon *boxMon, int attr, u32 value)
     case 107:
     case 108:
         attr -= 77;
+        mask = 1 << attr;
         if (value) {
-            blockB->ribbonsGBA |= (1 << attr);
+            blockB->ribbonsGBA |= mask;
         } else {
-            blockB->ribbonsGBA &= ~(1 << attr);
+            blockB->ribbonsGBA &= mask ^ 0xFFFFFFFF;
         }
         break;
     case 109:
@@ -328,10 +332,11 @@ void sub_02019388(BoxPokemon *boxMon, int attr, u32 value)
     case 139:
     case 140:
         attr -= 120;
+        mask64 = 1 << attr;
         if (value) {
-            blockC->ribbonsDS2 |= (1 << attr);
+            blockC->ribbonsDS2 |= mask64;
         } else {
-            blockC->ribbonsDS2 &= ~(1 << attr);
+            blockC->ribbonsDS2 &= mask64 ^ 0xFFFFFFFFFFFFFFFF;
         }
         break;
     case 141:

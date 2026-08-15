@@ -20,7 +20,7 @@ BOOL sub_021B9F70(BattleSystem *bsys, int a1)
 
 u16 sub_021B9F84(BattleSystem *bsys, int a1, u32 a2)
 {
-    BattleSlot *slot;
+    BattleSystemSlot *slot;
 
     if (sub_021B9F70(bsys, a1) != FALSE) {
         slot = &bsys->unk_020[a1];

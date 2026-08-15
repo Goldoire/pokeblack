@@ -1,5 +1,5 @@
 #include <nitro.h>
-#include "ov135/worldtrade.h"
+#include "ov135.h"
 
 extern u8 _02203C18[];
 extern const u32 _0220307C[];

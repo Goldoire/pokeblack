@@ -52,7 +52,7 @@ BOOL sub_021B8564(BattleSystem *bsys)
 
 u32 sub_021B8588(BattleSystem *bsys)
 {
-    return bsys->core->format;
+    return bsys->core->unk_04;
 }
 
 u32 sub_021B8590(BattleSystem *bsys)
@@ -78,7 +78,7 @@ u32 sub_021B8630(BattleSystem *bsys)
 {
     BattleCore *core = bsys->core;
 
-    if (core->mode <= 1) {
+    if (core->unk_00 <= 1) {
         return core->unk_70;
     }
     return 0;
@@ -86,7 +86,7 @@ u32 sub_021B8630(BattleSystem *bsys)
 
 u32 sub_021B8640(BattleSystem *bsys)
 {
-    switch (bsys->core->format) {
+    switch (bsys->core->unk_04) {
     case 0:
         return 1;
     case 1:
@@ -102,7 +102,7 @@ u32 sub_021B8640(BattleSystem *bsys)
 
 u32 sub_021B8670(BattleSystem *bsys)
 {
-    switch (bsys->core->format) {
+    switch (bsys->core->unk_04) {
     case 0:
         return 1;
     case 1:
@@ -126,7 +126,7 @@ BOOL sub_021B86A0(BattleSystem *bsys, u32 a1)
 
 u32 sub_021B86B8(BattleSystem *bsys)
 {
-    return bsys->core->mode;
+    return bsys->core->unk_00;
 }
 
 u32 sub_021B86C0(BattleSystem *bsys)
@@ -149,7 +149,7 @@ u32 sub_021B86DC(BattleSystem *bsys)
 
 u32 sub_021B86E4(BattleSystem *bsys)
 {
-    switch (bsys->core->mode) {
+    switch (bsys->core->unk_00) {
     case 0:
         return 0;
     case 1:
@@ -368,7 +368,7 @@ u8 sub_021B8C20(int a0, int a1, int a2)
 
 u8 sub_021B8C50(BattleSystem *bsys, int a1, int a2)
 {
-    return sub_021B8C20(bsys->core->format, a1, a2);
+    return sub_021B8C20(bsys->core->unk_04, a1, a2);
 }
 
 u8 sub_021B8C38(int a0, int a1)
@@ -381,7 +381,7 @@ u8 sub_021B8C38(int a0, int a1)
 
 u8 sub_021B8CB0(BattleSystem *bsys, u8 a1)
 {
-    switch (bsys->core->format) {
+    switch (bsys->core->unk_04) {
     case 0:
         return a1;
     case 3:

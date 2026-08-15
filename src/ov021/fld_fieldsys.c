@@ -22,6 +22,9 @@ void *sub_020113D8(void *a0);
 void *sub_02030734(u32 heapId, u32 size, u32 a2, const char *file, int line);
 void sub_020307B0(void *ptr);
 void sub_020371AC(u32 a0, u32 a1);
+/* 0x021880C8 and 0x02188AD4 are banked at
+ * build/attempts/ov021/sub_021880C8_sub_02188AD4.c -- both are one shared
+ * literal-pool-vs-MOVS idiom away from byte-exact. */
 void *sub_020120F4(void *ovyManager);
 void *sub_020120F8(void *ovyManager);
 void sub_02012110(void *ovyManager, void *a1);
@@ -147,102 +150,18 @@ BOOL sub_02188910(void *ovyManager, FieldSystem *fieldSystem)
     reg_MI_EXMEMCNT &= ~0x8000;
     sub_0218CC34(fieldSystem->g3dMapper);
     reg_MI_EXMEMCNT |= 0x8000;
-    sub_021A0E58(fieldSystem->unk024);
+    sub_021A0E58(fieldSystem->subScreen);
     if (fieldSystem->unk028 != NULL) {
         sub_021903E0(fieldSystem->unk028);
     }
-    if (fieldSystem->unk030 != NULL) {
-        sub_021BC4F0(fieldSystem->unk030);
+    if (fieldSystem->placeName != NULL) {
+        sub_021BC4F0(fieldSystem->placeName);
     }
     reg_MI_EXMEMCNT &= ~0x8000;
     sub_021890AC(fieldSystem);
     reg_MI_EXMEMCNT |= 0x8000;
     sub_020129F0(sub_020120F4(ovyManager));
     return FALSE;
-}
-
-/* ---- 0x021880C8: FieldMap bring-up ---- */
-
-void sub_020433E0(void *a0);
-void sub_02188D5C(FieldSystem *fieldSystem);
-void sub_0204A48C(void *a0, void *a1, u32 a2);
-void sub_020434DC(u32 a0, u32 a1);
-void sub_02043598(u32 a0, u32 a1);
-void sub_02045088(u16 heapId);
-void sub_0201DD60(void);
-void sub_02046440(u32 a0, u32 a1, u32 a2, u32 a3, u32 a4, u16 heapId, void *cb);
-void sub_02188EE4(FieldSystem *fieldSystem);
-void *sub_0218C9E8(u16 heapId, void *a1);
-void *sub_020056A0(void *cb, FieldSystem *fieldSystem, u32 a2);
-u32 sub_02030CB0(u32 a0);
-void *sub_02030CBC(u32 a0);
-void *sub_021C6D10(u32 a0, u16 heapId);
-void *sub_021D317C(u16 heapId);
-BOOL sub_02013CC8(u16 a0);
-BOOL sub_02013CE0(u16 a0);
-void sub_02034AC4(u32 a0);
-void sub_02035660(u32 a0);
-void sub_02188E50(void);
-
-extern u8 _021D3604[];
-extern u8 _021D3688[];
-
-BOOL sub_021880C8(void *a0, FieldSystem *fieldSystem)
-{
-    u16 heapId = fieldSystem->heapId;
-    void *bgConfig;
-
-    sub_020433E0(_021D3688);
-    sub_02188D5C(fieldSystem);
-    sub_0204A48C(_021D3604, _021D3688, 0x89);
-    sub_020434DC(0x10, 1);
-    sub_02043598(0x10, 1);
-    sub_02045088(heapId);
-    sub_0201DD60();
-    sub_02046440(0, 3, 0, 1, 0x1000, fieldSystem->heapId, sub_02188E50);
-    sub_02188EE4(fieldSystem);
-    bgConfig = sub_02012984(fieldSystem->unk008);
-    fieldSystem->g3dMapper = sub_0218C9E8(fieldSystem->heapId, bgConfig);
-    fieldSystem->task0AC = sub_020056A0(sub_02189108, fieldSystem, 0);
-    fieldSystem->unk114 = sub_02030734(heapId, sub_02030CB0(0x20), 0, _021DD9C0, 0x26B);
-    fieldSystem->unk110 = sub_02030CBC(0x20);
-    fieldSystem->taskManager = sub_021C6D10(10, fieldSystem->heapId);
-    fieldSystem->vreq = sub_021D317C(fieldSystem->heapId);
-    sub_02034AC4((sub_02013CC8(fieldSystem->unk0D0) == TRUE ||
-                  sub_02013CE0(fieldSystem->unk0D0) == TRUE) ? 0x13 : 0x12);
-    sub_02035660(0x1E);
-    return TRUE;
-}
-
-/* ---- 0x02188AD4: FieldMap tear-down, phase 1 ---- */
-
-void sub_02030DA4(void *a0);
-void sub_021D31A4(void *vreq);
-void sub_021C6D5C(void *taskManager);
-void sub_02030EAC(void *task);
-void sub_0218CA4C(void *g3dMapper);
-void sub_021890C8(FieldSystem *fieldSystem);
-void sub_0204A5AC(void);
-void sub_020450C8(void);
-void sub_02188E38(FieldSystem *fieldSystem);
-void sub_02034A5C(u32 a0);
-
-int sub_02188AD4(void *a0, FieldSystem *fieldSystem)
-{
-    sub_02030DA4(fieldSystem->unk110);
-    sub_020307B0(fieldSystem->unk114);
-    sub_021D31A4(fieldSystem->vreq);
-    fieldSystem->vreq = NULL;
-    sub_021C6D5C(fieldSystem->taskManager);
-    sub_02030EAC(fieldSystem->task0AC);
-    sub_0218CA4C(fieldSystem->g3dMapper);
-    sub_021890C8(fieldSystem);
-    sub_0204A5AC();
-    sub_020450C8();
-    sub_02188E38(fieldSystem);
-    sub_02034A5C((sub_02013CC8(fieldSystem->unk0D0) == TRUE ||
-                  sub_02013CE0(fieldSystem->unk0D0) == TRUE) ? 0x13 : 0x12);
-    return 2;
 }
 
 /* ---- 0x02188990: FieldMap teardown ---- */
@@ -283,50 +202,50 @@ void sub_021C7F9C(void *a0);
 
 BOOL sub_02188990(void *ovyManager, FieldSystem *fieldSystem)
 {
-    sub_021CF480(fieldSystem->unk13C);
-    sub_021C1C04(fieldSystem->unk124);
-    sub_021C1AD0(fieldSystem->unk120);
+    sub_021CF480(fieldSystem->encEff);
+    sub_021C1C04(fieldSystem->ci3d);
+    sub_021C1AD0(fieldSystem->particle);
     sub_0201209C(ovyManager, 0, 0);
     sub_021A2EB8(fieldSystem->unk08C);
-    sub_021BB90C(fieldSystem->unk0BC);
+    sub_021BB90C(fieldSystem->fieldmapFunc);
     sub_020263B0(sub_02012138(ovyManager), fieldSystem);
-    if (fieldSystem->unk030 != NULL) {
-        sub_021BC424(fieldSystem->unk030);
+    if (fieldSystem->placeName != NULL) {
+        sub_021BC424(fieldSystem->placeName);
     }
     sub_021BE218(fieldSystem);
-    sub_021BE2E0(fieldSystem->unk034);
-    sub_021A9F28(fieldSystem->unk090);
-    sub_020129B8(sub_020120F4(ovyManager), sub_021A0D44(fieldSystem->unk024));
-    sub_021ABDE8(fieldSystem->unk094);
+    sub_021BE2E0(fieldSystem->expObj);
+    sub_021A9F28(fieldSystem->encount);
+    sub_020129B8(sub_020120F4(ovyManager), sub_021A0D44(fieldSystem->subScreen));
+    sub_021ABDE8(fieldSystem->fieldEffect);
     if (fieldSystem->unk098 != NULL) {
         sub_0217F8EC(fieldSystem->unk098);
         fieldSystem->unk098 = NULL;
     }
-    sub_021A1AAC(fieldSystem->unk020);
-    fieldSystem->unk020 = NULL;
-    sub_021A0448(fieldSystem->unk014);
-    sub_021A02F4(fieldSystem->unk01C);
-    sub_021A0138(fieldSystem->unk018);
-    sub_021D33E0(fieldSystem->unk09C);
-    sub_021BB240(fieldSystem->unk03C);
-    sub_021AB81C(fieldSystem->unk044);
-    sub_021AB624(fieldSystem->unk040);
+    sub_021A1AAC(fieldSystem->weather);
+    fieldSystem->weather = NULL;
+    sub_021A0448(fieldSystem->light);
+    sub_021A02F4(fieldSystem->zoneFog);
+    sub_021A0138(fieldSystem->fog);
+    sub_021D33E0(fieldSystem->palaceSys);
+    sub_021BB240(fieldSystem->nogridMapper);
+    sub_021AB81C(fieldSystem->sceneAreaLoader);
+    sub_021AB624(fieldSystem->sceneArea);
     sub_0218E0E4(fieldSystem->camera);
     fieldSystem->mode->exit(fieldSystem);
     sub_021895DC(fieldSystem);
     sub_021892B4(fieldSystem);
     sub_021A2E90(fieldSystem->unk08C);
     sub_0218D05C(fieldSystem->g3dMapper);
-    if (fieldSystem->unk02C != NULL) {
-        sub_02190728(fieldSystem->unk02C);
+    if (fieldSystem->msgBg != NULL) {
+        sub_02190728(fieldSystem->msgBg);
     }
     if (fieldSystem->unk028 != NULL) {
         sub_021902BC(fieldSystem->unk028);
     }
     sub_020129DC(sub_020120F4(ovyManager), 0);
     sub_02035660(0x3C);
-    sub_021C31FC(fieldSystem->unk128);
-    sub_021C7F9C(fieldSystem->unk0A0);
+    sub_021C31FC(fieldSystem->sodateya);
+    sub_021C7F9C(fieldSystem->mapEff);
     return TRUE;
 }
 
@@ -344,27 +263,27 @@ void *sub_02188C58(FieldSystem *fieldSystem)
 
 void *sub_02188C5C(FieldSystem *fieldSystem)
 {
-    return fieldSystem->unk03C;
+    return fieldSystem->nogridMapper;
 }
 
 void *sub_02188C60(FieldSystem *fieldSystem)
 {
-    return fieldSystem->unk014;
+    return fieldSystem->light;
 }
 
 void *sub_02188C64(FieldSystem *fieldSystem)
 {
-    return fieldSystem->unk018;
+    return fieldSystem->fog;
 }
 
 void *sub_02188C68(FieldSystem *fieldSystem)
 {
-    return fieldSystem->unk01C;
+    return fieldSystem->zoneFog;
 }
 
 void *sub_02188C6C(FieldSystem *fieldSystem)
 {
-    return fieldSystem->unk020;
+    return fieldSystem->weather;
 }
 
 void *sub_02188C70(FieldSystem *fieldSystem)
@@ -374,7 +293,7 @@ void *sub_02188C70(FieldSystem *fieldSystem)
 
 void *sub_02188C7C(FieldSystem *fieldSystem)
 {
-    return fieldSystem->unk038;
+    return fieldSystem->mapObjMan;
 }
 
 void *sub_02188C80(FieldSystem *fieldSystem)
@@ -432,12 +351,12 @@ BOOL sub_02188CBC(FieldSystem *fieldSystem)
 
 void *sub_02188CCC(FieldSystem *fieldSystem)
 {
-    return fieldSystem->unk024;
+    return fieldSystem->subScreen;
 }
 
 void *sub_02188CD0(FieldSystem *fieldSystem)
 {
-    return fieldSystem->unk094;
+    return fieldSystem->fieldEffect;
 }
 
 void *sub_02188CD8(FieldSystem *fieldSystem)
@@ -452,7 +371,7 @@ void *sub_02188CE0(FieldSystem *fieldSystem)
 
 void *sub_02188CE8(FieldSystem *fieldSystem)
 {
-    return fieldSystem->unk090;
+    return fieldSystem->encount;
 }
 
 int sub_02188CF0(FieldSystem *fieldSystem)
@@ -462,17 +381,17 @@ int sub_02188CF0(FieldSystem *fieldSystem)
 
 void *sub_02188D20(FieldSystem *fieldSystem)
 {
-    return fieldSystem->unk030;
+    return fieldSystem->placeName;
 }
 
 void *sub_02188D24(FieldSystem *fieldSystem)
 {
-    return fieldSystem->unk0BC;
+    return fieldSystem->fieldmapFunc;
 }
 
 void *sub_02188D2C(FieldSystem *fieldSystem)
 {
-    return fieldSystem->unk034;
+    return fieldSystem->expObj;
 }
 
 void *sub_02188D30(FieldSystem *fieldSystem)
@@ -492,17 +411,17 @@ void sub_02188D40(FieldSystem *fieldSystem, void *a1)
 
 void *sub_02188D48(FieldSystem *fieldSystem)
 {
-    return fieldSystem->unk02C;
+    return fieldSystem->msgBg;
 }
 
 void sub_02188D4C(FieldSystem *fieldSystem, void *a1)
 {
-    fieldSystem->unk02C = a1;
+    fieldSystem->msgBg = a1;
 }
 
 void *sub_02188D50(FieldSystem *fieldSystem)
 {
-    return fieldSystem->unk128;
+    return fieldSystem->sodateya;
 }
 
 void *sub_02188D58(FieldSystem *fieldSystem)
@@ -538,22 +457,22 @@ void sub_021899F8(FieldSystem *fieldSystem, void *a1)
 
 void *sub_02189A00(FieldSystem *fieldSystem)
 {
-    return fieldSystem->unk124;
+    return fieldSystem->ci3d;
 }
 
 void *sub_02189A08(FieldSystem *fieldSystem)
 {
-    return fieldSystem->unk13C;
+    return fieldSystem->encEff;
 }
 
 void *sub_02189A10(FieldSystem *fieldSystem)
 {
-    return fieldSystem->unk0A0;
+    return fieldSystem->mapEff;
 }
 
 void *sub_02189A18(FieldSystem *fieldSystem)
 {
-    return fieldSystem->unk040;
+    return fieldSystem->sceneArea;
 }
 
 void sub_02189A1C(FieldSystem *fieldSystem, void *a1)

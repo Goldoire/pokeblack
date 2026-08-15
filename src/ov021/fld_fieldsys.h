@@ -41,19 +41,21 @@ struct FieldSystem {
     /* 0x008 */ void *unk008;    // = sub_020120F4(ovyManager) in the ctor
     /* 0x00C */ void *unk00C;    // acc 0x02188D58; = sub_0201407C(...), destroyed by sub_020140B4
     /* 0x010 */ void *camera;    // acc 0x02188C58; fed to field_camera.c (0x0218ED3C)
-    /* 0x014 */ void *unk014;    // acc 0x02188C60
-    /* 0x018 */ void *unk018;    // acc 0x02188C64
-    /* 0x01C */ void *unk01C;    // acc 0x02188C68
-    /* 0x020 */ void *unk020;    // acc 0x02188C6C
-    /* 0x024 */ void *unk024;    // acc 0x02188CCC
-    /* 0x028 */ void *unk028;    // acc 0x02188C54
-    /* 0x02C */ void *unk02C;    // acc 0x02188D48 (get) / 0x02188D4C (set)
-    /* 0x030 */ void *unk030;    // acc 0x02188D20
-    /* 0x034 */ void *unk034;    // acc 0x02188D2C
-    /* 0x038 */ void *unk038;    // acc 0x02188C7C
-    /* 0x03C */ void *unk03C;    // acc 0x02188C5C
-    /* 0x040 */ void *unk040;    // acc 0x02189A18
-    /* 0x044 */ void *unk044;
+    /* 0x014 */ void *light;     // acc 0x02188C60; freed by field_light.c 0x021A0448
+    /* 0x018 */ void *fog;       // acc 0x02188C64; freed by field_fog.c 0x021A0138
+    /* 0x01C */ void *zoneFog;   // acc 0x02188C68; freed by field_zonefog.c 0x021A02F4
+    /* 0x020 */ void *weather;   // acc 0x02188C6C; freed by weather.c 0x021A1AAC, then NULLed
+    /* 0x024 */ void *subScreen; // acc 0x02188CCC; field_subscreen.c 0x021A0D44/0x021A0E58
+    /* 0x028 */ void *unk028;    // acc 0x02188C54; nullable; field_msgbg.c 0x021902BC/0x021903E0
+    /* 0x02C */ void *msgBg;     // acc 0x02188D48 (get) / 0x02188D4C (set); nullable;
+                                 // freed by field_msgbg.c 0x02190728
+    /* 0x030 */ void *placeName; // acc 0x02188D20; nullable; field_place_name.c 0x021BC424/4F0/484
+    /* 0x034 */ void *expObj;    // acc 0x02188D2C; freed by fld_exp_obj.c 0x021BE2E0
+    /* 0x038 */ void *mapObjMan; // acc 0x02188C7C; the ov010 MMDL manager -- FieldPlayer's
+                                 // map object is sub_0216DE94(this, 0xFF) (0x021A3718)
+    /* 0x03C */ void *nogridMapper; // acc 0x02188C5C; freed by field_nogrid_mapper.c 0x021BB240
+    /* 0x040 */ void *sceneArea; // acc 0x02189A18; freed by fld_scenearea.c 0x021AB624
+    /* 0x044 */ void *sceneAreaLoader; // freed by fld_scenearea_loader.c 0x021AB81C
     /* 0x048 */ void *g3dMapper; // acc 0x02188C98; = field_g3d_mapper.c ctor 0x0218C9E8
     /* 0x04C */ void *unk04C;
     /* 0x050 */ void *unk050;
@@ -73,18 +75,19 @@ struct FieldSystem {
     /* 0x088 */ void *unk088;
     /* 0x08C */ void *unk08C;    // acc 0x02188CB4 (get) / 0x02188CBC (non-NULL test);
                                  // fed to field_player.c (0x021A3098, 0x021A2F48, 0x021A2F54)
-    /* 0x090 */ void *unk090;    // acc 0x02188CE8
-    /* 0x094 */ void *unk094;    // acc 0x02188CD0
-    /* 0x098 */ void *unk098;    // acc 0x02188CE0
-    /* 0x09C */ void *unk09C;
-    /* 0x0A0 */ void *unk0A0;    // acc 0x02189A10
+    /* 0x090 */ void *encount;   // acc 0x02188CE8; freed by field_encount.c 0x021A9F28
+    /* 0x094 */ void *fieldEffect; // acc 0x02188CD0; field_effect.c 0x021ABDE8/0x021ABE04
+    /* 0x098 */ void *unk098;    // acc 0x02188CE0; nullable, NULLed on teardown; owner is in main
+                                 // (0x0217F8EC / 0x0217F914)
+    /* 0x09C */ void *palaceSys; // freed by field_palace_sys.c 0x021D33E0
+    /* 0x0A0 */ void *mapEff;    // acc 0x02189A10; fieldskill_mapeff.c 0x021C7F9C/0x021C7FAC
     /* 0x0A4 */ void *unk0A4;
     /* 0x0A8 */ void *unk0A8;
     /* 0x0AC */ void *task0AC;   // = sub_020056A0(func_02189108, this, 0) in FieldMap init
     /* 0x0B0 */ void *unk0B0;
     /* 0x0B4 */ void *unk0B4;    // acc 0x02188C88
     /* 0x0B8 */ void *unk0B8;    // acc 0x02188C90
-    /* 0x0BC */ void *unk0BC;    // acc 0x02188D24
+    /* 0x0BC */ void *fieldmapFunc; // acc 0x02188D24; fieldmap_func.c 0x021BB90C/0x021BB948
     /* 0x0C0 */ int unk0C0;      // zeroed by FieldSystem_New; state, set to 2 by 0x02188BD8,
                                  // tested ==1 by 0x02188BE8
     /* 0x0C4 */ int unk0C4;      // index into the 8-byte-stride table at 0x021D36B8 (0x02188B58)
@@ -102,10 +105,10 @@ struct FieldSystem {
     /* 0x0E4 */ void *unk0E4;
     /* 0x0E8 */ void *unk0E8;
     /* 0x0EC */ void *unk0EC;
-    /* 0x0F0 */ void *unk0F0;    // acc 0x02188D40 (set)
-    /* 0x0F4 */ void *unk0F4;
-    /* 0x0F8 */ void *unk0F8;
-    /* 0x0FC */ void *unk0FC;
+    /* 0x0F0 */ void *unk0F0;    // acc 0x02188D40 (set); when non-NULL the field main loop
+                                 // (0x02188880) copies 12 bytes from it into unk0F4
+    /* 0x0F4 */ u8 unk0F4[12];   // 12-byte vector, destination of the unk0F0 copy and the
+                                 // second argument of mode->main() and of 0x0218D158
     /* 0x100 */ s32 unk100;      // acc 0x02189A78; = 0x02189A80(fieldSystem), a camera-derived depth
     /* 0x104 */ void *unk104;
     /* 0x108 */ const FieldMapMode *mode; // acc 0x02188CF0 returns mode->id; = func_02189BA8(mapClass)
@@ -114,14 +117,14 @@ struct FieldSystem {
     /* 0x114 */ void *unk114;    // 0x20-byte allocation in FieldMap init
     /* 0x118 */ void *unk118;
     /* 0x11C */ void *unk11C;
-    /* 0x120 */ void *unk120;
-    /* 0x124 */ void *unk124;    // acc 0x02189A00; fed to fld3d_ci.c (0x021C1C4C)
-    /* 0x128 */ void *unk128;    // acc 0x02188D50
+    /* 0x120 */ void *particle; // freed by fld_particle.c 0x021C1AD0
+    /* 0x124 */ void *ci3d;      // acc 0x02189A00; fld3d_ci.c 0x021C1C04/0x021C1C4C
+    /* 0x128 */ void *sodateya;  // acc 0x02188D50; freed by sodateya.c 0x021C31FC
     /* 0x12C */ void *unk12C;    // acc 0x021899F0 (get) / 0x021899F8 (set)
     /* 0x130 */ void *unk130;    // acc 0x02188CD8
     /* 0x134 */ void *taskManager; // acc 0x02188D38; = field_task_manager.c ctor 0x021C6D10(10, heapId)
     /* 0x138 */ void *unk138;    // acc 0x02189A24 (get) / 0x02189A1C (set)
-    /* 0x13C */ void *unk13C;    // acc 0x021899C4; fed to enceff.c (0x021CF520)
+    /* 0x13C */ void *encEff;    // acc 0x02189A08; enceff.c 0x021CF480/0x021CF520
     /* 0x140 */ void *unk140;    // acc 0x02189A58 (set)
     /* 0x144 */ void *unk144;    // acc 0x02189A48 (get) / 0x02189A50 (set)
     /* 0x148 */ void *unk148;    // acc 0x02189A60 returns &unk148

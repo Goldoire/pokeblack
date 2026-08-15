@@ -1,4 +1,4 @@
-#include "ov135/worldtrade.h"
+#include "ov135.h"
 
 void sub_021F4EC0(WorldTradeWork *work, u32 a1, u32 a2);
 void *sub_020120F4(void *a0);

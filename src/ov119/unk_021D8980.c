@@ -1,4 +1,4 @@
-#include "ov119/pokemontrade.h"
+#include "ov119.h"
 
 void sub_021B65B4(void *a0, u32 a1);
 void sub_021B6558(void *a0, u32 a1, u32 a2);

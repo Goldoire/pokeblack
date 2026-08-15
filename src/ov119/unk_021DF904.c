@@ -1,4 +1,4 @@
-#include "ov119/pokemontrade.h"
+#include "ov119.h"
 
 extern u8 _021E792C[];
 
@@ -68,7 +68,9 @@ void sub_021E36C8(u32 a0, u32 a1, u32 a2, u32 a3, u32 a4)
     sub_021E35A0(a0, a1, a2, a3, a4);
 }
 
-u32 sub_021E5158(u32 a0)
+/* Signed: the ROM calls _s32_div_f (0x0209C0A4), not _u32_div_f (0x0209C2B0).
+ * With a u32 parameter this is 9/12. */
+s32 sub_021E5158(s32 a0)
 {
     return a0 % 12;
 }

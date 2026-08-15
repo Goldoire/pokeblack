@@ -14,6 +14,8 @@
 
 struct GClactSet;
 
+struct GClactRenderer;
+
 typedef struct GClactVec2 {
     s16 x;
     s16 y;
@@ -116,14 +118,37 @@ typedef struct GClact {
     struct GClactAnim anim;   // 0x68 nested animation object, 0x7C bytes
 } GClact;
 
-/* Creation parameters, 8 bytes.  Field offsets PROVEN by sub_0204CED8. */
+/* Creation parameters, >= 0x18 bytes.  0x00-0x07 PROVEN by sub_0204CED8,
+ * 0x08-0x16 PROVEN by sub_0204D048.  Every field is copied straight into the
+ * actor, which is what identifies them. */
 typedef struct GClactInit {
-    s16 x;                    // 0x00
-    s16 y;                    // 0x02
-    u16 animSeq;              // 0x04
+    s16 x;                    // 0x00 -> GClact.pos.x   (via sub_0204B49C)
+    s16 y;                    // 0x02 -> GClact.pos.y
+    u16 animSeq;              // 0x04 -> GClact.animSeq
     u8 priority;              // 0x06 -> GClact.unk60_00
     u8 unk07;                 // 0x07 -> GClact.unk60_10
+    s16 unk08;                // 0x08 -> GClact.unk10.x and .y
+    u16 unk0A;                // 0x0A
+    u32 unk0C;                // 0x0C -> GClact.scale.x
+    u32 unk10;                // 0x10 -> GClact.scale.y
+    u16 unk14;                // 0x14 -> GClact.unk58
+    u16 unk16;                // 0x16 -> GClact.unk60_12
 } GClactInit;
+
+/* INFERRED from sub_0204B09C / sub_0204B0C8: the renderer holds a pointer at
+ * +0x98 to an array of 0x48-byte records whose first two words are an fx32
+ * (x,y) pair -- a screen-space origin the actor's s16 position is relative
+ * to.  The renderer itself lives at GClactCore+0x40. */
+typedef struct GClactCamera {
+    u32 x;                    // 0x00 fx32
+    u32 y;                    // 0x04 fx32
+    u8 unk08[0x48 - 8];
+} GClactCamera;
+
+typedef struct GClactRenderer {
+    u8 unk00[0x98];
+    GClactCamera *cameras;    // 0x98 PROVEN sub_0204B09C/sub_0204B0C8
+} GClactRenderer;
 
 /* Resource header.  Field offsets PROVEN by sub_0204CF40. */
 typedef struct GClactResHeader {
@@ -150,7 +175,7 @@ typedef struct GClactTemplate {
 typedef struct GClactSet {
     GClact *actors;           // 0x00 PROVEN sub_0204B100/sub_0204B1CC
     GClact *drawList;         // 0x04 circular, priority-sorted, PROVEN sub_0204C98C
-    void *unk08;              // 0x08 PROVEN sub_0204B258/sub_0204B270
+    GClactRenderer *renderer; // 0x08 PROVEN sub_0204B258/sub_0204B270
     u16 count;                // 0x0C PROVEN sub_0204B100/sub_0204B1CC
     u8 unk0E_0 : 4;           // 0x0E b0-3 PROVEN sub_0204B258/sub_0204B270
     u8 unk0E_4 : 4;           // 0x0E b4-7 PROVEN sub_0204B22C/sub_0204B248
@@ -187,7 +212,8 @@ typedef struct GClactCoreEntry {
  * PROVEN offsets are those a byte-exact function reads or writes. */
 typedef struct GClactCore {
     GClactCoreEntry engine[2];      // 0x00,0x20 PROVEN sub_0204BCF4/sub_0204BD18
-    u8 unk40[0xE0 - 0x40];          // 0x40 default render target, PROVEN sub_0204B270
+    GClactRenderer renderer;        // 0x40 PROVEN sub_0204B270
+    u8 unkDC[0xE0 - 0xDC];          // 0xDC
     GClactXferList xfer;            // 0xE0 PROVEN sub_0204C6E4/sub_0204C718/sub_0204C83C
     u16 unkF0;                      // 0xF0 PROVEN sub_0204BA7C
     u16 unkF2;                      // 0xF2 PROVEN sub_0204BA7C

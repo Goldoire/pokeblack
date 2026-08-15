@@ -17,6 +17,11 @@ void sub_0204B784(GClact *act, GClactBlob36 *src);
 void sub_0204B728(GClact *act, GClactBlob20 *src);
 void sub_0204B3DC(GClact *act, u32 v);
 void sub_0204B270(GClactSet *set);
+void sub_0204B59C(GClact *act, s16 v, u32 which);
+void sub_0204B5D4(GClact *act, u32 v, u32 which);
+void sub_0204B5F4(GClact *act, u16 v);
+void sub_0204B570(GClact *act, u32 v);
+GClact *sub_0204CFDC(GClactSet *set, const struct GClactInit *init, const struct GClactResHeader *hdr, u32 a3, u16 a4);
 void sub_0204B22C(GClactSet *set, u32 a1);
 void sub_0204BBC8(GClactSet *set);
 void sub_0204BC40(GClactSet *set);
@@ -37,9 +42,9 @@ u8 sub_0204B248(GClactSet *set)
     return set->unk0E_4;
 }
 
-void sub_0204B258(GClactSet *set, void *a1)
+void sub_0204B258(GClactSet *set, GClactRenderer *a1)
 {
-    set->unk08 = a1;
+    set->renderer = a1;
     set->unk0E_0 = 1;
 }
 
@@ -253,7 +258,7 @@ void sub_020637BC(GClactBlob36 *p, u32 a1);
 
 void sub_0204B270(GClactSet *set)
 {
-    set->unk08 = _02146A74->unk40;
+    set->renderer = &_02146A74->renderer;
     set->unk0E_0 = 0;
 }
 
@@ -721,7 +726,7 @@ extern void (*_020A138C[])(void *src, u32 dst, u32 size);
 void sub_0204C788(GClactXferList *list);
 void sub_0204C8A4(GClactXfer *e, u32 kind, u32 dst, void *src, u32 size);
 void sub_0204C8B8(GClactXfer *e);
-void sub_0204CB44(GClact *act, void *renderer);
+void sub_0204CB44(GClact *act, GClactRenderer *renderer);
 void sub_0204CEB4(GClact *act);
 void NNSi_G2dInitializeVRamLocation(GClactBlob36 *proxy);
 void NNS_G2dInitImagePaletteProxy(GClactBlob20 *proxy);
@@ -829,7 +834,7 @@ void sub_0204C944(GClactSet *set)
     }
     do
     {
-        sub_0204CB44(act, set->unk08);
+        sub_0204CB44(act, set->renderer);
         sub_0204CEB4(act);
         act = act->next;
     } while (act != set->drawList);
@@ -899,8 +904,8 @@ void sub_0204CAE4(GClact *act)
 
 /* ---- construction / destruction -------------------------------------- */
 
-void sub_0204B0C8(void *renderer, u32 a1, GClactVec2 *out);
-void sub_0204D0C4(GClactAnim *anim, const GClactResHeader *hdr, u16 a2);
+void sub_0204B0C8(GClactRenderer *renderer, u32 a1, GClactVec2 *out);
+void sub_0204D0C4(struct GClactAnim *anim, const struct GClactResHeader *hdr, u16 a2);
 GClact *sub_0204C8E4(GClactSet *set);
 
 GClactSet *sub_0204B100(int count, u8 pri, u32 heapId)
@@ -959,13 +964,13 @@ void sub_0204C98C(GClactSet *set, GClact *act)
         p = set->drawList->prev;
         set->drawList = act;
     }
-    else if ((u8)((headPri + sub_0204B838(set->drawList->prev)) / 2) < pri)
+    else if ((u8)((headPri + sub_0204B838(set->drawList->prev)) / 2) >= pri)
     {
-        p = sub_0204CAAC(set->drawList->prev, pri);
+        p = sub_0204CA74(set->drawList, pri);
     }
     else
     {
-        p = sub_0204CA74(set->drawList, pri);
+        p = sub_0204CAAC(set->drawList->prev, pri);
     }
     act->prev = p;
     act->next = p->next;
@@ -1007,7 +1012,7 @@ void sub_0204CF74(GClact *act, u32 a1, GClactVec2 *out)
         out->y = 0;
         return;
     }
-    sub_0204B0C8(((GClactSet *)act->list)->unk08, a1, out);
+    sub_0204B0C8(((GClactSet *)act->list)->renderer, a1, out);
 }
 
 void sub_0204CFA4(GClactTemplate *t, u16 x, u16 y, u32 a3, u32 a4, u32 a5, u32 a6)
@@ -1035,4 +1040,72 @@ GClact *sub_0204CFDC(GClactSet *set, const GClactInit *init, const GClactResHead
     sub_0204C98C(set, act);
     sub_0204B3DC(act, 1);
     return act;
+}
+
+/* ---- renderer camera origin ------------------------------------------ */
+
+void sub_0204BE28(GClactSet *set);
+void sub_0204BE38(void);
+u32 sub_0204D134(const GClactResHeader *hdr);
+extern void (*_020A13D0[])(GClactAnim *anim);
+extern void (*_020A13DC[])(GClactAnim *anim, const GClactResHeader *hdr, u16 a2);
+
+void sub_0204B084(GClactSet *set)
+{
+    sub_0204BE28(set);
+    ENV_SetResourceSet(set);
+}
+
+void sub_0204B09C(GClactRenderer *r, u32 i, const GClactVec2 *pos)
+{
+    GClactCamera *cam;
+    s32 x;
+    s32 y;
+
+    x = pos->x;
+    y = pos->y;
+    cam = &r->cameras[i];
+    cam->x = x << 12;
+    cam->y = y << 12;
+}
+
+void sub_0204B0C8(GClactRenderer *r, u32 i, GClactVec2 *out)
+{
+    GClactCamera *cam = &r->cameras[i];
+
+    out->x = (s32)cam->x >> 12;
+    out->y = (s32)cam->y >> 12;
+}
+
+void sub_0204B0F4(void)
+{
+    sub_0204BE38();
+}
+
+/* ---- animation object ------------------------------------------------ */
+
+GClact *sub_0204D048(GClactSet *set, const GClactInit *init, const GClactResHeader *hdr, u32 a3, u16 a4)
+{
+    GClact *act;
+
+    act = sub_0204CFDC(set, init, hdr, a3, a4);
+    sub_0204B59C(act, init->unk08, 0);
+    sub_0204B59C(act, init->unk08, 1);
+    sub_0204B5D4(act, init->unk0C, 0);
+    sub_0204B5D4(act, init->unk10, 1);
+    sub_0204B5F4(act, init->unk14);
+    sub_0204B570(act, init->unk16);
+    return act;
+}
+
+void sub_0204D0C4(GClactAnim *anim, const GClactResHeader *hdr, u16 a2)
+{
+    anim->type = sub_0204D134(hdr);
+    _020A13DC[anim->type](anim, hdr, a2);
+}
+
+void sub_0204D104(GClactAnim *anim)
+{
+    _020A13D0[anim->type](anim);
+    MI_CpuFill8(anim, 0, sizeof(GClactAnim));
 }

@@ -1,5 +1,5 @@
 #include <nitro.h>
-#include "ov119/pokemontrade.h"
+#include "ov119.h"
 
 typedef void (*PokemonTradeCallback)(PokemonTradeWork *work);
 
