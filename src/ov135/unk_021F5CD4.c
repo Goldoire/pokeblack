@@ -55,6 +55,22 @@ u32 sub_021F6C80(WorldTradeBoxEntry *a0, void *a1);
 u32 sub_020076A4(void *a0);
 u32 sub_020076B4(void *a0);
 
+u32 sub_020362DC(void);
+u32 sub_02035C60(void);
+
+u32 sub_021F6604(WorldTradeWork *work)
+{
+    if (sub_02202840(&work->unk_0FA0) == 0)
+    {
+        if (sub_020362DC() != 0 || sub_02035C60() != 0)
+        {
+            sub_0201F7A8(work->unk_0DD0, 0);
+            work->state = work->unk_002C;
+        }
+    }
+    return 2;
+}
+
 void sub_021F5CD4(WorldTradeWork *work, u32 a1)
 {
     if (a1 == 5)

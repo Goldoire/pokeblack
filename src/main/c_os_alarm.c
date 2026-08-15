@@ -10,6 +10,7 @@
 #define OS_GetTick                           sub_020870D0
 #define OS_DisableInterrupts                 sub_02087988
 #define OS_RestoreInterrupts                 sub_0208799C
+#define _ll_udiv                             sub_0209C014
 
 #define OSi_SetTimer        sub_02087180
 #define OS_InitAlarm        sub_02087208

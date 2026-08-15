@@ -8,11 +8,8 @@
 
 /* callees outside this file */
 #define GX_InitGXState                       sub_02080CC4
-#define OS_GetLockID                         sub_02084EC0
-#define OS_Terminate                         sub_0208823C
 #define MIi_DmaFill32                        sub_020821C0
 #define MIi_CpuClear32                       sub_02082A7C
-#define PMi_SetDispOffCount                  sub_0208C94C
 #define MI_WaitDma                           sub_02082594
 #define OS_DisableInterrupts                 sub_02087988
 #define OS_RestoreInterrupts                 sub_0208799C

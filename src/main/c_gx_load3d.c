@@ -10,10 +10,7 @@
 #define MIi_DmaCopy32                        sub_02082244
 #define MIi_CpuCopy32                        sub_02082A90
 #define MIi_DmaCopy32Async                   sub_02082498
-#define GX_ResetBankForTex                   sub_0208096C
 #define MI_WaitDma                           sub_02082594
-#define GX_ResetBankForTexPltt               sub_02080980
-#define GX_ResetBankForClearImage            sub_02080994
 
 #define GX_BeginLoadTex        sub_0207F7A0
 #define GX_BeginLoadTexPltt    sub_0207FA0C

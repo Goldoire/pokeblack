@@ -18,6 +18,41 @@ void sub_021F4CE4(WorldTradeWork *work);
 void sub_021F4EC0(WorldTradeWork *work, u32 a1, u32 a2);
 void sub_021F8668(WorldTradeSlot *a0, WorldTradeWork *work);
 
+void sub_021F7964(WorldTradeWork *work);
+void sub_021F99D0(void *a0);
+void sub_021F79EC(WorldTradeWork *work);
+void sub_021F76BC(void);
+void sub_022000E4(WorldTradeWork *work);
+void sub_0204B3DC(void *a0, u32 a1);
+void sub_02202940(WorldTradeAdapter *a0);
+void sub_020452E8(void *a0);
+
+void sub_021F7840(WorldTradeWork *work)
+{
+    s32 i;
+
+    sub_02202940(&work->unk_0FA0);
+    sub_020452E8(work->unk_0DE0);
+    for (i = 0; i < 6; i++)
+    {
+        sub_020452E8(work->unk_0D90[i]);
+    }
+    sub_020452E8(work->unk_0D40);
+}
+
+u32 sub_021F74F8(WorldTradeWork *work)
+{
+    sub_021F7964(work);
+    sub_021F99D0(work->unk_0DE4);
+    sub_021F79EC(work);
+    sub_021F7840(work);
+    sub_021F76BC();
+    sub_022000E4(work);
+    sub_0204B3DC(work->unk_0D38, 0);
+    sub_021F4EC8(work);
+    return 0;
+}
+
 u32 sub_021F7268(WorldTradeWork *work)
 {
     if (work->unk_00D8 != NULL)

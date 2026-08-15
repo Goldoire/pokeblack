@@ -8,7 +8,6 @@
 
 /* callees outside this file */
 #define NNS_FndAllocFromFrmHeapEx            sub_02061124
-#define NNS_FndAllocFromUnitHeap             sub_02061244
 #define OS_AllocFromHeap                     sub_020868E0
 #define OS_FreeToHeap                        sub_020869E8
 

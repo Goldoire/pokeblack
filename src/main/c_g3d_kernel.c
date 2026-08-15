@@ -9,12 +9,7 @@
 /* callees outside this file */
 #define MIi_CpuClear32                       sub_02082A7C
 #define GX_BeginLoadTex                      sub_0207F7A0
-#define GX_LoadTex                           sub_0207F804
-#define GX_EndLoadTex                        sub_0207F9BC
 #define GX_BeginLoadTexPltt                  sub_0207FA0C
-#define GX_LoadTexPltt                       sub_0207FA48
-#define GX_EndLoadTexPltt                    sub_0207FAE4
-#define FX_Div                               sub_0207C770
 
 #define NNS_G3dAnmObjCalcSizeRequired sub_02069C14
 #define NNS_G3dRenderObjInit          sub_02069D14

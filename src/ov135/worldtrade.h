@@ -76,13 +76,17 @@ typedef struct WorldTradeWork
     void *unk_0B8C;
     u8 pad_0B90[0xBF4 - 0xB90];
     void *unk_0BF4;   /* sub_022004F0 */
-    u8 pad_0BF8[0xD40 - 0xBF8];
+    u8 pad_0BF8[0xD38 - 0xBF8];
+    void *unk_0D38;   /* sub_021F74F8 */
+    u8 pad_0D3C[4];
     void *unk_0D40;   /* sub_021F4FA4 */
     u8 pad_0D44[4];
     void *unk_0D48;   /* sub_022003BC */
-    u8 pad_0D4C[4];
+    void *unk_0D4C;   /* sub_021F5940 */
     void *unk_0D50[3];
-    u8 pad_0D5C[0xDD0 - 0xD5C];
+    u8 pad_0D5C[0xD90 - 0xD5C];
+    void *unk_0D90[6]; /* sub_021F7840 releases all six */
+    u8 pad_0DA8[0xDD0 - 0xDA8];
     void *unk_0DD0;   /* sub_021F643C */
     u8 pad_0DD4[0xDE0 - 0xDD4];
     void *unk_0DE0;
@@ -100,7 +104,10 @@ typedef struct WorldTradeWork
     u8 pad_0EA8[0xEB2 - 0xEA8];
     u16 unk_0EB2;     /* sub_021F8A44 */
     u32 unk_0EB4;     /* sub_021F632C / sub_021F7EC0 */
-    u8 pad_0EB8[0xF18 - 0xEB8];
+    u8 pad_0EB8[0xEBC - 0xEB8];
+    void (*unk_0EBC)(struct WorldTradeWork *work); /* sub_021F4864 */
+    void (*unk_0EC0)(struct WorldTradeWork *work);
+    u8 pad_0EC4[0xF18 - 0xEC4];
     u8 unk_0F18;      /* sub_021F8BBC: sub-object, +0x64 is a second one */
     u8 pad_0F19[0xF7C - 0xF19];
     u8 unk_0F7C;

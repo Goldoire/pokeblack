@@ -9,6 +9,7 @@
 /* callees outside this file */
 #define NNS_FndInitList                      sub_02060468
 #define NNS_SndUnlockChannel                 sub_02072974
+#define _u32_div_f                           sub_0209C2B8
 #define SND_SetupChannelPcm                  sub_02089660
 #define SND_SetupAlarm                       sub_02089540
 #define NNS_FndAppendListObject              sub_020604AC

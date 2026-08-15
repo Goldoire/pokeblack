@@ -11,7 +11,6 @@
 #define FX_InvAsync                          sub_0207C8A0
 #define FX_GetDivResultFx64c                 sub_0207C848
 #define _ll_sdiv                             sub_0209BE64
-#define FX_Div                               sub_0207C770
 #define FX_GetDivResult                      sub_0207C86C
 
 #define MTX_Identity44_  sub_0207BDB4

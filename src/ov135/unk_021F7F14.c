@@ -25,6 +25,36 @@ void sub_021F4EC0(WorldTradeWork *work, u32 a1, u32 a2);
 u32 sub_02168124(void);
 void sub_02168064(void);
 
+void *sub_02045EC0(void *a0, u32 a1);
+void sub_02045808(void *a0);
+void sub_021F91A0(void *a0, u32 a1, u32 a2, u32 a3, u32 a4, u16 a5, u32 a6);
+void sub_022028C8(void *a0, u32 a1, u32 a2, u32 a3, u32 a4, u32 a5, u16 a6,
+                  u32 a7);
+
+void sub_021F7F9C(void *a0, void *a1, u32 a2, u32 a3, u32 a4, u16 a5, u32 a6)
+{
+    void *p;
+
+    if (a2 != 0)
+    {
+        p = sub_02045EC0(a1, a2);
+        sub_021F91A0(a0, (u32)p, 0, a4, a3, a5, a6);
+        sub_02045808(p);
+    }
+}
+
+void sub_021F7FD4(void *a0, void *a1, u32 a2, u32 a3, u16 a4, u32 a5)
+{
+    void *p;
+
+    if (a2 != 0)
+    {
+        p = sub_02045EC0(a1, a2);
+        sub_022028C8(a0, 0, (u32)p, 0, a3, 0, a4, a5);
+        sub_02045808(p);
+    }
+}
+
 u32 sub_021F7F14(WorldTradeWork *work)
 {
     if (work->unk_0014 == 0)

@@ -10,6 +10,7 @@
 #define OS_DisableInterrupts                 sub_02087988
 #define OS_RestoreInterrupts                 sub_0208799C
 #define OS_SleepThread                       sub_020857B0
+#define _s32_div_f                           sub_0209C0AC
 #define OS_WakeupThread                      sub_02085800
 
 #define OS_InitMessageQueue sub_02085D94

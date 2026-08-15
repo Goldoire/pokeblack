@@ -7,16 +7,10 @@
 #define SDK_FINALROM
 
 /* callees outside this file */
-#define MIi_CheckDma0SourceAddress           sub_02082714
 #define MIi_DmaSetParameters                 sub_020A9EA0
 #define MI_WaitDma                           sub_02082594
 #define OS_DisableInterrupts                 sub_02087988
-#define OS_GetIrqFunction                    sub_02084820
-#define OS_SetIrqFunction                    sub_0208477C
-#define OS_EnableIrqMask                     sub_02084970
 #define OS_RestoreInterrupts                 sub_0208799C
-#define OS_ResetRequestIrqMask               sub_020849D0
-#define OS_DisableIrqMask                    sub_020849A0
 
 #define MI_SendGXCommandAsync     sub_02082760
 #define MIi_FIFOCallback          sub_0208284C

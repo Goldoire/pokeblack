@@ -8,7 +8,6 @@
 
 /* callees outside this file */
 #define OS_DisableInterrupts                 sub_02087988
-#define OS_Terminate                         sub_0208823C
 #define OS_SleepThread                       sub_020857B0
 #define OS_RestoreInterrupts                 sub_0208799C
 #define OS_WakeupThread                      sub_02085800

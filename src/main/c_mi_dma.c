@@ -9,7 +9,6 @@
 /* callees outside this file */
 #define OS_DisableInterrupts                 sub_02087988
 #define OS_RestoreInterrupts                 sub_0208799C
-#define OS_Terminate                         sub_0208823C
 
 #define MIi_DmaSetParameters       sub_020A9EA0
 /* not in shard or dead-stripped: MIi_DmaFill32 (132B) */

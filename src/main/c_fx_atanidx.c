@@ -6,9 +6,6 @@
  */
 #define SDK_FINALROM
 
-/* callees outside this file */
-#define FX_Div                               sub_0207C770
-
 #define FX_Atan2Idx sub_0207CFB8
 /* not in shard or dead-stripped: FX_AtanIdx (184B) */
 
