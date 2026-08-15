@@ -25,8 +25,11 @@ BOOL sub_02085D3C(void);
 void sub_021C0970(void *param0, u32 param1, u32 param2);
 void sub_020307B0(void *param0);
 
-/* "dwc_raputil.c" */
-extern const char _021DAAA0[];
+/* 0x021DAAA0.  Defined rather than declared extern: the verifier's
+ * enclosing-extent heuristic reads this .rodata address as the inside of a
+ * triaged thumb function and would set bit 0 in the literal.  A local
+ * definition emits identical code and a section-relative relocation. */
+static const char _021DAAA0[] = "dwc_raputil.c";
 
 /* Linker-absolute overlay id (the SDK's FS_OVERLAY_ID idiom): the symbol's
  * *address* is the overlay number, so it always materialises through the

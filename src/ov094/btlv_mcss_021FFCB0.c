@@ -83,26 +83,6 @@ BOOL sub_021FFCB0(AnimMgr *sys, int sprId)
     return FALSE;
 }
 
-BOOL sub_021FFD6C(AnimMgr *sys)
-{
-    int i;
-
-    i = 0;
-    while (i < 8)
-    {
-        if (sub_021FFD9C(sys, i))
-        {
-            if (sub_021FFCB0(sys, i))
-            {
-                return TRUE;
-            }
-        }
-        i++;
-    }
-
-    return FALSE;
-}
-
 BOOL sub_021FFD9C(AnimMgr *sys, int sprId)
 {
     if (sub_022019F4(sys, sprId) != -1)

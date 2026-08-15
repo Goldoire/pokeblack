@@ -9,7 +9,6 @@
 #define FS_InitFile                          sub_020788AC
 #define FS_OpenFileFast                      sub_020789A4
 #define FS_OpenFileEx                        sub_020789FC
-#define FS_ReadFile                          sub_02078B78
 #define NNS_SndHeapAlloc                     sub_0207482C
 #define MIi_CpuCopy32                        sub_02082A90
 #define NNSi_SndSeqArcGetSeqInfo             sub_02075B54

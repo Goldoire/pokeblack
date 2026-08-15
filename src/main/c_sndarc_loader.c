@@ -5,17 +5,10 @@
 #define SDK_FINALROM
 
 /* callees outside this TU, from the claim table */
-#define NNS_SndArcGetSeqInfo                 sub_0207432C
-#define NNS_SndArcGetFileAddress             sub_02074674
-#define NNS_SndArcGetSeqArcInfo              sub_02074390
-#define NNS_SndArcGetBankInfo                sub_020743F4
-#define NNS_SndArcGetWaveArcInfo             sub_02074458
 #define SND_AssignWaveArc                    sub_0208A2BC
 #define NNS_SndHeapAlloc                     sub_0207482C
-#define NNS_SndArcReadFile                   sub_020745AC
 #define DC_StoreRange                        sub_020862D4
 #define NNS_SndArcGetCurrent                 sub_020742FC
-#define NNS_SndArcSetFileAddress             sub_0207469C
 #define MI_CpuCopy8                          sub_02082D44
 #define MI_CpuFill8                          sub_02082BCC
 #define OS_DisableInterrupts                 sub_02087988

@@ -5,14 +5,9 @@
 #define SDK_FINALROM
 
 /* callees outside this TU, from the claim table */
-#define OS_DisableIrqMask                    sub_020849A0
 #define OS_DisableInterrupts                 sub_02087988
 #define OS_RestoreInterrupts                 sub_0208799C
-#define OS_Terminate                         sub_0208823C
-#define OS_SetIrqFunction                    sub_0208477C
 #define GX_SetVCountEqVal                    sub_0207D384
-#define OS_EnableIrqMask                     sub_02084970
-#define OS_ResetRequestIrqMask               sub_020849D0
 #define OS_InitVAlarm        sub_02087578
 #define OSi_InsertVAlarm     sub_020875B8
 #define OSi_AppendVAlarm     sub_02087634

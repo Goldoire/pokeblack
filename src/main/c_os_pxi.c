@@ -5,7 +5,6 @@
 #define SDK_FINALROM
 
 /* callees outside this TU, from the claim table */
-#define OS_Terminate                         sub_0208823C
 #define PXI_SendWordByFifo                   sub_02088610
 #define OSi_SendToPxi      sub_02084A84
 /* stripped or unplaced: OS_IsResetOccurred (16B) */

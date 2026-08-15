@@ -49,6 +49,9 @@ void sub_0216B65C(void);
 int sub_02177270(u8 param0, int param1);
 BOOL sub_0215610C(void);
 void sub_02156344(u16 param0);
+void sub_021AEF6C(u16 param0, int param1, int param2);
+void sub_021AF18C(void *param0);
+extern const u8 _0215631D[];  /* sub_0215631C */
 
 /* ov021 */
 void sub_021AF13C(void);
@@ -67,6 +70,17 @@ void sub_02034A5C(u32 overlayId);
  * rather than an immediate.  This one resolves to 17. */
 extern u8 _00000011[];
 void sub_021B6100(void);
+void sub_021688FC(void *param0, int param1);
+int sub_0209C0A4(int numerator, int denominator); /* signed divide helper */
+void sub_0216AE88(void);
+void sub_021554C8(void);
+void sub_0216B7E0(u8 param0);
+void sub_021567B8(void);
+void sub_021AEE14(int param0);
+BOOL sub_021AF238(u32 param0, u32 param1);
+int sub_02155F58(void);
+void sub_02156CF4(void);
+void sub_02155C70(void);
 
 void sub_02155904(void)
 {
@@ -527,4 +541,336 @@ void sub_02156DFC(int param0)
 void sub_02156E24(int param0, int param1, int param2)
 {
     sub_02156E30(param0, param1, 0, param2);
+}
+
+void sub_02155648(void *param0, void *param1)
+{
+    *(void **)(_021A8264 + 0x27C) = param0;
+    *(void **)(_021A8264 + 0x280) = param1;
+}
+
+void sub_02155664(void *param0)
+{
+    *(void **)(_021A8264 + 0x2A4) = param0;
+}
+
+void sub_02155674(void)
+{
+}
+
+u8 sub_02155678(void)
+{
+    return _021A8264[0x7A5];
+}
+
+void sub_0215683C(void *param0, int param1)
+{
+    if (param1 > 32) {
+        sub_02034714(_021A1C5C, 0, _021A1C5C);
+    }
+
+    sub_021688FC(param0, param1);
+}
+
+u8 *sub_02156860(u32 param0)
+{
+    return _021A8264 + 0x34C + param0 * 32;
+}
+
+u8 sub_02156874(u32 param0)
+{
+    return _021A8264[param0 + 0x32C];
+}
+
+/* Maps a DWC/GameSpy numeric error code (param0) plus an error class
+ * (param1) onto the game's own error-screen id. */
+int sub_02156460(int param0, int param1)
+{
+    int v0 = sub_0209C0A4(param0, 100);
+    int v1 = sub_0209C0A4(param0, 1000);
+
+    if (param0 == 20101) {
+        return 1;
+    }
+
+    if (v1 == 23) {
+        return 1;
+    }
+
+    if (param0 == 20108) {
+        return 2;
+    }
+
+    if (param0 == 20110) {
+        return 3;
+    }
+
+    if (v0 == 512) {
+        return 4;
+    }
+
+    if (v0 == 500) {
+        return 5;
+    }
+
+    if (param0 == 51103) {
+        return 6;
+    }
+
+    if (v0 == 510) {
+        return 6;
+    }
+
+    if (v0 == 511) {
+        return 6;
+    }
+
+    if (v0 == 513) {
+        return 6;
+    }
+
+    if (param0 >= 52000 && param0 <= 52003) {
+        return 8;
+    }
+
+    if (param0 >= 52010 && param0 <= 52012) {
+        return 8;
+    }
+
+    if (param0 >= 52100 && param0 <= 52103) {
+        return 8;
+    }
+
+    if (param0 >= 52110 && param0 <= 52112) {
+        return 8;
+    }
+
+    if (param0 >= 52200 && param0 <= 52203) {
+        return 8;
+    }
+
+    if (param0 >= 52210 && param0 <= 52212) {
+        return 8;
+    }
+
+    if (param0 >= 52400 && param0 <= 52403) {
+        return 8;
+    }
+
+    if (param0 >= 52410 && param0 <= 52412) {
+        return 8;
+    }
+
+    if (param0 >= 52500 && param0 <= 52503) {
+        return 8;
+    }
+
+    if (param0 >= 52510 && param0 <= 52512) {
+        return 8;
+    }
+
+    if (param0 >= 52700 && param0 <= 52703) {
+        return 8;
+    }
+
+    if (param0 >= 52710 && param0 <= 52712) {
+        return 8;
+    }
+
+    if (param0 == 80430) {
+        return 9;
+    }
+
+    if (v1 == 20) {
+        return 0;
+    }
+
+    if (v0 == 520) {
+        return 0;
+    }
+
+    if (v0 == 521) {
+        return 0;
+    }
+
+    if (v0 == 522) {
+        return 0;
+    }
+
+    if (v0 == 523) {
+        return 0;
+    }
+
+    if (v0 == 530) {
+        return 0;
+    }
+
+    if (v0 == 531) {
+        return 0;
+    }
+
+    if (v0 == 532) {
+        return 0;
+    }
+
+    if (param0 < 10000) {
+        return 14;
+    }
+
+    if (v1 == 31) {
+        return 12;
+    }
+
+    switch (param1) {
+    case 0:
+    case 1:
+        return 14;
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+        return 11;
+    default:
+        sub_02034714(_021A1C5C, 0, _021A1C5C);
+        break;
+    case 7:
+        return 15;
+    }
+
+    return -1;
+}
+
+int sub_021561C0(void)
+{
+    int i;
+    u32 v0;
+    int v1;
+
+    sub_02156CF4();
+    sub_0216AE88();
+    sub_021567B8();
+
+    if (*(u32 *)(_021A8264 + 0x76C) != 0) {
+        if (*(u16 *)(_021A8264 + 0x794) == 1 && *(u32 *)(_021A8264 + 0x790) == 1
+            && *(u16 *)(_021A8264 + 0x796) == 1) {
+            sub_021AEE14(0);
+        } else {
+            sub_021AEE14(1);
+        }
+
+        if (*(u32 *)(_021A8264 + 0x768) != sub_0216B908()
+            && _021A8264[0x79F] == 0 && *(s16 *)(_021A8264 + 0x782) != 0) {
+            if (sub_021AF238(sub_0216B908(), sub_0216B838())) {
+                *(u32 *)(_021A8264 + 0x768) = sub_0216B908();
+            }
+        }
+    }
+
+    v0 = *(u32 *)(_021A8264 + 0x754);
+
+    if (v0 == 20) {
+        v1 = sub_02155F58();
+
+        if (v1 == 0) {
+            return 1003;
+        }
+
+        return v1;
+    }
+
+    if (v0 == 19) {
+        return 1004;
+    }
+
+    if (v0 == 9 || v0 == 10) {
+        for (i = 0; i < *(s32 *)(_021A8264 + 0x764); i++) {
+            if ((*(s32 *)(_021A8264 + i * 4 + 0x784))++ >= 240
+                && *(u32 *)(_021A8264 + 0x760) == 0 && sub_0215615C(i)) {
+                sub_02155C70();
+                break;
+            }
+        }
+    }
+
+    return sub_02155F58();
+}
+
+void sub_02156A58(int param0, int param1, int param2, int param3, int param4)
+{
+#pragma unused(param3)
+    int v0 = 0;
+
+    *(u32 *)(_021A8264 + 0x778) = 0;
+
+    if (param0 == 0) {
+        if (param1 == 0) {
+            if (_021A8264[0x7A4] != 0 && param4 == -1) {
+                v0 = 1;
+            }
+
+            if (*(u32 *)(_021A8264 + 0x2A4) != 0) {
+                if ((*(int (**)(int, void *))(_021A8264 + 0x2A4))(
+                        param4, sub_0203D650()) == 0) {
+                    v0 = 1;
+                }
+            }
+
+            if (_021A8264[0x7A0] != 0 || v0) {
+                if (param4 != -1) {
+                    sub_0216B7E0((u8)param4);
+                }
+            }
+
+            *(u32 *)(_021A8264 + 0x770) = param4;
+            *(u32 *)(_021A8264 + 0x798) = sub_0216B908();
+
+            if (*(u32 *)(_021A8264 + 0x798) == 1) {
+                sub_02155374(8);
+            } else {
+                sub_02155D2C(param4);
+            }
+        } else if (param2 == 0) {
+            *(u16 *)(_021A8264 + 0x780) = (u16)param4;
+            *(s32 *)(_021A8264 + 0x774) = -1;
+        }
+    }
+}
+
+void sub_02156344(u16 param0)
+{
+    int v0;
+
+    *(u16 *)(_021A8264 + 0x794) = 1;
+    *(u32 *)(_021A8264 + 0x790) = 1;
+    *(u16 *)(_021A8264 + 0x796) = 1;
+
+    if (*(u32 *)(_021A8264 + 0x76C) != 0) {
+        return;
+    }
+
+    switch (*(u32 *)(_021A8264 + 0x77C)) {
+    case 2:
+        v0 = 1;
+        break;
+    case 3:
+        v0 = 2;
+        break;
+    case 4:
+        v0 = 3;
+        break;
+    case 5:
+        v0 = 4;
+        break;
+    case 0:
+    case 1:
+    default:
+        v0 = 4;
+        break;
+    }
+
+    sub_021AEF6C(param0, v0, 1);
+    sub_021AF18C((void *)_0215631D);
+
+    *(u32 *)(_021A8264 + 0x76C) = 1;
 }

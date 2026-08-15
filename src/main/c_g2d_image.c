@@ -1,40 +1,39 @@
-/* TwlSDK/TwlSystem lib/TwlSystem/build/libraries/g2d/src/g2d_Image.c
- * Renamed to sub_<realRAM> per function so verify_functions.py can
- * place them. The retail ARM9 is built with SDK_FINALROM.
+/* lib/TwlSystem/build/libraries/g2d/src/g2d_Image.c, as linked into the retail ARM9.
+ * Each function is renamed to sub_<realRAM> so verify_functions.py can place
+ * it. SDK_FINALROM is what the retail build used: without it the merged .bss
+ * of a translation unit comes out in a different order and every static
+ * variable offset in the generated code is wrong.
  */
 #define SDK_FINALROM
 
-/* callees outside this TU, from the claim table */
+/* callees outside this file */
 #define DC_FlushRange                        sub_020862F0
-#define GX_BeginLoadTex                      sub_0207F7A0
-#define GX_LoadTex                           sub_0207F804
-#define GX_EndLoadTex                        sub_0207F9BC
+#define GX_BeginLoadTex                      sub_0207F754
 #define GX_BeginLoadOBJExtPltt               sub_0207F47C
 #define GXS_BeginLoadOBJExtPltt              sub_0207F6A8
 #define GX_BeginLoadTexPltt                  sub_0207FA0C
-#define GX_LoadTexPltt                       sub_0207FA48
-#define GX_EndLoadTexPltt                    sub_0207FAE4
+
 #define NNS_G2dInitImagePaletteProxy     sub_020637D4
 #define NNS_G2dSetImagePaletteLocation   sub_020637F4
 #define NNS_G2dGetImagePaletteLocation   sub_02063800
-/* stripped or unplaced: NNS_G2dInitImageProxy (28B) */
-/* stripped or unplaced: NNS_G2dSetImageLocation (8B) */
-/* stripped or unplaced: NNS_G2dGetImageLocation (8B) */
-/* stripped or unplaced: NNS_G2dIsImageReadyToUse (20B) */
-/* stripped or unplaced: NNS_G2dIsImagePaletteReadyToUse (24B) */
-/* stripped or unplaced: NNS_G2dLoadImage1DMapping (536B) */
-/* stripped or unplaced: NNS_G2dLoadImage2DMapping (536B) */
-/* stripped or unplaced: NNS_G2dLoadImageVramTransfer (448B) */
-/* stripped or unplaced: NNS_G2dLoadPalette (248B) */
-/* stripped or unplaced: NNS_G2dLoadPaletteEx (348B) */
-/* stripped or unplaced: NNSi_G2dInitializeVRamLocation (28B) */
-/* stripped or unplaced: NNSi_G2dSetVramLocation (8B) */
-/* stripped or unplaced: NNSi_G2dGetVramLocation (8B) */
-/* stripped or unplaced: NNSi_G2dIsVramLocationReadyToUse (20B) */
-/* stripped or unplaced: NNSi_G2dDoImageLoadingToVram (124B) */
-/* stripped or unplaced: NNSi_G2dSetupImageProxyPrams (344B) */
-/* stripped or unplaced: NNSi_G2dDoLoadingPaletteToVram (212B) */
-/* stripped or unplaced: NNSi_G2dDoLoadingPaletteToVramEx (312B) */
-/* stripped or unplaced: NNSi_G2dSetupPaletteProxyPrams (44B) */
+/* not in shard or dead-stripped: NNS_G2dInitImageProxy (28B) */
+/* not in shard or dead-stripped: NNS_G2dSetImageLocation (8B) */
+/* not in shard or dead-stripped: NNS_G2dGetImageLocation (8B) */
+/* not in shard or dead-stripped: NNS_G2dIsImageReadyToUse (20B) */
+/* not in shard or dead-stripped: NNS_G2dIsImagePaletteReadyToUse (24B) */
+/* not in shard or dead-stripped: NNS_G2dLoadImage1DMapping (536B) */
+/* not in shard or dead-stripped: NNS_G2dLoadImage2DMapping (536B) */
+/* not in shard or dead-stripped: NNS_G2dLoadImageVramTransfer (448B) */
+/* not in shard or dead-stripped: NNS_G2dLoadPalette (248B) */
+/* not in shard or dead-stripped: NNS_G2dLoadPaletteEx (348B) */
+/* not in shard or dead-stripped: NNSi_G2dInitializeVRamLocation (28B) */
+/* not in shard or dead-stripped: NNSi_G2dSetVramLocation (8B) */
+/* not in shard or dead-stripped: NNSi_G2dGetVramLocation (8B) */
+/* not in shard or dead-stripped: NNSi_G2dIsVramLocationReadyToUse (20B) */
+/* not in shard or dead-stripped: NNSi_G2dDoImageLoadingToVram (124B) */
+/* not in shard or dead-stripped: NNSi_G2dSetupImageProxyPrams (344B) */
+/* not in shard or dead-stripped: NNSi_G2dDoLoadingPaletteToVram (212B) */
+/* not in shard or dead-stripped: NNSi_G2dDoLoadingPaletteToVramEx (312B) */
+/* not in shard or dead-stripped: NNSi_G2dSetupPaletteProxyPrams (44B) */
 
 #include "../../lib/TwlSystem/build/libraries/g2d/src/g2d_Image.c"

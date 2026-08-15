@@ -1,6 +1,8 @@
-/* TwlSDK/TwlSystem lib/NitroSDK/TwlSDK/build/libraries/fx/common/src/fx_vec.c
- * Renamed to sub_<realRAM> per function so verify_functions.py can
- * place them. The retail ARM9 is built with SDK_FINALROM.
+/* lib/NitroSDK/TwlSDK/build/libraries/fx/common/src/fx_vec.c, as linked into the retail ARM9.
+ * Each function is renamed to sub_<realRAM> so verify_functions.py can place
+ * it. SDK_FINALROM is what the retail build used: without it the merged .bss
+ * of a translation unit comes out in a different order and every static
+ * variable offset in the generated code is wrong.
  */
 #define SDK_FINALROM
 
@@ -16,9 +18,9 @@
 #define VEC_Fx16Normalize    sub_0207CDB8
 #define VEC_MultAdd          sub_0207CEE4
 #define VEC_Distance         sub_0207CF3C
-/* stripped or unplaced: VEC_Fx16Subtract (56B) */
-/* stripped or unplaced: VEC_Fx16DotProduct (84B) */
-/* stripped or unplaced: VEC_MultSubtract (88B) */
-/* stripped or unplaced: VEC_Fx16Distance (144B) */
+/* not in shard or dead-stripped: VEC_Fx16Subtract (56B) */
+/* not in shard or dead-stripped: VEC_Fx16DotProduct (84B) */
+/* not in shard or dead-stripped: VEC_MultSubtract (88B) */
+/* not in shard or dead-stripped: VEC_Fx16Distance (144B) */
 
 #include "../../lib/NitroSDK/TwlSDK/build/libraries/fx/common/src/fx_vec.c"

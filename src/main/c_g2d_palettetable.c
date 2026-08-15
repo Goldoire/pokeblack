@@ -1,11 +1,13 @@
-/* TwlSDK/TwlSystem lib/TwlSystem/build/libraries/g2d/src/g2d_PaletteTable.c
- * Renamed to sub_<realRAM> per function so verify_functions.py can
- * place them. The retail ARM9 is built with SDK_FINALROM.
+/* lib/TwlSystem/build/libraries/g2d/src/g2d_PaletteTable.c, as linked into the retail ARM9.
+ * Each function is renamed to sub_<realRAM> so verify_functions.py can place
+ * it. SDK_FINALROM is what the retail build used: without it the merged .bss
+ * of a translation unit comes out in a different order and every static
+ * variable offset in the generated code is wrong.
  */
 #define SDK_FINALROM
 
-/* stripped or unplaced: NNS_G2dInitializePaletteTable (36B) */
-/* stripped or unplaced: NNS_G2dSetPaletteTableValue (12B) */
-/* stripped or unplaced: NNS_G2dGetPaletteTableValue (12B) */
+/* not in shard or dead-stripped: NNS_G2dInitializePaletteTable (36B) */
+/* not in shard or dead-stripped: NNS_G2dSetPaletteTableValue (12B) */
+/* not in shard or dead-stripped: NNS_G2dGetPaletteTableValue (12B) */
 
 #include "../../lib/TwlSystem/build/libraries/g2d/src/g2d_PaletteTable.c"

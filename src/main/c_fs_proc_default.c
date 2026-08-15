@@ -1,27 +1,26 @@
-/* TwlSDK/TwlSystem lib/NitroSDK/TwlSDK/build/libraries/fs/common/src/fs_proc_default.c
- * Renamed to sub_<realRAM> per function so verify_functions.py can
- * place them. The retail ARM9 is built with SDK_FINALROM.
+/* lib/NitroSDK/TwlSDK/build/libraries/fs/common/src/fs_proc_default.c, as linked into the retail ARM9.
+ * Each function is renamed to sub_<realRAM> so verify_functions.py can place
+ * it. SDK_FINALROM is what the retail build used: without it the merged .bss
+ * of a translation unit comes out in a different order and every static
+ * variable offset in the generated code is wrong.
  */
 #define SDK_FINALROM
 
-/* callees outside this TU, from the claim table */
-#define FS_ReadFile                          sub_02078B78
+/* callees outside this file */
 #define MI_CpuCopy8                          sub_02082D44
 #define FSi_WaitForArchiveCompletion         sub_02077700
 #define FSi_IncrementSjisPositionToSlash     sub_020787E0
 #define FS_InitFile                          sub_020788AC
 #define FS_GetArchiveName                    sub_02078530
-#define STD_GetStringLength                  sub_0208CC80
-#define FSi_IsUnreadableRomOffset            sub_0207A988
 #define MI_CpuFill8                          sub_02082BCC
 #define CARD_GetRomHeader                    sub_02075DEC
-#define OS_Terminate                         sub_0208823C
 #define FS_MountArchive                      sub_02078540
 #define FS_UnmountArchive                    sub_02078588
 #define FS_OpenFileDirect                    sub_02078964
 #define FS_CloseFile                         sub_02078A80
 #define FS_SuspendArchive                    sub_02078648
 #define FS_ResumeArchive                     sub_020786D8
+
 #define FSi_ReadTable                 sub_02079304
 #define FSi_SeekDirDirect             sub_02079364
 #define FSi_SeekDirDefault            sub_02079390
@@ -58,25 +57,25 @@
 #define FSi_ROMFAT_GetPathInfo        sub_0207A2E0
 #define FSi_ROMFAT_GetArchiveResource sub_0207A40C
 #define FSi_SRLArchiveProc            sub_0207AAE4
-/* stripped or unplaced: FSi_SeekAndReadSRL (56B) */
-/* stripped or unplaced: FSi_ReadSRLCallback (44B) */
-/* stripped or unplaced: FSi_MountSRLFile (344B) */
-/* stripped or unplaced: FSi_ReadMemCallback (40B) */
-/* stripped or unplaced: FSi_WriteMemCallback (44B) */
-/* stripped or unplaced: FS_LoadArchive (108B) */
-/* stripped or unplaced: FS_UnloadArchive (12B) */
-/* stripped or unplaced: FSi_GetFileLengthIfProc (64B) */
-/* stripped or unplaced: FSi_GetFilePositionIfProc (64B) */
-/* stripped or unplaced: FSi_SeekFileIfProc (100B) */
-/* stripped or unplaced: FS_SetArchiveProc (32B) */
-/* stripped or unplaced: FS_LoadArchiveTables (320B) */
-/* stripped or unplaced: FS_UnloadArchiveTables (132B) */
-/* stripped or unplaced: FS_GetArchiveBase (12B) */
-/* stripped or unplaced: FS_GetArchiveFAT (12B) */
-/* stripped or unplaced: FS_GetArchiveFNT (12B) */
-/* stripped or unplaced: FS_GetArchiveOffset (16B) */
-/* stripped or unplaced: FS_IsArchiveTableLoaded (20B) */
-/* stripped or unplaced: FS_GetFileImageTop (8B) */
-/* stripped or unplaced: FS_GetFileImageBottom (8B) */
+/* not in shard or dead-stripped: FSi_SeekAndReadSRL (56B) */
+/* not in shard or dead-stripped: FSi_ReadSRLCallback (44B) */
+/* not in shard or dead-stripped: FSi_MountSRLFile (344B) */
+/* not in shard or dead-stripped: FSi_ReadMemCallback (40B) */
+/* not in shard or dead-stripped: FSi_WriteMemCallback (44B) */
+/* not in shard or dead-stripped: FS_LoadArchive (108B) */
+/* not in shard or dead-stripped: FS_UnloadArchive (12B) */
+/* not in shard or dead-stripped: FSi_GetFileLengthIfProc (64B) */
+/* not in shard or dead-stripped: FSi_GetFilePositionIfProc (64B) */
+/* not in shard or dead-stripped: FSi_SeekFileIfProc (100B) */
+/* not in shard or dead-stripped: FS_SetArchiveProc (32B) */
+/* not in shard or dead-stripped: FS_LoadArchiveTables (320B) */
+/* not in shard or dead-stripped: FS_UnloadArchiveTables (132B) */
+/* not in shard or dead-stripped: FS_GetArchiveBase (12B) */
+/* not in shard or dead-stripped: FS_GetArchiveFAT (12B) */
+/* not in shard or dead-stripped: FS_GetArchiveFNT (12B) */
+/* not in shard or dead-stripped: FS_GetArchiveOffset (16B) */
+/* not in shard or dead-stripped: FS_IsArchiveTableLoaded (20B) */
+/* not in shard or dead-stripped: FS_GetFileImageTop (8B) */
+/* not in shard or dead-stripped: FS_GetFileImageBottom (8B) */
 
 #include "../../lib/NitroSDK/TwlSDK/build/libraries/fs/common/src/fs_proc_default.c"

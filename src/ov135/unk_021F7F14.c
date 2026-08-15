@@ -23,6 +23,7 @@ void sub_021F4EC8(WorldTradeWork *work);
 void sub_02005D90(u32 a0, u32 a1);
 void sub_021F4EC0(WorldTradeWork *work, u32 a1, u32 a2);
 u32 sub_02168124(void);
+void sub_02168064(void);
 
 u32 sub_021F7F14(WorldTradeWork *work)
 {
@@ -175,6 +176,12 @@ u32 sub_021F8A44(WorldTradeWork *work)
     work->unk_0030 = 0;
     sub_021F4EC0(work, 1, 0);
     return 2;
+}
+
+u32 sub_021F8A74(void)
+{
+    sub_02168064();
+    return 1;
 }
 
 u32 sub_021F8A80(void)

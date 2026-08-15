@@ -1,11 +1,11 @@
-/* TwlSDK/TwlSystem lib/TwlSystem/build/libraries/g2d/src/g2d_Animation.c
- * Renamed to sub_<realRAM> per function so verify_functions.py can
- * place them. The retail ARM9 is built with SDK_FINALROM.
+/* lib/TwlSystem/build/libraries/g2d/src/g2d_Animation.c, as linked into the retail ARM9.
+ * Each function is renamed to sub_<realRAM> so verify_functions.py can place
+ * it. SDK_FINALROM is what the retail build used: without it the merged .bss
+ * of a translation unit comes out in a different order and every static
+ * variable offset in the generated code is wrong.
  */
 #define SDK_FINALROM
 
-/* callees outside this TU, from the claim table */
-#define FX_Div                               sub_0207C770
 #define SetAnimCtrlCurrentFrameImpl_                     sub_02062D08
 #define NNS_G2dGetAnimCtrlCurrentElement                 sub_02062D40
 #define NNS_G2dSetAnimCtrlCurrentFrame                   sub_02062F00
@@ -15,14 +15,14 @@
 #define NNS_G2dBindAnimCtrl                              sub_02062FF0
 #define NNS_G2dSetAnimCtrlCallBackFunctorAtAnimFrame     sub_02063018
 #define NNSi_G2dIsAnimCtrlLoopAnim                       sub_02063030
-/* stripped or unplaced: NNSi_G2dCallbackFuncHandling (68B) */
-/* stripped or unplaced: SequenceEdgeHandle_ (272B) */
-/* stripped or unplaced: NNS_G2dGetAnimCtrlNextElement (84B) */
-/* stripped or unplaced: NNS_G2dGetAnimCtrlNormalizedTime (28B) */
-/* stripped or unplaced: NNS_G2dTickAnimCtrl (404B) */
-/* stripped or unplaced: NNS_G2dSetAnimCtrlCurrentFrameNoResetCurrentTime (12B) */
-/* stripped or unplaced: NNS_G2dInitAnimCtrlCallBackFunctor (16B) */
-/* stripped or unplaced: NNS_G2dResetAnimCtrlState (88B) */
-/* stripped or unplaced: NNS_G2dSetAnimCtrlCallBackFunctor (24B) */
+/* not in shard or dead-stripped: NNSi_G2dCallbackFuncHandling (68B) */
+/* not in shard or dead-stripped: SequenceEdgeHandle_ (272B) */
+/* not in shard or dead-stripped: NNS_G2dGetAnimCtrlNextElement (84B) */
+/* not in shard or dead-stripped: NNS_G2dGetAnimCtrlNormalizedTime (28B) */
+/* not in shard or dead-stripped: NNS_G2dTickAnimCtrl (404B) */
+/* not in shard or dead-stripped: NNS_G2dSetAnimCtrlCurrentFrameNoResetCurrentTime (12B) */
+/* not in shard or dead-stripped: NNS_G2dInitAnimCtrlCallBackFunctor (16B) */
+/* not in shard or dead-stripped: NNS_G2dResetAnimCtrlState (88B) */
+/* not in shard or dead-stripped: NNS_G2dSetAnimCtrlCallBackFunctor (24B) */
 
 #include "../../lib/TwlSystem/build/libraries/g2d/src/g2d_Animation.c"

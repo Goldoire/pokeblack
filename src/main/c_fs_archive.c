@@ -1,21 +1,20 @@
-/* TwlSDK/TwlSystem lib/NitroSDK/TwlSDK/build/libraries/fs/common/src/fs_archive.c
- * Renamed to sub_<realRAM> per function so verify_functions.py can
- * place them. The retail ARM9 is built with SDK_FINALROM.
+/* lib/NitroSDK/TwlSDK/build/libraries/fs/common/src/fs_archive.c, as linked into the retail ARM9.
+ * Each function is renamed to sub_<realRAM> so verify_functions.py can place
+ * it. SDK_FINALROM is what the retail build used: without it the merged .bss
+ * of a translation unit comes out in a different order and every static
+ * variable offset in the generated code is wrong.
  */
 #define SDK_FINALROM
 
-/* callees outside this TU, from the claim table */
+/* callees outside this file */
 #define OS_DisableInterrupts                 sub_02087988
 #define OS_WakeupThread                      sub_02085800
 #define OS_RestoreInterrupts                 sub_0208799C
-#define OS_SleepThread                       sub_020857B0
 #define FS_InitFile                          sub_020788AC
-#define OS_Terminate                         sub_0208823C
-#define STD_CompareNString                   sub_0208CE54
-#define STD_CopyLString                      sub_0208CB18
 #define FSi_DecrementSjisPositionToSlash     sub_02078834
 #define FSi_TrimSjisTrailingSlash            sub_02078868
 #define MI_CpuFill8                          sub_02082BCC
+
 #define FSi_IsEventCommand           sub_02077634
 #define FSi_EndCommand               sub_0207765C
 #define FSi_WaitForArchiveCompletion sub_02077700
@@ -36,11 +35,11 @@
 #define FS_SuspendArchive            sub_02078648
 #define FS_ResumeArchive             sub_020786D8
 #define FS_NotifyArchiveAsyncEnd     sub_02078734
-/* stripped or unplaced: FSi_GetArchiveChain (16B) */
-/* stripped or unplaced: FSi_NextCommand (428B) */
-/* stripped or unplaced: FSi_EndArchive (84B) */
-/* stripped or unplaced: FS_GetArchiveResultCode (104B) */
-/* stripped or unplaced: FS_GetCurrentDirectory (12B) */
-/* stripped or unplaced: FS_WaitAsync (164B) */
+/* not in shard or dead-stripped: FSi_GetArchiveChain (16B) */
+/* not in shard or dead-stripped: FSi_NextCommand (428B) */
+/* not in shard or dead-stripped: FSi_EndArchive (84B) */
+/* not in shard or dead-stripped: FS_GetArchiveResultCode (104B) */
+/* not in shard or dead-stripped: FS_GetCurrentDirectory (12B) */
+/* not in shard or dead-stripped: FS_WaitAsync (164B) */
 
 #include "../../lib/NitroSDK/TwlSDK/build/libraries/fs/common/src/fs_archive.c"

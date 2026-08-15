@@ -6,14 +6,12 @@
 
 /* callees outside this TU, from the claim table */
 #define NNS_FndCreateFrmHeapEx               sub_020610E0
-#define NNS_FndDestroyFrmHeap                sub_02061120
 #define NNS_FndGetPrevListObject             sub_0206062C
 #define NNS_FndRemoveListObject              sub_020605B4
-#define NNS_FndFreeToFrmHeap                 sub_02061160
-#define NNS_FndAllocFromFrmHeapEx            sub_0206112C
+#define NNS_FndFreeToFrmHeap                 sub_02061158
+#define NNS_FndAllocFromFrmHeapEx            sub_02061124
 #define NNS_FndAppendListObject              sub_020604AC
-#define NNS_FndRecordStateForFrmHeap         sub_0206118C
-#define NNS_FndFreeByStateToFrmHeap          sub_020611DC
+#define NNS_FndRecordStateForFrmHeap         sub_02061184
 #define NNS_FndInitList                      sub_02060468
 #define SND_GetCurrentCommandTag             sub_02089D40
 #define SND_FlushCommand                     sub_02089B38

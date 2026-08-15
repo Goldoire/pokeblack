@@ -6,8 +6,6 @@
 
 /* callees outside this TU, from the claim table */
 #define OS_Halt                              sub_020882D0
-#define SVC_WaitByLoop                       sub_02004498
-#define OS_WaitIrq                           sub_020845A4
 #define OS_EnableInterrupts            sub_02087974
 #define OS_DisableInterrupts           sub_02087988
 #define OS_RestoreInterrupts           sub_0208799C

@@ -1,6 +1,8 @@
-/* TwlSDK/TwlSystem lib/TwlSystem/build/libraries/fnd/src/list.c
- * Renamed to sub_<realRAM> per function so verify_functions.py can
- * place them. The retail ARM9 is built with SDK_FINALROM.
+/* lib/TwlSystem/build/libraries/fnd/src/list.c, as linked into the retail ARM9.
+ * Each function is renamed to sub_<realRAM> so verify_functions.py can place
+ * it. SDK_FINALROM is what the retail build used: without it the merged .bss
+ * of a translation unit comes out in a different order and every static
+ * variable offset in the generated code is wrong.
  */
 #define SDK_FINALROM
 
@@ -12,6 +14,6 @@
 #define NNS_FndRemoveListObject  sub_020605B4
 #define NNS_FndGetNextListObject sub_02060614
 #define NNS_FndGetPrevListObject sub_0206062C
-/* stripped or unplaced: NNS_FndGetNthListObject (72B) */
+/* not in shard or dead-stripped: NNS_FndGetNthListObject (72B) */
 
 #include "../../lib/TwlSystem/build/libraries/fnd/src/list.c"

@@ -43,7 +43,6 @@ void sub_020360A8(void)
 void sub_020360B8(UnkStruct020360B8 *p)
 {
     UnkStruct020360B8_entry *e;
-    u32 t;
 
     if (p->unk00 == NULL) {
         return;
@@ -65,30 +64,39 @@ void sub_020360B8(UnkStruct020360B8 *p)
             }
             break;
         case 2:
-            t = 0;
+        {
+            u32 t = 0;
             if ((p->unk1C & e->unk00) != 0) {
                 t |= e->unk04;
             }
             if ((p->unk1C & e->unk04) != 0) {
                 t |= e->unk00;
             }
-            p->unk1C = (p->unk1C & ((e->unk00 | e->unk04) ^ 0xFFFF)) | t;
-            t = 0;
+            p->unk1C &= (e->unk00 | e->unk04) ^ 0xFFFF;
+            p->unk1C |= t;
+        }
+        {
+            u32 t = 0;
             if ((p->unk18 & e->unk00) != 0) {
                 t |= e->unk04;
             }
             if ((p->unk18 & e->unk04) != 0) {
                 t |= e->unk00;
             }
-            p->unk18 = (p->unk18 & ((e->unk00 | e->unk04) ^ 0xFFFF)) | t;
-            t = 0;
+            p->unk18 &= (e->unk00 | e->unk04) ^ 0xFFFF;
+            p->unk18 |= t;
+        }
+        {
+            u32 t = 0;
             if ((p->unk20 & e->unk00) != 0) {
                 t |= e->unk04;
             }
             if ((p->unk20 & e->unk04) != 0) {
                 t |= e->unk00;
             }
-            p->unk20 = (p->unk20 & ((e->unk00 | e->unk04) ^ 0xFFFF)) | t;
+            p->unk20 &= (e->unk00 | e->unk04) ^ 0xFFFF;
+            p->unk20 |= t;
+        }
             break;
         case 3:
             p->unk1C &= e->unk00 ^ 0xFFFF;

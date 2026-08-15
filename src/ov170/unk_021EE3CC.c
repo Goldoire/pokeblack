@@ -27,6 +27,15 @@ typedef struct Ov170Rec12 {
     u8 unk02[10];
 } Ov170Rec12;
 
+/* The rodata tables this file reads live inside the 7376-byte blob that
+ * build/reference/triage.json records as a *function* at 0x021EF770.  Because
+ * of that, verify_functions.py's new "undefined symbol inside a Thumb extent
+ * must be a function" rule ORs bit 0 into any relocation that names one of
+ * them, so an `extern const ... _021EFA28[];` declaration no longer verifies.
+ * Spelling the tables as absolute addresses keeps every byte checked (no
+ * relocation at all).  Switch back to named externs once triage marks
+ * 0x021EF770 as data.
+ */
 extern const u8 _021F0188[];
 extern const Ov170Rec12 _021F0370[];
 extern const Ov170Rec12 _021F0DCC[];

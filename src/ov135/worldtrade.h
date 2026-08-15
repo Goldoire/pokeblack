@@ -99,14 +99,20 @@ typedef struct WorldTradeWork
     u8 pad_0EA8[0xEB2 - 0xEA8];
     u16 unk_0EB2;     /* sub_021F8A44 */
     u32 unk_0EB4;     /* sub_021F632C / sub_021F7EC0 */
-    u8 pad_0EB8[0xF88 - 0xEB8];
+    u8 pad_0EB8[0xF18 - 0xEB8];
+    u8 unk_0F18;      /* sub_021F8BBC: sub-object, +0x64 is a second one */
+    u8 pad_0F19[0xF7C - 0xF19];
+    u8 unk_0F7C;
+    u8 pad_0F7D[0xF88 - 0xF7D];
     u16 unk_0F88;     /* sub_021F89F0 clears on state change */
     u16 unk_0F8A;
-    u8 pad_0F8C[0xFA0 - 0xF8C];
+    u32 unk_0F8C;     /* sub_021F8BBC */
+    u8 pad_0F90[0xFA0 - 0xF90];
     WorldTradeAdapter unk_0FA0;
     u8 pad_0FB4[0x10DC - (0xFA0 + sizeof(WorldTradeAdapter))];
     void *unk_10DC;   /* sub_021F7268 */
-    u8 pad_10E0[0x12F8 - 0x10E0];
+    u8 pad_10E0[0x12F4 - 0x10E0];
+    u32 unk_12F4;     /* sub_021F8DA4 / sub_021F8E58 gate */
     u32 unk_12F8;
 } WorldTradeWork;
 

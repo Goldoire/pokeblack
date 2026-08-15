@@ -8,9 +8,6 @@
 #define NNS_SndArcGetCurrent                 sub_020742FC
 #define NNS_SndPlayerSetPlayableSeqCount     sub_02072DB0
 #define NNS_SndPlayerSetAllocatableChannel   sub_02072DD0
-#define NNS_SndArcGetSeqInfo                 sub_0207432C
-#define NNS_SndArcGetSeqArcInfo              sub_02074390
-#define NNS_SndArcGetFileAddress             sub_02074674
 #define NNSi_SndSeqArcGetSeqInfo             sub_02075B54
 #define NNSi_SndArcLoadBank                  sub_02074CD0
 #define NNSi_SndArcLoadSeq                   sub_02074BEC

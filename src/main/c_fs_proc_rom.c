@@ -1,20 +1,18 @@
-/* TwlSDK/TwlSystem lib/NitroSDK/TwlSDK/build/libraries/fs/common/src/fs_proc_rom.c
- * Renamed to sub_<realRAM> per function so verify_functions.py can
- * place them. The retail ARM9 is built with SDK_FINALROM.
+/* lib/NitroSDK/TwlSDK/build/libraries/fs/common/src/fs_proc_rom.c, as linked into the retail ARM9.
+ * Each function is renamed to sub_<realRAM> so verify_functions.py can place
+ * it. SDK_FINALROM is what the retail build used: without it the merged .bss
+ * of a translation unit comes out in a different order and every static
+ * variable offset in the generated code is wrong.
  */
 #define SDK_FINALROM
 
-/* callees outside this TU, from the claim table */
-#define CARD_IsPulledOut                     sub_020774B8
+/* callees outside this file */
 #define FS_NotifyArchiveAsyncEnd             sub_02078734
-#define CARDi_ReadRom                        sub_020771BC
 #define CARD_LockRom                         sub_02075E10
 #define CARD_UnlockRom                       sub_02075E80
 #define CARD_Init                            sub_02075CAC
-#define OS_GetLockID                         sub_02084EC0
 #define FS_InitArchive                       sub_02078360
 #define FS_RegisterArchiveName               sub_02078384
-#define OS_GetBootType                       sub_02087B04
 #define CARD_GetOwnRomHeader                 sub_02075DF8
 #define FS_SetArchiveProc                    sub_0207A5A8
 #define FS_LoadArchive                       sub_0207A4B0
@@ -26,6 +24,7 @@
 #define OS_RestoreInterrupts                 sub_0208799C
 #define FS_LoadArchiveTables                 sub_0207A5C8
 #define FS_OpenFileDirect                    sub_02078964
+
 #define FSi_OnRomReadDone         sub_0207A9C8
 #define FSi_ReadRomCallback       sub_0207A9EC
 #define FSi_EmptyArchiveProc      sub_0207AAE4
@@ -36,9 +35,9 @@
 #define FS_SetDefaultDMA          sub_0207AC64
 #define FS_TryLoadTable           sub_0207ACB4
 #define FS_CreateFileFromRom      sub_0207ACD4
-/* stripped or unplaced: FSi_IsUnreadableRomOffset (8B) */
-/* stripped or unplaced: FSi_RomArchiveProc (112B) */
-/* stripped or unplaced: FSi_EndRomArchive (84B) */
-/* stripped or unplaced: FS_GetDefaultDMA (16B) */
+/* not in shard or dead-stripped: FSi_IsUnreadableRomOffset (8B) */
+/* not in shard or dead-stripped: FSi_RomArchiveProc (112B) */
+/* not in shard or dead-stripped: FSi_EndRomArchive (84B) */
+/* not in shard or dead-stripped: FS_GetDefaultDMA (16B) */
 
 #include "../../lib/NitroSDK/TwlSDK/build/libraries/fs/common/src/fs_proc_rom.c"

@@ -47,14 +47,10 @@ extern Conn *sub_021BEC00(Mgr *m, void *key);
 extern Sess *sub_021BEBC8(Mgr *m, void *key);
 extern int sub_021BEBA8(Mgr *m, void *key);
 extern void sub_021BEA64(Conn *c);
-extern s32 sub_021BF018(Mgr *m, Conn *c);
 extern s32 sub_021BEFE4(Mgr *m, Conn *c);
-extern void sub_021BA850(Conn *c);
 extern void sub_021B9C1C(void *p, int n);
-extern void sub_021BB8B4(Ctx *ctx);
 extern s32 sub_021BB97C(Ctx *ctx, void *sock);
 extern void sub_021BBA14(Ctx *ctx, s32 fd);
-extern void sub_021BBB28(Mgr *m, void *p);
 extern int sub_021C1FF8(void *p);
 extern int sub_021C204C(void);
 extern int sub_021C2270(void);
@@ -63,7 +59,7 @@ extern int sub_021C2350(void *p);
 extern int sub_02059F38(void);
 extern void sub_021BFB20(void);
 
-int sub_021BF1B0(Conn *c);
+extern int sub_021BF1B0(Conn *c);   /* banked: build/attempts/ov114/sub_021BF1B0.c */
 int sub_021BF288(Conn *c);
 int sub_021BF3BC(Conn *c);
 int sub_021BF488(Conn *c);
@@ -76,36 +72,6 @@ int sub_021BF184(Conn *c)
         return -1;
     }
     return sub_021BF1B0(e);
-}
-
-int sub_021BF1B0(Conn *c)
-{
-    Ctx *ctx = sub_021BEF08();
-    Mgr *mgr = sub_021BEF58(ctx);
-
-    sub_021BEF50(ctx);
-    if (c == NULL) {
-        return -1;
-    }
-    if (c->counter > 0 && c->unk_18 >= 0) {
-        sub_021BBA14(ctx, c->unk_18);
-        c->unk_18 = -1;
-    }
-    if (sub_021BF018(mgr, c) > 0) {
-        return 0;
-    }
-    if (c->unk_10 != NULL && *(s32 *)((u8 *)c->unk_10 + 4) == 0) {
-        sub_021BB8B4(ctx);
-    }
-    if (c->unk_14 != NULL) {
-        if (c->unk_10 != NULL) {
-            sub_021BF288(c);
-        }
-        sub_021BBB28(mgr, c->unk_14);
-    }
-    sub_021BEBA8(mgr, c);
-    sub_021BA850(c);
-    return 0;
 }
 
 int sub_021BF288(Conn *c)

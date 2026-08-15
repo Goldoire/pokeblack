@@ -1,41 +1,43 @@
-/* TwlSDK/TwlSystem lib/NitroSDK/TwlSDK/build/libraries/env/common/src/env_system.c
- * Renamed to sub_<realRAM> per function so verify_functions.py can
- * place them. The retail ARM9 is built with SDK_FINALROM.
+/* lib/NitroSDK/TwlSDK/build/libraries/env/common/src/env_system.c, as linked into the retail ARM9.
+ * Each function is renamed to sub_<realRAM> so verify_functions.py can place
+ * it. SDK_FINALROM is what the retail build used: without it the merged .bss
+ * of a translation unit comes out in a different order and every static
+ * variable offset in the generated code is wrong.
  */
 #define SDK_FINALROM
 
-/* callees outside this TU, from the claim table */
+/* callees outside this file */
 #define MI_CpuFill8                          sub_02082BCC
-#define STD_CopyLString                      sub_0208CB18
+
 #define ENV_PrependResourceSet                 sub_020913BC
-/* stripped or unplaced: ENVi_ClearLinkList (44B) */
-/* stripped or unplaced: ENVi_SearchBlankLink (48B) */
-/* stripped or unplaced: ENV_Init (52B) */
-/* stripped or unplaced: ENV_AppendResourceSet (92B) */
-/* stripped or unplaced: ENV_InsertResourceSet (116B) */
-/* stripped or unplaced: ENV_SetResourceSet (24B) */
-/* stripped or unplaced: ENV_GetResourceSetLinkHead (16B) */
-/* stripped or unplaced: ENV_GetNextResourceSet (8B) */
-/* stripped or unplaced: ENV_SetClass (40B) */
-/* stripped or unplaced: ENV_GetClass (12B) */
-/* stripped or unplaced: ENVi_CheckIfSameClass (64B) */
-/* stripped or unplaced: ENVi_CheckIfSameMember (112B) */
-/* stripped or unplaced: ENVi_SearchByMemberNameFromResourceSet (92B) */
-/* stripped or unplaced: ENVi_SearchByMemberName (104B) */
-/* stripped or unplaced: ENVi_SearchByFullNameFromResourceSet (68B) */
-/* stripped or unplaced: ENVi_SearchByFullName (104B) */
-/* stripped or unplaced: ENVi_Search (72B) */
-/* stripped or unplaced: ENVi_GetPtrAndLength (120B) */
-/* stripped or unplaced: ENV_GetType (36B) */
-/* stripped or unplaced: ENV_GetSize (32B) */
-/* stripped or unplaced: ENV_GetBelongingResourceSet (88B) */
-/* stripped or unplaced: ENV_GetU64 (108B) */
-/* stripped or unplaced: ENV_InitIter (32B) */
-/* stripped or unplaced: ENVi_SetNextSetForIter (28B) */
-/* stripped or unplaced: ENV_SearchByClass (152B) */
-/* stripped or unplaced: ENV_SearchByMember (152B) */
-/* stripped or unplaced: ENV_SearchByType (132B) */
-/* stripped or unplaced: ENV_SearchByPartialName (144B) */
-/* stripped or unplaced: ENV_SetResourceSetArray (64B) */
+/* not in shard or dead-stripped: ENVi_ClearLinkList (44B) */
+/* not in shard or dead-stripped: ENVi_SearchBlankLink (48B) */
+/* not in shard or dead-stripped: ENV_Init (52B) */
+/* not in shard or dead-stripped: ENV_AppendResourceSet (92B) */
+/* not in shard or dead-stripped: ENV_InsertResourceSet (116B) */
+/* not in shard or dead-stripped: ENV_SetResourceSet (24B) */
+/* not in shard or dead-stripped: ENV_GetResourceSetLinkHead (16B) */
+/* not in shard or dead-stripped: ENV_GetNextResourceSet (8B) */
+/* not in shard or dead-stripped: ENV_SetClass (40B) */
+/* not in shard or dead-stripped: ENV_GetClass (12B) */
+/* not in shard or dead-stripped: ENVi_CheckIfSameClass (64B) */
+/* not in shard or dead-stripped: ENVi_CheckIfSameMember (112B) */
+/* not in shard or dead-stripped: ENVi_SearchByMemberNameFromResourceSet (92B) */
+/* not in shard or dead-stripped: ENVi_SearchByMemberName (104B) */
+/* not in shard or dead-stripped: ENVi_SearchByFullNameFromResourceSet (68B) */
+/* not in shard or dead-stripped: ENVi_SearchByFullName (104B) */
+/* not in shard or dead-stripped: ENVi_Search (72B) */
+/* not in shard or dead-stripped: ENVi_GetPtrAndLength (120B) */
+/* not in shard or dead-stripped: ENV_GetType (36B) */
+/* not in shard or dead-stripped: ENV_GetSize (32B) */
+/* not in shard or dead-stripped: ENV_GetBelongingResourceSet (88B) */
+/* not in shard or dead-stripped: ENV_GetU64 (108B) */
+/* not in shard or dead-stripped: ENV_InitIter (32B) */
+/* not in shard or dead-stripped: ENVi_SetNextSetForIter (28B) */
+/* not in shard or dead-stripped: ENV_SearchByClass (152B) */
+/* not in shard or dead-stripped: ENV_SearchByMember (152B) */
+/* not in shard or dead-stripped: ENV_SearchByType (132B) */
+/* not in shard or dead-stripped: ENV_SearchByPartialName (144B) */
+/* not in shard or dead-stripped: ENV_SetResourceSetArray (64B) */
 
 #include "../../lib/NitroSDK/TwlSDK/build/libraries/env/common/src/env_system.c"

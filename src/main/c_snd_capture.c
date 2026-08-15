@@ -19,9 +19,7 @@
 #define SND_SetChannelVolume                 sub_02089638
 #define _s32_div_f                           sub_0209C0AC
 #define _u32_div_f                           sub_0209C2B8
-#define NNS_SndAllocAlarm                    sub_020729C8
 #define NNS_SndFreeAlarm                     sub_02072A08
-#define NNS_SndLockChannel                   sub_02072934
 #define NNS_SndUnlockCapture                 sub_020729A4
 #define SND_SetupChannelPcm                  sub_02089660
 #define SND_SetupAlarm                       sub_02089540

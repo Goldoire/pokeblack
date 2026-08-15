@@ -5,7 +5,6 @@
 #define SDK_FINALROM
 
 /* callees outside this TU, from the claim table */
-#define SVC_WaitByLoop                       sub_02004498
 #define OS_GetBootType                       sub_02087B04
 #define OSi_DetectDeviceType     sub_02085D0C
 #define OS_IsRunOnEmulator       sub_02085D24

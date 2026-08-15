@@ -1,16 +1,18 @@
-/* TwlSDK/TwlSystem lib/NitroSDK/TwlSDK/build/libraries/fs/common/src/fs_api.c
- * Renamed to sub_<realRAM> per function so verify_functions.py can
- * place them. The retail ARM9 is built with SDK_FINALROM.
+/* lib/NitroSDK/TwlSDK/build/libraries/fs/common/src/fs_api.c, as linked into the retail ARM9.
+ * Each function is renamed to sub_<realRAM> so verify_functions.py can place
+ * it. SDK_FINALROM is what the retail build used: without it the merged .bss
+ * of a translation unit comes out in a different order and every static
+ * variable offset in the generated code is wrong.
  */
 #define SDK_FINALROM
 
-/* callees outside this TU, from the claim table */
+/* callees outside this file */
 #define FSi_InitRomArchive                   sub_0207AB10
-#define FSi_InitOverlay                      sub_02078C48
 #define OS_DisableInterrupts                 sub_02087988
 #define OS_RestoreInterrupts                 sub_0208799C
+
 #define FS_Init        sub_0207AD04
-/* stripped or unplaced: FS_IsAvailable (16B) */
-/* stripped or unplaced: FS_End (60B) */
+/* not in shard or dead-stripped: FS_IsAvailable (16B) */
+/* not in shard or dead-stripped: FS_End (60B) */
 
 #include "../../lib/NitroSDK/TwlSDK/build/libraries/fs/common/src/fs_api.c"

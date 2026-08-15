@@ -39,7 +39,7 @@ BOOL sub_02155B14(u32 param0, u32 param1, u32 param2);
 int sub_021562EC(void);
 BOOL sub_02156690(BOOL param0);
 void sub_02156730(void);
-int sub_02156874(void);
+u8 sub_02156874(u32 param0);
 void sub_0216B908(void);
 
 /* Thumb entry points of forwarding targets (see NOTE ON THE THUNKS). */
@@ -56,7 +56,7 @@ extern const u8 _02156DB1[];  /* sub_02156DB0 */
 extern const u8 _02156DFD[];  /* sub_02156DFC */
 
 u32 sub_02156D84(void);
-void sub_02157048(u16 param0, u32 param1);
+void sub_02157048(u32 param0, u32 param1);
 
 void sub_02155160(void)
 {
@@ -180,9 +180,9 @@ void sub_02155330(void)
     ((void (*)(void))_02156DB1)();
 }
 
-BOOL sub_02155338(void)
+BOOL sub_02155338(u32 param0)
 {
-    if (sub_02156874() == 6) {
+    if (sub_02156874(param0) == 6) {
         return TRUE;
     }
 

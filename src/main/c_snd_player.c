@@ -18,7 +18,6 @@
 #define SND_SetTrackModSpeed                 sub_02089470
 #define SND_SetTrackAllocatableChannel       sub_0208948C
 #define SND_SetPlayerTempoRatio              sub_020893B8
-#define SND_SetPlayerGlobalVariable          sub_0207916C
 #define NNS_FndInitList                      sub_02060468
 #define SND_GetPlayerStatus                  sub_0208A054
 #define SND_IsFinishedCommandTag             sub_02089D6C

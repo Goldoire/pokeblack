@@ -101,40 +101,75 @@ void *sub_0215F060(void *param0, struct UnkStruct0215EA6C *param1)
 
 int sub_0215EA94(void *param0, void *param1, struct UnkStruct0215EA6C *param2)
 {
+    u16 v;
+    int handle;
+
     sub_0201296C(sub_020120F4(param2->unk_08));
-    sub_02159058(sub_021587B0(param0, 0x2715, 0, 0), param2->unk_0C, 0, 0, 0);
+
+    v = param2->unk_0C;
+    handle = sub_021587B0(param0, 0x2715, 0, 0);
+
+    sub_02159058(handle, v, 0, 0, 0);
 
     return 0;
 }
 
 int sub_0215EB18(void *param0, void *param1, struct UnkStruct0215EA6C *param2)
 {
+    u16 v;
+    int handle;
+
     sub_0201296C(sub_020120F4(param2->unk_08));
-    sub_02159058(sub_021587B0(param0, 0x2713, 0, 0), param2->unk_0C, 0, 0, 0);
+
+    v = param2->unk_0C;
+    handle = sub_021587B0(param0, 0x2713, 0, 0);
+
+    sub_02159058(handle, v, 0, 0, 0);
 
     return 0;
 }
 
 int sub_0215EB88(void *param0, void *param1, struct UnkStruct0215EA6C *param2)
 {
+    u16 v;
+    int handle;
+
     sub_0201296C(sub_020120F4(param2->unk_08));
-    sub_02159058(sub_021587B0(param0, 0x2717, 0, 0), param2->unk_0C, 0, 0, 0);
+
+    v = param2->unk_0C;
+    handle = sub_021587B0(param0, 0x2717, 0, 0);
+
+    sub_02159058(handle, v, 0, 0, 0);
 
     return 0;
 }
 
 int sub_0215EBF8(void *param0, void *param1, struct UnkStruct0215EA6C *param2)
 {
+    u16 v;
+    int handle;
+
     sub_0201296C(sub_020120F4(param2->unk_08));
-    sub_02159058(sub_021587B0(param0, 0x2711, 0, 0), param2->unk_0C, 0, 0, 0);
+
+    v = param2->unk_0C;
+    handle = sub_021587B0(param0, 0x2711, 0, 0);
+
+    sub_02159058(handle, v, 0, 0, 0);
 
     return 0;
 }
 
 int sub_0215EEF8(void *param0, void *param1, struct UnkStruct0215EA6C *param2)
 {
+    u16 v;
+    int handle;
+
     sub_0201296C(sub_020120F4(param2->unk_08));
-    sub_02159058(sub_021587B0(param0, 0x271c, 0, 0), param2->unk_0C, 0, 0, 0);
+
+    v = param2->unk_0C;
+    handle = sub_021587B0(param0, 0x271c, 0, 0);
+
+    sub_02159058(handle, v, 0, 0, 0);
 
     return 0;
 }

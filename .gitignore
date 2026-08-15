@@ -95,3 +95,12 @@ tools/ndsdisasm/
 *.nds
 baserom.nds
 melonDS_log.txt
+
+# build/ is ignored above because it is derived from the ROM, but these three
+# files are curated state, not build output: the claim table carries every
+# status the integrator reconciled, triage carries the instruction-set map the
+# verifier depends on, and the history file is the progress record. Losing them
+# to a `git clean` would cost real work that cannot be regenerated.
+!build/reference/functions.json
+!build/reference/triage.json
+!build/reference/progress_history.jsonl

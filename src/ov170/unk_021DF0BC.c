@@ -84,14 +84,14 @@ u32 sub_021DF254(Ov170Ctx *a0)
 
 u32 sub_021DF324(Ov170Ctx *a0)
 {
-    u8 v;
+    Ov170Env *e = a0->unk0c;
 
     if (a0->unk18 == 0) {
-        v = a0->unk0c->unk0f;
-        if (a0->unk16 >= 0x1E) {
-            v += 0x1E;
+        if (a0->unk16 < 0x1E) {
+            a0->unk16 = e->unk0f;
+        } else {
+            a0->unk16 = e->unk0f + 0x1E;
         }
-        a0->unk16 = v;
     }
     sub_020307B0(a0->unk0c);
     return 0;
