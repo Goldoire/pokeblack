@@ -1,0 +1,707 @@
+main-C shard: every function verifying N/N OK, 704 functions 62712 bytes.
+address    size  new?  src/main/<file>.c            original SDK name
+
+0x0205a11c    16       src/main/c_card_spi.c           CARDi_CommandBegin
+0x02060468    24  NEW  src/main/c_fnd_list.c           NNS_FndInitList
+0x02060550   100  NEW  src/main/c_fnd_list.c           NNS_FndInsertListObject
+0x020605b4    96  NEW  src/main/c_fnd_list.c           NNS_FndRemoveListObject
+0x02060614    24  NEW  src/main/c_fnd_list.c           NNS_FndGetNextListObject
+0x0206062c    20  NEW  src/main/c_fnd_list.c           NNS_FndGetPrevListObject
+0x020612c8    32  NEW  src/main/c_fnd_allocator.c      AllocatorAllocForUnitHeap
+0x02061330    20  NEW  src/main/c_fnd_allocator.c      NNS_FndAllocFromAllocator
+0x02061344    20  NEW  src/main/c_fnd_allocator.c      NNS_FndFreeToAllocator
+0x02061390    72       src/main/c_gfd_frmtex.c         NNSi_GfdSetTexNrmSearchArray
+0x02061808    28  NEW  src/main/c_gfd_frmpltt.c        NNS_GfdGetFrmPlttVramState
+0x02061860    24       src/main/c_gfd_vramxfer.c       IsVramTransferTaskQueueFull_
+0x02061878    20       src/main/c_gfd_vramxfer.c       IsVramTransferTaskQueueEmpty_
+0x02061b5c    24       src/main/c_gfd_vramxfer.c       ResetTaskQueue_
+0x02061bb0    16       src/main/c_gfd_vramxfer.c       NNSi_GfdGetFrontVramTransferTaskQueue
+0x02061bc0    16       src/main/c_gfd_vramxfer.c       NNSi_GfdGetEndVramTransferTaskQueue
+0x02061c0c    36       src/main/c_gfd_vramxfer.c       NNS_GfdInitVramTransferManager
+0x02061c44    96       src/main/c_gfd_vramxfer.c       NNS_GfdDoVramTransfer
+0x02061ca4   104       src/main/c_gfd_vramxfer.c       NNS_GfdRegisterNewVramTransferTask
+0x02062d08    56  NEW  src/main/c_g2d_animation.c      SetAnimCtrlCurrentFrameImpl_
+0x02062d40    12  NEW  src/main/c_g2d_animation.c      NNS_G2dGetAnimCtrlCurrentElement
+0x02062f00    28  NEW  src/main/c_g2d_animation.c      NNS_G2dSetAnimCtrlCurrentFrame
+0x02062f1c    28  NEW  src/main/c_g2d_animation.c      NNS_G2dGetAnimCtrlCurrentFrame
+0x02062f78    24  NEW  src/main/c_g2d_animation.c      NNS_G2dInitAnimCallBackFunctor
+0x02062ff0    16  NEW  src/main/c_g2d_animation.c      NNS_G2dBindAnimCtrl
+0x02063018    24  NEW  src/main/c_g2d_animation.c      NNS_G2dSetAnimCtrlCallBackFunctorAtAnimFrame
+0x02063030    36  NEW  src/main/c_g2d_animation.c      NNSi_G2dIsAnimCtrlLoopAnim
+0x020637d4    32       src/main/c_g2d_image.c          NNS_G2dInitImagePaletteProxy
+0x020637f4    12  NEW  src/main/c_g2d_image.c          NNS_G2dSetImagePaletteLocation
+0x02063800    12  NEW  src/main/c_g2d_image.c          NNS_G2dGetImagePaletteLocation
+0x020640b0    28  NEW  src/main/c_g2d_image.c          NNSi_G2dInitializeVRamLocation
+0x02064140    16       src/main/c_g2d_srtcontrol.c     NNSi_G2dSrtcInitControl
+0x02064150    40       src/main/c_g2d_srtcontrol.c     NNSi_G2dSrtcSetInitialValue
+0x02064648    84       src/main/c_g2d_multicellanim.c  GetMCBankNumCellAnimRequired_
+0x020648b4    44       src/main/c_g2d_multicellanim.c  NNS_G2dGetMCWorkAreaSize
+0x020648e0    84       src/main/c_g2d_multicellanim.c  NNS_G2dGetMCBankNumNodesRequired
+0x02064934   160       src/main/c_g2d_multicellanim.c  NNS_G2dTickMCInstance
+0x02064c10   172       src/main/c_g2d_multicellanim.c  NNS_G2dResetMCCellAnimationAll
+0x02064d70   204       src/main/c_g2d_multicellanim.c  NNS_G2dTraverseMCNodes
+0x02066878    24       src/main/c_g2d_celltransfer.c   NNSi_G2dGetCellTransferState
+0x02066abc    36       src/main/c_g2d_celltransfer.c   NNS_G2dSetCellTransferStateRequested
+0x02066b38    76       src/main/c_g2d_celltransfer.c   NNS_G2dFreeCellTransferStateHandle
+0x02067cfc    20       src/main/c_ext_scrntest.c       EXT_TestResetCounter
+0x02067eb0   200       src/main/c_g2d_font.c           GetGlyphIndex
+0x02067f78    36       src/main/c_g2d_font.c           NNS_G2dFontInitUTF8
+0x02067f9c    72       src/main/c_g2d_font.c           NNS_G2dFontFindGlyphIndex
+0x02069c14    96       src/main/c_g3d_kernel.c         NNS_G3dAnmObjCalcSizeRequired
+0x02069d14    84       src/main/c_g3d_kernel.c         NNS_G3dRenderObjInit
+0x02069d68   184       src/main/c_g3d_kernel.c         addLink_
+0x02069e88   128       src/main/c_g3d_kernel.c         NNS_G3dRenderObjAddAnmObj
+0x02069f08   116       src/main/c_g3d_kernel.c         removeLink_
+0x02069f7c    84       src/main/c_g3d_kernel.c         NNS_G3dRenderObjRemoveAnmObj
+0x02069fd0    20       src/main/c_g3d_kernel.c         NNS_G3dTexGetRequiredSize
+0x02069fe4    20       src/main/c_g3d_kernel.c         NNS_G3dTex4x4GetRequiredSize
+0x02069ff8    20       src/main/c_g3d_kernel.c         NNS_G3dTexSetTexKey
+0x0206a00c   184       src/main/c_g3d_kernel.c         NNS_G3dTexLoad
+0x0206a110    20       src/main/c_g3d_kernel.c         NNS_G3dPlttGetRequiredSize
+0x0206a124     8  NEW  src/main/c_g3d_kernel.c         NNS_G3dPlttSetPlttKey
+0x0206a12c    80       src/main/c_g3d_kernel.c         NNS_G3dPlttLoad
+0x0206a19c   304       src/main/c_g3d_kernel.c         bindMdlTex_Internal_
+0x0206a67c   132       src/main/c_g3d_kernel.c         NNS_G3dReleaseMdlPltt
+0x0206a884   120       src/main/c_g3d_glbstate.c       NNS_G3dGlbFlushVP
+0x0206aa3c    60       src/main/c_g3d_glbstate.c       NNS_G3dGlbLightVector
+0x0206aa78    20       src/main/c_g3d_glbstate.c       NNS_G3dGlbLightColor
+0x0206aa8c    36       src/main/c_g3d_glbstate.c       NNS_G3dGlbMaterialColorDiffAmb
+0x0206aab0    36       src/main/c_g3d_glbstate.c       NNS_G3dGlbMaterialColorSpecEmi
+0x0206af08   108       src/main/c_g3d_anm.c            NNSi_G3dAnmBlendMat
+0x0206b3d0   136       src/main/c_g3d_anm.c            NNSi_G3dAnmBlendVis
+0x0206b780    40       src/main/c_g3d_sbc.c            NNSi_G3dFuncSbc_NOP
+0x0206b7a8    40       src/main/c_g3d_sbc.c            NNSi_G3dFuncSbc_RET
+0x0206bea0   176       src/main/c_g3d_sbc.c            NNSi_G3dFuncSbc_MAT
+0x0206c024   160       src/main/c_g3d_sbc.c            NNSi_G3dFuncSbc_SHP
+0x0206db40    32       src/main/c_g3d_gecom.c          NNS_G3dGeSetBuffer
+0x0206db60    32       src/main/c_g3d_gecom.c          NNS_G3dGeReleaseBuffer
+0x0206dbdc    24       src/main/c_g3d_gecom.c          NNS_G3dGeWaitSendDL
+0x0206df14    40       src/main/c_g3d_util.c           NNS_G3dInit
+0x0206df3c   392       src/main/c_g3d_util.c           NNS_G3dWorldPosToScrPos
+0x0206e348    16  NEW  src/main/c_g3d_mem.c            NNS_G3dAllocRenderObj
+0x0206e358    12  NEW  src/main/c_g3d_mem.c            NNS_G3dFreeRenderObj
+0x0206e364    36  NEW  src/main/c_g3d_mem.c            NNS_G3dAllocAnmObj
+0x0206e394   120       src/main/c_g3d_model.c          NNS_G3dMdlSetMdlLightEnableFlag
+0x0206e40c   120       src/main/c_g3d_model.c          NNS_G3dMdlSetMdlPolygonMode
+0x0206e484   120       src/main/c_g3d_model.c          NNS_G3dMdlSetMdlCullMode
+0x0206e4fc   120       src/main/c_g3d_model.c          NNS_G3dMdlSetMdlPolygonID
+0x0206e574   120       src/main/c_g3d_model.c          NNS_G3dMdlSetMdlAlpha
+0x0206e5ec    64       src/main/c_g3d_model.c          NNS_G3dMdlSetMdlDiffAll
+0x0206e954    16       src/main/c_g3d_resacc.c         NNS_G3dGetMdlSet
+0x0206e964    64       src/main/c_g3d_resacc.c         NNS_G3dGetTex
+0x0206e9a4    92       src/main/c_g3d_resacc_anm.c     NNS_G3dGetAnmByIdx
+0x0206ea58   116       src/main/c_g3d_resacc_anm.c     NNSi_G3dGetTexPatAnmFV
+0x0206eacc    52       src/main/c_g3d_resacc_anm.c     NNSi_G3dGetTexPatAnmDataByIdx
+0x0206eb7c    60       src/main/c_g3d_nsbca.c          NNSi_G3dAnmCalcNsBca
+0x0206ec50   144       src/main/c_g3d_nsbca.c          getMdlScale_
+0x0206ece0   384       src/main/c_g3d_nsbca.c          getMdlRot_
+0x02070274   236       src/main/c_g3d_nsbma.c          GetMatColAnmuAlphaValue_
+0x02070624   268       src/main/c_g3d_nsbta.c          GetTexSRTAnmSinCosVal_
+0x02072794    32  NEW  src/main/c_snd_nnsmain.c        NNS_SndSetMonoFlag
+0x020728e8    56  NEW  src/main/c_snd_nnsmain.c        BeginSleep
+0x02072974    48       src/main/c_snd_resource_mgr.c   NNS_SndUnlockChannel
+0x020729a4    28       src/main/c_snd_resource_mgr.c   NNS_SndUnlockCapture
+0x02072a08    32       src/main/c_snd_resource_mgr.c   NNS_SndFreeAlarm
+0x02072a28    28       src/main/c_snd_resource_mgr.c   NNSi_SndInitResourceMgr
+0x02072a44    68       src/main/c_snd_waveout.c        NNS_SndWaveOutAllocChannel
+0x02072c18    40  NEW  src/main/c_snd_waveout.c        NNS_SndWaveOutSetVolume
+0x02072c40   132       src/main/c_snd_waveout.c        NNS_SndWaveOutSetSpeed
+0x02072cc4    92       src/main/c_snd_waveout.c        NNS_SndWaveOutIsPlaying
+0x02072d98    24  NEW  src/main/c_snd_player.c         NNS_SndPlayerSetPlayerVolume
+0x02072db0    32  NEW  src/main/c_snd_player.c         NNS_SndPlayerSetPlayableSeqCount
+0x02072dd0    24  NEW  src/main/c_snd_player.c         NNS_SndPlayerSetAllocatableChannel
+0x02072ec8    24  NEW  src/main/c_snd_player.c         NNS_SndPlayerCountPlayingSeqByPlayerNo
+0x02072f34    20  NEW  src/main/c_snd_player.c         NNS_SndPlayerSetVolume
+0x02072f48    20  NEW  src/main/c_snd_player.c         NNS_SndPlayerSetInitialVolume
+0x02072f5c    44  NEW  src/main/c_snd_player.c         NNS_SndPlayerMoveVolume
+0x02072fe8    48  NEW  src/main/c_snd_player.c         NNS_SndPlayerSetTrackVolume
+0x020730dc    44  NEW  src/main/c_snd_player.c         NNS_SndPlayerSetSeqArcNo
+0x02073898    40  NEW  src/main/c_snd_stream.c         NNS_SndStrmFreeChannel
+0x02073a60    84  NEW  src/main/c_snd_stream.c         NNS_SndStrmStart
+0x02073ab4    28  NEW  src/main/c_snd_stream.c         NNS_SndStrmStop
+0x02073bb0    48  NEW  src/main/c_snd_stream.c         ShutdownStrm
+0x02073be0    16  NEW  src/main/c_snd_stream.c         AlarmCallback
+0x02073cec   112  NEW  src/main/c_snd_stream.c         EndSleep
+0x02073d5c    32       src/main/c_snd_capture.c        NNSi_SndCaptureInit
+0x02073d7c   128       src/main/c_snd_capture.c        NNSi_SndCaptureMain
+0x02073ee4    88  NEW  src/main/c_snd_capture.c        NNSi_SndCaptureBeginSleep
+0x020742e4    24  NEW  src/main/c_sndarc.c             NNS_SndArcSetCurrent
+0x020742fc    16  NEW  src/main/c_sndarc.c             NNS_SndArcGetCurrent
+0x0207430c    24  NEW  src/main/c_sndarc.c             NNS_SndArcGetSeqParam
+0x020746c4    12  NEW  src/main/c_sndarc.c             FatDisposeCallback
+0x02074758    24  NEW  src/main/c_snd_heap.c           NNS_SndHeapDestroy
+0x02074770   188  NEW  src/main/c_snd_heap.c           NNS_SndHeapClear
+0x0207482c   104  NEW  src/main/c_snd_heap.c           NNS_SndHeapAlloc
+0x020748e0   212  NEW  src/main/c_snd_heap.c           NNS_SndHeapLoadState
+0x020749c4    52  NEW  src/main/c_snd_heap.c           InitHeap
+0x020749f8    60  NEW  src/main/c_snd_heap.c           NewSection
+0x02074a34    32  NEW  src/main/c_snd_heap.c           EraseSync
+0x02074bec   132  NEW  src/main/c_sndarc_loader.c      NNSi_SndArcLoadSeq
+0x02074c70    96  NEW  src/main/c_sndarc_loader.c      NNSi_SndArcLoadSeqArc
+0x02074cd0   320  NEW  src/main/c_sndarc_loader.c      NNSi_SndArcLoadBank
+0x020751f4    88  NEW  src/main/c_sndarc_loader.c      DisposeCallback
+0x0207524c    40  NEW  src/main/c_sndarc_loader.c      SeqDisposeCallback
+0x02075274    48  NEW  src/main/c_sndarc_loader.c      BankDisposeCallback
+0x020752a4    48  NEW  src/main/c_sndarc_loader.c      WaveArcDisposeCallback
+0x020752d4    32  NEW  src/main/c_sndarc_loader.c      WaveArcTableDisposeCallback
+0x020752f4    72  NEW  src/main/c_sndarc_loader.c      SingleWaveDisposeCallback
+0x0207533c   200  NEW  src/main/c_sndarc_loader.c      LoadSingleWave
+0x02075560    72  NEW  src/main/c_sndarc_player.c      NNS_SndArcPlayerStartSeq
+0x020755a8   112  NEW  src/main/c_sndarc_player.c      NNS_SndArcPlayerStartSeqEx
+0x02075618   128  NEW  src/main/c_sndarc_player.c      NNS_SndArcPlayerStartSeqArc
+0x02075b54    64  NEW  src/main/c_snd_seqdata.c        NNSi_SndSeqArcGetSeqInfo
+0x02075b94    24       src/main/c_snd_fader.c          NNSi_SndFaderInit
+0x02075bd4    52       src/main/c_snd_fader.c          NNSi_SndFaderGet
+0x02075c08    24       src/main/c_snd_fader.c          NNSi_SndFaderUpdate
+0x02075c20    24       src/main/c_snd_fader.c          NNSi_SndFaderIsFinished
+0x02075c38    88       src/main/c_card_api.c           CARDi_PeekEventListener
+0x02075c90    28       src/main/c_card_api.c           CARDi_LockBusCondition
+0x02075cac   244       src/main/c_card_api.c           CARD_Init
+0x02075da0    16  NEW  src/main/c_card_api.c           CARD_IsEnabled
+0x02075db0    24  NEW  src/main/c_card_api.c           CARD_CheckEnabled
+0x02075dc8    16       src/main/c_card_api.c           CARD_Enable
+0x02075dd8    20  NEW  src/main/c_card_api.c           CARD_GetResultCode
+0x02075dec    12  NEW  src/main/c_card_api.c           CARD_GetRomHeader
+0x02075df8    12  NEW  src/main/c_card_api.c           CARD_GetOwnRomHeader
+0x02075e10   112       src/main/c_card_api.c           CARD_LockRom
+0x02075e80    28       src/main/c_g3c.c                CARD_UnlockRom
+0x02075e9c    16       src/main/c_card_api.c           CARD_LockBackup
+0x02075eac    40  NEW  src/main/c_card_api.c           CARD_UnlockBackup
+0x02075ed4   120  NEW  src/main/c_card_common.c        CARDi_LockResource
+0x02075f4c   128  NEW  src/main/c_card_common.c        CARDi_UnlockResource
+0x02076050    32       src/main/c_card_common.c        CARDi_WaitAsync
+0x02076070    28       src/main/c_card_common.c        CARDi_TryWaitAsync
+0x0207608c    40       src/main/c_card_common.c        CARDi_InitResourceLock
+0x020760b4    76       src/main/c_card_common.c        CARDi_InitCommand
+0x02076100   112       src/main/c_card_hook.c          CARDi_NotifyEvent
+0x02076170   116       src/main/c_card_task.c          CARDi_ExecuteOldTypeTask
+0x020761e4    76       src/main/c_card_task.c          CARDi_OldTypeTaskThread
+0x02076230   120       src/main/c_card_task.c          CARDi_WaitForTask
+0x020762a8    76       src/main/c_card_task.c          CARDi_EndTask
+0x02076344    28       src/main/c_card_utility.c       CARDi_ICInvalidateSmart
+0x02076360    92       src/main/c_card_utility.c       CARDi_DCInvalidateSmart
+0x02076bbc   128       src/main/c_card_rom.c           CARDi_SetRomOp
+0x02076d38   104  NEW  src/main/c_card_rom.c           CARDi_ReadRomStatusCore
+0x02076da0    96       src/main/c_card_rom.c           CARDi_RefreshRom
+0x02076e00    76       src/main/c_card_rom.c           CARDi_RefreshRomCore
+0x02077084    48  NEW  src/main/c_card_rom.c           CARDi_DmaReadDone
+0x020770b4   180       src/main/c_card_rom.c           CARDi_IsRomDmaAvailable
+0x020773c4    12  NEW  src/main/c_card_rom.c           CARD_WaitRomAsync
+0x020775b8    64  NEW  src/main/c_cp_context.c         CP_SaveContext
+0x020775f8    60       src/main/c_cp_context.c         CPi_RestoreContext
+0x02077634    40       src/main/c_fs_archive.c         FSi_IsEventCommand
+0x0207765c   164       src/main/c_fs_archive.c         FSi_EndCommand
+0x02077700    88       src/main/c_fs_archive.c         FSi_WaitForArchiveCompletion
+0x02077758   896  NEW  src/main/c_fs_archive.c         FSi_InvokeCommand
+0x02077c78   132       src/main/c_fs_archive.c         FSi_ExecuteAsyncCommand
+0x02077cfc   132       src/main/c_fs_archive.c         FSi_ExecuteSyncCommand
+0x02077d80   312  NEW  src/main/c_fs_archive.c         FSi_SendCommand
+0x02077eb8   140       src/main/c_fs_archive.c         FS_FindArchive
+0x02077f44   212       src/main/c_fs_archive.c         FS_SetCurrentDirectory
+0x02078018    96       src/main/c_fs_archive.c         FSi_CopySafeString
+0x02078078   744  NEW  src/main/c_fs_archive.c         FS_NormalizePath
+0x02078360    36       src/main/c_fs_archive.c         FS_InitArchive
+0x02078384   256  NEW  src/main/c_fs_archive.c         FS_RegisterArchiveName
+0x02078484   172  NEW  src/main/c_fs_archive.c         FS_ReleaseArchiveName
+0x02078530    16       src/main/c_fs_archive.c         FS_GetArchiveName
+0x02078540    72       src/main/c_fs_archive.c         FS_MountArchive
+0x02078588   192       src/main/c_fs_archive.c         FS_UnmountArchive
+0x02078648   144       src/main/c_fs_archive.c         FS_SuspendArchive
+0x020786d8    92       src/main/c_fs_archive.c         FS_ResumeArchive
+0x02078734   108       src/main/c_fs_archive.c         FS_NotifyArchiveAsyncEnd
+0x020787a0    64       src/main/c_fs_file.c            FSi_DecrementSjisPosition
+0x020787e0    84       src/main/c_fs_file.c            FSi_IncrementSjisPositionToSlash
+0x02078834    52       src/main/c_fs_file.c            FSi_DecrementSjisPositionToSlash
+0x02078868    68       src/main/c_fs_file.c            FSi_TrimSjisTrailingSlash
+0x020788ac    44       src/main/c_fs_file.c            FS_InitFile
+0x020788d8   140       src/main/c_fs_file.c            FS_ConvertPathToFileID
+0x02078964    64       src/main/c_fs_file.c            FS_OpenFileDirect
+0x020789a4    88       src/main/c_fs_file.c            FS_OpenFileFast
+0x020789fc   132  NEW  src/main/c_fs_file.c            FS_OpenFileEx
+0x02078a80    20       src/main/c_fs_file.c            FS_CloseFile
+0x02078a94    88       src/main/c_fs_file.c            FS_GetFileLength
+0x02078aec    88       src/main/c_fs_file.c            FS_GetFilePosition
+0x02078bc4    84  NEW  src/main/c_fs_file.c            FS_WriteFile
+0x02078c18    16       src/main/c_fs_file.c            FS_OpenFile
+0x02078cb0    28       src/main/c_fs_overlay.c         FSi_GetOverlayBinarySize
+0x02078ccc    60       src/main/c_fs_overlay.c         FS_ClearOverlayImage
+0x02078eb0   128       src/main/c_fs_overlay.c         FS_LoadOverlayImage
+0x02079164   240  NEW  src/main/c_fs_overlay.c         FS_EndOverlay
+0x02079254    16  NEW  src/main/c_fs_overlay.c         FS_UnloadOverlayImage
+0x02079264    84       src/main/c_fs_overlay.c         FS_LoadOverlay
+0x020792b8    76       src/main/c_fs_overlay.c         FS_UnloadOverlay
+0x02079304    96       src/main/c_fs_proc_default.c    FSi_ReadTable
+0x02079364    44       src/main/c_fs_proc_default.c    FSi_SeekDirDirect
+0x02079390   156       src/main/c_fs_proc_default.c    FSi_SeekDirDefault
+0x0207942c   300       src/main/c_fs_proc_default.c    FSi_ReadDirDefault
+0x02079558   532       src/main/c_fs_proc_default.c    FSi_FindPathDefault
+0x0207976c   892       src/main/c_fs_proc_default.c    FSi_GetPathDefault
+0x02079ae8   136       src/main/c_fs_proc_default.c    FSi_OpenFileFastDefault
+0x02079b70    36       src/main/c_fs_proc_default.c    FSi_OpenFileDirectDefault
+0x02079b94    48       src/main/c_fs_proc_default.c    FSi_ReadFileDefault
+0x02079bc4    48       src/main/c_fs_proc_default.c    FSi_WriteFileDefault
+0x02079bf4     8  NEW  src/main/c_fs_proc_default.c    FSi_IgnoredCommand
+0x02079bfc   208       src/main/c_fs_proc_default.c    FSi_TranslateCommand
+0x02079ccc    68       src/main/c_fs_proc_default.c    FSi_ROMFAT_ReadFile
+0x02079d10    68       src/main/c_fs_proc_default.c    FSi_ROMFAT_WriteFile
+0x02079d54    88       src/main/c_fs_proc_default.c    FSi_ROMFAT_SeekDirectory
+0x02079dac   296       src/main/c_fs_proc_default.c    FSi_ROMFAT_ReadDirectory
+0x02079ed4   140       src/main/c_fs_proc_default.c    FSi_ROMFAT_FindPath
+0x02079f60    68       src/main/c_fs_proc_default.c    FSi_ROMFAT_GetPath
+0x02079fa4    72       src/main/c_fs_proc_default.c    FSi_ROMFAT_OpenFileFast
+0x02079fec    84       src/main/c_fs_proc_default.c    FSi_ROMFAT_OpenFileDirect
+0x0207a040    48       src/main/c_fs_proc_default.c    FSi_ROMFAT_CloseFile
+0x0207a070    52       src/main/c_fs_proc_default.c    FSi_ROMFAT_Activate
+0x0207a0a4    52       src/main/c_fs_proc_default.c    FSi_ROMFAT_Idle
+0x0207a0d8    52       src/main/c_fs_proc_default.c    FSi_ROMFAT_Suspend
+0x0207a10c    52       src/main/c_fs_proc_default.c    FSi_ROMFAT_Resume
+0x0207a140    80       src/main/c_fs_proc_default.c    FSi_ROMFAT_OpenFile
+0x0207a190   108       src/main/c_fs_proc_default.c    FSi_ROMFAT_SeekFile
+0x0207a1fc    28       src/main/c_fs_proc_default.c    FSi_ROMFAT_GetFileLength
+0x0207a218    28       src/main/c_fs_proc_default.c    FSi_ROMFAT_GetFilePosition
+0x0207a234    48  NEW  src/main/c_fs_proc_default.c    FSi_ROMFAT_Unmount
+0x0207a264    12  NEW  src/main/c_fs_proc_default.c    FSi_ROMFAT_GetArchiveCaps
+0x0207a270    88       src/main/c_fs_proc_default.c    FSi_ROMFAT_OpenDirectory
+0x0207a2c8    24  NEW  src/main/c_fs_proc_default.c    FSi_ROMFAT_CloseDirectory
+0x0207a2e0   300       src/main/c_fs_proc_default.c    FSi_ROMFAT_GetPathInfo
+0x0207a40c    80       src/main/c_fs_proc_default.c    FSi_ROMFAT_GetArchiveResource
+0x0207a7c4   204  NEW  src/main/c_fs_proc_mem.c        FSi_MemArchiveProc
+0x0207a890   176  NEW  src/main/c_fs_proc_mem.c        FSi_InitMemArchive
+0x0207a940    64       src/main/c_fs_proc_mem.c        FS_CreateFileFromMemory
+0x0207a9c8    36       src/main/c_fs_proc_rom.c        FSi_OnRomReadDone
+0x0207a9ec    72       src/main/c_fs_proc_rom.c        FSi_ReadRomCallback
+0x0207aae4    20       src/main/c_fs_proc_rom.c        FSi_EmptyArchiveProc
+0x0207aaf8     8  NEW  src/main/c_fs_proc_rom.c        FSi_ReadDummyCallback
+0x0207ab00     8  NEW  src/main/c_fs_proc_rom.c        FSi_WriteDummyCallback
+0x0207ab08     8  NEW  src/main/c_fs_proc_rom.c        FSi_OverrideRomArchive
+0x0207ab10   340       src/main/c_fs_proc_rom.c        FSi_InitRomArchive
+0x0207ac64    80       src/main/c_fs_proc_rom.c        FS_SetDefaultDMA
+0x0207acb4    32       src/main/c_fs_proc_rom.c        FS_TryLoadTable
+0x0207acd4    48       src/main/c_fs_proc_rom.c        FS_CreateFileFromRom
+0x0207ad04    44       src/main/c_fs_api.c             FS_Init
+0x0207ad40    24       src/main/c_fx_mtx22.c           MTX_Identity22_
+0x0207ad58    12  NEW  src/main/c_fx_mtx22.c           MTX_Scale22_
+0x0207ad64    12  NEW  src/main/c_fx_mtx22.c           MTX_Rot22_
+0x0207ad70    84       src/main/c_fx_mtx22.c           MTX_ScaleApply22
+0x0207adc4    36       src/main/c_fx_mtx33.c           MTX_Identity33_
+0x0207ade8    60       src/main/c_fx_mtx33.c           MTX_Copy33To44_
+0x0207ae24    18       src/main/c_fx_mtx33.c           MTX_Scale33_
+0x0207ae38   200       src/main/c_fx_mtx33.c           MTX_ScaleApply33
+0x0207af00    28       src/main/c_fx_mtx33.c           MTX_RotX33_
+0x0207af1c    28       src/main/c_fx_mtx33.c           MTX_RotY33_
+0x0207af38    24       src/main/c_fx_mtx33.c           MTX_RotZ33_
+0x0207af50   340       src/main/c_fx_mtx33.c           MTX_RotAxis33
+0x0207b0a4   740       src/main/c_fx_mtx33.c           MTX_Inverse33
+0x0207b388   404       src/main/c_fx_mtx33.c           MTX_Concat33
+0x0207b51c   124       src/main/c_fx_mtx33.c           MTX_MultVec33
+0x0207b598    40       src/main/c_fx_mtx43.c           MTX_Identity43_
+0x0207b5c0    52       src/main/c_fx_mtx43.c           MTX_Copy43To44_
+0x0207b5f4    22       src/main/c_fx_mtx43.c           MTX_Scale43_
+0x0207b60c    52       src/main/c_fx_mtx43.c           MTX_ScaleApply43
+0x0207b640    26       src/main/c_fx_mtx43.c           MTX_RotY43_
+0x0207b65c    32       src/main/c_fx_mtx43.c           MTX_RotAxis43
+0x0207b67c   884       src/main/c_fx_mtx43.c           MTX_Inverse43
+0x0207b9f0   536       src/main/c_fx_mtx43.c           MTX_Concat43
+0x0207bc08   152       src/main/c_fx_mtx43.c           MTX_MultVec43
+0x0207bca0   276       src/main/c_fx_mtx43.c           MTX_LookAt
+0x0207bdb4    44       src/main/c_fx_mtx44.c           MTX_Identity44_
+0x0207bdec    40       src/main/c_fx_mtx44.c           MTX_Copy44To33_
+0x0207be14   956       src/main/c_fx_mtx44.c           MTX_Concat44
+0x0207c1d0   568       src/main/c_fx_mtx44.c           MTX_FrustumW
+0x0207c554   532       src/main/c_fx_mtx44.c           MTX_OrthoW
+0x0207c768    16  NEW  src/main/c_fx_cp.c              FX_Div
+0x0207c7b4    52       src/main/c_fx_cp.c              FX_Sqrt
+0x0207c7e8    96       src/main/c_fx_cp.c              FX_InvSqrt
+0x0207c848    36       src/main/c_fx_cp.c              FX_GetDivResultFx64c
+0x0207c86c    52       src/main/c_fx_cp.c              FX_GetDivResult
+0x0207c8a0    48       src/main/c_fx_cp.c              FX_InvAsync
+0x0207c8d0    52       src/main/c_fx_cp.c              FX_SqrtAsync
+0x0207c904    44       src/main/c_fx_cp.c              FX_GetSqrtResult
+0x0207c930    40       src/main/c_fx_cp.c              FX_DivAsync
+0x0207c958    60       src/main/c_fx_cp.c              FX_DivS32
+0x0207c994    60       src/main/c_fx_cp.c              FX_ModS32
+0x0207c9d0    48       src/main/c_fx_vec.c             VEC_Add
+0x0207ca00    48       src/main/c_fx_vec.c             VEC_Subtract
+0x0207ca30    56       src/main/c_fx_vec.c             VEC_Fx16Add
+0x0207ca68    60       src/main/c_fx_vec.c             VEC_DotProduct
+0x0207cae8   128       src/main/c_fx_vec.c             VEC_CrossProduct
+0x0207cb68   104       src/main/c_fx_vec.c             VEC_Fx16CrossProduct
+0x0207cbd0    96       src/main/c_fx_vec.c             VEC_Mag
+0x0207cc30   116       src/main/c_fx_vec.c             VEC_Fx16Mag
+0x0207cca4   276       src/main/c_fx_vec.c             VEC_Normalize
+0x0207cdb8   300       src/main/c_fx_vec.c             VEC_Fx16Normalize
+0x0207cee4    88       src/main/c_fx_vec.c             VEC_MultAdd
+0x0207cf3c   124       src/main/c_fx_vec.c             VEC_Distance
+0x0207cfb8   400       src/main/c_fx_atanidx.c         FX_Atan2Idx
+0x0207d184   128  NEW  src/main/c_fx_asinacosidx.c     FX_AcosIdx
+0x0207d384    40       src/main/c_gx.c                 GX_SetVCountEqVal
+0x0207d41c    16  NEW  src/main/c_gx.c                 GX_IsDispOn
+0x0207d42c    64       src/main/c_gx.c                 GX_DispOff
+0x0207d46c    68       src/main/c_gx.c                 GX_DispOn
+0x0207d4b0   104       src/main/c_gx.c                 GX_SetGraphicsMode
+0x0207d518    28       src/main/c_gx.c                 GXS_SetGraphicsMode
+0x0207d534    40       src/main/c_gx.c                 GXx_SetMasterBrightness_
+0x0207d55c    64  NEW  src/main/c_gx.c                 GXx_GetMasterBrightness_
+0x0207d59c   160       src/main/c_g2.c                 G2x_SetBGyAffine_
+0x0207d63c    28       src/main/c_g2.c                 G2x_SetBlendAlpha_
+0x0207d658    36       src/main/c_g2.c                 G2x_SetBlendBrightness_
+0x0207d67c    68       src/main/c_g2.c                 G2x_SetBlendBrightnessExt_
+0x0207d6c0    68       src/main/c_g2.c                 G2x_ChangeBlendBrightness_
+0x0207d760   100       src/main/c_g3_util.c            G3i_OrthoW_
+0x0207d7c4    76       src/main/c_g3_util.c            G3i_LookAt_
+0x0207d810    60       src/main/c_g3_util.c            G3_RotX
+0x0207d84c    60       src/main/c_g3_util.c            G3_RotY
+0x0207d888    60       src/main/c_g3_util.c            G3_RotZ
+0x0207d8c4    28       src/main/c_g3imm.c              G3_LoadMtx44
+0x0207d8e0    28       src/main/c_g3imm.c              G3_LoadMtx43
+0x0207d8fc    28       src/main/c_g3imm.c              G3_MultMtx44
+0x0207d918    28       src/main/c_g3imm.c              G3_MultMtx43
+0x0207d934    28       src/main/c_g3imm.c              G3_MultMtx33
+0x0207d950    56       src/main/c_g3imm.c              G3_MultTransMtx33
+0x0207df60    52       src/main/c_gx_bgcnt.c           G2_GetBG0ScrPtr
+0x0207df94    32       src/main/c_gx_bgcnt.c           G2S_GetBG0ScrPtr
+0x0207dfb4    52       src/main/c_gx_bgcnt.c           G2_GetBG1ScrPtr
+0x0207dfe8    32       src/main/c_gx_bgcnt.c           G2S_GetBG1ScrPtr
+0x0207e008   132       src/main/c_gx_bgcnt.c           G2_GetBG2ScrPtr
+0x0207e08c   116       src/main/c_gx_bgcnt.c           G2S_GetBG2ScrPtr
+0x0207e100   132       src/main/c_gx_bgcnt.c           G2_GetBG3ScrPtr
+0x0207e184   116       src/main/c_gx_bgcnt.c           G2S_GetBG3ScrPtr
+0x0207e1f8    52       src/main/c_gx_bgcnt.c           G2_GetBG0CharPtr
+0x0207e22c    32       src/main/c_gx_bgcnt.c           G2S_GetBG0CharPtr
+0x0207e24c    52       src/main/c_gx_bgcnt.c           G2_GetBG1CharPtr
+0x0207e280    32       src/main/c_gx_bgcnt.c           G2S_GetBG1CharPtr
+0x0207e2a0    80       src/main/c_gx_bgcnt.c           G2_GetBG2CharPtr
+0x0207e2f0    64       src/main/c_gx_bgcnt.c           G2S_GetBG2CharPtr
+0x0207e330    88       src/main/c_gx_bgcnt.c           G2_GetBG3CharPtr
+0x0207e388    72       src/main/c_gx_bgcnt.c           G2S_GetBG3CharPtr
+0x0207f308   140       src/main/c_gx_load2d.c          GX_BeginLoadBGExtPltt
+0x0207f47c    72       src/main/c_gx_load2d.c          GX_BeginLoadOBJExtPltt
+0x0207f6a8    24       src/main/c_gx_load2d.c          GXS_BeginLoadOBJExtPltt
+0x0207f7a0    92  NEW  src/main/c_gx_load3d.c          GX_BeginLoadTex
+0x0207fa0c    52       src/main/c_gx_load3d.c          GX_BeginLoadTexPltt
+0x0207fb2c   144       src/main/c_gx_load3d.c          GX_BeginLoadClearImage
+0x02080c84    36  NEW  src/main/c_gxasm.c              GX_SendFifo48B
+0x02080ca8    28       src/main/c_gxasm.c              GX_SendFifo64B
+0x02080cc4    96       src/main/c_gxstate.c            GX_InitGXState
+0x02081940    64  NEW  src/main/c_crc.c                MATHi_CRC8InitTable
+0x02081980    56       src/main/c_crc.c                MATHi_CRC8Update
+0x020819b8    68       src/main/c_crc.c                MATHi_CRC16InitTable
+0x020819fc    68       src/main/c_crc.c                MATHi_CRC16InitTableRev
+0x02081a40    64       src/main/c_crc.c                MATHi_CRC16Update
+0x02081a80    64       src/main/c_crc.c                MATHi_CRC16UpdateRev
+0x02081ac0    64       src/main/c_crc.c                MATHi_CRC32InitTableRev
+0x02081b00    60       src/main/c_crc.c                MATHi_CRC32UpdateRev
+0x02081b3c    40       src/main/c_crc.c                MATH_CalcCRC8
+0x02081b64    40       src/main/c_crc.c                MATH_CalcCRC16
+0x02081b8c    44       src/main/c_crc.c                MATH_CalcCRC16CCITT
+0x02081bb8    44       src/main/c_crc.c                MATH_CalcCRC32
+0x02081be4   648       src/main/c_qsort.c              MATH_QSort
+0x020821b0    16       src/main/c_mi_wram.c            MI_SetWramBank
+0x02082658    40       src/main/c_os_timer.c           OS_StopTimer64
+0x02082760   236  NEW  src/main/c_mi_dma_gxcommand.c   MI_SendGXCommandAsync
+0x0208284c   180       src/main/c_mi_dma_gxcommand.c   MIi_FIFOCallback
+0x02082900    96       src/main/c_mi_dma_gxcommand.c   MIi_DMACallback
+0x02082960   188       src/main/c_mi_dma_gxcommand.c   MI_SendGXCommandAsyncFast
+0x02082a1c    44       src/main/c_mi_dma_gxcommand.c   MIi_DMAFastCallback
+0x02082a48    24       src/main/c_mi_memory.c          MIi_CpuClear16
+0x02082a60    28       src/main/c_mi_memory.c          MIi_CpuCopy16
+0x02082a7c    20       src/main/c_mi_memory.c          MIi_CpuClear32
+0x02082a90    24       src/main/c_mi_memory.c          MIi_CpuCopy32
+0x02082aa8    24       src/main/c_mi_memory.c          MIi_CpuSend32
+0x02082ac0    76       src/main/c_mi_memory.c          MIi_CpuClearFast
+0x02082b0c    56       src/main/c_mi_memory.c          MIi_CpuCopyFast
+0x02082b44    28       src/main/c_mi_memory.c          MI_Copy32B
+0x02082b60    28       src/main/c_mi_memory.c          MI_Copy36B
+0x02082b7c    36       src/main/c_mi_memory.c          MI_Copy48B
+0x02082ba0    44       src/main/c_mi_memory.c          MI_Copy64B
+0x02082bcc   148       src/main/c_mi_memory.c          MI_CpuFill8
+0x02082c60   228       src/main/c_mi_memory.c          MI_CpuFill
+0x02082d44   304       src/main/c_mi_memory.c          MI_CpuCopy8
+0x02082e74    48       src/main/c_mi_memory.c          MI_CpuComp8
+0x02082ea4   752       src/main/c_mi_memory.c          MI_CpuCopy
+0x02083194   788       src/main/c_mi_memory.c          MI_CpuMove
+0x020834a8    14  NEW  src/main/c_mi_memory.c          MI_Zero36B
+0x020834b8     8  NEW  src/main/c_mi_swap.c            MI_SwapWord
+0x020834c0   224       src/main/c_mi_uncompress.c      MI_UncompressLZ8
+0x020835a0   124       src/main/c_mi_dma_card.c        MIi_CardDmaCopy32
+0x02084a84    44       src/main/c_os_pxi.c             OSi_SendToPxi
+0x02084fb4    24  NEW  src/main/c_os_thread.c          OSi_GetUnusedThreadId
+0x02084fcc   120       src/main/c_os_thread.c          OSi_InsertLinkToQueue
+0x02085044    52       src/main/c_os_thread.c          OSi_RemoveLinkFromQueue
+0x02085078    84       src/main/c_os_thread.c          OSi_RemoveSpecifiedLinkFromQueue
+0x020850cc    48       src/main/c_os_thread.c          OSi_RemoveMutexLinkFromQueue
+0x020850fc    92       src/main/c_os_thread.c          OSi_InsertThreadToList
+0x02085158    72       src/main/c_os_thread.c          OSi_RemoveThreadFromList
+0x020851a0   196  NEW  src/main/c_os_thread.c          OSi_RescheduleThread
+0x02085264   332  NEW  src/main/c_os_thread.c          OS_InitThread
+0x020853b0    16  NEW  src/main/c_os_thread.c          OS_IsThreadAvailable
+0x020853c0   240       src/main/c_os_thread.c          OS_CreateThread
+0x020854b0    32       src/main/c_os_thread.c          OS_ExitThread
+0x020854d0    88  NEW  src/main/c_os_thread.c          OSi_ExitThread_ArgSpecified
+0x02085528    56  NEW  src/main/c_os_thread.c          OSi_ExitThread
+0x02085560    92  NEW  src/main/c_os_thread.c          OSi_ExitThread_Destroy
+0x020855bc   124       src/main/c_os_thread.c          OS_DestroyThread
+0x02085638    36       src/main/c_os_thread.c          OS_KillThread
+0x0208565c   156  NEW  src/main/c_os_thread.c          OS_KillThreadWithPriority
+0x020856f8    24       src/main/c_os_thread.c          OSi_CancelThreadAlarmForSleep
+0x02085710    60       src/main/c_os_thread.c          OS_JoinThread
+0x0208574c    20       src/main/c_os_thread.c          OS_IsThreadTerminated
+0x02085760    80       src/main/c_os_thread.c          OS_SleepThreadDirect
+0x020857b0    80  NEW  src/main/c_os_thread.c          OS_SleepThread
+0x02085800   104       src/main/c_os_thread.c          OS_WakeupThread
+0x02085868    40       src/main/c_os_thread.c          OS_WakeupThreadDirect
+0x02085890    44       src/main/c_os_thread.c          OS_SelectThread
+0x020858bc    28       src/main/c_os_thread.c          OS_RescheduleThread
+0x020858d8   176  NEW  src/main/c_os_thread.c          OS_YieldThread
+0x02085988   168       src/main/c_os_thread.c          OS_SetThreadPriority
+0x02085a30     8  NEW  src/main/c_os_thread.c          OS_GetThreadPriority
+0x02085a38   160       src/main/c_os_thread.c          OS_Sleep
+0x02085ad8    32       src/main/c_os_thread.c          OSi_SleepAlarmCallback
+0x02085af8    40       src/main/c_os_thread.c          OS_SetSwitchThreadCallback
+0x02085b20    16  NEW  src/main/c_os_thread.c          OSi_IdleThreadProc
+0x02085b30    48  NEW  src/main/c_os_thread.c          OS_DisableScheduler
+0x02085b60    52  NEW  src/main/c_os_thread.c          OS_EnableScheduler
+0x02085b94     8  NEW  src/main/c_os_thread.c          OS_SetThreadDestructor
+0x02085b9c   108       src/main/c_os_context.c         OS_InitContext
+0x02085c08    76       src/main/c_os_context.c         OS_SaveContext
+0x02085d0c    24       src/main/c_os_emulator.c        OSi_DetectDeviceType
+0x02085d24    24       src/main/c_os_emulator.c        OS_IsRunOnEmulator
+0x02085d94    40       src/main/c_os_message.c         OS_InitMessageQueue
+0x02085dbc   148       src/main/c_os_message.c         OS_SendMessage
+0x02085e50   160       src/main/c_os_message.c         OS_ReceiveMessage
+0x02085ef0   156       src/main/c_os_message.c         OS_JamMessage
+0x02085f8c   120       src/main/c_os_message.c         OS_ReadMessage
+0x02086004    36       src/main/c_os_mutex.c           OS_InitMutex
+0x02086028    80       src/main/c_os_mutex.c           OS_LockMutex
+0x02086078    16       src/main/c_os_mutex.c           OS_UnlockMutex
+0x02086088    72       src/main/c_os_mutex.c           OSi_UnlockAllMutex
+0x020860d0   148       src/main/c_os_mutex.c           OS_TryLockMutex
+0x02086164   216  NEW  src/main/c_os_mutex.c           OSi_UnlockMutexCore
+0x0208623c    36       src/main/c_os_mutex.c           OSi_EnqueueTail
+0x02086260    36       src/main/c_os_mutex.c           OSi_DequeueItem
+0x02086284    52  NEW  src/main/c_os_cache.c           DC_FlushAll
+0x020862b8    28       src/main/c_os_cache.c           DC_InvalidateRange
+0x020862d4    28       src/main/c_os_cache.c           DC_StoreRange
+0x020862f0    36       src/main/c_os_cache.c           DC_FlushRange
+0x02086314    12  NEW  src/main/c_os_cache.c           DC_WaitWriteBufferEmpty
+0x02086320    12  NEW  src/main/c_os_cache.c           IC_InvalidateAll
+0x0208632c    28       src/main/c_os_cache.c           IC_InvalidateRange
+0x02086348    32       src/main/c_os_init.c            OSi_WaitVCount0
+0x020867f4    28       src/main/c_os_alloc.c           DLAddFront
+0x02086810    40       src/main/c_os_alloc.c           DLExtract
+0x02086838   168       src/main/c_os_alloc.c           DLInsert
+0x020868e0   264       src/main/c_os_alloc.c           OS_AllocFromHeap
+0x020869e8   104       src/main/c_os_alloc.c           OS_FreeToHeap
+0x02086a50   168       src/main/c_os_alloc.c           OS_InitAlloc
+0x02086af8   160       src/main/c_os_alloc.c           OS_CreateHeap
+0x02086c54    28       src/main/c_os_alloc.c           OS_ReferentSize
+0x02086cbc    36       src/main/c_os_alloc.c           OS_IsOnVram
+0x02086ce0    20       src/main/c_os_tcm.c             OS_GetDTCMAddress
+0x02086cf4    16  NEW  src/main/c_os_protunit.c        OS_EnableProtectionUnit
+0x02086d04    16       src/main/c_os_protunit.c        OS_DisableProtectionUnit
+0x02086d14    28       src/main/c_os_protregion.c      OS_SetProtectionRegionParam
+0x02086d30     8  NEW  src/main/c_os_protregion.c      OS_SetProtectionRegion0
+0x02086d38     8  NEW  src/main/c_os_protregion.c      OS_SetProtectionRegion1
+0x02086d40     8  NEW  src/main/c_os_protregion.c      OS_SetProtectionRegion2
+0x02086d48     8  NEW  src/main/c_os_protregion.c      OS_SetProtectionRegion3
+0x02086d50     8  NEW  src/main/c_os_protregion.c      OS_SetProtectionRegion4
+0x02086d58     8  NEW  src/main/c_os_protregion.c      OS_SetProtectionRegion5
+0x02086d60     8  NEW  src/main/c_os_protregion.c      OS_SetProtectionRegion6
+0x02086d68     8  NEW  src/main/c_os_protregion.c      OS_SetProtectionRegion7
+0x02086d70     8  NEW  src/main/c_os_protregion.c      OS_GetProtectionRegion0
+0x02086d78     8  NEW  src/main/c_os_protregion.c      OS_GetProtectionRegion1
+0x02086d80     8  NEW  src/main/c_os_protregion.c      OS_GetProtectionRegion2
+0x02086d88     8  NEW  src/main/c_os_protregion.c      OS_GetProtectionRegion3
+0x02086d90     8  NEW  src/main/c_os_protregion.c      OS_GetProtectionRegion4
+0x02086d98     8  NEW  src/main/c_os_protregion.c      OS_GetProtectionRegion5
+0x02086da0     8  NEW  src/main/c_os_protregion.c      OS_GetProtectionRegion6
+0x02086da8     8  NEW  src/main/c_os_protregion.c      OS_GetProtectionRegion7
+0x02086db0    40       src/main/c_os_protregion.c      OS_SetProtectionRegionEx
+0x02086e40   116  NEW  src/main/c_os_exception.c       OSi_ExceptionHandler
+0x02086eb4    20  NEW  src/main/c_os_exception.c       OSi_GetAndDisplayContext
+0x02086ec8   128       src/main/c_os_exception.c       OSi_SetExContext
+0x02086fe8   112       src/main/c_os_tick.c            OS_InitTick
+0x02087058    16       src/main/c_os_tick.c            OS_IsTickAvailable
+0x02087068   104  NEW  src/main/c_os_tick.c            OSi_CountUpTick
+0x020870d0   160       src/main/c_os_tick.c            OS_GetTick
+0x02087170    16       src/main/c_os_tick.c            OS_GetTickLo
+0x02087180   136       src/main/c_os_alarm.c           OSi_SetTimer
+0x02087208    60       src/main/c_os_alarm.c           OS_InitAlarm
+0x02087244    16  NEW  src/main/c_os_alarm.c           OS_IsAlarmAvailable
+0x02087254    16       src/main/c_os_alarm.c           OS_CreateAlarm
+0x02087264   296       src/main/c_os_alarm.c           OSi_InsertAlarm
+0x0208738c   108  NEW  src/main/c_os_alarm.c           OS_SetAlarm
+0x020873f8   132       src/main/c_os_alarm.c           OS_CancelAlarm
+0x0208747c    16  NEW  src/main/c_os_alarm.c           OSi_AlarmHandler
+0x0208748c   236       src/main/c_os_alarm.c           OSi_ArrangeTimer
+0x02087578    64       src/main/c_os_valarm.c          OS_InitVAlarm
+0x020875b8   124       src/main/c_os_valarm.c          OSi_InsertVAlarm
+0x02087634    56       src/main/c_os_valarm.c          OSi_AppendVAlarm
+0x0208766c    56       src/main/c_os_valarm.c          OSi_DetachVAlarm
+0x020876a4    20       src/main/c_os_valarm.c          OS_CreateVAlarm
+0x020876b8   140  NEW  src/main/c_os_valarm.c          OS_SetVAlarm
+0x02087744    64       src/main/c_os_valarm.c          OSi_SetNextVAlarm
+0x020878ec    76       src/main/c_os_valarm.c          OSi_CompareVCount
+0x02087938    60       src/main/c_os_valarm.c          OSi_GetVFrame
+0x02087974    20       src/main/c_os_system.c          OS_EnableInterrupts
+0x02087988    20       src/main/c_os_system.c          OS_DisableInterrupts
+0x0208799c    24       src/main/c_os_system.c          OS_RestoreInterrupts
+0x020879b4    20       src/main/c_os_system.c          OS_DisableInterrupts_IrqAndFiq
+0x020879c8    24       src/main/c_os_system.c          OS_RestoreInterrupts_IrqAndFiq
+0x020879e0    12  NEW  src/main/c_os_system.c          OS_GetCpsrIrq
+0x020879ec    12  NEW  src/main/c_os_system.c          OS_GetProcMode
+0x02087a3c   168  NEW  src/main/c_os_system.c          OS_WaitInterrupt
+0x02087b04    16  NEW  src/main/c_os_systemwork.c      OS_GetBootType
+0x02087b14    12  NEW  src/main/c_os_systemwork.c      OS_GetBootInfo
+0x02087b78    84       src/main/c_os_reset.c           OS_InitReset
+0x02087c6c    28       src/main/c_os_ownerinfo.c       OS_GetMacAddress
+0x02087c88   128       src/main/c_os_ownerinfo.c       OS_GetOwnerInfo
+0x02087d08    20       src/main/c_os_ownerinfo.c       OS_GetOwnerRtcOffset
+0x02087ea0     8  NEW  src/main/c_math.c               MATH_CountLeadingZerosFunc
+0x02087ea8    52       src/main/c_os_vramexcl.c        OSi_InitVramExclusive
+0x02087edc   132       src/main/c_os_vramexcl.c        OSi_UnlockVram
+0x02088168   204       src/main/c_os_entropy.c         OS_GetLowEntropyData
+0x020882d0    12  NEW  src/main/c_os_terminate.c       OS_Halt
+0x020882dc    20       src/main/c_os_event.c           OS_InitEvent
+0x020882f0   168       src/main/c_os_event.c           OS_WaitEventEx
+0x02088398    60       src/main/c_os_event.c           OS_SignalEvent
+0x02088498    12  NEW  src/main/c_pxi_init.c           PXI_Init
+0x020884a4   252  NEW  src/main/c_pxi_fifo.c           PXI_InitFifo
+0x020885a0    76       src/main/c_pxi_fifo.c           PXI_SetFifoRecvCallback
+0x020885ec    36       src/main/c_pxi_fifo.c           PXI_IsCallbackReady
+0x02088610   120       src/main/c_pxi_fifo.c           PXI_SendWordByFifo
+0x02088688   256       src/main/c_pxi_fifo.c           PXIi_HandlerRecvFifoNotEmpty
+0x02088788   108       src/main/c_rtc_external.c       RTC_Init
+0x020887f4   112       src/main/c_rtc_external.c       RTC_GetDateAsync
+0x02088864    56       src/main/c_rtc_external.c       RTC_GetDate
+0x0208889c   112       src/main/c_rtc_external.c       RTC_GetTimeAsync
+0x0208890c    56  NEW  src/main/c_rtc_external.c       RTC_GetTime
+0x02088944   124       src/main/c_rtc_external.c       RTC_GetDateTimeAsync
+0x020889c0    56       src/main/c_rtc_external.c       RTC_GetDateTime
+0x02088e5c   104       src/main/c_rtc_external.c       RtcBCD2HEX
+0x02088ec4    16  NEW  src/main/c_rtc_external.c       RtcGetResultCallback
+0x02088eec    16       src/main/c_rtc_internal.c       RTCi_ReadRawDateTimeAsync
+0x02088efc    16       src/main/c_rtc_internal.c       RTCi_ReadRawDateAsync
+0x02088f0c    16       src/main/c_rtc_internal.c       RTCi_ReadRawTimeAsync
+0x02088f1c    16       src/main/c_rtc_internal.c       RTCi_WriteRawStatus2Async
+0x02088f2c    44       src/main/c_rtc_internal.c       RtcSendPxiCommand
+0x02088f58   148  NEW  src/main/c_rtc_convert.c        RTC_ConvertDateToDay
+0x02088fec    24       src/main/c_rtc_convert.c        RTCi_ConvertTimeToSecond
+0x02089004    92       src/main/c_rtc_convert.c        RTC_ConvertDateTimeToSecond
+0x02089060   256       src/main/c_rtc_convert.c        RTC_ConvertDayToDate
+0x02089160   128       src/main/c_rtc_convert.c        RTCi_ConvertSecondToTime
+0x020891e0   148       src/main/c_rtc_convert.c        RTC_ConvertSecondToDateTime
+0x02089274   188       src/main/c_rtc_convert.c        RTC_GetDayOfWeek
+0x02089330    32       src/main/c_snd_interface.c      SND_StopSeq
+0x02089350    40       src/main/c_snd_interface.c      SND_PrepareSeq
+0x02089378    32       src/main/c_snd_interface.c      SND_StartPreparedSeq
+0x02089398    32       src/main/c_snd_interface.c      SND_PauseSeq
+0x020893b8    24       src/main/c_snd_interface.c      SND_SetPlayerTempoRatio
+0x020893d0    24       src/main/c_snd_interface.c      SND_SetPlayerVolume
+0x020893e8    24       src/main/c_snd_interface.c      SND_SetPlayerChannelPriority
+0x02089400    28       src/main/c_snd_interface.c      SND_SetTrackVolume
+0x0208941c    28       src/main/c_snd_interface.c      SND_SetTrackPitch
+0x02089438    28       src/main/c_snd_interface.c      SND_SetTrackPan
+0x02089454    28       src/main/c_snd_interface.c      SND_SetTrackModDepth
+0x02089470    28       src/main/c_snd_interface.c      SND_SetTrackModSpeed
+0x0208948c    40       src/main/c_snd_interface.c      SND_SetTrackAllocatableChannel
+0x020894b4    40       src/main/c_snd_interface.c      SND_StartTimer
+0x020894dc   100       src/main/c_snd_interface.c      SND_StopTimer
+0x02089540    64       src/main/c_snd_interface.c      SND_SetupAlarm
+0x02089580    48       src/main/c_snd_interface.c      SND_SetTrackMute
+0x020895b0    40       src/main/c_snd_interface.c      SND_SetTrackMuteEx
+0x020895d8    32       src/main/c_snd_interface.c      SND_LockChannel
+0x020895f8    32       src/main/c_snd_interface.c      SND_UnlockChannel
+0x02089618    32       src/main/c_snd_interface.c      SND_SetChannelTimer
+0x02089638    40       src/main/c_snd_interface.c      SND_SetChannelVolume
+0x02089660    76       src/main/c_snd_interface.c      SND_SetupChannelPcm
+0x020896ac    32       src/main/c_snd_interface.c      SND_InvalidateSeqData
+0x020896cc    32       src/main/c_snd_interface.c      SND_InvalidateBankData
+0x020896ec    32       src/main/c_snd_interface.c      SND_InvalidateWaveData
+0x0208970c    32       src/main/c_snd_interface.c      SND_SetMasterVolume
+0x0208972c    40       src/main/c_snd_interface.c      SND_SetOutputSelector
+0x02089754    32       src/main/c_snd_interface.c      SND_SetMasterPan
+0x02089774    32       src/main/c_snd_interface.c      SND_ResetMasterPan
+0x02089794    32       src/main/c_snd_interface.c      SND_ReadDriverInfo
+0x020897b4    40       src/main/c_snd_interface.c      SNDi_SetPlayerParam
+0x020897dc    40       src/main/c_snd_interface.c      SNDi_SetTrackParam
+0x02089804    68       src/main/c_snd_interface.c      PushCommand_impl
+0x02089848    56       src/main/c_snd_main.c           SND_Init
+0x02089880    20  NEW  src/main/c_snd_main.c           SNDi_LockMutex
+0x02089894    20  NEW  src/main/c_snd_main.c           SNDi_UnlockMutex
+0x020898a8   208       src/main/c_snd_command.c        SND_CommandInit
+0x02089978   256       src/main/c_snd_command.c        SND_RecvCommandReply
+0x02089a78   136       src/main/c_snd_command.c        SND_AllocCommand
+0x02089b00    56       src/main/c_snd_command.c        SND_PushCommand
+0x02089cd4   108       src/main/c_snd_command.c        SND_WaitForCommandProc
+0x02089d40    44       src/main/c_snd_command.c        SND_GetCurrentCommandTag
+0x02089d6c    80       src/main/c_snd_command.c        SND_IsFinishedCommandTag
+0x02089dbc    60       src/main/c_snd_command.c        SND_CountFreeCommand
+0x02089df8    60       src/main/c_snd_command.c        SND_CountReservedCommand
+0x02089e34    28       src/main/c_snd_command.c        SND_CountWaitingCommand
+0x02089e50    36  NEW  src/main/c_snd_command.c        PxiFifoCallback
+0x02089e74   100       src/main/c_snd_command.c        InitPXI
+0x02089ed8    40       src/main/c_snd_command.c        RequestCommandProc
+0x02089f00    72       src/main/c_snd_command.c        AllocCommand
+0x02089f48    64       src/main/c_snd_command.c        IsCommandAvailable
+0x02089f88    56       src/main/c_snd_alarm.c          SND_AlarmInit
+0x02089fc0    32       src/main/c_snd_alarm.c          SNDi_IncAlarmId
+0x02089fe0    48       src/main/c_snd_alarm.c          SNDi_SetAlarmHandler
+0x0208a010    68       src/main/c_snd_alarm.c          SNDi_CallAlarmHandler
+0x0208a054    40       src/main/c_snd_work.c           SND_GetPlayerStatus
+0x0208a07c    40       src/main/c_snd_work.c           SND_GetChannelStatus
+0x0208a0a4   264       src/main/c_snd_work.c           SND_ReadTrackInfo
+0x0208a1ac    36       src/main/c_snd_work.c           SNDi_GetFinishedCommandTag
+0x0208a1d0   124       src/main/c_snd_work.c           SNDi_InitSharedWork
+0x0208a24c   112       src/main/c_snd_util.c           SND_CalcChannelVolume
+0x0208a2bc   208       src/main/c_snd_bank.c           SND_AssignWaveArc
+0x0208a38c   152       src/main/c_snd_bank.c           SND_DestroyBank
+0x0208a424    72       src/main/c_snd_bank.c           SND_DestroyWaveArc
+0x0208a46c    32       src/main/c_snd_bank.c           SND_GetFirstInstDataPos
+0x0208a48c   428       src/main/c_snd_bank.c           SND_GetNextInstData
+0x0208a638     8  NEW  src/main/c_snd_bank.c           SND_GetWaveDataCount
+0x0208a640    52       src/main/c_snd_bank.c           SND_SetWaveDataAddress
+0x0208a674    60       src/main/c_snd_bank.c           SND_GetWaveDataAddress
+0x0208b24c   112  NEW  src/main/c_mic.c                MIC_Init
+0x0208b2bc   304       src/main/c_mic.c                MIC_StartAutoSamplingAsync
+0x0208b3ec    56       src/main/c_mic.c                MIC_StartAutoSampling
+0x0208b424    92       src/main/c_mic.c                MIC_StopAutoSamplingAsync
+0x0208b480    56       src/main/c_mic.c                MIC_StopAutoSampling
+0x0208b4b8    16       src/main/c_mic.c                MIC_GetLastSamplingAddress
+0x0208b548   264  NEW  src/main/c_mic.c                MicCommonCallback
+0x0208b650   268       src/main/c_mic.c                MicStartAutoSampling
+0x0208b75c    44       src/main/c_mic.c                MicStopAutoSampling
+0x0208b788    16       src/main/c_mic.c                MicGetResultCallback
+0x0208b798    24  NEW  src/main/c_mic.c                MicWaitBusy
+0x0208b7bc   132       src/main/c_pm.c                 PMi_WaitBusy
+0x0208b840    12  NEW  src/main/c_pm.c                 PMi_DummyCallback
+0x0208b87c    52       src/main/c_pm.c                 PMi_WaitVBlank
+0x0208baf4   196       src/main/c_pm.c                 PMi_TryToSendPxiDataTillSuccess
+0x0208bbb8   140       src/main/c_pm.c                 PMi_SendSleepStart
+0x0208bc44    72       src/main/c_pm.c                 PM_SendUtilityCommandAsync
+0x0208bc8c    56       src/main/c_pm.c                 PM_SendUtilityCommand
+0x0208bcc4   100       src/main/c_pm.c                 PMi_SetLEDAsync
+0x0208bd28    40       src/main/c_pm.c                 PMi_SetLED
+0x0208bd50   136       src/main/c_pm.c                 PM_SetBackLightAsync
+0x0208bdd8    40       src/main/c_pm.c                 PM_SetBackLight
+0x0208be58    76       src/main/c_pm.c                 PMi_ForceToPowerOff
+0x0208bf08    48       src/main/c_pm.c                 PMi_SetAmp
+0x0208bf38    28       src/main/c_pm.c                 PM_SetAmpGain
+0x0208bf6c    64       src/main/c_pm.c                 PM_GetBattery
+0x0208bfd0    96       src/main/c_pm.c                 PM_GetBackLight
+0x0208c030    80       src/main/c_pm.c                 PM_GetAmp
+0x0208c080    44       src/main/c_pm.c                 PMi_SendPxiData
+0x0208c64c    60       src/main/c_pm.c                 PM_SetLCDPower
+0x0208c688    28       src/main/c_pm.c                 PM_GetLCDPower
+0x0208c6a4    28       src/main/c_pm.c                 PMi_SendLEDPatternCommand
+0x0208c6c0    60       src/main/c_pm.c                 PM_GetLEDPattern
+0x0208c6fc   140       src/main/c_pm.c                 PMi_InsertList
+0x0208c788    88       src/main/c_pm.c                 PMi_DeleteList
+0x0208c7e0    40       src/main/c_pm.c                 PMi_ExecuteList
+0x0208c828    32       src/main/c_pm.c                 PM_AppendPreSleepCallback
+0x0208c848    36       src/main/c_pm.c                 PMi_InsertPreSleepCallbackEx
+0x0208c86c    24       src/main/c_pm.c                 PM_DeletePreSleepCallback
+0x0208c884    24  NEW  src/main/c_pm.c                 PM_DeletePostSleepCallback
+0x0208c89c   168       src/main/c_pm.c                 PMi_LCDOnAvoidReset
+0x020913bc    20  NEW  src/main/c_env_system.c         ENV_PrependResourceSet
+0x020a9fc8   352       src/main/c_os_irqhandler.c      OS_IrqHandler_ThreadSwitch

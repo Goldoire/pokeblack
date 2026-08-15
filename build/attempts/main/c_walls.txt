@@ -1,0 +1,107 @@
+main-C shard 0x0204A39C-0x020AA3C1: functions inside otherwise-verified
+SDK wrapper files that are NOT yet byte-exact, with the observed cause.
+Every other function in these files reports N/N OK.
+
+0x02060480    35/44    src/main/c_fnd_list.c
+0x020604ac    76/84    src/main/c_fnd_list.c
+0x02060500    72/80    src/main/c_fnd_list.c
+0x02061840    31/32    src/main/c_gfd_vramxfer.c
+0x02061b74    54/60    src/main/c_gfd_vramxfer.c
+0x02061bd0    54/60    src/main/c_gfd_vramxfer.c
+0x02061c30    11/16    src/main/c_gfd_vramxfer.c
+0x02062f38    41/64    src/main/c_g2d_animation.c
+0x0206bf50   166/208   src/main/c_g3d_sbc.c
+0x02072ebc     8/12    src/main/c_snd_player.c
+0x02072ee0    54/80    src/main/c_snd_player.c
+0x02072f88    20/24    src/main/c_snd_player.c
+0x020738c0   359/408   src/main/c_snd_stream.c
+0x02073ad0    93/104   src/main/c_snd_stream.c
+0x02073b3c   110/116   src/main/c_snd_stream.c
+0x02073bf0   152/168   src/main/c_snd_stream.c
+0x02073ca0    69/76    src/main/c_snd_stream.c
+0x02074324    94/96    src/main/c_sndarc.c
+0x02074388    94/96    src/main/c_sndarc.c
+0x020743ec    94/96    src/main/c_sndarc.c
+0x02074450    94/96    src/main/c_sndarc.c
+0x020744b4    93/96    src/main/c_sndarc.c
+0x02074518    93/96    src/main/c_sndarc.c
+0x0207457c    34/36    src/main/c_sndarc.c
+0x020745a4   194/196   src/main/c_sndarc.c
+0x0207466c    35/36    src/main/c_sndarc.c
+0x02074694    23/24    src/main/c_sndarc.c
+0x020746b0    11/16    src/main/c_sndarc.c
+0x02075bac    31/40    src/main/c_snd_fader.c
+0x02076e4c   266/268   src/main/c_card_rom.c
+0x02076f68   142/144   src/main/c_card_rom.c
+0x02077008   111/112   src/main/c_card_rom.c
+0x02077168    63/64    src/main/c_card_rom.c
+0x020771b4   372/376   src/main/c_card_rom.c
+0x0207c788    43/44    src/main/c_fx_cp.c
+0x020846ac    14/16    src/main/c_rtc_internal.c
+0x02085c54    59/68    src/main/c_os_context.c
+0x02087ae4    31/32    src/main/c_os_system.c
+0x02088c14     7/44    src/main/c_rtc_external.c
+0x02089b38   367/400   src/main/c_snd_command.c
+0x0208b84c    40/44    src/main/c_pm.c
+0x0208c944    23/24    src/main/c_pm.c
+0x020a9ea0   202/208   src/main/c_mi_dma.c
+0x020a9f70    80/84    src/main/c_os_irqhandler.c
+
+Diagnosed causes (one cause usually covers a whole family):
+
+c_sndarc.c   0x02074324..0x020746B0 (10 fns, ~800B)
+    Every diff is a struct field offset 8 too small: [r3,#0x90] where the ROM
+    has [r3,#0x98], [r1,#0x88] vs [r1,#0x90], [r0,#0xc] vs [r0,#0x10]. The
+    retail NNSSndArc / NNSSndArcHeader has 8 more bytes before the file table
+    than lib/TwlSystem/include has. Fixing the header fixes all ten at once.
+
+c_card_rom.c 0x02076E4C, 0x02076F68, 0x02077008, 0x02077168, 0x020771B4
+    Same shape, 4 bytes: [r0,#0] vs [r0,#4], [r5,#8] vs [r5,#0xc]. One extra
+    word near the head of CARDiCommon in the retail SDK.
+
+c_pm.c       0x0208B84C, 0x0208C944
+    PM work struct is 4 bytes larger: [r2,#0x30] vs [r2,#0x34] etc.
+
+c_snd_stream.c 0x020738C0, 0x02073AD0, 0x02073B3C, 0x02073BF0, 0x02073CA0
+c_snd_player.c 0x02072EBC, 0x02072EE0, 0x02072F88
+c_snd_command.c 0x02089B38 (SND_FlushCommand)
+c_snd_fader.c  0x02075BAC
+c_fnd_list.c   0x02060480, 0x020604AC, 0x02060500
+c_g3d_sbc.c    0x0206BF50
+c_g2d_animation.c 0x02062F38
+    Real codegen differences (register allocation r5<->r6, statement order,
+    an extra `mov rN,#0` before the first call). These are NNS version
+    differences in the source, not flag or struct problems.
+
+c_os_context.c 0x02085C54 (OS_LoadContext)
+    Retail builds the CP (coprocessor) context path; the in-tree source
+    compiles the plain path. Different prologue and an extra call.
+
+c_mi_dma.c   0x020A9EA0 (MIi_DmaSetParameters)
+c_os_irqhandler.c 0x020A9F70 (OS_IrqHandler), 0x020A9FC8 also affected
+    NOT FIXABLE UNDER THE CURRENT NAMING. The tail of main.bin from file
+    address 0x020A9E80 is the ITCM autoload image; it executes at 0x01FF8000
+    (delta 0xB1E80). Their bodies match, but every branch and literal inside
+    them encodes the ITCM address, which cannot be expressed by a symbol named
+    sub_020A9xxx. Callers work fine once the callee is named at its ITCM
+    address - that is how c_mi_dma_gxcommand.c went 3/5 -> 5/5, with
+    #define MIi_DmaSetParameters sub_01FF8020.
+
+c_os_system.c 0x02087AE4
+    One word: the ROM encodes the call to 0x02004490 as BLX (ARM->Thumb) but
+    build/reference/triage.json records 0x02004490 as `arm`, so the verifier
+    emits BL. The C is right; the triage mode for 0x02004490 is wrong.
+
+c_gfd_vramxfer.c 0x02061840
+    Calls the MSL helper _u32_div_f. verify_functions.py hardcodes it at
+    0x0209C0A4; the ROM branch decodes to 0x0209C2B0. Compiler-generated
+    symbol, so it cannot be renamed from C - the table needs the fix.
+
+c_fx_cp.c 0x0207C788 (FX_DivFx64c)
+    Source calls FX_DivAsync; the ROM calls 0x0207C8A0, which byte-matches
+    FX_InvAsync exactly. Swapping the two placements makes things worse
+    (8/12 instead of 11/12), so the retail fx_cp.c differs from the in-tree one.
+
+c_rtc_internal.c 0x020846AC, c_rtc_external.c 0x02088C14
+    Function-pointer table entries pointing at addresses the placement search
+    could not confirm.

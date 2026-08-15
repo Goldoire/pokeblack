@@ -110,6 +110,11 @@ melonDS_log.txt
 # the directories have to be walked back in one level at a time.
 !build/
 build/*
+# Banked near-misses carry the diagnosis that stops the next person repeating
+# ten attempts. loop_guard_notes.md is a worked negative result with a minimal
+# reproducer; that is a deliverable, not build output.
+!build/attempts/
+!build/attempts/**
 !build/reference/
 build/reference/*
 !build/reference/functions.json
