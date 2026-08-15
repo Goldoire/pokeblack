@@ -1,5 +1,13 @@
 #include "types.h"
 
+/* NOT YET on include/ov170.h.  The fields this file names at panel+0x68 /
+ * +0x6C fall inside the Ov170Anim embedded at +0x58, where the shared header
+ * still has only `u8 filler_10[0x08]`.  Reaching them would mean punning
+ * through that filler, which is worse than the private struct below and would
+ * silently survive the integrator naming those two words.  Move this file over
+ * once Ov170Anim has real members at +0x10 (u32) and +0x14 (void *).
+ * panel+0x60 in the sibling files is already `anim.unk08`. */
+
 typedef struct Ov170Panel {
     u8 unk00[0x6c];
     void *unk6c;

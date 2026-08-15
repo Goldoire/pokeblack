@@ -92,9 +92,30 @@ typedef struct BattleQueue {
  * +0x04 holds one of BattleSystem::unk_0C8[2].
  * ------------------------------------------------------------------------- */
 typedef struct BattleScriptCtx {
-    u32 unk_00;             // +0x00 INFERRED
-    BattleQueue *unk_04;    // +0x04 PROVEN  -- 021D36CC and 16 siblings
-} BattleScriptCtx;
+    u32 unk_00;                     // +0x00 INFERRED (read 4B by 50 handlers)
+    BattleQueue *unk_04;            // +0x04 PROVEN  -- 021D36CC and 23 siblings
+    u8 filler_08[0x034 - 0x008];    // +0x08 INFERRED
+    void *unk_034;                  // +0x34 INFERRED (021D3B74)
+    u8 filler_038[0x054 - 0x038];   // +0x38 INFERRED
+    void *unk_054;                  // +0x54 INFERRED (44 handlers read it)
+    void *unk_058;                  // +0x58 INFERRED
+    u8 filler_05C[0x0AC - 0x05C];   // +0x5C INFERRED
+    void *unk_0AC;                  // +0xAC INFERRED (5 handlers)
+    u8 filler_0B0[0x134 - 0x0B0];   // +0xB0 INFERRED
+    void *unk_134;                  // +0x134 INFERRED
+    void *unk_138;                  // +0x138 INFERRED
+    void *unk_13C;                  // +0x13C INFERRED (021D3934, as 0x4F << 2)
+    void *unk_140;                  // +0x140 INFERRED
+    u8 filler_144[0x1A6 - 0x144];   // +0x144 INFERRED
+    u8 unk_1A6;                     // +0x1A6 INFERRED
+} BattleScriptCtx;                  // >= 0x1A7
+
+/*
+ * Sweeping all 92 opcode handlers for constant-offset loads off their first
+ * argument gives exactly eleven distinct offsets -- 0x000, 0x004, 0x034,
+ * 0x054, 0x058, 0x0AC, 0x134, 0x138, 0x13C, 0x140 and 0x1A6 -- which is why
+ * everything between them is filler rather than a guess.
+ */
 
 /* ---------------------------------------------------------------------------
  * BattleSystem -- >= 0x474. The object every ov093 entry point takes.

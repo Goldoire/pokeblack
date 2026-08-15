@@ -9,10 +9,10 @@
  * record.
  */
 
-typedef struct Ctx Ctx;
-typedef struct Mgr Mgr;
+typedef struct Ov114Ctx Ov114Ctx;
+typedef struct Ov114Mgr Ov114Mgr;
 
-typedef struct Sess {
+typedef struct Ov114Sess {
     u32 unk_00;
     u32 unk_04;
     u32 unk_08;
@@ -23,9 +23,9 @@ typedef struct Sess {
     u32 unk_28;
     u8 pad_2C[0x438 - 0x2C];
     int unk_438;
-} Sess;
+} Ov114Sess;
 
-typedef struct Conn {
+typedef struct Ov114Buffer {
     s32 unk_00;
     s32 unk_04;
     u32 unk_08;
@@ -35,22 +35,22 @@ typedef struct Conn {
     s32 unk_18;
     u8 pad_1C[0x8048 - 0x1C];
     s32 counter;                                /* 0x8048 */
-} Conn;
+} Ov114Buffer;
 
 extern int _021D3B20;
 extern u8 _021CE544[];
 
-extern Ctx *sub_021BEF08(void);
-extern void *sub_021BEF50(Ctx *ctx);
-extern Mgr *sub_021BEF58(Ctx *ctx);
-extern Conn *sub_021BEC00(Mgr *m, void *key);
-extern Sess *sub_021BEBC8(Mgr *m, void *key);
-extern int sub_021BEBA8(Mgr *m, void *key);
-extern void sub_021BEA64(Conn *c);
-extern s32 sub_021BEFE4(Mgr *m, Conn *c);
+extern Ov114Ctx *sub_021BEF08(void);
+extern void *sub_021BEF50(Ov114Ctx *ctx);
+extern Ov114Mgr *sub_021BEF58(Ov114Ctx *ctx);
+extern Ov114Buffer *sub_021BEC00(Ov114Mgr *m, void *key);
+extern Ov114Sess *sub_021BEBC8(Ov114Mgr *m, void *key);
+extern int sub_021BEBA8(Ov114Mgr *m, void *key);
+extern void sub_021BEA64(Ov114Buffer *c);
+extern s32 sub_021BEFE4(Ov114Mgr *m, Ov114Buffer *c);
 extern void sub_021B9C1C(void *p, int n);
-extern s32 sub_021BB97C(Ctx *ctx, void *sock);
-extern void sub_021BBA14(Ctx *ctx, s32 fd);
+extern s32 sub_021BB97C(Ov114Ctx *ctx, void *sock);
+extern void sub_021BBA14(Ov114Ctx *ctx, s32 fd);
 extern int sub_021C1FF8(void *p);
 extern int sub_021C204C(void);
 extern int sub_021C2270(void);
@@ -59,14 +59,14 @@ extern int sub_021C2350(void *p);
 extern int sub_02059F38(void);
 extern void sub_021BFB20(void);
 
-extern int sub_021BF1B0(Conn *c);   /* banked: build/attempts/ov114/sub_021BF1B0.c */
-int sub_021BF288(Conn *c);
-int sub_021BF3BC(Conn *c);
-int sub_021BF488(Conn *c);
+extern int sub_021BF1B0(Ov114Buffer *c);   /* banked: build/attempts/ov114/sub_021BF1B0.c */
+int sub_021BF288(Ov114Buffer *c);
+int sub_021BF3BC(Ov114Buffer *c);
+int sub_021BF488(Ov114Buffer *c);
 
-int sub_021BF184(Conn *c)
+int sub_021BF184(Ov114Buffer *c)
 {
-    Conn *e = sub_021BEC00(sub_021BEF58(sub_021BEF08()), c);
+    Ov114Buffer *e = sub_021BEC00(sub_021BEF58(sub_021BEF08()), c);
 
     if (e == NULL) {
         return -1;
@@ -74,12 +74,12 @@ int sub_021BF184(Conn *c)
     return sub_021BF1B0(e);
 }
 
-int sub_021BF288(Conn *c)
+int sub_021BF288(Ov114Buffer *c)
 {
-    Ctx *ctx = sub_021BEF08();
+    Ov114Ctx *ctx = sub_021BEF08();
     void *p = sub_021BEF50(ctx);
-    Mgr *mgr = sub_021BEF58(ctx);
-    Conn *e = sub_021BEC00(mgr, c);
+    Ov114Mgr *mgr = sub_021BEF58(ctx);
+    Ov114Buffer *e = sub_021BEC00(mgr, c);
     int st;
 
     if (e == NULL) {
@@ -95,11 +95,11 @@ int sub_021BF288(Conn *c)
     return 0;
 }
 
-int sub_021BF308(Conn *c)
+int sub_021BF308(Ov114Buffer *c)
 {
-    Ctx *ctx = sub_021BEF08();
-    Mgr *mgr = sub_021BEF58(ctx);
-    Conn *e = sub_021BEC00(mgr, c);
+    Ov114Ctx *ctx = sub_021BEF08();
+    Ov114Mgr *mgr = sub_021BEF58(ctx);
+    Ov114Buffer *e = sub_021BEC00(mgr, c);
     void *sock;
     s32 fd;
 
@@ -119,10 +119,10 @@ int sub_021BF308(Conn *c)
     return 0;
 }
 
-int sub_021BF374(Conn *c)
+int sub_021BF374(Ov114Buffer *c)
 {
-    Ctx *ctx = sub_021BEF08();
-    Conn *e = sub_021BEC00(sub_021BEF58(ctx), c);
+    Ov114Ctx *ctx = sub_021BEF08();
+    Ov114Buffer *e = sub_021BEC00(sub_021BEF58(ctx), c);
     s32 v;
 
     if (e == NULL) {
@@ -136,9 +136,9 @@ int sub_021BF374(Conn *c)
     return 0;
 }
 
-int sub_021BF3BC(Conn *c)
+int sub_021BF3BC(Ov114Buffer *c)
 {
-    Conn *e = sub_021BEC00(sub_021BEF58(sub_021BEF08()), c);
+    Ov114Buffer *e = sub_021BEC00(sub_021BEF58(sub_021BEF08()), c);
 
     if (e == NULL) {
         return -1;
@@ -146,12 +146,12 @@ int sub_021BF3BC(Conn *c)
     return e->unk_00;
 }
 
-int sub_021BF3E4(Conn *c, u32 *o1, u32 *o2)
+int sub_021BF3E4(Ov114Buffer *c, u32 *o1, u32 *o2)
 {
-    Ctx *ctx = sub_021BEF08();
-    Mgr *mgr = sub_021BEF58(ctx);
-    Conn *e = sub_021BEC00(mgr, c);
-    Sess *s;
+    Ov114Ctx *ctx = sub_021BEF08();
+    Ov114Mgr *mgr = sub_021BEF58(ctx);
+    Ov114Buffer *e = sub_021BEC00(mgr, c);
+    Ov114Sess *s;
 
     if (e != NULL) {
         s = sub_021BEBC8(mgr, e);
@@ -165,12 +165,12 @@ int sub_021BF3E4(Conn *c, u32 *o1, u32 *o2)
     return -1;
 }
 
-int sub_021BF444(Conn *c)
+int sub_021BF444(Ov114Buffer *c)
 {
-    Ctx *ctx = sub_021BEF08();
-    Mgr *mgr = sub_021BEF58(ctx);
-    Conn *e = sub_021BEC00(mgr, c);
-    Sess *s;
+    Ov114Ctx *ctx = sub_021BEF08();
+    Ov114Mgr *mgr = sub_021BEF58(ctx);
+    Ov114Buffer *e = sub_021BEC00(mgr, c);
+    Ov114Sess *s;
 
     if (e != NULL) {
         s = sub_021BEBC8(mgr, e);
@@ -182,9 +182,9 @@ int sub_021BF444(Conn *c)
     return 0;
 }
 
-int sub_021BF488(Conn *c)
+int sub_021BF488(Ov114Buffer *c)
 {
-    Conn *e = sub_021BEC00(sub_021BEF58(sub_021BEF08()), c);
+    Ov114Buffer *e = sub_021BEC00(sub_021BEF58(sub_021BEF08()), c);
 
     if (e != NULL) {
         return e->unk_04;
@@ -192,12 +192,12 @@ int sub_021BF488(Conn *c)
     return -1;
 }
 
-int sub_021BF4B0(Conn *c, u32 *o1, u32 *o2)
+int sub_021BF4B0(Ov114Buffer *c, u32 *o1, u32 *o2)
 {
-    Ctx *ctx = sub_021BEF08();
-    Mgr *mgr = sub_021BEF58(ctx);
-    Conn *e = sub_021BEC00(mgr, c);
-    Sess *s;
+    Ov114Ctx *ctx = sub_021BEF08();
+    Ov114Mgr *mgr = sub_021BEF58(ctx);
+    Ov114Buffer *e = sub_021BEC00(mgr, c);
+    Ov114Sess *s;
 
     if (e != NULL) {
         s = sub_021BEBC8(mgr, e);

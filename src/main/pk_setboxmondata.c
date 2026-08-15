@@ -24,8 +24,7 @@ void sub_02019388(BoxPokemon *boxMon, int attr, u32 value)
     PokemonDataBlockB *blockB = sub_02019C38(boxMon, boxMon->pid, 1);
     PokemonDataBlockC *blockC = sub_02019C38(boxMon, boxMon->pid, 2);
     PokemonDataBlockD *blockD = sub_02019C38(boxMon, boxMon->pid, 3);
-    int mask;
-    s64 mask64;
+    s64 mask;
 
     switch (attr) {
     case 0:
@@ -332,11 +331,11 @@ void sub_02019388(BoxPokemon *boxMon, int attr, u32 value)
     case 139:
     case 140:
         attr -= 120;
-        mask64 = 1 << attr;
+        mask = 1 << attr;
         if (value) {
-            blockC->ribbonsDS2 |= mask64;
+            blockC->ribbonsDS2 |= mask;
         } else {
-            blockC->ribbonsDS2 &= mask64 ^ 0xFFFFFFFFFFFFFFFF;
+            blockC->ribbonsDS2 &= mask ^ 0xFFFFFFFFFFFFFFFF;
         }
         break;
     case 141:
@@ -391,9 +390,9 @@ void sub_02019388(BoxPokemon *boxMon, int attr, u32 value)
         blockB->hpIV = (u8)(value & 0x1F);
         blockB->atkIV = (u8)((value >> 5) & 0x1F);
         blockB->defIV = (u8)((value >> 10) & 0x1F);
-        blockB->speedIV = (u8)((value >> 15) & 0x1F);
-        blockB->spAtkIV = (u8)((value >> 20) & 0x1F);
-        blockB->spDefIV = (u8)((value >> 25) & 0x1F);
+        blockB->spAtkIV = (u8)((value >> 15) & 0x1F);
+        blockB->spDefIV = (u8)((value >> 20) & 0x1F);
+        blockB->speedIV = (u8)((value >> 25) & 0x1F);
         break;
     }
 }

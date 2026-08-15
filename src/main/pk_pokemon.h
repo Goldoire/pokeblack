@@ -121,6 +121,113 @@ typedef struct Pokemon {
     /* 0x88 */ PartyPokemon party;
 } Pokemon;
 
+
+/*
+ * MON_DATA_* field ids, read straight out of the jump tables of
+ * GetBoxMonDataInternal (0x02018E34, cases 0..0xAF) and
+ * SetBoxMonDataInternal (0x02019388, cases 0..0xB1), plus
+ * Get/SetMonDataInternal (0x02018DB4 / 0x02019308, cases 0x9D..0xA8).
+ * All four are byte-exact, so this numbering is PROVEN, not inferred.
+ *
+ * Relative to gen 4 (pokeheartgold): identical through 76, then HAS_NICKNAME
+ * moves out of slot 77 to slot 117, so 78..109 shift down by one; gen 4's
+ * PtHGSS egg/met-location and shiny-leaf fields are replaced by the gen-5
+ * NATURE / HIDDEN_ABILITY bytes at 112/113.
+ */
+#define MON_DATA_PERSONALITY          0
+#define MON_DATA_IS_PARTY_DECRYPTED   1
+#define MON_DATA_IS_BOX_DECRYPTED     2
+#define MON_DATA_CHECKSUM_FAILED      3
+#define MON_DATA_CHECKSUM             4
+#define MON_DATA_SPECIES              5
+#define MON_DATA_HELD_ITEM            6
+#define MON_DATA_OT_ID                7
+#define MON_DATA_EXPERIENCE           8
+#define MON_DATA_FRIENDSHIP           9
+#define MON_DATA_ABILITY              10
+#define MON_DATA_MARKINGS             11
+#define MON_DATA_LANGUAGE             12
+#define MON_DATA_HP_EV                13
+#define MON_DATA_ATK_EV               14
+#define MON_DATA_DEF_EV               15
+#define MON_DATA_SPEED_EV             16
+#define MON_DATA_SPATK_EV             17
+#define MON_DATA_SPDEF_EV             18
+#define MON_DATA_COOL                 19
+#define MON_DATA_BEAUTY               20
+#define MON_DATA_CUTE                 21
+#define MON_DATA_SMART                22
+#define MON_DATA_TOUGH                23
+#define MON_DATA_SHEEN                24
+#define MON_DATA_RIBBON_DS1_FIRST     25 // .. 53, bit (id - 25) of blockA.ribbonsDS1
+#define MON_DATA_RIBBON_DS1_LAST      53
+#define MON_DATA_MOVE1                54 // .. 57
+#define MON_DATA_MOVE1_PP             58 // .. 61
+#define MON_DATA_MOVE1_PP_UPS         62 // .. 65
+#define MON_DATA_MOVE1_MAX_PP         66 // .. 69, get-only (set is a no-op)
+#define MON_DATA_HP_IV                70
+#define MON_DATA_ATK_IV               71
+#define MON_DATA_DEF_IV               72
+#define MON_DATA_SPEED_IV             73
+#define MON_DATA_SPATK_IV             74
+#define MON_DATA_SPDEF_IV             75
+#define MON_DATA_IS_EGG               76
+#define MON_DATA_RIBBON_GBA_FIRST     77 // .. 108, bit (id - 77) of blockB.ribbonsGBA
+#define MON_DATA_RIBBON_GBA_LAST      108
+#define MON_DATA_FATEFUL_ENCOUNTER    109
+#define MON_DATA_GENDER               110 // getter recomputes and writes back
+#define MON_DATA_FORM                 111
+#define MON_DATA_NATURE               112
+#define MON_DATA_HIDDEN_ABILITY       113
+#define MON_DATA_UNK_114              114
+#define MON_DATA_NICKNAME             115
+#define MON_DATA_NICKNAME_STRING      116
+#define MON_DATA_HAS_NICKNAME         117
+#define MON_DATA_UNK_118              118
+#define MON_DATA_MET_GAME             119
+#define MON_DATA_RIBBON_DS2_FIRST     120 // .. 140, bit (id - 120) of blockC.ribbonsDS2
+#define MON_DATA_RIBBON_DS2_LAST      140
+#define MON_DATA_OT_NAME              141
+#define MON_DATA_OT_NAME_STRING       142
+#define MON_DATA_EGG_YEAR             143
+#define MON_DATA_EGG_MONTH            144
+#define MON_DATA_EGG_DAY              145
+#define MON_DATA_MET_YEAR             146
+#define MON_DATA_MET_MONTH            147
+#define MON_DATA_MET_DAY              148
+#define MON_DATA_EGG_LOCATION         149
+#define MON_DATA_MET_LOCATION         150
+#define MON_DATA_POKERUS              151
+#define MON_DATA_POKEBALL             152
+#define MON_DATA_MET_LEVEL            153
+#define MON_DATA_OT_GENDER            154
+#define MON_DATA_ENCOUNTER_TYPE       155
+#define MON_DATA_POKEBALL_HGSS        156
+#define MON_DATA_STATUS               157 // party block starts here
+#define MON_DATA_LEVEL                158
+#define MON_DATA_CAPSULE              159
+#define MON_DATA_HP                   160
+#define MON_DATA_MAX_HP               161
+#define MON_DATA_ATK                  162
+#define MON_DATA_DEF                  163
+#define MON_DATA_SPEED                164
+#define MON_DATA_SP_ATK               165
+#define MON_DATA_SP_DEF               166
+#define MON_DATA_MAIL                 167
+#define MON_DATA_BALL_CAPSULE         168 // no-op both ways
+#define MON_DATA_SPECIES_EXISTS       169
+#define MON_DATA_SANITY_IS_EGG        170
+#define MON_DATA_SPECIES_OR_EGG       171
+#define MON_DATA_COMBINED_IVS         172
+#define MON_DATA_NO_PRINT_GENDER      173
+#define MON_DATA_TYPE_1               174
+#define MON_DATA_TYPE_2               175
+#define MON_DATA_SPECIES_NAME         176 // set-only
+#define MON_DATA_SPECIES_NAME_STRING  177 // set-only
+
+#define SPECIES_EGG_BLACK 650 // returned by MON_DATA_SPECIES on a bad egg
+#define MAX_ITEM_ID       626
+
 #define PARTY_SIZE 6
 
 typedef struct Party {

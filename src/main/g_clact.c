@@ -13,8 +13,8 @@ void sub_0204B878(GClact *act, u32 seq);
 void sub_0204B8D4(GClact *act, u32 frames);
 void sub_0204B49C(GClact *act, s16 v, u32 a2, u32 which);
 void sub_0204B84C(GClact *act, u32 v);
-void sub_0204B784(GClact *act, GClactBlob36 *src);
-void sub_0204B728(GClact *act, GClactBlob20 *src);
+void sub_0204B784(GClact *act, GNNSImageProxy *src);
+void sub_0204B728(GClact *act, GNNSImagePaletteProxy *src);
 void sub_0204B3DC(GClact *act, u32 v);
 void sub_0204B270(GClactSet *set);
 void sub_0204B59C(GClact *act, s16 v, u32 which);
@@ -251,8 +251,8 @@ void sub_0204D510(GClactAnim *anim);
 u32 sub_0204D768(GClactAnim *anim);
 u32 sub_0204D7C4(GClactAnim *anim);
 u32 sub_02062F1C(GClactAnimCtrl *ctrl);
-void sub_0206380C(GClactBlob20 *p, u32 a1);
-void sub_020637BC(GClactBlob36 *p, u32 a1);
+void sub_0206380C(GNNSImagePaletteProxy *p, u32 a1);
+void sub_020637BC(GNNSImageProxy *p, u32 a1);
 
 /* ---- GClactSet, continued -------------------------------------------- */
 
@@ -400,26 +400,26 @@ void sub_0204B800(GClact *act, u8 v)
 
 /* ---- GClact block copies --------------------------------------------- */
 
-void sub_0204B728(GClact *act, GClactBlob20 *src)
+void sub_0204B728(GClact *act, GNNSImagePaletteProxy *src)
 {
     sub_0206380C(src, 1);
     sub_0206380C(src, 2);
     act->palProxy = *src;
 }
 
-void sub_0204B764(const GClact *act, GClactBlob20 *dst)
+void sub_0204B764(const GClact *act, GNNSImagePaletteProxy *dst)
 {
     *dst = act->palProxy;
 }
 
-void sub_0204B784(GClact *act, GClactBlob36 *src)
+void sub_0204B784(GClact *act, GNNSImageProxy *src)
 {
     sub_020637BC(src, 1);
     sub_020637BC(src, 2);
     act->imageProxy = *src;
 }
 
-void sub_0204B7C8(const GClact *act, GClactBlob36 *dst)
+void sub_0204B7C8(const GClact *act, GNNSImageProxy *dst)
 {
     *dst = act->imageProxy;
 }
@@ -728,8 +728,8 @@ void sub_0204C8A4(GClactXfer *e, u32 kind, u32 dst, void *src, u32 size);
 void sub_0204C8B8(GClactXfer *e);
 void sub_0204CB44(GClact *act, GClactRenderer *renderer);
 void sub_0204CEB4(GClact *act);
-void NNSi_G2dInitializeVRamLocation(GClactBlob36 *proxy);
-void NNS_G2dInitImagePaletteProxy(GClactBlob20 *proxy);
+void NNSi_G2dInitializeVRamLocation(GNNSImageProxy *proxy);
+void NNS_G2dInitImagePaletteProxy(GNNSImagePaletteProxy *proxy);
 
 void sub_0204C6E4(GClactXferList *list)
 {

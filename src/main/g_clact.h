@@ -44,16 +44,16 @@ typedef struct GNNSImageAttr {
     int mappingType;
 } GNNSImageAttr;
 
-typedef struct GClactBlob36 {          /* NNSG2dImageProxy, 0x24 */
+typedef struct GNNSImageProxy {          /* NNSG2dImageProxy, 0x24 */
     GNNSVRamLocation vramLocation;
     GNNSImageAttr attr;
-} GClactBlob36;
+} GNNSImageProxy;
 
-typedef struct GClactBlob20 {          /* NNSG2dImagePaletteProxy, 0x14 */
+typedef struct GNNSImagePaletteProxy {          /* NNSG2dImagePaletteProxy, 0x14 */
     int fmt;
     int bExtendedPlt;
     GNNSVRamLocation vramLocation;
-} GClactBlob20;
+} GNNSImagePaletteProxy;
 
 /* == NNSG2dAnimController (lib/TwlSystem g2d_Animation.h), 0x30 bytes.
  * Field identifications PROVEN by offset:
@@ -92,8 +92,8 @@ typedef struct GClact {
     GClactVec2 pos;           // 0x0C PROVEN sub_0204B528/sub_0204B53C
     GClactVec2 unk10;         // 0x10 PROVEN sub_0204B588/sub_0204B59C
     GClactVec2u32 scale;      // 0x14 fx32 pair, =FX32_ONE in sub_0204CAE4
-    GClactBlob36 imageProxy;  // 0x1C PROVEN sub_0204B784/sub_0204B7C8/sub_0204CAE4
-    GClactBlob20 palProxy;    // 0x40 PROVEN sub_0204B728/sub_0204B764/sub_0204CAE4
+    GNNSImageProxy imageProxy;  // 0x1C PROVEN sub_0204B784/sub_0204B7C8/sub_0204CAE4
+    GNNSImagePaletteProxy palProxy;    // 0x40 PROVEN sub_0204B728/sub_0204B764/sub_0204CAE4
     u32 animSpeed;            // 0x54 =FX32_ONE in sub_0204CAE4, PROVEN sub_0204B954
     u16 unk58;                // 0x58 PROVEN sub_0204B5F4/sub_0204B5FC
     u16 animSeq;              // 0x5A PROVEN sub_0204B878/sub_0204B898
@@ -154,8 +154,8 @@ typedef struct GClactRenderer {
 typedef struct GClactResHeader {
     u16 unk00;                // 0x00 -> GClact.unk5C
     u16 unk02;                // 0x02 -> GClact.unk5E
-    GClactBlob36 *imageProxy; // 0x04
-    GClactBlob20 *palProxy;   // 0x08
+    GNNSImageProxy *imageProxy; // 0x04
+    GNNSImagePaletteProxy *palProxy;   // 0x08
 } GClactResHeader;
 
 /* 0x20-byte stack template built by sub_0204CFA4 (all nine stores PROVEN). */

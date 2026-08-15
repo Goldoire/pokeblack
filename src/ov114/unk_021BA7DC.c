@@ -12,7 +12,7 @@
 typedef void *(*AllocFn)(u32 size, u32 align);
 typedef void (*FreeFn)(void *p);
 
-typedef struct Alloc {
+typedef struct Ov114Alloc {
     AllocFn alloc;                              /* 0x00 */
     FreeFn free;                                /* 0x04 */
     u32 unk_08;
@@ -22,22 +22,22 @@ typedef struct Alloc {
     u32 unk_18;
     u32 unk_1C;
     u32 unk_20;
-} Alloc;
+} Ov114Alloc;
 
-typedef struct Sock {
+typedef struct Ov114Sock {
     u32 unk_00;
     u32 unk_04;
     u8 pad_08[0x30 - 0x08];
     u8 unk_30[4];                               /* 0x30 */
-} Sock;
+} Ov114Sock;
 
-extern Alloc *sub_021BEF08(void);
+extern Ov114Alloc *sub_021BEF08(void);
 extern BOOL sub_021BAA1C(void *p, void *a, void *b, void *c);
 
-void sub_021BA874(Alloc *a, void *v);
-void sub_021BA87C(Alloc *a, void *v);
+void sub_021BA874(Ov114Alloc *a, void *v);
+void sub_021BA87C(Ov114Alloc *a, void *v);
 
-void sub_021BA7DC(Alloc *a)
+void sub_021BA7DC(Ov114Alloc *a)
 {
     a->alloc = NULL;
     a->free = NULL;
@@ -52,7 +52,7 @@ void sub_021BA7DC(Alloc *a)
 
 void *sub_021BA820(u32 size, u32 align)
 {
-    Alloc *a = sub_021BEF08();
+    Ov114Alloc *a = sub_021BEF08();
     AllocFn fn = a->alloc;
 
     if (fn == NULL) {
@@ -63,7 +63,7 @@ void *sub_021BA820(u32 size, u32 align)
 
 void sub_021BA850(void *p)
 {
-    Alloc *a = sub_021BEF08();
+    Ov114Alloc *a = sub_021BEF08();
     FreeFn fn = a->free;
 
     if (fn == NULL) {
@@ -72,22 +72,22 @@ void sub_021BA850(void *p)
     fn(p);
 }
 
-void sub_021BA874(Alloc *a, void *v)
+void sub_021BA874(Ov114Alloc *a, void *v)
 {
     a->unk_14 = v;
 }
 
-void sub_021BA87C(Alloc *a, void *v)
+void sub_021BA87C(Ov114Alloc *a, void *v)
 {
     a->unk_10 = v;
 }
 
-void *sub_021BA884(Alloc *a)
+void *sub_021BA884(Ov114Alloc *a)
 {
     return a->unk_10;
 }
 
-BOOL sub_021BAC38(Sock *s, void *a, void *b, void *c)
+BOOL sub_021BAC38(Ov114Sock *s, void *a, void *b, void *c)
 {
     if (s->unk_04 != 0) {
         return 0;

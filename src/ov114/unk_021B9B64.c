@@ -3,28 +3,28 @@
 /*
  * ov114 worker-thread plumbing (0x021B9B64..0x021B9D8C).
  *
- * A Worker is an OSMessageQueue (+0x00) with its 3-slot backing array
+ * A Ov114Worker is an OSMessageQueue (+0x00) with its 3-slot backing array
  * (+0x20) and the OSThread that services it (+0x2C).  sub_021B9C60 is the
  * thread entry thunk.
  */
 
-typedef struct Worker {
+typedef struct Ov114Worker {
     u8 queue[0x20];                             /* 0x00  OSMessageQueue */
     void *msgbuf[3];                            /* 0x20 */
     u8 thread[0xB4];                            /* 0x2C  OSThread */
-} Worker;
+} Ov114Worker;
 
-typedef struct Obj {
+typedef struct Ov114Obj {
     u8 pad_00[0xAC];
     void *unk_AC;                               /* 0xAC */
-} Obj;
+} Ov114Obj;
 
-typedef struct ThreadInfo {
+typedef struct Ov114ThreadInfo {
     u32 unk_00;
     void *current;                              /* 0x04 */
-} ThreadInfo;
+} Ov114ThreadInfo;
 
-extern ThreadInfo _02150FEC;
+extern Ov114ThreadInfo _02150FEC;
 extern u8 _021CF964[];
 
 extern BOOL sub_02085D94(void *q, void *buf, s32 n);       /* OS_InitMessageQueue */
@@ -42,14 +42,14 @@ extern int sub_0215F644(void *h);
 extern int sub_0215F428(int a, int b, int c);
 extern void sub_0215EBB4(void);
 extern void sub_021BA850(void *p);
-extern int sub_021BBEB8(Worker *w);
-extern void sub_021BBEA0(Worker *w);
+extern int sub_021BBEB8(Ov114Worker *w);
+extern void sub_021BBEA0(Ov114Worker *w);
 extern void sub_021BE4D4(void);
 
 void sub_021B9C60(void);
-BOOL sub_021B9C08(Worker *w);
+BOOL sub_021B9C08(Ov114Worker *w);
 
-BOOL sub_021B9B64(Worker *w, u32 prio, void *stack)
+BOOL sub_021B9B64(Ov114Worker *w, u32 prio, void *stack)
 {
     if (sub_021BBEB8(w) == 0) {
         sub_02085D94(w->queue, w->msgbuf, 3);
@@ -61,26 +61,26 @@ BOOL sub_021B9B64(Worker *w, u32 prio, void *stack)
     return TRUE;
 }
 
-void sub_021B9BD4(Worker *w, Obj *o)
+void sub_021B9BD4(Ov114Worker *w, Ov114Obj *o)
 {
     *(u32 *)((u8 *)o + 0x18) = 1;
     sub_021B9C08(w);
     sub_02085710(w->thread);
 }
 
-void sub_021B9BF4(Worker *w)
+void sub_021B9BF4(Ov114Worker *w)
 {
     void *msg;
 
     sub_02085E50(w, &msg, 1);
 }
 
-BOOL sub_021B9C08(Worker *w)
+BOOL sub_021B9C08(Ov114Worker *w)
 {
     return sub_02085DBC(w, NULL, 0);
 }
 
-void sub_021B9C1C(Worker *w, int flag)
+void sub_021B9C1C(Ov114Worker *w, int flag)
 {
     void *th = w->thread;
     void *cur = _02150FEC.current;
@@ -135,7 +135,7 @@ int sub_021B9CE4(void)
     return sub_0215F428(2, 1, 0);
 }
 
-int sub_021B9CFC(int unused, Obj *o, void *h)
+int sub_021B9CFC(int unused, Ov114Obj *o, void *h)
 {
     int rc = sub_0215F644(h);
     int elapsed;

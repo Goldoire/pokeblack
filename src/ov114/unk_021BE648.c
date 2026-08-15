@@ -9,9 +9,9 @@
  * shared one.
  */
 
-typedef struct Ctx Ctx;
+typedef struct Ov114Ctx Ov114Ctx;
 
-typedef struct Sock {
+typedef struct Ov114Sock {
     u32 unk_00;
     u32 unk_04;
     u32 unk_08;
@@ -26,20 +26,20 @@ typedef struct Sock {
     u8 pad_D4[0x24C - 0xD4];
     u32 unk_24C;
     u32 unk_250;
-} Sock;
+} Ov114Sock;
 
-extern Ctx *sub_021BEF08(void);
-extern void *sub_021BEF3C(Ctx *ctx);
-extern void *sub_021BEF58(Ctx *ctx);
-extern Sock *sub_021BEC10(void *list, int id);
-extern Sock *sub_021BEC2C(void *list, int id);
-extern BOOL sub_021BA88C(Ctx *ctx, int a, int b, int c);
-extern void sub_021BA988(Ctx *ctx, void *cb);
-extern void sub_021BAA14(Ctx *ctx);
-extern BOOL sub_021BAC38(Sock *s, void *f, int b, int c);
-extern BOOL sub_021BAC58(Sock *s, void *f, int b, int c);
-extern int sub_021BBCF0(Sock *s, int b, int c);
-extern int sub_021BBDFC(void *f, Sock *s, int b);
+extern Ov114Ctx *sub_021BEF08(void);
+extern void *sub_021BEF3C(Ov114Ctx *ctx);
+extern void *sub_021BEF58(Ov114Ctx *ctx);
+extern Ov114Sock *sub_021BEC10(void *list, int id);
+extern Ov114Sock *sub_021BEC2C(void *list, int id);
+extern BOOL sub_021BA88C(Ov114Ctx *ctx, int a, int b, int c);
+extern void sub_021BA988(Ov114Ctx *ctx, void *cb);
+extern void sub_021BAA14(Ov114Ctx *ctx);
+extern BOOL sub_021BAC38(Ov114Sock *s, void *f, int b, int c);
+extern BOOL sub_021BAC58(Ov114Sock *s, void *f, int b, int c);
+extern int sub_021BBCF0(Ov114Sock *s, int b, int c);
+extern int sub_021BBDFC(void *f, Ov114Sock *s, int b);
 
 int sub_021BE648(int a, int b, int c)
 {
@@ -61,7 +61,7 @@ void sub_021BE6AC(void)
     sub_021BAA14(sub_021BEF08());
 }
 
-int sub_021BE6EC(Sock *s, int b, int c)
+int sub_021BE6EC(Ov114Sock *s, int b, int c)
 {
     void *f = sub_021BEF3C(sub_021BEF08());
 
@@ -76,25 +76,25 @@ int sub_021BE6EC(Sock *s, int b, int c)
 
 int sub_021BE6BC(int id, int b, int c)
 {
-    Ctx *ctx = sub_021BEF08();
-    Sock *s = sub_021BEC10(sub_021BEF58(ctx), id);
+    Ov114Ctx *ctx = sub_021BEF08();
+    Ov114Sock *s = sub_021BEC10(sub_021BEF58(ctx), id);
 
     return sub_021BE6EC(s, b, c);
 }
 
 int sub_021BE748(int id, int b, int c)
 {
-    Ctx *ctx = sub_021BEF08();
+    Ov114Ctx *ctx = sub_021BEF08();
     void *f = sub_021BEF3C(ctx);
-    Sock *s = sub_021BEC10(sub_021BEF58(ctx), id);
+    Ov114Sock *s = sub_021BEC10(sub_021BEF58(ctx), id);
 
     return sub_021BAC58(s, f, b, c) ? 0 : -1;
 }
 
 int sub_021BE79C(int id, int b, int c)
 {
-    Ctx *ctx = sub_021BEF08();
-    Sock *s = sub_021BEC10(sub_021BEF58(ctx), id);
+    Ov114Ctx *ctx = sub_021BEF08();
+    Ov114Sock *s = sub_021BEC10(sub_021BEF58(ctx), id);
 
     if (s == NULL) {
         return -1;
@@ -113,8 +113,8 @@ int sub_021BE79C(int id, int b, int c)
 
 int sub_021BE7FC(int id, int b, int c)
 {
-    Ctx *ctx = sub_021BEF08();
-    Sock *s = sub_021BEC2C(sub_021BEF58(ctx), id);
+    Ov114Ctx *ctx = sub_021BEF08();
+    Ov114Sock *s = sub_021BEC2C(sub_021BEF58(ctx), id);
 
     if (s == NULL) {
         return -1;
@@ -124,9 +124,9 @@ int sub_021BE7FC(int id, int b, int c)
 
 int sub_021BE838(int id, int b)
 {
-    Ctx *ctx = sub_021BEF08();
+    Ov114Ctx *ctx = sub_021BEF08();
     void *f = sub_021BEF3C(ctx);
-    Sock *s = sub_021BEC2C(sub_021BEF58(ctx), id);
+    Ov114Sock *s = sub_021BEC2C(sub_021BEF58(ctx), id);
 
     if (s == NULL) {
         return -1;
@@ -136,8 +136,8 @@ int sub_021BE838(int id, int b)
 
 int sub_021BE880(int id)
 {
-    Ctx *ctx = sub_021BEF08();
-    Sock *s = sub_021BEC2C(sub_021BEF58(ctx), id);
+    Ov114Ctx *ctx = sub_021BEF08();
+    Ov114Sock *s = sub_021BEC2C(sub_021BEF58(ctx), id);
 
     if (s == NULL) {
         return -1;
@@ -150,8 +150,8 @@ int sub_021BE880(int id)
 
 int sub_021BE8B8(int id, int v)
 {
-    Ctx *ctx = sub_021BEF08();
-    Sock *s = sub_021BEC10(sub_021BEF58(ctx), id);
+    Ov114Ctx *ctx = sub_021BEF08();
+    Ov114Sock *s = sub_021BEC10(sub_021BEF58(ctx), id);
 
     if (s == NULL) {
         return -1;
