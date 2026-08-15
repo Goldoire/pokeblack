@@ -46,6 +46,22 @@ u16 sub_021C3400(void *param0);
 u16 sub_021C340C(void *param0);
 u16 sub_021C34C4(void *param0);
 
+/* The sequence ids reach these two handlers as EXTERNAL ABSOLUTE SYMBOLS, not
+ * as integer literals.  That is why the ROM loads them out of the function's
+ * own literal pool into a callee-saved register (`ldr r4,[pc,#0x18]` /
+ * `.word 0x25`) and feeds r4 to both calls: mwcc emits a pool word whenever
+ * the operand is a relocation, and CSEs it across the two calls.  Written as
+ * the literal 0x25 every one of the 24 mwccarm builds emits `movs r0,#0x25`
+ * twice and `push {r4,lr}` -- 7/32.  Substituting a >255 literal reproduces
+ * the ROM byte-for-byte except the pool word, which is what identifies this
+ * as a relocation rather than a codegen difference. */
+extern u8 _00000025[];
+extern u8 _0000002F[];
+
+void sub_02034AC4(u32 seqId);
+void sub_02034A5C(u32 seqId);
+void sub_021F3800(void *param0);
+
 /* ---- F3: *var = c(b(a(script))) ------------------------------------- */
 
 int sub_02159708(void *ctx, void *script)
@@ -260,6 +276,28 @@ int sub_0216F8DC(void *ctx, void *script)
     sub_0215897C(obj, sub_021F38BC(sub_0215A5DC(script)));
 
     return 1;
+}
+
+int sub_0215CE70(void *ctx, void *script)
+{
+    void *arg = sub_0215A5DC(script);
+
+    sub_02034AC4((u32)_00000025);
+    sub_021F3800(arg);
+    sub_02034A5C((u32)_00000025);
+
+    return 0;
+}
+
+int sub_02164778(void *ctx, void *script)
+{
+    void *arg = sub_0215A5DC(script);
+
+    sub_02034AC4((u32)_0000002F);
+    sub_021F3800(arg);
+    sub_02034A5C((u32)_0000002F);
+
+    return 0;
 }
 
 int sub_0215CE98(void *ctx, void *script)

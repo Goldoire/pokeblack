@@ -158643,7 +158643,8 @@
    "name": "sub_021DEFEC",
    "ram": 35516396,
    "size": 12,
-   "status": "unclaimed"
+   "status": "unclaimed",
+   "mode": "thumb"
   },
   {
    "name": "func_021DEFF8",
