@@ -529,3 +529,46 @@ s32 sub_02189A78(FieldSystem *fieldSystem)
 {
     return fieldSystem->unk100;
 }
+
+/* ---- 0x02188B58: the FieldMap state machine ----
+ *
+ * fieldmap.c's own .rodata table at 0x021D36B8: six rows of two
+ * `int (*)(void *)` slots, indexed [fieldSystem->unk0C4][fieldSystem->unk0C9].
+ * The rows are the field-map lifecycle, and every entry is a proc in this TU:
+ *   0  0x021880C8 0x021880C8   (init A)
+ *   1  0x021881D8 0x021881D8   (init B)
+ *   2  0x021885E8 0x021885E8   (init C)
+ *   3  0x02188758 0x02188910   (main loop / vblank half)
+ *   4  0x02188990 0x02188990   (teardown phase 0)
+ *   5  0x02188AD4 0x02188AD4   (teardown phase 1, src/ov021/fld_mapctl.c)
+ * Return 0 = stay (toggle the half), 1 = advance the row, 2 = finished.
+ */
+typedef int (*FieldMapStateFunc)(void *a0, FieldSystem *fieldSystem);
+
+extern FieldMapStateFunc _021D36B8[][2];
+
+BOOL sub_02188B58(void *a0, FieldSystem *fieldSystem)
+{
+    int result = 0;
+    FieldMapStateFunc fn;
+
+    fieldSystem->unk0CC++;
+    fn = _021D36B8[fieldSystem->unk0C4][fieldSystem->unk0C9];
+    if (fn != NULL) {
+        result = fn(a0, fieldSystem);
+    }
+
+    switch (result) {
+    case 0:
+        fieldSystem->unk0C9 = (fieldSystem->unk0C9 == 0);
+        break;
+    case 1:
+        fieldSystem->unk0C4++;
+        fieldSystem->unk0C8 = 0;
+        fieldSystem->unk0C9 = 0;
+        break;
+    case 2:
+        return TRUE;
+    }
+    return FALSE;
+}

@@ -83,7 +83,18 @@ typedef struct Ov170Anim {
     u16 *unk08;          // +0x08 PROVEN x3
     u16 unk0c;           // +0x0C PROVEN x3
     u16 unk0e;           // +0x0E PROVEN x5
-    u8 filler_10[0x08];  // +0x10 INFERRED
+    /*
+     * +0x10 and +0x14 PROVEN (wave 3). Three files -- unk_021DCDB8.c,
+     * unk_021E2020.c and unk_021E8F60.c -- reach these as panel+0x68 and
+     * panel+0x6C (0x58 + 0x10 and 0x58 + 0x14).
+     *
+     * DEFECT FIXED: they were `u8 filler_10[0x08]`, so those three files had
+     * to keep private panel structs -- reaching the fields through the shared
+     * header would have meant punning through a byte array. Naming them is
+     * what lets the three migrate.
+     */
+    u32 unk10;           // +0x10 PROVEN x2 (panel+0x68)
+    void *unk14;         // +0x14 PROVEN x2 (panel+0x6C)
 } Ov170Anim;             // 0x18
 
 /* ---------------------------------------------------------------------------
@@ -132,12 +143,21 @@ struct Ov170Panel {
 };                              // 0xA19C
 
 /*
- * Note on +0x0060 / +0x0068 / +0x006C: four files name an `Ov170Rect *` at
- * +0x60 and two name fields at +0x68 and +0x6C, all of which fall INSIDE the
- * Ov170Anim embedded at +0x58..+0x70. Those files did not know about the
- * embedded struct. Reach them as `panel->anim` members once the anim layout
- * is filled in; do not add overlapping fields here. The one at +0x70 is
- * outside the anim and is kept.
+ * Note on +0x0060 / +0x0068 / +0x006C: these all fall INSIDE the Ov170Anim
+ * embedded at +0x58..+0x70, and the files that named them did not know about
+ * the embedded struct. Reach them through `panel->anim`:
+ *     panel+0x68  ->  panel->anim.unk10   (now named, wave 3)
+ *     panel+0x6C  ->  panel->anim.unk14   (now named, wave 3)
+ *     panel+0x60  ->  panel->anim.unk08   (typed u16 * here; four files call
+ *                                          it Ov170Rect * -- see below)
+ * Do not add overlapping fields to Ov170Panel.
+ *
+ * The +0x60 typing is the one loose end: `Ov170Anim::unk08` is `u16 *` on the
+ * strength of three files and `Ov170Rect *` on the strength of four others.
+ * Both are 4-byte pointers so nothing about the layout is at risk, and
+ * Ov170Rect is four u16s, so `u16 *` is a compatible view of the same memory.
+ * Left as u16 * until someone shows a matched function that indexes it as a
+ * rect rather than as a halfword array.
  */
 
 /* ---------------------------------------------------------------------------

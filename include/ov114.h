@@ -134,7 +134,18 @@ struct Ov114Sock {
     u32 unk_10;              // +0x010 PROVEN x2
     u32 unk_14;              // +0x014 PROVEN x2
     u32 unk_18;              // +0x018 PROVEN x2
-    u8 filler_1C[0x30 - 0x1C];  // +0x01C INFERRED
+    u8 filler_1C[0x28 - 0x1C];  // +0x01C INFERRED
+    /*
+     * +0x028 PROVEN (unk_021B9D8C.c: `ssl->unk_800 = s->unk_28;`).
+     *
+     * DEFECT FIXED (wave 3): the first version of this header claimed to be
+     * the union of all four Sock declarations and was not -- filler_1C ran to
+     * 0x30 and swallowed this field, so unk_021B9D8C.c could not migrate off
+     * its private struct. The union was assembled from the *widest* three
+     * declarations and this offset only appears in the 0xDC one.
+     */
+    u32 unk_28;              // +0x028 PROVEN (unk_021B9D8C.c)
+    u8 filler_2C[0x30 - 0x2C];  // +0x02C INFERRED
     u8 unk_30[4];            // +0x030 PROVEN (unk_021BA7DC.c)
     u32 unk_34;              // +0x034 PROVEN (unk_021BE648.c)
     u8 filler_38[0x4C - 0x38];  // +0x038 INFERRED

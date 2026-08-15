@@ -47,12 +47,16 @@ checks the branch word. Never declare a prototype under a friendly name alone.
 
 | Header | Confidence | What it is |
 |---|---|---|
-| `types.h` | **verified by construction** | now just `#include <nitro/types.h>` plus `bool8`/`bool32`/`NELEMS` |
+| `types.h` | **verified by construction** | `#include <nitro/types.h>` plus `bool8`/`bool32`/`NELEMS` |
 | `global.h` | **verified by construction** | umbrella: `<nitro.h>` + `<nnsys.h>` + `types.h`; start new files with this |
-| `heap.h` | **verified** | GameFreak heap layer, every offset cited below |
-| `gf_fwd.h` | safe by design | opaque `typedef struct X X;` name registry — no fields at all |
-| `msl/*.h` | build plumbing | minimal `stddef/stdlib/string/stdio/stdarg` so the SDK and NNS headers can be included |
-| `ov114.h`, `ov170.h`, `ov094.h` | **proven-by-match** | merged worker structs, see the reconciliation section |
+| `heap.h` | **read-from-ROM** | GameFreak heap layer, every offset cited by address |
+| `pokemon.h` | **proven twice over** | `Pokemon` / `BoxPokemon` / `Party` + the MON_DATA_* map |
+| `ov021.h` | **proven-by-match** | `FieldSystem` 0x154, `FieldPlayer`, `FieldCamera` |
+| `g_clact.h` | **proven-by-match** | `clact.c`, the 2D sprite system |
+| `main_types.h` | **proven-by-match** | `MainRec` `MainSub` `Fifo` and the three main globals |
+| `ov009.h` `ov010.h` `ov093.h` `ov094.h` `ov114.h` `ov119.h` `ov135.h` `ov170.h` | **proven-by-match** | per-module models, see the reconciliation section |
+| `gf_fwd.h` | safe by design | opaque `typedef struct X X;` registry — no fields at all |
+| `msl/*.h` | build plumbing | minimal `stddef/stdlib/string/stdio/stdarg` so SDK and NNS headers can be included |
 | `init.h`, `overlay_stubs.h` | unverified | loose Ghidra-era prototypes; harmless but unaudited |
 | `ghidra_legacy.h` | **wrong, quarantined** | the old unverified structs, kept only so `src/*.c` scratch files still build |
 | `globals.h`, `resource.h`, `intro_types.h` | tombstones | see below |
@@ -406,3 +410,109 @@ not identify one address. Call those by `sub_<addr>`.
 
 `0x02004490` is triaged `arm` but the ROM calls it with `BLX`, so it is Thumb;
 `callsite_modes.py --apply` is what fixes that class and it has been re-run.
+
+
+---
+
+# Wave 3
+
+## Promoted data models
+
+| header | from | evidence |
+|---|---|---|
+| `pokemon.h` | `src/main/pk_pokemon.h` | **proven twice over** |
+| `ov021.h` | `src/ov021/fld_fieldsys.h` + `fld_player_core.h` + `fld_camera.h` | 49 of 85 word slots pinned to a named accessor |
+| `g_clact.h` | `src/main/g_clact.h` | a bitfield partition that sums to exactly 32 bits |
+| `ov093.h` | `src/ov093/battle.h` folded into the existing header | ~60 accessors |
+
+**Delete the private headers.** While a local copy exists it wins the quoted
+include search and shadows the shared one, so promotion does nothing.
+
+`pokemon.h` is the strongest evidence in the repo and the only structure so far
+proven by two *independent* derivations: every field of all four 0x20-byte
+substructs is pinned separately by the jump table of `GetBoxMonDataInternal`
+(0x02018E34, 1224/1224 OK) and by that of `SetBoxMonDataInternal` (0x02019388,
+1736/1736 OK), and the two agree everywhere. `sizeof(Pokemon)` = 0xDC is
+confirmed a third time by the party stride wave 1 measured independently.
+
+`ov021.h` carries a **do not reconcile against gen 4** warning: pokeheartgold's
+`FieldSystem` is 0x128 and gen 5 reordered the head. The subsystem *set* is
+recognisable, which is exactly what makes it dangerous — the names transfer and
+the offsets do not.
+
+`ov093.h`: `BattleCore::unk_04` is the battle format. 0x021B8670 switches it
+0..3 and answers 1, 2, 3, 1 battlers per side; 0x021B8640 answers 1, 3, 5, 5
+target slots — single / double / triple / rotation, exactly gen 5's set. A
+purely internal derivation landing on a known external fact.
+
+Note a name trap now in that header: `BattleSystemSlot` (0x28, at
+`BattleSystem+0x020`) is **not** `BattleSlotRecord` (0x1C). Unrelated objects.
+
+## Defects fixed in wave 2's headers
+
+- **`Ov114Sock` was not the superset it claimed.** `filler_1C` ran to 0x30 and
+  swallowed `unk_28`, which `src/ov114/unk_021B9D8C.c` needs, so that file
+  could not migrate. The union had been assembled from the widest three of the
+  four declarations and this offset only appears in the fourth.
+- **`Ov170Anim` had `u8 filler_10[0x08]`**, so the three files reaching
+  panel+0x68 / +0x6C had to keep private structs — going through the shared
+  header would have meant punning through a byte array. Now `u32 unk10` and
+  `void *unk14`; reach them as `panel->anim.unk10` / `.unk14`.
+- **`ov009.h` had the instruction set wrong.** It repeated the guide's rule
+  that everything above 0x02157170 in ov009 is ARM. `dwc_rapcommon.c` verifies
+  **88/88 as Thumb** and only 84/88 as ARM. The guide's rule is a good default
+  for the module but not a boundary to trust per file.
+
+## Mode corrections are now durable
+
+`tools/scripts/persist_modes.py`. **Do not regenerate `triage.json`** — it is
+derived, and a regeneration discards every correction that lives only there.
+`callsite_modes.py` restores only `main` targets, so overlay-internal errors
+come straight back; one regeneration cost ov016 three functions to gain ov170
+one.
+
+This script writes those corrections into the claim table, where `triage.py`'s
+explicit `mode` override keeps them (the same mechanism as `status: "data"`).
+It has two passes:
+
+1. every place `triage.json` currently disagrees with a fresh `classify()`;
+2. **intra-module call-site derivation** — the gap `callsite_modes.py` leaves
+   open. It restricts itself to `main` because overlays alias in RAM, but that
+   reasoning does not apply when decoding one module's own bytes and accepting
+   only targets inside that same module's image: the callee can only be that
+   module's code.
+
+**1,001 modes are now pinned** (ov095 510, ov093 394, main 30, ov021 14,
+ov170 7, ov016 3, …). Guards: only inside known code extents, only in the
+extent's recorded mode, unanimous votes only, never `data`/`veneer`, and
+**never a row that already verifies** — its mode is settled by something
+stronger than a vote and its callers were encoded against the current value.
+8 such disagreements are reported rather than applied.
+
+`triage.json` was then patched **in place** from the claim table (970 modes, 52
+rows added), not regenerated.
+
+The claim-table schema now allows an optional fifth key, `mode`.
+
+## Translation-unit map
+
+`tools/scripts/tu_map.py` swept across all 238 modules:
+**107 modules produced a map, 566 translation units resolved to an address
+span**, merged into `build/reference/tu_map.json`. 131 modules have no `.c`
+strings — that trick needs a TU that asserts or allocates.
+
+Two spot checks landed on facts derived independently by other agents:
+`fieldmap.c` at 0x02188030 (the FieldSystem_New address ov021 cited) and
+`clact.c` at 0x0204A39C..0x0204E130 (the range the g_clact worker gave).
+
+## Actions for workers (wave 3)
+
+| file / module | change |
+|---|---|
+| `src/main/pk_pokemon.h` | delete; `#include "pokemon.h"` |
+| `src/ov021/fld_fieldsys.h`, `fld_player_core.h`, `fld_camera.h` | delete; `#include "ov021.h"` |
+| `src/main/g_clact.h` | delete; `#include "g_clact.h"` (now the shared one) |
+| `src/ov093/battle.h` | delete; `#include "ov093.h"` |
+| `src/ov114/unk_021B9D8C.c` | can migrate now — `Ov114Sock::unk_28` exists |
+| ov170 `unk_021DCDB8.c`, `unk_021E2020.c`, `unk_021E8F60.c` | can migrate now — use `panel->anim.unk10` / `.unk14` |
+| `src/ov009/dwc_rapcommon.c` | compile `--thumb` (88/88, vs 84/88 as ARM) |

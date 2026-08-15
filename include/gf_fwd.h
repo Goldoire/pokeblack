@@ -30,6 +30,23 @@
  *     struct UnkStruct021D0F00 { u32 unk_00; u16 unk_04; };   // local, private
  *
  * or plain pointer arithmetic. Do not put a speculative layout in include/.
+ *
+ * ---------------------------------------------------------------------------
+ * NO LONGER OPAQUE -- these now have real, evidenced layouts. Include the
+ * header instead of guessing, and note that they define the struct BODY while
+ * the typedef below stays here, so both files can be included together:
+ *
+ *     FieldSystem                     -> "ov021.h"   (0x154, 49 slots pinned)
+ *     Pokemon / BoxPokemon / Party    -> "pokemon.h" (proven twice over)
+ *
+ * Still genuinely opaque, and still the right place to send a proposal:
+ * String, MsgData, MessageFormat, SaveData, BgConfig, Window, SpriteList,
+ * SpriteRenderer, SpriteResourceManager, Sprite, OverlayManager, TaskManager,
+ * SysTask, SysTaskQueue, NARC, ScriptContext.
+ *
+ * (The 2D sprite system does have a layout now -- "g_clact.h" -- but it is
+ * GameFreak's `clact.c` object, named GClact*, not the gen-4 `Sprite` this
+ * file reserves. Whether they are the same object is unresolved.)
  */
 
 /* --- memory / core ------------------------------------------------------- */

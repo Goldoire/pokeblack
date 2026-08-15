@@ -11,9 +11,14 @@
  * From src/ov009/dwc_rapcommon.c (64 functions, all N/N OK). Delete the local
  * `UnkStruct021A8268` and include this instead.
  *
- * INSTRUCTION SET: ov009 is Thumb only for its first ~8 KB
- * (0x02155160-0x02157170, Game Freak's own code). Everything above that,
- * including this block, is ARM DWC/GameSpy library code. See WORKER_GUIDE.md.
+ * INSTRUCTION SET -- CORRECTED (wave 3). This header previously repeated
+ * WORKER_GUIDE.md's rule that everything above 0x02157170 in ov009 is ARM.
+ * That is wrong for this block: src/ov009/dwc_rapcommon.c verifies **88/88 as
+ * Thumb** and only 84/88 as ARM. Compile it with `--thumb`.
+ *
+ * The guide's rule is a good default for the module but it is not a boundary
+ * you can trust per-file; the DWC middleware is mixed. Check the bytes, or
+ * just try both -- the verifier settles it in one run.
  *
  * The original translation unit is named in the overlay's rodata:
  * "dwc_rapcommon.c" at 0x021A1C7C.
