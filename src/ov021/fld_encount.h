@@ -44,4 +44,28 @@ typedef struct FieldEncountStep {
     /* 0x08 */ u32 steps;  // PROVEN 0x021AA728 (word, saturates at 0xA000)
 } FieldEncountStep;        // size 0x0C
 
+/*
+ * The context block the wild-mon roll is handed. Filled field-by-field by
+ * 0x021AA304, which is the only proof of the layout (the allocation is in the
+ * caller's frame, so no size is proven -- >= 0x0E, and the caller reserves
+ * 0x10 of stack for it).
+ */
+typedef struct FieldEncountInfo {
+    /* 0x00 */ u32 unk00;        // PROVEN 0x021AA304 = sub_02013ED8(zoneId)
+    /* 0x04 */ u32 unk04;        // PROVEN 0x021AA304 =
+                                 //   sub_021AB580(sub_021AB0F0(sub_021A30C8(player)))
+    /* 0x08 */ u8 weatherClass;  // PROVEN 0x021AA304 = sub_021AA69C(fieldSystem)
+    /* 0x09 */ u8 unk09;         // PROVEN 0x021AA304 = sub_02012984(a1)
+    /* 0x0A */ u16 zoneId;       // PROVEN 0x021AA304 = sub_02188C9C(fieldSystem)
+    /* 0x0C */ u8 hour;          // PROVEN 0x021AA304 (RTCTime.hour, truncated)
+    /* 0x0D */ u8 minute;        // PROVEN 0x021AA304 (RTCTime.minute, truncated)
+} FieldEncountInfo;
+
+/* NitroSDK RTCTime, as sub_0203F4CC fills it (three words, hour/minute/second). */
+typedef struct RTCTime {
+    /* 0x00 */ s32 hour;
+    /* 0x04 */ s32 minute;
+    /* 0x08 */ s32 second;
+} RTCTime;
+
 #endif // POKEBLACK_OV021_FLD_ENCOUNT_H

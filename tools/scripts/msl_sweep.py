@@ -22,18 +22,25 @@ verbatim with its output paths repointed; data symbols (ctype tables, the float
 constants, the printf format tables) get the same treatment in sweep_data(),
 because a chunk of that address range is tables rather than code.
 
-Output: build/reference/msl_matches.json, sdk_matches.json's shape plus a
-"kind" field ("func"/"data") and "source" (the pret file the symbol came from):
-  [{name, object, source, kind, size, masked, hits: [{module, ram, offset}]}]
+Output: build/reference/msl_matches.json, sdk_matches.json's shape plus "kind"
+("func"/"data"), "source" (the pret file), "unmasked", and a "confidence"
+grading explained on refine():
+  [{name, object, source, kind, size, masked, unmasked, confidence,
+    hits: [{module, ram, offset, occurrences, confidence}]}]
 
---near is a diagnostic, not a result: for every unmatched function it reports
-the closest same-length window in main and how many bytes differ.  That is what
-answers "is this a different MSL version or a different library entirely".
+--near and --map are diagnostics, not results.  --near reports, for every
+unmatched function, the closest same-length window in main and how many bytes
+differ.  --map walks each pret file's function order and prints the runs that
+land consecutively in main.  Together they answer "is this a different MSL
+version or a different library entirely" -- the answer for Black is the former:
+the whole library is there, in the same order, most functions a handful of bytes
+off, so only the ones that happen to be identical can be claimed exactly.
 
 Usage:
   python tools/scripts/msl_sweep.py --compile   # once
   python tools/scripts/msl_sweep.py             # sweep + write results
   python tools/scripts/msl_sweep.py --near      # why the misses miss
+  python tools/scripts/msl_sweep.py --map       # which TU sits where in main
 """
 import glob
 import json
@@ -147,11 +154,22 @@ def sweep_data():
             obj = Obj(path)
         except Exception:
             continue
-        for sym in obj.symtab:
-            if sym["typ"] != 1 or sym["size"] < 16 or sym["shndx"] >= len(obj.sections):
-                continue
-            if sym["name"].startswith(SKIP_PREFIXES):
-                continue
+        # mwasmarm gives a .rodata table no type at all, so STT_OBJECT alone
+        # finds nothing; STT_NOTYPE with a size and a PROGBITS home is what a
+        # ctype map or a printf digit table actually looks like.  The whole
+        # section is swept too, as one blob under the name "<file>:.rodata":
+        # a table that got split into several symbols still shows up that way.
+        cand = [dict(s) for s in obj.symtab
+                if s["typ"] in (0, 1) and s["size"] >= 16
+                and s["shndx"] < len(obj.sections)
+                and not s["name"].startswith(SKIP_PREFIXES)
+                and not s["name"].startswith((".", "$", "?"))]
+        for i, sec in enumerate(obj.sections):
+            if sec["type"] == 1 and sec["size"] >= 16 and \
+                    sec["sname"] in (".rodata", ".data"):
+                cand.append(dict(name=os.path.basename(path)[:-2] + ":" + sec["sname"],
+                                 value=0, size=sec["size"], shndx=i, typ=1))
+        for sym in cand:
             sec = obj.sections[sym["shndx"]]
             if sec["type"] != 1 or not sec["size"]:       # skip .bss / NOBITS
                 continue
@@ -210,9 +228,14 @@ def refine(results):
     for r in results:
         path = os.path.join(OUT_DIR, r["object"])
         obj = objs.get(path) or objs.setdefault(path, Obj(path))
-        sym = next(s for s in obj.symtab
-                   if s["name"] == r["name"] and s["size"] == r["size"]
-                   and s["typ"] in (1, 2))
+        if ":" in r["name"]:        # synthetic whole-section entry from sweep_data
+            sname = r["name"].split(":", 1)[1]
+            i = next(j for j, s in enumerate(obj.sections) if s["sname"] == sname)
+            sym = dict(name=r["name"], value=0, size=r["size"], shndx=i, typ=1)
+        else:
+            sym = next(s for s in obj.symtab
+                       if s["name"] == r["name"] and s["size"] == r["size"]
+                       and s["typ"] in (0, 1, 2))
         # Source order within the translation unit.  mwcc with -ipa file emits
         # one .text per function, so sym["value"] is 0 for every one of them and
         # only the section index orders them; the pret .s files put everything
@@ -304,10 +327,21 @@ def sweep():
 
     in_main = [(main_hit(r), r) for r in strong if main_hit(r)]
     lo, hi = 0x020923F0, 0x0209D850
-    span = sum(r["size"] for h, r in in_main if lo <= h["ram"] < hi)
-    print(f"  {len(in_main)} in main, {sum(r['size'] for _h, r in in_main)} bytes; "
-          f"{span} of them inside {lo:#x}-{hi:#x} "
-          f"({100.0 * span / (hi - lo):.1f}% of that range)")
+
+    def union(iv):
+        """Covered bytes, not summed sizes: sweep_data reports both a table and
+        the section it lives in, and those overlap."""
+        tot, end = 0, -1
+        for a, b in sorted(iv):
+            tot += max(0, b - max(a, end))
+            end = max(end, b)
+        return tot
+
+    spans = [(h["ram"], h["ram"] + r["size"]) for h, r in in_main]
+    clipped = [(max(a, lo), min(b, hi)) for a, b in spans if a < hi and b > lo]
+    print(f"  {len(in_main)} in main covering {union(spans)} distinct bytes; "
+          f"{union(clipped)} of them inside {lo:#x}-{hi:#x} "
+          f"({100.0 * union(clipped) / (hi - lo):.1f}% of that range)")
     for h, r in sorted(in_main, key=lambda x: x[0]["ram"]):
         extra = sum(1 for x in r["hits"]
                     if x["module"] != "main" and x["confidence"] == "strong")
@@ -330,7 +364,8 @@ def near():
     base = manifest["main"]["ram"]
     matched = set()
     if os.path.exists(RESULTS):
-        matched = {r["name"] for r in json.load(open(RESULTS))}
+        matched = {r["name"] for r in json.load(open(RESULTS))
+                   if r["confidence"] == "strong"}
     rows = []
     for path in sorted(glob.glob(OUT_DIR + "/*.o")):
         try:
@@ -407,19 +442,29 @@ def tu_map():
                     best = (d, pos)
             if best[1] is not None and best[0] <= 0.25 * len(cmpi):
                 placed.append((base + best[1], n, best[0], s["name"]))
-        # keep only functions with a same-file neighbour nearby: one lone 80%
-        # window is a coincidence, two in a row is a translation unit
-        keep = [p for p in placed
-                if any(q is not p and abs(q[0] - p[0]) <= NEAR * 4 for q in placed)]
-        if len(keep) < 2:
-            continue
-        lo = min(p[0] for p in keep)
-        hi = max(p[0] + p[1] for p in keep)
-        exact = sum(1 for p in keep if p[2] == 0)
-        total_span += hi - lo
-        total_bytes += sum(p[1] for p in keep)
-        print(f"{os.path.basename(path)[:-2]:32s} {lo:#010x}-{hi:#010x} "
-              f"{exact:4d}/{len(keep):<3d} exact {sum(p[1] for p in keep):6d}")
+        # A single 80%-similar window anywhere in 680 KB proves nothing.  Walk
+        # the pret file's own function order and keep runs of two or more that
+        # land in that order, each roughly where the previous one ended: that is
+        # a translation unit sitting in the ROM, not a coincidence.  strlen is
+        # the case this rejects -- its closest window in main is wcslen, 27 of
+        # 28 bytes identical and 6 KB away from the rest of its file.
+        runs, cur = [], []
+        for p in placed:
+            if cur and -64 <= p[0] - (cur[-1][0] + cur[-1][1]) <= 2048:
+                cur.append(p)
+            else:
+                runs.append(cur)
+                cur = [p]
+        runs.append(cur)
+        for keep in runs:
+            if len(keep) < 2:
+                continue
+            lo, hi = keep[0][0], keep[-1][0] + keep[-1][1]
+            exact = sum(1 for p in keep if p[2] == 0)
+            total_span += hi - lo
+            total_bytes += sum(p[1] for p in keep)
+            print(f"{os.path.basename(path)[:-2]:32s} {lo:#010x}-{hi:#010x} "
+                  f"{exact:4d}/{len(keep):<3d} exact {sum(p[1] for p in keep):6d}")
     print(f"\n{total_bytes} bytes of main sit in positively identified MSL "
           f"translation units, spanning {total_span} bytes of address space")
 

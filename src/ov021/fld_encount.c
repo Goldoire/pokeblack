@@ -217,3 +217,27 @@ int sub_021AA69C(FieldSystem *fieldSystem)
         return 0;
     }
 }
+
+/* ---- 0x021AA304: fill in the context the wild-mon roll needs ---- */
+
+u16 sub_02188C9C(FieldSystem *fieldSystem);
+u32 sub_02013ED8(u16 zoneId);
+u32 sub_021AB580(void *a0);
+void sub_0203F4CC(RTCTime *time);
+u8 sub_02012984(void *a0);
+
+void sub_021AA304(FieldEncountInfo *info, void *a1, FieldSystem *fieldSystem)
+{
+    u16 zoneId = sub_02188C9C(fieldSystem);
+    void *player = sub_02188CB4(fieldSystem);
+    RTCTime time;
+
+    info->unk00 = sub_02013ED8(zoneId);
+    info->unk04 = sub_021AB580(sub_021AB0F0(sub_021A30C8(player)));
+    info->zoneId = zoneId;
+    sub_0203F4CC(&time);
+    info->hour = time.hour;
+    info->minute = time.minute;
+    info->weatherClass = sub_021AA69C(fieldSystem);
+    info->unk09 = sub_02012984(a1);
+}
