@@ -99,8 +99,12 @@ typedef struct BattleScriptCtx {
     void *unk_034;                  // +0x34 PROVEN  -- 021D3B88, 021D3D1C
     u8 filler_038[0x054 - 0x038];   // +0x38 INFERRED
     void *unk_054;                  // +0x54 PROVEN  -- 021D3688, 021D3630
-    void *unk_058;                  // +0x58 INFERRED
-    u8 filler_05C[0x0AC - 0x05C];   // +0x5C INFERRED
+    /*
+     * Not a pointer: 021D1BD0 and 021D1CF4 form `ctx + 0x58` and pass it to
+     * sub_021EAF18 / sub_021EAF50 / sub_021EA614, so an object is embedded
+     * here.  It is the string-format buffer the message opcodes fill in.
+     */
+    u8 unk_058[0x0AC - 0x058];      // +0x58 PROVEN as an address -- 021D1BD0
     void *unk_0AC;                  // +0xAC INFERRED (5 handlers)
     u8 filler_0B0[0x134 - 0x0B0];   // +0xB0 INFERRED
     u32 unk_134;                    // +0x134 INFERRED

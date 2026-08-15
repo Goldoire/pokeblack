@@ -78,4 +78,27 @@ typedef struct MsgBgWinSet {
                                // 0x02190764, 0x0219077C, 0x02190788, 0x02190794
 } MsgBgWinSet;
 
+/*
+ * A larger printer record. Same window at +0x04 as MsgBgWinSet but a different
+ * head, so the two are genuinely distinct objects.
+ */
+typedef struct MsgBgPrinter {
+    /* 0x00 */ u8 filler00[4];
+    /* 0x04 */ MsgBgWin *win; // PROVEN 0x021909BC (sub_02190538)
+    /* 0x08 */ void *unk08;   // PROVEN 0x021909BC (sub_02193130), 0x02190B1C
+    /* 0x0C */ void *unk0C;   // PROVEN 0x021909BC (sub_0201F868)
+    /* 0x10 */ void *unk10;   // PROVEN 0x021909BC (sub_0202020C), 0x02190A14
+} MsgBgPrinter;
+
+/* The window template the 0x02190938 family is handed. */
+typedef struct MsgBgWinTemplate {
+    /* 0x00 */ u16 unk00;     // PROVEN 0x02190B08
+    /* 0x02 */ u8 filler02[0x14 - 0x02];
+    /* 0x14 */ u16 unk14;     // PROVEN 0x02190B08
+    /* 0x16 */ u16 unk16;     // PROVEN 0x02190B08
+    /* 0x18 */ u16 unk18;     // PROVEN 0x02190B08
+    /* 0x1A */ u16 unk1A;     // PROVEN 0x02190B08
+    /* 0x1C */ u32 unk1C;     // PROVEN 0x02190960
+} MsgBgWinTemplate;
+
 #endif // POKEBLACK_OV021_FLD_MSGBG_H
