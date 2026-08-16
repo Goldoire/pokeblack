@@ -89,19 +89,25 @@ int sub_021D1CF4(BattleScriptCtx *ctx, u32 *state, u32 *args)
             if (sub_021B8CE8(ctx->unk_00, ctx->unk_1A6, v0) == FALSE) {
                 if (ctx->unk_1A6 == v0) {
                     sub_021EAF18(ctx->unk_058, 1, sub_021D1DF4(ctx));
+                sub_021EAF50(ctx->unk_058, t);
+                sub_021EA614(ctx->unk_054, ctx->unk_058);
                 } else {
                     sub_021EAF18(ctx->unk_058, 1, 0x11);
                     sub_021EAF50(ctx->unk_058, v0);
+                sub_021EAF50(ctx->unk_058, t);
+                sub_021EA614(ctx->unk_054, ctx->unk_058);
                 }
             } else if (sub_021B9F70(ctx->unk_00, v0) != 0) {
                 sub_021EAF18(ctx->unk_058, 1, 0x0E);
                 sub_021EAF50(ctx->unk_058, v0);
+                sub_021EAF50(ctx->unk_058, t);
+                sub_021EA614(ctx->unk_054, ctx->unk_058);
             } else {
                 sub_021EAF18(ctx->unk_058, 1, 0x11);
                 sub_021EAF50(ctx->unk_058, v0);
+                sub_021EAF50(ctx->unk_058, t);
+                sub_021EA614(ctx->unk_054, ctx->unk_058);
             }
-            sub_021EAF50(ctx->unk_058, t);
-            sub_021EA614(ctx->unk_054, ctx->unk_058);
         }
         (*state)++;
         break;

@@ -30,127 +30,127 @@ void sub_021D67D8(void *a0, u16 a1);
 void sub_021D6D5C(void *a0, u16 a1);
 void sub_021D6D70(void *a0);
 
-int sub_021D36CC(BattleScriptCtx *ctx, void *a1, u32 *a2)
+int sub_021D36CC(BattleScriptCtx *ctx, u32 *state, u32 *a2)
 {
     sub_021D5F90(sub_021B9934(ctx->unk_04, (u8)a2[0]), (u16)a2[1]);
     return 1;
 }
 
-int sub_021D36EC(BattleScriptCtx *ctx, void *a1, u32 *a2)
+int sub_021D36EC(BattleScriptCtx *ctx, u32 *state, u32 *a2)
 {
     sub_021D5FA4(sub_021B9934(ctx->unk_04, (u8)a2[0]), (u16)a2[1]);
     return 1;
 }
 
-int sub_021D377C(BattleScriptCtx *ctx, void *a1, u32 *a2)
+int sub_021D377C(BattleScriptCtx *ctx, u32 *state, u32 *a2)
 {
     sub_021D5FB8(sub_021B9934(ctx->unk_04, (u8)a2[0]));
     return 1;
 }
 
-int sub_021D3894(BattleScriptCtx *ctx, void *a1, u32 *a2)
+int sub_021D3894(BattleScriptCtx *ctx, u32 *state, u32 *a2)
 {
     sub_021D5EFC(sub_021B9934(ctx->unk_04, (u8)a2[0]));
     return 1;
 }
 
-int sub_021D38AC(BattleScriptCtx *ctx, void *a1, u32 *a2)
+int sub_021D38AC(BattleScriptCtx *ctx, u32 *state, u32 *a2)
 {
     sub_021D5F08(sub_021B9934(ctx->unk_04, (u8)a2[0]));
     return 1;
 }
 
-int sub_021D38C4(BattleScriptCtx *ctx, void *a1, u32 *a2)
+int sub_021D38C4(BattleScriptCtx *ctx, u32 *state, u32 *a2)
 {
     sub_021D5F38(sub_021B9934(ctx->unk_04, (u8)a2[0]), a2[1]);
     return 1;
 }
 
-int sub_021D3900(BattleScriptCtx *ctx, void *a1, u32 *a2)
+int sub_021D3900(BattleScriptCtx *ctx, u32 *state, u32 *a2)
 {
     sub_021D61F0(sub_021B9934(ctx->unk_04, (u8)a2[0]));
     return 1;
 }
 
-int sub_021D3918(BattleScriptCtx *ctx, void *a1, u32 *a2)
+int sub_021D3918(BattleScriptCtx *ctx, u32 *state, u32 *a2)
 {
     sub_021D6238(sub_021B9934(ctx->unk_04, (u8)a2[0]), a2[1]);
     return 1;
 }
 
-int sub_021D3988(BattleScriptCtx *ctx, void *a1, u32 *a2)
+int sub_021D3988(BattleScriptCtx *ctx, u32 *state, u32 *a2)
 {
     sub_021D66B0(sub_021B9934(ctx->unk_04, (u8)a2[0]), (u16)a2[1]);
     return 1;
 }
 
-int sub_021D3A20(BattleScriptCtx *ctx, void *a1, u32 *a2)
+int sub_021D3A20(BattleScriptCtx *ctx, u32 *state, u32 *a2)
 {
     sub_021D6730(sub_021B9934(ctx->unk_04, (u8)a2[0]), (u16)a2[1]);
     return 1;
 }
 
-int sub_021D3A7C(BattleScriptCtx *ctx, void *a1, u32 *a2)
+int sub_021D3A7C(BattleScriptCtx *ctx, u32 *state, u32 *a2)
 {
     sub_021D5FE4(sub_021B9934(ctx->unk_04, (u8)a2[0]), a2[1]);
     return 1;
 }
 
-int sub_021D3A98(BattleScriptCtx *ctx, void *a1, u32 *a2)
+int sub_021D3A98(BattleScriptCtx *ctx, u32 *state, u32 *a2)
 {
     sub_021D6008(sub_021B9934(ctx->unk_04, (u8)a2[0]), a2[1]);
     return 1;
 }
 
-int sub_021D3AB4(BattleScriptCtx *ctx, void *a1, u32 *a2)
+int sub_021D3AB4(BattleScriptCtx *ctx, u32 *state, u32 *a2)
 {
     sub_021D5FC0(sub_021B9934(ctx->unk_04, (u8)a2[0]), a2[1]);
     return 1;
 }
 
-int sub_021D3AD0(BattleScriptCtx *ctx, void *a1, u32 *a2)
+int sub_021D3AD0(BattleScriptCtx *ctx, u32 *state, u32 *a2)
 {
     sub_021D6440(sub_021B9934(ctx->unk_04, (u8)a2[0]), a2[1]);
     return 1;
 }
 
-int sub_021D3AEC(BattleScriptCtx *ctx, void *a1, u32 *a2)
+int sub_021D3AEC(BattleScriptCtx *ctx, u32 *state, u32 *a2)
 {
     sub_021D66D0(sub_021B9934(ctx->unk_04, (u8)a2[0]), a2[1]);
     return 1;
 }
 
-int sub_021D3B08(BattleScriptCtx *ctx, void *a1, u32 *a2)
+int sub_021D3B08(BattleScriptCtx *ctx, u32 *state, u32 *a2)
 {
     sub_021D5B44(sub_021B9934(ctx->unk_04, (u8)a2[0]), (u16)a2[1]);
     return 1;
 }
 
-int sub_021D3B5C(BattleScriptCtx *ctx, void *a1, u32 *a2)
+int sub_021D3B5C(BattleScriptCtx *ctx, u32 *state, u32 *a2)
 {
     sub_021D64F0(sub_021B9934(ctx->unk_04, (u8)a2[0]));
     return 1;
 }
 
-int sub_021D3C0C(BattleScriptCtx *ctx, void *a1, u32 *a2)
+int sub_021D3C0C(BattleScriptCtx *ctx, u32 *state, u32 *a2)
 {
     sub_021D6D5C(sub_021B9934(ctx->unk_04, (u8)a2[0]), (u16)a2[1]);
     return 1;
 }
 
-int sub_021D3C2C(BattleScriptCtx *ctx, void *a1, u32 *a2)
+int sub_021D3C2C(BattleScriptCtx *ctx, u32 *state, u32 *a2)
 {
     sub_021D6D70(sub_021B9934(ctx->unk_04, (u8)a2[0]));
     return 1;
 }
 
-int sub_021D3C90(BattleScriptCtx *ctx, void *a1, u32 *a2)
+int sub_021D3C90(BattleScriptCtx *ctx, u32 *state, u32 *a2)
 {
     sub_021D6738(sub_021B9934(ctx->unk_04, (u8)a2[0]));
     return 1;
 }
 
-int sub_021D3D50(BattleScriptCtx *ctx, void *a1, u32 *a2)
+int sub_021D3D50(BattleScriptCtx *ctx, u32 *state, u32 *a2)
 {
     sub_021D67D8(sub_021B9934(ctx->unk_04, (u8)a2[0]), (u16)a2[1]);
     return 1;

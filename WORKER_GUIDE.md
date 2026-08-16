@@ -109,6 +109,18 @@ Each of these cost an agent multiple attempts. Reach for them before grinding.
   is emitted in its source position.
 
 **Types**
+- **`const` on a pointer parameter is load-bearing, not documentation.** It is
+  what lets CW prove an argument load cannot alias an outgoing-argument store
+  and hoist it above the `str [sp]`. Four ov093 handlers that push a stack
+  argument sit at roughly 70-95% without it, and no compiler build, `-proc` or
+  `-O` level moves them — the fix is `const u32 *args`.
+- **A one-word struct passed BY VALUE** explains an otherwise-dead 4-byte frame
+  in the caller (`push {r3,r4,lr}; sub sp,#4` with nothing ever written to
+  `[sp]`) and blocks CW's `ldm` fusion of two adjacent argument loads.
+- **Duplicate the shared tail in every arm** of an if/else when the ROM does.
+  CW cross-jumps identical arms back together; writing the tail once instead
+  makes it merge only a partial suffix, and the function comes out several
+  bytes short.
 - `lsls #29 / lsrs #31` after `ldrb` is a `u8 x:1` **bitfield** read, not a
   shift-and-mask. Bitfields are LSB-first and are the only way to get the
   `bic`/`orr` write idiom. A mask constant materialised fresh at each use

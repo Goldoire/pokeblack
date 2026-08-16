@@ -1,15 +1,14 @@
 #include "ov093/battle.h"
 
-// ov093 0x021d381c..0x021d3a10: battle-script opcode handlers, ids 12, 16, 19
-// and 23.  Entries in the {handler, opcode-id} table at 0x021F00E0.
+// ov093 0x021d381c..0x021d3b5a: battle-script opcode handlers, ids 12, 16, 19,
+// 23, 25 and 32.  Entries in the {handler, opcode-id} table at 0x021F00E0.
 //
 //     int op(BattleScriptCtx *ctx, u32 *state, u32 *args);
 //
 // sub_021D6034 takes its third parameter as a one-word struct BY VALUE, not as
 // a u32: that is what reserves the caller's otherwise-dead 4-byte frame, and
 // the callee's `push {r0,r1,r2,r3}` + `ldr r0,[sp,#0x18]` is the matching
-// address-taken read.  ids 25 (0x021D3A40) and 32 (0x021D3B28) of this run are
-// banked, see build/attempts/ov093.
+// address-taken read.
 
 typedef struct BattleScriptArg {
     u32 unk_00;
@@ -21,7 +20,9 @@ void *sub_021B9BF0(void *p, u8 a1);
 void sub_021B9C10(void *p, int a1, int a2);
 void sub_021D5EA8(void *a0, u8 a1, u8 a2);
 BOOL sub_021D5B68(void *a0);
+void sub_021D5734(void *a0, u8 a1, u16 a2, u8 a3, u32 a4);
 void sub_021D6034(void *a0, u32 a1, BattleScriptArg a2);
+void sub_021D6744(void *a0, u8 a1, u32 a2, u8 a3, u16 a4, u16 a5);
 void sub_021D6064(void *a0, void *a1, u32 a2, u32 a3);
 void sub_021D63EC(void *a0, u16 a1);
 void sub_021D6580(void *a0);
@@ -94,3 +95,23 @@ int sub_021D39A8(BattleScriptCtx *ctx, u32 *state, u32 *args)
     return 1;
 }
 
+// The two handlers below take `args` as `const u32 *`.  That is not cosmetic:
+// both push a stack argument, and only with the const qualifier will CW prove
+// the following argument load cannot alias the outgoing-argument store and
+// hoist it above the `str [sp]`, which is what the ROM does.
+
+int sub_021D3A40(BattleScriptCtx *ctx, u32 *state, const u32 *args)
+{
+    void *p = sub_021B9934(ctx->unk_04, (u8)args[0]);
+
+    sub_021D6744(p, (u8)args[1], args[2], (u8)args[3], (u16)args[4], (u16)args[5]);
+    return 1;
+}
+
+int sub_021D3B28(BattleScriptCtx *ctx, u32 *state, const u32 *args)
+{
+    void *p = sub_021B9934(ctx->unk_04, (u8)args[0]);
+
+    sub_021D5734(p, (u8)args[1], (u16)args[4], (u8)args[2], args[3]);
+    return 1;
+}
