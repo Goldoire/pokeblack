@@ -6,6 +6,40 @@ literally; do not invent a different build path.
 
 Working directory for every command: `C:\Users\pranav\decomp\pokeblack\repo`.
 
+## Two bars: matching and functional
+
+This project has two acceptance bars, and your brief will say which one applies.
+Do not mix them up, and do not silently downgrade from one to the other.
+
+**Tier A — byte-exact.** `verify_functions.py` reports N/N OK. Proof. This is
+the bar for anything whose purpose is to establish a fact: a struct layout, a
+field width, a signature, an opcode table. Use it wherever it is cheap.
+
+**Tier B — functionally equivalent.** `equiv.py` reports no discrepancy. The C
+does the same thing but need not compile to the same bytes. This is the bar for
+a PC port, where register allocation and instruction scheduling are irrelevant
+because the code will be recompiled for a different architecture entirely.
+
+```bash
+python tools/scripts/equiv.py ov021 0x02188c54 build/src/ov021/fld_fieldsys.o
+python tools/scripts/equiv.py --all ov021        # whole module
+```
+
+It compares the ordered sequence of call targets, the set of base-relative
+load/store offsets and widths, the constants, and the branch/return/back-edge
+counts. It ignores registers, scheduling, and literal-pool placement.
+
+**A Tier B pass is weaker than it looks.** It means "no discrepancy found", not
+"proven equivalent" — it is a smoke test, not the byte comparison. On known-good
+code it agrees 95-100% of the time, so the residual false-positive rate is a few
+percent; a flag is worth investigating and is not automatically your bug. What
+it reliably catches is the class that actually ruins a port: a call in the wrong
+order, a missed call, a wrong struct offset, a dropped loop.
+
+So when working at Tier B: read the disassembly, do not just iterate until the
+tool goes quiet. If a function comes out byte-exact anyway, say so — that is
+free Tier A evidence and worth recording.
+
 ## The loop
 
 **1. Pick a function.** Your assignment names a module and (for `main`) an
