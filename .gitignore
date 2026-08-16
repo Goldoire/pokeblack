@@ -148,3 +148,9 @@ lib/
 # Built from tools/mwasmarm_patcher/mwasmarm_patcher.c by its own Makefile.
 tools/mwasmarm_patcher/mwasmarm_patcher
 tools/mwasmarm_patcher/mwasmarm_patcher.exe
+
+# There are two blanket `*.py` rules in this file and the later one wins, so an
+# earlier negation silently stops applying to NEW python files while tracked
+# ones keep working -- which is how the toolchain went missing the first time.
+# Keep this last.
+!tools/scripts/*.py
