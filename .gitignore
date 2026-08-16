@@ -120,3 +120,31 @@ build/reference/*
 !build/reference/functions.json
 !build/reference/triage.json
 !build/reference/progress_history.jsonl
+
+# ---------------------------------------------------------------------------
+# ROM-derived content. Present locally, never committed.
+#
+# This is how pret-style decomps work: the repository holds source, and the
+# game's own data is extracted from a ROM the user supplies. Shipping it would
+# be redistributing Nintendo's assets, which is both the usual reason these
+# projects get taken down and, at 189 MB, the reason this repo's history was
+# 105 MB before these paths were stripped from it.
+#
+# Do not remove these lines to "fix" a build error -- nothing in the Makefile
+# reads any of them.
+files/
+asm_dumps/
+data/**/*.bin
+IRBO.yml
+tools/IRBO.yml
+
+# Nintendo's SDK source and the CodeWarrior toolchain. lib/NitroSDK/ was
+# already excluded; lib/TwlSystem/ (174 MB of NNS source) was NOT, and a bare
+# `git add -A` would have committed 1,974 files of it. Both are proprietary and
+# the user supplies them, exactly as with the ROM.
+lib/
+!lib/.gitkeep
+
+# Built from tools/mwasmarm_patcher/mwasmarm_patcher.c by its own Makefile.
+tools/mwasmarm_patcher/mwasmarm_patcher
+tools/mwasmarm_patcher/mwasmarm_patcher.exe
