@@ -295,7 +295,13 @@
   {
    "name": "FUN_020056EC",
    "ram": 33576684,
-   "size": 112,
+   "size": 60,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02005728",
+   "ram": 33576744,
+   "size": 52,
    "status": "unclaimed"
   },
   {
@@ -398,7 +404,19 @@
   {
    "name": "FUN_020059C8",
    "ram": 33577416,
-   "size": 348,
+   "size": 56,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02005A00",
+   "ram": 33577472,
+   "size": 76,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02005A4C",
+   "ram": 33577548,
+   "size": 216,
    "status": "unclaimed"
   },
   {
@@ -464,14 +482,26 @@
   {
    "name": "sub_02005CE0",
    "ram": 33578208,
-   "size": 52,
+   "size": 40,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02005D08",
+   "ram": 33578248,
+   "size": 12,
    "status": "unclaimed"
   },
   {
    "name": "FUN_02005D14",
    "ram": 33578260,
-   "size": 32,
+   "size": 20,
    "status": "matched:heap_block_initialize"
+  },
+  {
+   "name": "sub_02005D28",
+   "ram": 33578280,
+   "size": 12,
+   "status": "unclaimed"
   },
   {
    "name": "sub_02005D34",
@@ -492,15 +522,51 @@
    "status": "matched:fade_state_process"
   },
   {
+   "name": "sub_02005DF8",
+   "ram": 33578488,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
    "name": "sub_02005E04",
    "ram": 33578500,
-   "size": 176,
+   "size": 44,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02005E30",
+   "ram": 33578544,
+   "size": 32,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02005E50",
+   "ram": 33578576,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02005E64",
+   "ram": 33578596,
+   "size": 56,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02005E9C",
+   "ram": 33578652,
+   "size": 24,
    "status": "unclaimed"
   },
   {
    "name": "sub_02005EB4",
    "ram": 33578676,
-   "size": 112,
+   "size": 44,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02005EE0",
+   "ram": 33578720,
+   "size": 68,
    "status": "unclaimed"
   },
   {
@@ -548,7 +614,13 @@
   {
    "name": "sub_02006148",
    "ram": 33579336,
-   "size": 92,
+   "size": 36,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200616C",
+   "ram": 33579372,
+   "size": 56,
    "status": "unclaimed"
   },
   {
@@ -560,7 +632,13 @@
   {
    "name": "sub_020061E4",
    "ram": 33579492,
-   "size": 20,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020061F0",
+   "ram": 33579504,
+   "size": 8,
    "status": "unclaimed"
   },
   {
@@ -614,7 +692,13 @@
   {
    "name": "FUN_02006394",
    "ram": 33579924,
-   "size": 432,
+   "size": 32,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020063B4",
+   "ram": 33579956,
+   "size": 400,
    "status": "unclaimed"
   },
   {
@@ -734,7 +818,13 @@
   {
    "name": "sub_02006E2C",
    "ram": 33582636,
-   "size": 120,
+   "size": 80,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02006E7C",
+   "ram": 33582716,
+   "size": 40,
    "status": "unclaimed"
   },
   {
@@ -770,7 +860,13 @@
   {
    "name": "sub_020071EC",
    "ram": 33583596,
-   "size": 112,
+   "size": 92,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02007248",
+   "ram": 33583688,
+   "size": 20,
    "status": "unclaimed"
   },
   {
@@ -782,8 +878,29 @@
   {
    "name": "FUN_020072A4",
    "ram": 33583780,
-   "size": 388,
+   "size": 40,
    "status": "unclaimed"
+  },
+  {
+   "name": "sub_020072CC",
+   "ram": 33583820,
+   "size": 128,
+   "status": "unclaimed",
+   "mode": "thumb"
+  },
+  {
+   "name": "sub_0200734C",
+   "ram": 33583948,
+   "size": 140,
+   "status": "unclaimed",
+   "mode": "thumb"
+  },
+  {
+   "name": "sub_020073D8",
+   "ram": 33584088,
+   "size": 80,
+   "status": "unclaimed",
+   "mode": "thumb"
   },
   {
    "name": "sub_02007428",
@@ -818,7 +935,13 @@
   {
    "name": "sub_0200752C",
    "ram": 33584428,
-   "size": 816,
+   "size": 420,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020076D0",
+   "ram": 33584848,
+   "size": 396,
    "status": "unclaimed"
   },
   {
@@ -1408,7 +1531,13 @@
   {
    "name": "sub_0200945C",
    "ram": 33592412,
-   "size": 124,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02009470",
+   "ram": 33592432,
+   "size": 104,
    "status": "unclaimed"
   },
   {
@@ -1504,7 +1633,13 @@
   {
    "name": "sub_02009CB0",
    "ram": 33594544,
-   "size": 160,
+   "size": 108,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02009D1C",
+   "ram": 33594652,
+   "size": 52,
    "status": "unclaimed"
   },
   {
@@ -1781,9 +1916,705 @@
   {
    "name": "FUN_0200C1DC",
    "ram": 33604060,
-   "size": 12172,
+   "size": 24,
    "status": "unclaimed",
    "mode": "thumb"
+  },
+  {
+   "name": "sub_0200C1F4",
+   "ram": 33604084,
+   "size": 48,
+   "status": "unclaimed",
+   "mode": "thumb"
+  },
+  {
+   "name": "sub_0200C224",
+   "ram": 33604132,
+   "size": 52,
+   "status": "unclaimed",
+   "mode": "thumb"
+  },
+  {
+   "name": "sub_0200C258",
+   "ram": 33604184,
+   "size": 228,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200C33C",
+   "ram": 33604412,
+   "size": 40,
+   "status": "unclaimed",
+   "mode": "thumb"
+  },
+  {
+   "name": "sub_0200C364",
+   "ram": 33604452,
+   "size": 144,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200C3F4",
+   "ram": 33604596,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200C3F8",
+   "ram": 33604600,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200C40C",
+   "ram": 33604620,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200C418",
+   "ram": 33604632,
+   "size": 208,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200C4E8",
+   "ram": 33604840,
+   "size": 56,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200C520",
+   "ram": 33604896,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200C528",
+   "ram": 33604904,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200C52C",
+   "ram": 33604908,
+   "size": 120,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200C5A4",
+   "ram": 33605028,
+   "size": 320,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200C6E4",
+   "ram": 33605348,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200C6EC",
+   "ram": 33605356,
+   "size": 52,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200C720",
+   "ram": 33605408,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200C738",
+   "ram": 33605432,
+   "size": 72,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200C780",
+   "ram": 33605504,
+   "size": 32,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200C7A0",
+   "ram": 33605536,
+   "size": 32,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200C7C0",
+   "ram": 33605568,
+   "size": 52,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200C7F4",
+   "ram": 33605620,
+   "size": 36,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200C818",
+   "ram": 33605656,
+   "size": 252,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200C914",
+   "ram": 33605908,
+   "size": 216,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200C9EC",
+   "ram": 33606124,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200C9F4",
+   "ram": 33606132,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200CA10",
+   "ram": 33606160,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200CA1C",
+   "ram": 33606172,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200CA38",
+   "ram": 33606200,
+   "size": 54,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200CA6E",
+   "ram": 33606254,
+   "size": 42,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200CA98",
+   "ram": 33606296,
+   "size": 392,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200CC20",
+   "ram": 33606688,
+   "size": 692,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200CED4",
+   "ram": 33607380,
+   "size": 84,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200CF28",
+   "ram": 33607464,
+   "size": 44,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200CF54",
+   "ram": 33607508,
+   "size": 272,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200D064",
+   "ram": 33607780,
+   "size": 104,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200D0CC",
+   "ram": 33607884,
+   "size": 44,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200D0F8",
+   "ram": 33607928,
+   "size": 480,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200D2D8",
+   "ram": 33608408,
+   "size": 56,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200D310",
+   "ram": 33608464,
+   "size": 88,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200D368",
+   "ram": 33608552,
+   "size": 172,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200D414",
+   "ram": 33608724,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200D418",
+   "ram": 33608728,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200D424",
+   "ram": 33608740,
+   "size": 1032,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200D82C",
+   "ram": 33609772,
+   "size": 44,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200D858",
+   "ram": 33609816,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200D85C",
+   "ram": 33609820,
+   "size": 40,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200D884",
+   "ram": 33609860,
+   "size": 144,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200D914",
+   "ram": 33610004,
+   "size": 336,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200DA64",
+   "ram": 33610340,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200DA6C",
+   "ram": 33610348,
+   "size": 84,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200DAC0",
+   "ram": 33610432,
+   "size": 224,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200DBA0",
+   "ram": 33610656,
+   "size": 368,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200DD10",
+   "ram": 33611024,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200DD18",
+   "ram": 33611032,
+   "size": 116,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200DD8C",
+   "ram": 33611148,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200DDA8",
+   "ram": 33611176,
+   "size": 548,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200DFCC",
+   "ram": 33611724,
+   "size": 88,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200E024",
+   "ram": 33611812,
+   "size": 72,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200E06C",
+   "ram": 33611884,
+   "size": 36,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200E090",
+   "ram": 33611920,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200E098",
+   "ram": 33611928,
+   "size": 36,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200E0BC",
+   "ram": 33611964,
+   "size": 44,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200E0E8",
+   "ram": 33612008,
+   "size": 60,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200E124",
+   "ram": 33612068,
+   "size": 344,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200E27C",
+   "ram": 33612412,
+   "size": 236,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200E368",
+   "ram": 33612648,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200E370",
+   "ram": 33612656,
+   "size": 36,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200E394",
+   "ram": 33612692,
+   "size": 12,
+   "status": "unclaimed",
+   "mode": "thumb"
+  },
+  {
+   "name": "sub_0200E3A0",
+   "ram": 33612704,
+   "size": 4,
+   "status": "unclaimed",
+   "mode": "thumb"
+  },
+  {
+   "name": "sub_0200E3A4",
+   "ram": 33612708,
+   "size": 168,
+   "status": "unclaimed",
+   "mode": "thumb"
+  },
+  {
+   "name": "sub_0200E44C",
+   "ram": 33612876,
+   "size": 20,
+   "status": "unclaimed",
+   "mode": "thumb"
+  },
+  {
+   "name": "sub_0200E460",
+   "ram": 33612896,
+   "size": 40,
+   "status": "unclaimed",
+   "mode": "thumb"
+  },
+  {
+   "name": "sub_0200E488",
+   "ram": 33612936,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200E49C",
+   "ram": 33612956,
+   "size": 20,
+   "status": "unclaimed",
+   "mode": "thumb"
+  },
+  {
+   "name": "sub_0200E4B0",
+   "ram": 33612976,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200E4CC",
+   "ram": 33613004,
+   "size": 188,
+   "status": "unclaimed",
+   "mode": "thumb"
+  },
+  {
+   "name": "sub_0200E588",
+   "ram": 33613192,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200E590",
+   "ram": 33613200,
+   "size": 288,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200E6B0",
+   "ram": 33613488,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200E6B4",
+   "ram": 33613492,
+   "size": 52,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200E6E8",
+   "ram": 33613544,
+   "size": 8,
+   "status": "unclaimed",
+   "mode": "thumb"
+  },
+  {
+   "name": "sub_0200E6F0",
+   "ram": 33613552,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200E6FC",
+   "ram": 33613564,
+   "size": 52,
+   "status": "unclaimed",
+   "mode": "thumb"
+  },
+  {
+   "name": "sub_0200E730",
+   "ram": 33613616,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200E734",
+   "ram": 33613620,
+   "size": 320,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200E874",
+   "ram": 33613940,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200E878",
+   "ram": 33613944,
+   "size": 56,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200E8B0",
+   "ram": 33614000,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200E8B8",
+   "ram": 33614008,
+   "size": 48,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200E8E8",
+   "ram": 33614056,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200E8EC",
+   "ram": 33614060,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200E904",
+   "ram": 33614084,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200E918",
+   "ram": 33614104,
+   "size": 32,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200E938",
+   "ram": 33614136,
+   "size": 164,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200E9DC",
+   "ram": 33614300,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200E9E0",
+   "ram": 33614304,
+   "size": 44,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200EA0C",
+   "ram": 33614348,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200EA14",
+   "ram": 33614356,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200EA1C",
+   "ram": 33614364,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200EA2C",
+   "ram": 33614380,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200EA3C",
+   "ram": 33614396,
+   "size": 472,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200EC14",
+   "ram": 33614868,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200EC2C",
+   "ram": 33614892,
+   "size": 108,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200EC98",
+   "ram": 33615000,
+   "size": 160,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200ED38",
+   "ram": 33615160,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200ED3C",
+   "ram": 33615164,
+   "size": 268,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200EE48",
+   "ram": 33615432,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200EE50",
+   "ram": 33615440,
+   "size": 136,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200EED8",
+   "ram": 33615576,
+   "size": 160,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200EF78",
+   "ram": 33615736,
+   "size": 340,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200F0CC",
+   "ram": 33616076,
+   "size": 56,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200F104",
+   "ram": 33616132,
+   "size": 36,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0200F128",
+   "ram": 33616168,
+   "size": 64,
+   "status": "unclaimed"
   },
   {
    "name": "FUN_0200F168",
@@ -2336,9 +3167,645 @@
   {
    "name": "FUN_02012FF0",
    "ram": 33632240,
-   "size": 17376,
+   "size": 48,
    "status": "unclaimed",
    "mode": "thumb"
+  },
+  {
+   "name": "sub_02013020",
+   "ram": 33632288,
+   "size": 48,
+   "status": "unclaimed",
+   "mode": "thumb"
+  },
+  {
+   "name": "sub_02013050",
+   "ram": 33632336,
+   "size": 48,
+   "status": "unclaimed",
+   "mode": "thumb"
+  },
+  {
+   "name": "sub_02013080",
+   "ram": 33632384,
+   "size": 68,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020130C4",
+   "ram": 33632452,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020130DC",
+   "ram": 33632476,
+   "size": 104,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02013144",
+   "ram": 33632580,
+   "size": 200,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0201320C",
+   "ram": 33632780,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02013220",
+   "ram": 33632800,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02013234",
+   "ram": 33632820,
+   "size": 60,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02013270",
+   "ram": 33632880,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02013284",
+   "ram": 33632900,
+   "size": 184,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0201333C",
+   "ram": 33633084,
+   "size": 36,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02013360",
+   "ram": 33633120,
+   "size": 404,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020134F4",
+   "ram": 33633524,
+   "size": 52,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02013528",
+   "ram": 33633576,
+   "size": 1112,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02013980",
+   "ram": 33634688,
+   "size": 276,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02013A94",
+   "ram": 33634964,
+   "size": 60,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02013AD0",
+   "ram": 33635024,
+   "size": 64,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02013B10",
+   "ram": 33635088,
+   "size": 40,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02013B38",
+   "ram": 33635128,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02013B44",
+   "ram": 33635140,
+   "size": 48,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02013B74",
+   "ram": 33635188,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02013B90",
+   "ram": 33635216,
+   "size": 76,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02013BDC",
+   "ram": 33635292,
+   "size": 52,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02013C10",
+   "ram": 33635344,
+   "size": 32,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02013C30",
+   "ram": 33635376,
+   "size": 64,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02013C70",
+   "ram": 33635440,
+   "size": 44,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02013C9C",
+   "ram": 33635484,
+   "size": 44,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02013CC8",
+   "ram": 33635528,
+   "size": 24,
+   "status": "unclaimed",
+   "mode": "thumb"
+  },
+  {
+   "name": "sub_02013CE0",
+   "ram": 33635552,
+   "size": 32,
+   "status": "unclaimed",
+   "mode": "thumb"
+  },
+  {
+   "name": "sub_02013D00",
+   "ram": 33635584,
+   "size": 32,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02013D20",
+   "ram": 33635616,
+   "size": 60,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02013D5C",
+   "ram": 33635676,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02013D74",
+   "ram": 33635700,
+   "size": 40,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02013D9C",
+   "ram": 33635740,
+   "size": 164,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02013E40",
+   "ram": 33635904,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02013E4C",
+   "ram": 33635916,
+   "size": 224,
+   "status": "unclaimed",
+   "mode": "thumb"
+  },
+  {
+   "name": "sub_02013F2C",
+   "ram": 33636140,
+   "size": 280,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02014044",
+   "ram": 33636420,
+   "size": 56,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0201407C",
+   "ram": 33636476,
+   "size": 56,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020140B4",
+   "ram": 33636532,
+   "size": 40,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020140DC",
+   "ram": 33636572,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020140E8",
+   "ram": 33636584,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020140F8",
+   "ram": 33636600,
+   "size": 268,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02014204",
+   "ram": 33636868,
+   "size": 112,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02014274",
+   "ram": 33636980,
+   "size": 92,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020142D0",
+   "ram": 33637072,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020142D8",
+   "ram": 33637080,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020142E8",
+   "ram": 33637096,
+   "size": 84,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0201433C",
+   "ram": 33637180,
+   "size": 44,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02014368",
+   "ram": 33637224,
+   "size": 32,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02014388",
+   "ram": 33637256,
+   "size": 68,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020143CC",
+   "ram": 33637324,
+   "size": 80,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0201441C",
+   "ram": 33637404,
+   "size": 72,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02014464",
+   "ram": 33637476,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02014468",
+   "ram": 33637480,
+   "size": 32,
+   "status": "unclaimed",
+   "mode": "thumb"
+  },
+  {
+   "name": "sub_02014488",
+   "ram": 33637512,
+   "size": 84,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020144DC",
+   "ram": 33637596,
+   "size": 48,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0201450C",
+   "ram": 33637644,
+   "size": 120,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02014584",
+   "ram": 33637764,
+   "size": 72,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020145CC",
+   "ram": 33637836,
+   "size": 92,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02014628",
+   "ram": 33637928,
+   "size": 112,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02014698",
+   "ram": 33638040,
+   "size": 96,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020146F8",
+   "ram": 33638136,
+   "size": 48,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02014728",
+   "ram": 33638184,
+   "size": 48,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02014758",
+   "ram": 33638232,
+   "size": 88,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020147B0",
+   "ram": 33638320,
+   "size": 200,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02014878",
+   "ram": 33638520,
+   "size": 408,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02014A10",
+   "ram": 33638928,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02014A20",
+   "ram": 33638944,
+   "size": 96,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02014A80",
+   "ram": 33639040,
+   "size": 596,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02014CD4",
+   "ram": 33639636,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02014CF0",
+   "ram": 33639664,
+   "size": 160,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02014D90",
+   "ram": 33639824,
+   "size": 2048,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02015590",
+   "ram": 33641872,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020155A0",
+   "ram": 33641888,
+   "size": 1064,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020159C8",
+   "ram": 33642952,
+   "size": 470,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02015B9E",
+   "ram": 33643422,
+   "size": 6,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02015BA4",
+   "ram": 33643428,
+   "size": 798,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02015EC2",
+   "ram": 33644226,
+   "size": 36,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02015EE6",
+   "ram": 33644262,
+   "size": 70,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02015F2C",
+   "ram": 33644332,
+   "size": 252,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02016028",
+   "ram": 33644584,
+   "size": 844,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02016374",
+   "ram": 33645428,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02016380",
+   "ram": 33645440,
+   "size": 68,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020163C4",
+   "ram": 33645508,
+   "size": 620,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02016630",
+   "ram": 33646128,
+   "size": 592,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02016880",
+   "ram": 33646720,
+   "size": 156,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0201691C",
+   "ram": 33646876,
+   "size": 104,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02016984",
+   "ram": 33646980,
+   "size": 80,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020169D4",
+   "ram": 33647060,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020169E8",
+   "ram": 33647080,
+   "size": 440,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02016BA0",
+   "ram": 33647520,
+   "size": 2,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02016BA2",
+   "ram": 33647522,
+   "size": 106,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02016C0C",
+   "ram": 33647628,
+   "size": 44,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02016C38",
+   "ram": 33647672,
+   "size": 40,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02016C60",
+   "ram": 33647712,
+   "size": 872,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02016FC8",
+   "ram": 33648584,
+   "size": 312,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02017100",
+   "ram": 33648896,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02017114",
+   "ram": 33648916,
+   "size": 84,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02017168",
+   "ram": 33649000,
+   "size": 324,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020172AC",
+   "ram": 33649324,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020172BC",
+   "ram": 33649340,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020172D8",
+   "ram": 33649368,
+   "size": 240,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020173C8",
+   "ram": 33649608,
+   "size": 8,
+   "status": "unclaimed"
   },
   {
    "name": "FUN_020173D0",
@@ -2634,7 +4101,13 @@
   {
    "name": "sub_020185A0",
    "ram": 33654176,
-   "size": 36,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020185B0",
+   "ram": 33654192,
+   "size": 20,
    "status": "unclaimed"
   },
   {
@@ -2646,8 +4119,15 @@
   {
    "name": "sub_020185F0",
    "ram": 33654256,
-   "size": 8,
+   "size": 4,
    "status": "unclaimed"
+  },
+  {
+   "name": "sub_020185F4",
+   "ram": 33654260,
+   "size": 4,
+   "status": "unclaimed",
+   "mode": "thumb"
   },
   {
    "name": "sub_020185F8",
@@ -2682,7 +4162,13 @@
   {
    "name": "sub_020189F0",
    "ram": 33655280,
-   "size": 24,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02018A00",
+   "ram": 33655296,
+   "size": 8,
    "status": "unclaimed"
   },
   {
@@ -2832,7 +4318,13 @@
   {
    "name": "sub_02019CA0",
    "ram": 33660064,
-   "size": 260,
+   "size": 184,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02019D58",
+   "ram": 33660248,
+   "size": 76,
    "status": "unclaimed"
   },
   {
@@ -2850,7 +4342,19 @@
   {
    "name": "sub_0201A26C",
    "ram": 33661548,
-   "size": 264,
+   "size": 60,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0201A2A8",
+   "ram": 33661608,
+   "size": 100,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0201A30C",
+   "ram": 33661708,
+   "size": 104,
    "status": "unclaimed"
   },
   {
@@ -3033,8 +4537,20 @@
   {
    "name": "sub_0201ADD0",
    "ram": 33664464,
-   "size": 76,
+   "size": 20,
    "status": "matched:main/a_unk_0201AD88"
+  },
+  {
+   "name": "sub_0201ADE4",
+   "ram": 33664484,
+   "size": 48,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0201AE14",
+   "ram": 33664532,
+   "size": 8,
+   "status": "unclaimed"
   },
   {
    "name": "sub_0201AE1C",
@@ -3045,7 +4561,13 @@
   {
    "name": "sub_0201AF6C",
    "ram": 33664876,
-   "size": 104,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0201AF80",
+   "ram": 33664896,
+   "size": 84,
    "status": "unclaimed"
   },
   {
@@ -3172,7 +4694,13 @@
   {
    "name": "sub_0201C4E4",
    "ram": 33670372,
-   "size": 520,
+   "size": 480,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0201C6C4",
+   "ram": 33670852,
+   "size": 40,
    "status": "unclaimed"
   },
   {
@@ -3263,7 +4791,25 @@
   {
    "name": "sub_0201CDF4",
    "ram": 33672692,
-   "size": 152,
+   "size": 60,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0201CE30",
+   "ram": 33672752,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0201CE38",
+   "ram": 33672760,
+   "size": 36,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0201CE5C",
+   "ram": 33672796,
+   "size": 48,
    "status": "unclaimed"
   },
   {
@@ -3305,7 +4851,19 @@
   {
    "name": "sub_0201D478",
    "ram": 33674360,
-   "size": 332,
+   "size": 68,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0201D4BC",
+   "ram": 33674428,
+   "size": 108,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0201D528",
+   "ram": 33674536,
+   "size": 156,
    "status": "unclaimed"
   },
   {
@@ -3941,7 +5499,13 @@
   {
    "name": "sub_02020DEC",
    "ram": 33689068,
-   "size": 328,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02020E08",
+   "ram": 33689096,
+   "size": 300,
    "status": "unclaimed"
   },
   {
@@ -4635,13 +6199,31 @@
   {
    "name": "sub_02024368",
    "ram": 33702760,
-   "size": 304,
+   "size": 180,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202441C",
+   "ram": 33702940,
+   "size": 124,
    "status": "unclaimed"
   },
   {
    "name": "sub_02024498",
    "ram": 33703064,
-   "size": 112,
+   "size": 60,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020244D4",
+   "ram": 33703124,
+   "size": 36,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020244F8",
+   "ram": 33703160,
+   "size": 16,
    "status": "unclaimed"
   },
   {
@@ -4703,7 +6285,13 @@
   {
    "name": "sub_02024838",
    "ram": 33703992,
-   "size": 160,
+   "size": 80,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02024888",
+   "ram": 33704072,
+   "size": 80,
    "status": "unclaimed"
   },
   {
@@ -4842,7 +6430,19 @@
   {
    "name": "sub_02025BEC",
    "ram": 33709036,
-   "size": 696,
+   "size": 48,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02025C1C",
+   "ram": 33709084,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02025C30",
+   "ram": 33709104,
+   "size": 628,
    "status": "unclaimed"
   },
   {
@@ -4938,7 +6538,13 @@
   {
    "name": "sub_0202685C",
    "ram": 33712220,
-   "size": 928,
+   "size": 878,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02026BCA",
+   "ram": 33713098,
+   "size": 50,
    "status": "unclaimed"
   },
   {
@@ -5005,7 +6611,2842 @@
   {
    "name": "FUN_0202744C",
    "ram": 33715276,
-   "size": 30400,
+   "size": 20,
+   "status": "unclaimed",
+   "mode": "thumb"
+  },
+  {
+   "name": "sub_02027460",
+   "ram": 33715296,
+   "size": 84,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020274B4",
+   "ram": 33715380,
+   "size": 68,
+   "status": "unclaimed",
+   "mode": "thumb"
+  },
+  {
+   "name": "sub_020274F8",
+   "ram": 33715448,
+   "size": 236,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020275E4",
+   "ram": 33715684,
+   "size": 300,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02027710",
+   "ram": 33715984,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02027714",
+   "ram": 33715988,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02027718",
+   "ram": 33715992,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202771C",
+   "ram": 33715996,
+   "size": 92,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02027778",
+   "ram": 33716088,
+   "size": 380,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020278F4",
+   "ram": 33716468,
+   "size": 304,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02027A24",
+   "ram": 33716772,
+   "size": 268,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02027B30",
+   "ram": 33717040,
+   "size": 48,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02027B60",
+   "ram": 33717088,
+   "size": 148,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02027BF4",
+   "ram": 33717236,
+   "size": 336,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02027D44",
+   "ram": 33717572,
+   "size": 248,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02027E3C",
+   "ram": 33717820,
+   "size": 464,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202800C",
+   "ram": 33718284,
+   "size": 120,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028084",
+   "ram": 33718404,
+   "size": 224,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028164",
+   "ram": 33718628,
+   "size": 372,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020282D8",
+   "ram": 33719000,
+   "size": 540,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020284F4",
+   "ram": 33719540,
+   "size": 52,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028528",
+   "ram": 33719592,
+   "size": 52,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202855C",
+   "ram": 33719644,
+   "size": 72,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020285A4",
+   "ram": 33719716,
+   "size": 116,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028618",
+   "ram": 33719832,
+   "size": 68,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202865C",
+   "ram": 33719900,
+   "size": 260,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028760",
+   "ram": 33720160,
+   "size": 36,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028784",
+   "ram": 33720196,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202878C",
+   "ram": 33720204,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028794",
+   "ram": 33720212,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020287A8",
+   "ram": 33720232,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020287B4",
+   "ram": 33720244,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020287CC",
+   "ram": 33720268,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020287E4",
+   "ram": 33720292,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020287F8",
+   "ram": 33720312,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202880C",
+   "ram": 33720332,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028828",
+   "ram": 33720360,
+   "size": 156,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020288C4",
+   "ram": 33720516,
+   "size": 60,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028900",
+   "ram": 33720576,
+   "size": 136,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028988",
+   "ram": 33720712,
+   "size": 48,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020289B8",
+   "ram": 33720760,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020289D4",
+   "ram": 33720788,
+   "size": 36,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020289F8",
+   "ram": 33720824,
+   "size": 88,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028A50",
+   "ram": 33720912,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028A58",
+   "ram": 33720920,
+   "size": 328,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028BA0",
+   "ram": 33721248,
+   "size": 60,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028BDC",
+   "ram": 33721308,
+   "size": 84,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028C30",
+   "ram": 33721392,
+   "size": 32,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028C50",
+   "ram": 33721424,
+   "size": 96,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028CB0",
+   "ram": 33721520,
+   "size": 36,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028CD4",
+   "ram": 33721556,
+   "size": 88,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028D2C",
+   "ram": 33721644,
+   "size": 40,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028D54",
+   "ram": 33721684,
+   "size": 40,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028D7C",
+   "ram": 33721724,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028D8C",
+   "ram": 33721740,
+   "size": 44,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028DB8",
+   "ram": 33721784,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028DCC",
+   "ram": 33721804,
+   "size": 64,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028E0C",
+   "ram": 33721868,
+   "size": 60,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028E48",
+   "ram": 33721928,
+   "size": 56,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028E80",
+   "ram": 33721984,
+   "size": 44,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028EAC",
+   "ram": 33722028,
+   "size": 108,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028F18",
+   "ram": 33722136,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028F30",
+   "ram": 33722160,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028F48",
+   "ram": 33722184,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028F60",
+   "ram": 33722208,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028F7C",
+   "ram": 33722236,
+   "size": 32,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028F9C",
+   "ram": 33722268,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028FB8",
+   "ram": 33722296,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028FD0",
+   "ram": 33722320,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02028FE0",
+   "ram": 33722336,
+   "size": 96,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029040",
+   "ram": 33722432,
+   "size": 176,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020290F0",
+   "ram": 33722608,
+   "size": 56,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029128",
+   "ram": 33722664,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202912C",
+   "ram": 33722668,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029130",
+   "ram": 33722672,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029134",
+   "ram": 33722676,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029138",
+   "ram": 33722680,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202913C",
+   "ram": 33722684,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029154",
+   "ram": 33722708,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202916C",
+   "ram": 33722732,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029170",
+   "ram": 33722736,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029174",
+   "ram": 33722740,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029178",
+   "ram": 33722744,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202917C",
+   "ram": 33722748,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029180",
+   "ram": 33722752,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029184",
+   "ram": 33722756,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029188",
+   "ram": 33722760,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202918C",
+   "ram": 33722764,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020291A8",
+   "ram": 33722792,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020291C4",
+   "ram": 33722820,
+   "size": 36,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020291E8",
+   "ram": 33722856,
+   "size": 36,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202920C",
+   "ram": 33722892,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029228",
+   "ram": 33722920,
+   "size": 40,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029250",
+   "ram": 33722960,
+   "size": 56,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029288",
+   "ram": 33723016,
+   "size": 56,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020292C0",
+   "ram": 33723072,
+   "size": 40,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020292E8",
+   "ram": 33723112,
+   "size": 36,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202930C",
+   "ram": 33723148,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029324",
+   "ram": 33723172,
+   "size": 32,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029344",
+   "ram": 33723204,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029348",
+   "ram": 33723208,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029354",
+   "ram": 33723220,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029364",
+   "ram": 33723236,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029374",
+   "ram": 33723252,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202938C",
+   "ram": 33723276,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202939C",
+   "ram": 33723292,
+   "size": 60,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020293D8",
+   "ram": 33723352,
+   "size": 48,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029408",
+   "ram": 33723400,
+   "size": 44,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029434",
+   "ram": 33723444,
+   "size": 40,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202945C",
+   "ram": 33723484,
+   "size": 32,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202947C",
+   "ram": 33723516,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029488",
+   "ram": 33723528,
+   "size": 108,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020294F4",
+   "ram": 33723636,
+   "size": 108,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029560",
+   "ram": 33723744,
+   "size": 120,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020295D8",
+   "ram": 33723864,
+   "size": 128,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029658",
+   "ram": 33723992,
+   "size": 112,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020296C8",
+   "ram": 33724104,
+   "size": 152,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029760",
+   "ram": 33724256,
+   "size": 140,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020297EC",
+   "ram": 33724396,
+   "size": 124,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029868",
+   "ram": 33724520,
+   "size": 120,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020298E0",
+   "ram": 33724640,
+   "size": 88,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029938",
+   "ram": 33724728,
+   "size": 128,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020299B8",
+   "ram": 33724856,
+   "size": 132,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029A3C",
+   "ram": 33724988,
+   "size": 108,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029AA8",
+   "ram": 33725096,
+   "size": 180,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029B5C",
+   "ram": 33725276,
+   "size": 220,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029C38",
+   "ram": 33725496,
+   "size": 92,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029C94",
+   "ram": 33725588,
+   "size": 452,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029E58",
+   "ram": 33726040,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029E64",
+   "ram": 33726052,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029E74",
+   "ram": 33726068,
+   "size": 64,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029EB4",
+   "ram": 33726132,
+   "size": 96,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029F14",
+   "ram": 33726228,
+   "size": 48,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029F44",
+   "ram": 33726276,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029F4C",
+   "ram": 33726284,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029F54",
+   "ram": 33726292,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029F60",
+   "ram": 33726304,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029F6C",
+   "ram": 33726316,
+   "size": 32,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029F8C",
+   "ram": 33726348,
+   "size": 68,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029FD0",
+   "ram": 33726416,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029FE4",
+   "ram": 33726436,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02029FF8",
+   "ram": 33726456,
+   "size": 36,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202A01C",
+   "ram": 33726492,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202A02C",
+   "ram": 33726508,
+   "size": 88,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202A084",
+   "ram": 33726596,
+   "size": 100,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202A0E8",
+   "ram": 33726696,
+   "size": 228,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202A1CC",
+   "ram": 33726924,
+   "size": 64,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202A20C",
+   "ram": 33726988,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202A21C",
+   "ram": 33727004,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202A230",
+   "ram": 33727024,
+   "size": 380,
+   "status": "unclaimed",
+   "mode": "thumb"
+  },
+  {
+   "name": "sub_0202A3AC",
+   "ram": 33727404,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202A3BC",
+   "ram": 33727420,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202A3CC",
+   "ram": 33727436,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202A3D8",
+   "ram": 33727448,
+   "size": 36,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202A3FC",
+   "ram": 33727484,
+   "size": 68,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202A440",
+   "ram": 33727552,
+   "size": 116,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202A4B4",
+   "ram": 33727668,
+   "size": 1248,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202A994",
+   "ram": 33728916,
+   "size": 96,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202A9F4",
+   "ram": 33729012,
+   "size": 256,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AAF4",
+   "ram": 33729268,
+   "size": 52,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AB28",
+   "ram": 33729320,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AB38",
+   "ram": 33729336,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AB4C",
+   "ram": 33729356,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AB54",
+   "ram": 33729364,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AB5C",
+   "ram": 33729372,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AB64",
+   "ram": 33729380,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AB7C",
+   "ram": 33729404,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AB84",
+   "ram": 33729412,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AB8C",
+   "ram": 33729420,
+   "size": 68,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202ABD0",
+   "ram": 33729488,
+   "size": 40,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202ABF8",
+   "ram": 33729528,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202ABFC",
+   "ram": 33729532,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AC00",
+   "ram": 33729536,
+   "size": 76,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AC4C",
+   "ram": 33729612,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AC60",
+   "ram": 33729632,
+   "size": 92,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202ACBC",
+   "ram": 33729724,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202ACC8",
+   "ram": 33729736,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202ACCC",
+   "ram": 33729740,
+   "size": 48,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202ACFC",
+   "ram": 33729788,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AD10",
+   "ram": 33729808,
+   "size": 52,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AD44",
+   "ram": 33729860,
+   "size": 52,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AD78",
+   "ram": 33729912,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AD88",
+   "ram": 33729928,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AD8C",
+   "ram": 33729932,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202ADA0",
+   "ram": 33729952,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202ADB4",
+   "ram": 33729972,
+   "size": 36,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202ADD8",
+   "ram": 33730008,
+   "size": 44,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AE04",
+   "ram": 33730052,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AE08",
+   "ram": 33730056,
+   "size": 44,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AE34",
+   "ram": 33730100,
+   "size": 44,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AE60",
+   "ram": 33730144,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AE64",
+   "ram": 33730148,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AE68",
+   "ram": 33730152,
+   "size": 52,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AE9C",
+   "ram": 33730204,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AEB8",
+   "ram": 33730232,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AEBC",
+   "ram": 33730236,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AED0",
+   "ram": 33730256,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AEEC",
+   "ram": 33730284,
+   "size": 60,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AF28",
+   "ram": 33730344,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AF30",
+   "ram": 33730352,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AF34",
+   "ram": 33730356,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AF3C",
+   "ram": 33730364,
+   "size": 56,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AF74",
+   "ram": 33730420,
+   "size": 56,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AFAC",
+   "ram": 33730476,
+   "size": 80,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202AFFC",
+   "ram": 33730556,
+   "size": 80,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B04C",
+   "ram": 33730636,
+   "size": 88,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B0A4",
+   "ram": 33730724,
+   "size": 48,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B0D4",
+   "ram": 33730772,
+   "size": 48,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B104",
+   "ram": 33730820,
+   "size": 48,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B134",
+   "ram": 33730868,
+   "size": 32,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B154",
+   "ram": 33730900,
+   "size": 32,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B174",
+   "ram": 33730932,
+   "size": 32,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B194",
+   "ram": 33730964,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B1AC",
+   "ram": 33730988,
+   "size": 64,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B1EC",
+   "ram": 33731052,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B1F4",
+   "ram": 33731060,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B1FC",
+   "ram": 33731068,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B204",
+   "ram": 33731076,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B20C",
+   "ram": 33731084,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B224",
+   "ram": 33731108,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B230",
+   "ram": 33731120,
+   "size": 36,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B254",
+   "ram": 33731156,
+   "size": 56,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B28C",
+   "ram": 33731212,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B2A4",
+   "ram": 33731236,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B2BC",
+   "ram": 33731260,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B2CC",
+   "ram": 33731276,
+   "size": 48,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B2FC",
+   "ram": 33731324,
+   "size": 100,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B360",
+   "ram": 33731424,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B374",
+   "ram": 33731444,
+   "size": 44,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B3A0",
+   "ram": 33731488,
+   "size": 76,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B3EC",
+   "ram": 33731564,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B404",
+   "ram": 33731588,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B420",
+   "ram": 33731616,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B424",
+   "ram": 33731620,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B42C",
+   "ram": 33731628,
+   "size": 40,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B454",
+   "ram": 33731668,
+   "size": 40,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B47C",
+   "ram": 33731708,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B490",
+   "ram": 33731728,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B49C",
+   "ram": 33731740,
+   "size": 224,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B57C",
+   "ram": 33731964,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B584",
+   "ram": 33731972,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B59C",
+   "ram": 33731996,
+   "size": 56,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B5D4",
+   "ram": 33732052,
+   "size": 40,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B5FC",
+   "ram": 33732092,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B610",
+   "ram": 33732112,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B624",
+   "ram": 33732132,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B63C",
+   "ram": 33732156,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B64C",
+   "ram": 33732172,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B65C",
+   "ram": 33732188,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B66C",
+   "ram": 33732204,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B67C",
+   "ram": 33732220,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B68C",
+   "ram": 33732236,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B69C",
+   "ram": 33732252,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B6AC",
+   "ram": 33732268,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B6BC",
+   "ram": 33732284,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B6CC",
+   "ram": 33732300,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B6DC",
+   "ram": 33732316,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B6EC",
+   "ram": 33732332,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B6F8",
+   "ram": 33732344,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B704",
+   "ram": 33732356,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B710",
+   "ram": 33732368,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B720",
+   "ram": 33732384,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B72C",
+   "ram": 33732396,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B738",
+   "ram": 33732408,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B744",
+   "ram": 33732420,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B758",
+   "ram": 33732440,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B764",
+   "ram": 33732452,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B770",
+   "ram": 33732464,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B77C",
+   "ram": 33732476,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B788",
+   "ram": 33732488,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B794",
+   "ram": 33732500,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B7A0",
+   "ram": 33732512,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B7AC",
+   "ram": 33732524,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B7B8",
+   "ram": 33732536,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B7BC",
+   "ram": 33732540,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B7C8",
+   "ram": 33732552,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B7D4",
+   "ram": 33732564,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B7E0",
+   "ram": 33732576,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B7EC",
+   "ram": 33732588,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B7F8",
+   "ram": 33732600,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B804",
+   "ram": 33732612,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B810",
+   "ram": 33732624,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B818",
+   "ram": 33732632,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B834",
+   "ram": 33732660,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B84C",
+   "ram": 33732684,
+   "size": 72,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B894",
+   "ram": 33732756,
+   "size": 80,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B8E4",
+   "ram": 33732836,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B8F4",
+   "ram": 33732852,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B8FC",
+   "ram": 33732860,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B904",
+   "ram": 33732868,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B90C",
+   "ram": 33732876,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B914",
+   "ram": 33732884,
+   "size": 48,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B944",
+   "ram": 33732932,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B958",
+   "ram": 33732952,
+   "size": 112,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B9C8",
+   "ram": 33733064,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B9E0",
+   "ram": 33733088,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202B9F0",
+   "ram": 33733104,
+   "size": 52,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202BA24",
+   "ram": 33733156,
+   "size": 60,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202BA60",
+   "ram": 33733216,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202BA7C",
+   "ram": 33733244,
+   "size": 32,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202BA9C",
+   "ram": 33733276,
+   "size": 32,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202BABC",
+   "ram": 33733308,
+   "size": 44,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202BAE8",
+   "ram": 33733352,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202BAF4",
+   "ram": 33733364,
+   "size": 76,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202BB40",
+   "ram": 33733440,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202BB48",
+   "ram": 33733448,
+   "size": 32,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202BB68",
+   "ram": 33733480,
+   "size": 72,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202BBB0",
+   "ram": 33733552,
+   "size": 76,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202BBFC",
+   "ram": 33733628,
+   "size": 76,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202BC48",
+   "ram": 33733704,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202BC60",
+   "ram": 33733728,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202BC78",
+   "ram": 33733752,
+   "size": 40,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202BCA0",
+   "ram": 33733792,
+   "size": 304,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202BDD0",
+   "ram": 33734096,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202BDE8",
+   "ram": 33734120,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202BE00",
+   "ram": 33734144,
+   "size": 36,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202BE24",
+   "ram": 33734180,
+   "size": 48,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202BE54",
+   "ram": 33734228,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202BE68",
+   "ram": 33734248,
+   "size": 60,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202BEA4",
+   "ram": 33734308,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202BEBC",
+   "ram": 33734332,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202BECC",
+   "ram": 33734348,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202BEDC",
+   "ram": 33734364,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202BEE4",
+   "ram": 33734372,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202BEEC",
+   "ram": 33734380,
+   "size": 104,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202BF54",
+   "ram": 33734484,
+   "size": 48,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202BF84",
+   "ram": 33734532,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202BF90",
+   "ram": 33734544,
+   "size": 52,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202BFC4",
+   "ram": 33734596,
+   "size": 44,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202BFF0",
+   "ram": 33734640,
+   "size": 128,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C070",
+   "ram": 33734768,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C08C",
+   "ram": 33734796,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C09C",
+   "ram": 33734812,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C0B8",
+   "ram": 33734840,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C0C0",
+   "ram": 33734848,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C0C8",
+   "ram": 33734856,
+   "size": 80,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C118",
+   "ram": 33734936,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C124",
+   "ram": 33734948,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C140",
+   "ram": 33734976,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C148",
+   "ram": 33734984,
+   "size": 80,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C198",
+   "ram": 33735064,
+   "size": 44,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C1C4",
+   "ram": 33735108,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C1D4",
+   "ram": 33735124,
+   "size": 48,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C204",
+   "ram": 33735172,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C218",
+   "ram": 33735192,
+   "size": 40,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C240",
+   "ram": 33735232,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C244",
+   "ram": 33735236,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C24C",
+   "ram": 33735244,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C250",
+   "ram": 33735248,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C268",
+   "ram": 33735272,
+   "size": 52,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C29C",
+   "ram": 33735324,
+   "size": 36,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C2C0",
+   "ram": 33735360,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C2D0",
+   "ram": 33735376,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C2D8",
+   "ram": 33735384,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C2DC",
+   "ram": 33735388,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C2EC",
+   "ram": 33735404,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C308",
+   "ram": 33735432,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C318",
+   "ram": 33735448,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C320",
+   "ram": 33735456,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C328",
+   "ram": 33735464,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C330",
+   "ram": 33735472,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C338",
+   "ram": 33735480,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C340",
+   "ram": 33735488,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C348",
+   "ram": 33735496,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C350",
+   "ram": 33735504,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C358",
+   "ram": 33735512,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C360",
+   "ram": 33735520,
+   "size": 36,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C384",
+   "ram": 33735556,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C3A0",
+   "ram": 33735584,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C3A8",
+   "ram": 33735592,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C3C4",
+   "ram": 33735620,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C3E0",
+   "ram": 33735648,
+   "size": 144,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C470",
+   "ram": 33735792,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C48C",
+   "ram": 33735820,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C498",
+   "ram": 33735832,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C4A4",
+   "ram": 33735844,
+   "size": 36,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C4C8",
+   "ram": 33735880,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C4CC",
+   "ram": 33735884,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C4D0",
+   "ram": 33735888,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C4D8",
+   "ram": 33735896,
+   "size": 44,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C504",
+   "ram": 33735940,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C510",
+   "ram": 33735952,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C518",
+   "ram": 33735960,
+   "size": 32,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C538",
+   "ram": 33735992,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C548",
+   "ram": 33736008,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C550",
+   "ram": 33736016,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C558",
+   "ram": 33736024,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C560",
+   "ram": 33736032,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C568",
+   "ram": 33736040,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C570",
+   "ram": 33736048,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C578",
+   "ram": 33736056,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C580",
+   "ram": 33736064,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C588",
+   "ram": 33736072,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C590",
+   "ram": 33736080,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C5AC",
+   "ram": 33736108,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C5B4",
+   "ram": 33736116,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C5C4",
+   "ram": 33736132,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C5CC",
+   "ram": 33736140,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C5E0",
+   "ram": 33736160,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C5F0",
+   "ram": 33736176,
+   "size": 64,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C630",
+   "ram": 33736240,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C634",
+   "ram": 33736244,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C638",
+   "ram": 33736248,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C654",
+   "ram": 33736276,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C670",
+   "ram": 33736304,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C688",
+   "ram": 33736328,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C6A0",
+   "ram": 33736352,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C6AC",
+   "ram": 33736364,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C6B8",
+   "ram": 33736376,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C6BC",
+   "ram": 33736380,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C6C4",
+   "ram": 33736388,
+   "size": 76,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C710",
+   "ram": 33736464,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C72C",
+   "ram": 33736492,
+   "size": 52,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C760",
+   "ram": 33736544,
+   "size": 52,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C794",
+   "ram": 33736596,
+   "size": 144,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C824",
+   "ram": 33736740,
+   "size": 148,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C8B8",
+   "ram": 33736888,
+   "size": 124,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C934",
+   "ram": 33737012,
+   "size": 60,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202C970",
+   "ram": 33737072,
+   "size": 340,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202CAC4",
+   "ram": 33737412,
+   "size": 128,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202CB44",
+   "ram": 33737540,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202CB4C",
+   "ram": 33737548,
+   "size": 268,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202CC58",
+   "ram": 33737816,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202CC70",
+   "ram": 33737840,
+   "size": 356,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202CDD4",
+   "ram": 33738196,
+   "size": 580,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202D018",
+   "ram": 33738776,
+   "size": 72,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202D060",
+   "ram": 33738848,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202D064",
+   "ram": 33738852,
+   "size": 56,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202D09C",
+   "ram": 33738908,
+   "size": 56,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202D0D4",
+   "ram": 33738964,
+   "size": 60,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202D110",
+   "ram": 33739024,
+   "size": 52,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202D144",
+   "ram": 33739076,
+   "size": 52,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202D178",
+   "ram": 33739128,
+   "size": 52,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202D1AC",
+   "ram": 33739180,
+   "size": 52,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202D1E0",
+   "ram": 33739232,
+   "size": 52,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202D214",
+   "ram": 33739284,
+   "size": 216,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202D2EC",
+   "ram": 33739500,
+   "size": 228,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202D3D0",
+   "ram": 33739728,
+   "size": 216,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202D4A8",
+   "ram": 33739944,
+   "size": 292,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202D5CC",
+   "ram": 33740236,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202D5D8",
+   "ram": 33740248,
+   "size": 32,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202D5F8",
+   "ram": 33740280,
+   "size": 36,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202D61C",
+   "ram": 33740316,
+   "size": 36,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202D640",
+   "ram": 33740352,
+   "size": 36,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202D664",
+   "ram": 33740388,
+   "size": 36,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202D688",
+   "ram": 33740424,
+   "size": 36,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202D6AC",
+   "ram": 33740460,
+   "size": 36,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202D6D0",
+   "ram": 33740496,
+   "size": 144,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202D760",
+   "ram": 33740640,
+   "size": 120,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202D7D8",
+   "ram": 33740760,
+   "size": 68,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202D81C",
+   "ram": 33740828,
+   "size": 124,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202D898",
+   "ram": 33740952,
+   "size": 968,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202DC60",
+   "ram": 33741920,
+   "size": 100,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202DCC4",
+   "ram": 33742020,
+   "size": 424,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202DE6C",
+   "ram": 33742444,
+   "size": 48,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202DE9C",
+   "ram": 33742492,
+   "size": 68,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202DEE0",
+   "ram": 33742560,
+   "size": 68,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202DF24",
+   "ram": 33742628,
+   "size": 68,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202DF68",
+   "ram": 33742696,
+   "size": 108,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202DFD4",
+   "ram": 33742804,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202DFEC",
+   "ram": 33742828,
+   "size": 84,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202E040",
+   "ram": 33742912,
+   "size": 92,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202E09C",
+   "ram": 33743004,
+   "size": 44,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202E0C8",
+   "ram": 33743048,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202E0E0",
+   "ram": 33743072,
+   "size": 272,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202E1F0",
+   "ram": 33743344,
+   "size": 412,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202E38C",
+   "ram": 33743756,
+   "size": 88,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202E3E4",
+   "ram": 33743844,
+   "size": 76,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202E430",
+   "ram": 33743920,
+   "size": 876,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202E79C",
+   "ram": 33744796,
+   "size": 236,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202E888",
+   "ram": 33745032,
+   "size": 80,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0202E8D8",
+   "ram": 33745112,
+   "size": 564,
    "status": "unclaimed",
    "mode": "thumb"
   },
@@ -5079,8 +9520,15 @@
   {
    "name": "FUN_02030164",
    "ram": 33751396,
-   "size": 414,
+   "size": 320,
    "status": "unclaimed"
+  },
+  {
+   "name": "sub_020302A4",
+   "ram": 33751716,
+   "size": 94,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "sub_02030302",
@@ -5127,8 +9575,15 @@
   {
    "name": "FUN_020304C0",
    "ram": 33752256,
-   "size": 100,
+   "size": 12,
    "status": "unclaimed"
+  },
+  {
+   "name": "sub_020304CC",
+   "ram": 33752268,
+   "size": 88,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "FUN_02030524",
@@ -5301,7 +9756,13 @@
   {
    "name": "sub_02030EAC",
    "ram": 33754796,
-   "size": 68,
+   "size": 60,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02030EE8",
+   "ram": 33754856,
+   "size": 8,
    "status": "unclaimed"
   },
   {
@@ -5764,8 +10225,15 @@
   {
    "name": "sub_0203386C",
    "ram": 33765484,
-   "size": 140,
+   "size": 76,
    "status": "unclaimed"
+  },
+  {
+   "name": "sub_020338B8",
+   "ram": 33765560,
+   "size": 64,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "OS_IsThreadAvailable",
@@ -7510,8 +11978,15 @@
   {
    "name": "FUN_0203C934",
    "ram": 33802548,
-   "size": 92,
+   "size": 4,
    "status": "unclaimed"
+  },
+  {
+   "name": "sub_0203C938",
+   "ram": 33802552,
+   "size": 88,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "FUN_0203C990",
@@ -7624,7 +12099,13 @@
   {
    "name": "FUN_0203D0DC",
    "ram": 33804508,
-   "size": 160,
+   "size": 80,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0203D12C",
+   "ram": 33804588,
+   "size": 80,
    "status": "unclaimed"
   },
   {
@@ -7948,7 +12429,13 @@
   {
    "name": "sub_0203FA08",
    "ram": 33815048,
-   "size": 316,
+   "size": 232,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0203FAF0",
+   "ram": 33815280,
+   "size": 84,
    "status": "unclaimed"
   },
   {
@@ -7960,14 +12447,28 @@
   {
    "name": "sub_02040300",
    "ram": 33817344,
-   "size": 1376,
+   "size": 792,
    "status": "unclaimed"
+  },
+  {
+   "name": "sub_02040618",
+   "ram": 33818136,
+   "size": 584,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "sub_02040860",
    "ram": 33818720,
-   "size": 340,
+   "size": 264,
    "status": "unclaimed"
+  },
+  {
+   "name": "sub_02040968",
+   "ram": 33818984,
+   "size": 76,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "sub_020409B4",
@@ -8026,8 +12527,22 @@
   {
    "name": "sub_02041300",
    "ram": 33821440,
-   "size": 692,
+   "size": 452,
    "status": "unclaimed"
+  },
+  {
+   "name": "sub_020414C4",
+   "ram": 33821892,
+   "size": 40,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_020414EC",
+   "ram": 33821932,
+   "size": 200,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "sub_020415B4",
@@ -8038,13 +12553,44 @@
   {
    "name": "sub_0204162C",
    "ram": 33822252,
-   "size": 112,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02041648",
+   "ram": 33822280,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02041664",
+   "ram": 33822308,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02041680",
+   "ram": 33822336,
+   "size": 28,
    "status": "unclaimed"
   },
   {
    "name": "sub_0204169C",
    "ram": 33822364,
-   "size": 840,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020416B8",
+   "ram": 33822392,
+   "size": 28,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_020416D4",
+   "ram": 33822420,
+   "size": 784,
    "status": "unclaimed"
   },
   {
@@ -8068,20 +12614,111 @@
   {
    "name": "FUN_02041B94",
    "ram": 33823636,
-   "size": 1996,
+   "size": 1668,
    "status": "unclaimed"
+  },
+  {
+   "name": "sub_02042218",
+   "ram": 33825304,
+   "size": 188,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_020422D4",
+   "ram": 33825492,
+   "size": 140,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "sub_02042360",
    "ram": 33825632,
-   "size": 188,
+   "size": 116,
    "status": "unclaimed"
+  },
+  {
+   "name": "sub_020423D4",
+   "ram": 33825748,
+   "size": 72,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "ENV_GetResourceSetLinkHead",
    "ram": 33825820,
    "size": 16,
    "status": "matched_sdk"
+  },
+  {
+   "name": "sub_02042508",
+   "ram": 33826056,
+   "size": 172,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_020425B4",
+   "ram": 33826228,
+   "size": 236,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_020426A0",
+   "ram": 33826464,
+   "size": 584,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_020428E8",
+   "ram": 33827048,
+   "size": 572,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02042B24",
+   "ram": 33827620,
+   "size": 520,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02042D2C",
+   "ram": 33828140,
+   "size": 264,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02042E34",
+   "ram": 33828404,
+   "size": 164,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02042ED8",
+   "ram": 33828568,
+   "size": 288,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02042FF8",
+   "ram": 33828856,
+   "size": 156,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02043094",
+   "ram": 33829012,
+   "size": 156,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "sub_02043130",
@@ -8110,8 +12747,35 @@
   {
    "name": "sub_02043534",
    "ram": 33830196,
-   "size": 192,
+   "size": 36,
    "status": "unclaimed"
+  },
+  {
+   "name": "sub_02043558",
+   "ram": 33830232,
+   "size": 24,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02043570",
+   "ram": 33830256,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02043588",
+   "ram": 33830280,
+   "size": 16,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02043598",
+   "ram": 33830296,
+   "size": 92,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "sub_020435F4",
@@ -8134,7 +12798,278 @@
   {
    "name": "FUN_02043678",
    "ram": 33830520,
-   "size": 8488,
+   "size": 132,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020436FC",
+   "ram": 33830652,
+   "size": 88,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02043754",
+   "ram": 33830740,
+   "size": 88,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_020437AC",
+   "ram": 33830828,
+   "size": 40,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_020437D4",
+   "ram": 33830868,
+   "size": 8,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_020437DC",
+   "ram": 33830876,
+   "size": 8,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_020437E4",
+   "ram": 33830884,
+   "size": 8,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_020437EC",
+   "ram": 33830892,
+   "size": 40,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02043814",
+   "ram": 33830932,
+   "size": 236,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02043900",
+   "ram": 33831168,
+   "size": 148,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02043994",
+   "ram": 33831316,
+   "size": 12,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_020439A0",
+   "ram": 33831328,
+   "size": 268,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02043AAC",
+   "ram": 33831596,
+   "size": 72,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02043AF4",
+   "ram": 33831668,
+   "size": 104,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02043B5C",
+   "ram": 33831772,
+   "size": 60,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02043B98",
+   "ram": 33831832,
+   "size": 948,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02043F4C",
+   "ram": 33832780,
+   "size": 434,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020440FE",
+   "ram": 33833214,
+   "size": 382,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0204427C",
+   "ram": 33833596,
+   "size": 888,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020445F4",
+   "ram": 33834484,
+   "size": 864,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02044954",
+   "ram": 33835348,
+   "size": 668,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02044BF0",
+   "ram": 33836016,
+   "size": 240,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02044CE0",
+   "ram": 33836256,
+   "size": 168,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02044D88",
+   "ram": 33836424,
+   "size": 308,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02044EBC",
+   "ram": 33836732,
+   "size": 564,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020450F0",
+   "ram": 33837296,
+   "size": 288,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02045210",
+   "ram": 33837584,
+   "size": 216,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020452E8",
+   "ram": 33837800,
+   "size": 76,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02045334",
+   "ram": 33837876,
+   "size": 64,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02045374",
+   "ram": 33837940,
+   "size": 900,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_020456F8",
+   "ram": 33838840,
+   "size": 56,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02045730",
+   "ram": 33838896,
+   "size": 8,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02045738",
+   "ram": 33838904,
+   "size": 8,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02045740",
+   "ram": 33838912,
+   "size": 8,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02045748",
+   "ram": 33838920,
+   "size": 8,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02045750",
+   "ram": 33838928,
+   "size": 8,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02045758",
+   "ram": 33838936,
+   "size": 8,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02045760",
+   "ram": 33838944,
+   "size": 8,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02045768",
+   "ram": 33838952,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02045770",
+   "ram": 33838960,
+   "size": 8,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02045778",
+   "ram": 33838968,
+   "size": 32,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02045798",
+   "ram": 33839000,
+   "size": 8,
    "status": "unclaimed"
   },
   {
@@ -8188,7 +13123,13 @@
   {
    "name": "sub_02045924",
    "ram": 33839396,
-   "size": 220,
+   "size": 112,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02045994",
+   "ram": 33839508,
+   "size": 108,
    "status": "unclaimed"
   },
   {
@@ -8236,7 +13177,13 @@
   {
    "name": "sub_02045C04",
    "ram": 33840132,
-   "size": 168,
+   "size": 64,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02045C44",
+   "ram": 33840196,
+   "size": 104,
    "status": "unclaimed"
   },
   {
@@ -8398,7 +13345,19 @@
   {
    "name": "sub_02048F74",
    "ram": 33853300,
-   "size": 308,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02048F88",
+   "ram": 33853320,
+   "size": 168,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02049030",
+   "ram": 33853488,
+   "size": 120,
    "status": "unclaimed"
   },
   {
@@ -8410,7 +13369,13 @@
   {
    "name": "FUN_020490F4",
    "ram": 33853684,
-   "size": 168,
+   "size": 72,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0204913C",
+   "ram": 33853756,
+   "size": 96,
    "status": "unclaimed"
   },
   {
@@ -8470,7 +13435,13 @@
   {
    "name": "FUN_0204960C",
    "ram": 33854988,
-   "size": 24,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0204961C",
+   "ram": 33855004,
+   "size": 8,
    "status": "unclaimed"
   },
   {
@@ -8548,7 +13519,43 @@
   {
    "name": "FUN_02049C28",
    "ram": 33856552,
-   "size": 780,
+   "size": 396,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02049DB4",
+   "ram": 33856948,
+   "size": 64,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02049DF4",
+   "ram": 33857012,
+   "size": 64,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02049E34",
+   "ram": 33857076,
+   "size": 64,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02049E74",
+   "ram": 33857140,
+   "size": 64,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02049EB4",
+   "ram": 33857204,
+   "size": 64,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02049EF4",
+   "ram": 33857268,
+   "size": 64,
    "status": "unclaimed"
   },
   {
@@ -8560,13 +13567,67 @@
   {
    "name": "sub_02049F78",
    "ram": 33857400,
-   "size": 580,
+   "size": 68,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02049FBC",
+   "ram": 33857468,
+   "size": 64,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02049FFC",
+   "ram": 33857532,
+   "size": 64,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0204A03C",
+   "ram": 33857596,
+   "size": 64,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0204A07C",
+   "ram": 33857660,
+   "size": 64,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0204A0BC",
+   "ram": 33857724,
+   "size": 64,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0204A0FC",
+   "ram": 33857788,
+   "size": 64,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0204A13C",
+   "ram": 33857852,
+   "size": 64,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0204A17C",
+   "ram": 33857916,
+   "size": 64,
    "status": "unclaimed"
   },
   {
    "name": "FUN_0204A1BC",
    "ram": 33857980,
-   "size": 452,
+   "size": 220,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0204A298",
+   "ram": 33858200,
+   "size": 232,
    "status": "unclaimed"
   },
   {
@@ -8578,7 +13639,13 @@
   {
    "name": "FUN_0204A39C",
    "ram": 33858460,
-   "size": 1028,
+   "size": 812,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0204A6C8",
+   "ram": 33859272,
+   "size": 216,
    "status": "unclaimed"
   },
   {
@@ -8590,7 +13657,13 @@
   {
    "name": "sub_0204A8D4",
    "ram": 33859796,
-   "size": 688,
+   "size": 252,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0204A9D0",
+   "ram": 33860048,
+   "size": 436,
    "status": "unclaimed"
   },
   {
@@ -8620,7 +13693,13 @@
   {
    "name": "sub_0204ADA4",
    "ram": 33861028,
-   "size": 284,
+   "size": 72,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0204ADEC",
+   "ram": 33861100,
+   "size": 212,
    "status": "unclaimed"
   },
   {
@@ -8693,13 +13772,15 @@
    "name": "sub_0204B248",
    "ram": 33862216,
    "size": 16,
-   "status": "matched:main/g_clact"
+   "status": "matched:main/g_clact",
+   "mode": "thumb"
   },
   {
    "name": "sub_0204B258",
    "ram": 33862232,
    "size": 24,
-   "status": "matched:main/g_clact"
+   "status": "matched:main/g_clact",
+   "mode": "thumb"
   },
   {
    "name": "sub_0204B270",
@@ -8729,7 +13810,8 @@
    "name": "sub_0204B3F4",
    "ram": 33862644,
    "size": 16,
-   "status": "matched:main/g_clact"
+   "status": "matched:main/g_clact",
+   "mode": "thumb"
   },
   {
    "name": "sub_0204B404",
@@ -8753,7 +13835,8 @@
    "name": "sub_0204B4EC",
    "ram": 33862892,
    "size": 60,
-   "status": "matched:main/g_clact"
+   "status": "matched:main/g_clact",
+   "mode": "thumb"
   },
   {
    "name": "sub_0204B528",
@@ -8789,7 +13872,8 @@
    "name": "sub_0204B588",
    "ram": 33863048,
    "size": 20,
-   "status": "matched:main/g_clact"
+   "status": "matched:main/g_clact",
+   "mode": "thumb"
   },
   {
    "name": "sub_0204B59C",
@@ -8801,13 +13885,15 @@
    "name": "sub_0204B5AC",
    "ram": 33863084,
    "size": 20,
-   "status": "matched:main/g_clact"
+   "status": "matched:main/g_clact",
+   "mode": "thumb"
   },
   {
    "name": "sub_0204B5C0",
    "ram": 33863104,
    "size": 20,
-   "status": "matched:main/g_clact"
+   "status": "matched:main/g_clact",
+   "mode": "thumb"
   },
   {
    "name": "sub_0204B5D4",
@@ -8819,7 +13905,8 @@
    "name": "sub_0204B5E4",
    "ram": 33863140,
    "size": 16,
-   "status": "matched:main/g_clact"
+   "status": "matched:main/g_clact",
+   "mode": "thumb"
   },
   {
    "name": "sub_0204B5F4",
@@ -8831,13 +13918,15 @@
    "name": "sub_0204B5FC",
    "ram": 33863164,
    "size": 8,
-   "status": "matched:main/g_clact"
+   "status": "matched:main/g_clact",
+   "mode": "thumb"
   },
   {
    "name": "sub_0204B604",
    "ram": 33863172,
    "size": 84,
-   "status": "matched:main/g_clact"
+   "status": "matched:main/g_clact",
+   "mode": "thumb"
   },
   {
    "name": "sub_0204B658",
@@ -8855,7 +13944,8 @@
    "name": "sub_0204B6E4",
    "ram": 33863396,
    "size": 16,
-   "status": "matched:main/g_clact"
+   "status": "matched:main/g_clact",
+   "mode": "thumb"
   },
   {
    "name": "sub_0204B6F4",
@@ -8867,7 +13957,8 @@
    "name": "sub_0204B714",
    "ram": 33863444,
    "size": 20,
-   "status": "matched:main/g_clact"
+   "status": "matched:main/g_clact",
+   "mode": "thumb"
   },
   {
    "name": "sub_0204B728",
@@ -8879,7 +13970,8 @@
    "name": "sub_0204B764",
    "ram": 33863524,
    "size": 32,
-   "status": "matched:main/g_clact"
+   "status": "matched:main/g_clact",
+   "mode": "thumb"
   },
   {
    "name": "sub_0204B784",
@@ -8891,19 +13983,22 @@
    "name": "sub_0204B7C8",
    "ram": 33863624,
    "size": 40,
-   "status": "matched:main/g_clact"
+   "status": "matched:main/g_clact",
+   "mode": "thumb"
   },
   {
    "name": "sub_0204B7F0",
    "ram": 33863664,
    "size": 8,
-   "status": "matched:main/g_clact"
+   "status": "matched:main/g_clact",
+   "mode": "thumb"
   },
   {
    "name": "sub_0204B7F8",
    "ram": 33863672,
    "size": 8,
-   "status": "matched:main/g_clact"
+   "status": "matched:main/g_clact",
+   "mode": "thumb"
   },
   {
    "name": "sub_0204B800",
@@ -8927,7 +14022,8 @@
    "name": "sub_0204B864",
    "ram": 33863780,
    "size": 20,
-   "status": "matched:main/g_clact"
+   "status": "matched:main/g_clact",
+   "mode": "thumb"
   },
   {
    "name": "sub_0204B878",
@@ -8946,13 +14042,15 @@
    "name": "sub_0204B8A0",
    "ram": 33863840,
    "size": 36,
-   "status": "matched:main/g_clact"
+   "status": "matched:main/g_clact",
+   "mode": "thumb"
   },
   {
    "name": "sub_0204B8C4",
    "ram": 33863876,
    "size": 16,
-   "status": "matched:main/g_clact"
+   "status": "matched:main/g_clact",
+   "mode": "thumb"
   },
   {
    "name": "sub_0204B8D4",
@@ -8964,19 +14062,22 @@
    "name": "sub_0204B8F4",
    "ram": 33863924,
    "size": 20,
-   "status": "matched:main/g_clact"
+   "status": "matched:main/g_clact",
+   "mode": "thumb"
   },
   {
    "name": "sub_0204B908",
    "ram": 33863944,
    "size": 16,
-   "status": "matched:main/g_clact"
+   "status": "matched:main/g_clact",
+   "mode": "thumb"
   },
   {
    "name": "sub_0204B918",
    "ram": 33863960,
    "size": 20,
-   "status": "matched:main/g_clact"
+   "status": "matched:main/g_clact",
+   "mode": "thumb"
   },
   {
    "name": "sub_0204B92C",
@@ -8989,7 +14090,8 @@
    "name": "sub_0204B944",
    "ram": 33864004,
    "size": 16,
-   "status": "matched:main/g_clact"
+   "status": "matched:main/g_clact",
+   "mode": "thumb"
   },
   {
    "name": "sub_0204B954",
@@ -9008,37 +14110,43 @@
    "name": "sub_0204B974",
    "ram": 33864052,
    "size": 24,
-   "status": "matched:main/g_clact"
+   "status": "matched:main/g_clact",
+   "mode": "thumb"
   },
   {
    "name": "sub_0204B98C",
    "ram": 33864076,
    "size": 20,
-   "status": "matched:main/g_clact"
+   "status": "matched:main/g_clact",
+   "mode": "thumb"
   },
   {
    "name": "sub_0204B9A0",
    "ram": 33864096,
    "size": 36,
-   "status": "matched:main/g_clact"
+   "status": "matched:main/g_clact",
+   "mode": "thumb"
   },
   {
    "name": "sub_0204B9C4",
    "ram": 33864132,
    "size": 60,
-   "status": "matched:main/g_clact"
+   "status": "matched:main/g_clact",
+   "mode": "thumb"
   },
   {
    "name": "sub_0204BA00",
    "ram": 33864192,
    "size": 16,
-   "status": "matched:main/g_clact"
+   "status": "matched:main/g_clact",
+   "mode": "thumb"
   },
   {
    "name": "sub_0204BA10",
    "ram": 33864208,
    "size": 16,
-   "status": "matched:main/g_clact"
+   "status": "matched:main/g_clact",
+   "mode": "thumb"
   },
   {
    "name": "sub_0204BA20",
@@ -9895,20 +15003,238 @@
   {
    "name": "sub_02052DC8",
    "ram": 33893832,
-   "size": 9014,
+   "size": 512,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02052FC8",
+   "ram": 33894344,
+   "size": 124,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02053044",
+   "ram": 33894468,
+   "size": 232,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205312C",
+   "ram": 33894700,
+   "size": 236,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02053218",
+   "ram": 33894936,
+   "size": 2120,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02053A60",
+   "ram": 33897056,
+   "size": 720,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02053D30",
+   "ram": 33897776,
+   "size": 5070,
    "status": "unclaimed"
   },
   {
    "name": "sub_020550FE",
    "ram": 33902846,
-   "size": 16982,
+   "size": 5510,
    "status": "unclaimed"
+  },
+  {
+   "name": "sub_02056684",
+   "ram": 33908356,
+   "size": 800,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020569A4",
+   "ram": 33909156,
+   "size": 6492,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02058300",
+   "ram": 33915648,
+   "size": 128,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02058380",
+   "ram": 33915776,
+   "size": 76,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_020583CC",
+   "ram": 33915852,
+   "size": 1540,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_020589D0",
+   "ram": 33917392,
+   "size": 952,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02058D88",
+   "ram": 33918344,
+   "size": 556,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02058FB4",
+   "ram": 33918900,
+   "size": 84,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02059008",
+   "ram": 33918984,
+   "size": 124,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02059084",
+   "ram": 33919108,
+   "size": 32,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_020590A4",
+   "ram": 33919140,
+   "size": 8,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_020590AC",
+   "ram": 33919148,
+   "size": 20,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_020590C0",
+   "ram": 33919168,
+   "size": 8,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_020590C8",
+   "ram": 33919176,
+   "size": 40,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020590F0",
+   "ram": 33919216,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020590F8",
+   "ram": 33919224,
+   "size": 8,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02059100",
+   "ram": 33919232,
+   "size": 28,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_0205911C",
+   "ram": 33919260,
+   "size": 212,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_020591F0",
+   "ram": 33919472,
+   "size": 224,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_020592D0",
+   "ram": 33919696,
+   "size": 132,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "sub_02059354",
    "ram": 33919828,
-   "size": 900,
+   "size": 32,
    "status": "unclaimed"
+  },
+  {
+   "name": "sub_02059374",
+   "ram": 33919860,
+   "size": 68,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020593B8",
+   "ram": 33919928,
+   "size": 80,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02059408",
+   "ram": 33920008,
+   "size": 256,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02059508",
+   "ram": 33920264,
+   "size": 128,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02059588",
+   "ram": 33920392,
+   "size": 296,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020596B0",
+   "ram": 33920688,
+   "size": 24,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_020596C8",
+   "ram": 33920712,
+   "size": 16,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "sub_020596D8",
@@ -9949,14 +15275,186 @@
   {
    "name": "sub_02059A5C",
    "ram": 33921628,
-   "size": 1728,
+   "size": 1272,
    "status": "unclaimed"
+  },
+  {
+   "name": "sub_02059F54",
+   "ram": 33922900,
+   "size": 84,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02059FA8",
+   "ram": 33922984,
+   "size": 356,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205A10C",
+   "ram": 33923340,
+   "size": 16,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "OS_SetThreadDestructorStack",
    "ram": 33923356,
    "size": 16,
    "status": "matched_sdk"
+  },
+  {
+   "name": "sub_0205A158",
+   "ram": 33923416,
+   "size": 20,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205A16C",
+   "ram": 33923436,
+   "size": 68,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205A1B0",
+   "ram": 33923504,
+   "size": 792,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205A4C8",
+   "ram": 33924296,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205A4D4",
+   "ram": 33924308,
+   "size": 132,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205A558",
+   "ram": 33924440,
+   "size": 64,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205A598",
+   "ram": 33924504,
+   "size": 184,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205A650",
+   "ram": 33924688,
+   "size": 212,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205A724",
+   "ram": 33924900,
+   "size": 472,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205A8FC",
+   "ram": 33925372,
+   "size": 600,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205AB54",
+   "ram": 33925972,
+   "size": 1680,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205B1E4",
+   "ram": 33927652,
+   "size": 3052,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_0205BDD0",
+   "ram": 33930704,
+   "size": 1092,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_0205C214",
+   "ram": 33931796,
+   "size": 176,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_0205C2C4",
+   "ram": 33931972,
+   "size": 32,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205C2E4",
+   "ram": 33932004,
+   "size": 36,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205C308",
+   "ram": 33932040,
+   "size": 20,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_0205C31C",
+   "ram": 33932060,
+   "size": 148,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205C3B0",
+   "ram": 33932208,
+   "size": 280,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205C4C8",
+   "ram": 33932488,
+   "size": 1048,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205C8E0",
+   "ram": 33933536,
+   "size": 972,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_0205CCAC",
+   "ram": 33934508,
+   "size": 472,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_0205CE84",
+   "ram": 33934980,
+   "size": 172,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_0205CF30",
+   "ram": 33935152,
+   "size": 224,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "sub_0205D010",
@@ -9973,7 +15471,227 @@
   {
    "name": "sub_0205D074",
    "ram": 33935476,
-   "size": 9684,
+   "size": 260,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205D178",
+   "ram": 33935736,
+   "size": 68,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_0205D1BC",
+   "ram": 33935804,
+   "size": 8,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_0205D1C4",
+   "ram": 33935812,
+   "size": 32,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_0205D1E4",
+   "ram": 33935844,
+   "size": 308,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_0205D318",
+   "ram": 33936152,
+   "size": 344,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205D470",
+   "ram": 33936496,
+   "size": 104,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205D4D8",
+   "ram": 33936600,
+   "size": 176,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205D588",
+   "ram": 33936776,
+   "size": 704,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205D848",
+   "ram": 33937480,
+   "size": 140,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205D8D4",
+   "ram": 33937620,
+   "size": 1748,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205DFA8",
+   "ram": 33939368,
+   "size": 360,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205E110",
+   "ram": 33939728,
+   "size": 108,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205E17C",
+   "ram": 33939836,
+   "size": 84,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205E1D0",
+   "ram": 33939920,
+   "size": 204,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205E29C",
+   "ram": 33940124,
+   "size": 424,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205E444",
+   "ram": 33940548,
+   "size": 332,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205E590",
+   "ram": 33940880,
+   "size": 188,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205E64C",
+   "ram": 33941068,
+   "size": 324,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205E790",
+   "ram": 33941392,
+   "size": 136,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205E818",
+   "ram": 33941528,
+   "size": 164,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205E8BC",
+   "ram": 33941692,
+   "size": 152,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205E954",
+   "ram": 33941844,
+   "size": 476,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205EB30",
+   "ram": 33942320,
+   "size": 252,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205EC2C",
+   "ram": 33942572,
+   "size": 508,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205EE28",
+   "ram": 33943080,
+   "size": 112,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205EE98",
+   "ram": 33943192,
+   "size": 700,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205F154",
+   "ram": 33943892,
+   "size": 100,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205F1B8",
+   "ram": 33943992,
+   "size": 224,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205F298",
+   "ram": 33944216,
+   "size": 44,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205F2C4",
+   "ram": 33944260,
+   "size": 152,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205F35C",
+   "ram": 33944412,
+   "size": 40,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205F384",
+   "ram": 33944452,
+   "size": 44,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205F3B0",
+   "ram": 33944496,
+   "size": 340,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205F504",
+   "ram": 33944836,
+   "size": 84,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205F558",
+   "ram": 33944920,
+   "size": 84,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0205F5AC",
+   "ram": 33945004,
+   "size": 156,
    "status": "unclaimed"
   },
   {
@@ -10183,8 +15901,14 @@
   {
    "name": "AllocFromHead",
    "ram": 33950216,
-   "size": 180,
+   "size": 178,
    "status": "matched_sdk"
+  },
+  {
+   "name": "sub_02060ABA",
+   "ram": 33950394,
+   "size": 2,
+   "status": "unclaimed"
   },
   {
    "name": "AllocFromTail",
@@ -10496,7 +16220,19 @@
   {
    "name": "sub_02061D0C",
    "ram": 33955084,
-   "size": 316,
+   "size": 228,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02061DF0",
+   "ram": 33955312,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02061DFC",
+   "ram": 33955324,
+   "size": 76,
    "status": "unclaimed"
   },
   {
@@ -10508,8 +16244,15 @@
   {
    "name": "sub_02061EA4",
    "ram": 33955492,
-   "size": 340,
+   "size": 20,
    "status": "unclaimed"
+  },
+  {
+   "name": "sub_02061EB8",
+   "ram": 33955512,
+   "size": 320,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "sub_02061FF8",
@@ -10532,8 +16275,15 @@
   {
    "name": "sub_020621FC",
    "ram": 33956348,
-   "size": 632,
+   "size": 116,
    "status": "unclaimed"
+  },
+  {
+   "name": "sub_02062270",
+   "ram": 33956464,
+   "size": 516,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "sub_02062474",
@@ -10544,8 +16294,15 @@
   {
    "name": "sub_02062594",
    "ram": 33957268,
-   "size": 160,
+   "size": 68,
    "status": "unclaimed"
+  },
+  {
+   "name": "sub_020625D8",
+   "ram": 33957336,
+   "size": 92,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "sub_02062634",
@@ -10562,14 +16319,28 @@
   {
    "name": "sub_0206267C",
    "ram": 33957500,
-   "size": 348,
+   "size": 12,
    "status": "unclaimed"
+  },
+  {
+   "name": "sub_02062688",
+   "ram": 33957512,
+   "size": 336,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "sub_020627D8",
    "ram": 33957848,
-   "size": 56,
+   "size": 24,
    "status": "unclaimed"
+  },
+  {
+   "name": "sub_020627F0",
+   "ram": 33957872,
+   "size": 32,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "sub_02062810",
@@ -10598,8 +16369,21 @@
   {
    "name": "sub_02062920",
    "ram": 33958176,
-   "size": 200,
+   "size": 60,
    "status": "unclaimed"
+  },
+  {
+   "name": "sub_0206295C",
+   "ram": 33958236,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0206296C",
+   "ram": 33958252,
+   "size": 124,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "sub_020629E8",
@@ -10681,6 +16465,13 @@
    "status": "matched:main/c_g2d_animation"
   },
   {
+   "name": "sub_02062D4C",
+   "ram": 33959244,
+   "size": 436,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
    "name": "sub_02062F00",
    "ram": 33959680,
    "size": 28,
@@ -10693,10 +16484,24 @@
    "status": "matched:main/c_g2d_animation"
   },
   {
+   "name": "sub_02062F38",
+   "ram": 33959736,
+   "size": 64,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
    "name": "sub_02062F78",
    "ram": 33959800,
    "size": 24,
    "status": "matched:main/c_g2d_animation"
+  },
+  {
+   "name": "sub_02062F90",
+   "ram": 33959824,
+   "size": 96,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "sub_02062FF0",
@@ -10755,14 +16560,28 @@
   {
    "name": "sub_02063640",
    "ram": 33961536,
-   "size": 336,
+   "size": 324,
    "status": "unclaimed"
+  },
+  {
+   "name": "sub_02063784",
+   "ram": 33961860,
+   "size": 12,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "NNSi_G2dInitializeVRamLocation",
    "ram": 33961872,
    "size": 28,
    "status": "matched_sdk"
+  },
+  {
+   "name": "sub_020637AC",
+   "ram": 33961900,
+   "size": 8,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "sub_020637B4",
@@ -10833,8 +16652,36 @@
   {
    "name": "sub_020640B0",
    "ram": 33964208,
-   "size": 144,
+   "size": 36,
    "status": "matched:main/c_g2d_image"
+  },
+  {
+   "name": "sub_020640D4",
+   "ram": 33964244,
+   "size": 8,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_020640DC",
+   "ram": 33964252,
+   "size": 36,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02064100",
+   "ram": 33964288,
+   "size": 32,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02064120",
+   "ram": 33964320,
+   "size": 32,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "NNSi_G2dSrtcInitControl",
@@ -10847,6 +16694,20 @@
    "ram": 33964368,
    "size": 40,
    "status": "matched_sdk"
+  },
+  {
+   "name": "sub_02064178",
+   "ram": 33964408,
+   "size": 36,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_0206419C",
+   "ram": 33964444,
+   "size": 240,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "sub_0206428C",
@@ -10881,8 +16742,15 @@
   {
    "name": "sub_020643A4",
    "ram": 33964964,
-   "size": 676,
+   "size": 40,
    "status": "unclaimed"
+  },
+  {
+   "name": "sub_020643CC",
+   "ram": 33965004,
+   "size": 636,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "GetMCBankNumCellAnimRequired_",
@@ -10919,6 +16787,12 @@
    "ram": 33966388,
    "size": 160,
    "status": "matched_sdk"
+  },
+  {
+   "name": "sub_020649D4",
+   "ram": 33966548,
+   "size": 572,
+   "status": "unclaimed"
   },
   {
    "name": "NNS_G2dResetMCCellAnimationAll",
@@ -10959,8 +16833,22 @@
   {
    "name": "sub_020653A4",
    "ram": 33969060,
-   "size": 1584,
+   "size": 148,
    "status": "unclaimed"
+  },
+  {
+   "name": "sub_02065438",
+   "ram": 33969208,
+   "size": 1088,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02065878",
+   "ram": 33970296,
+   "size": 348,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "sub_020659D4",
@@ -11007,14 +16895,35 @@
   {
    "name": "sub_02065D4C",
    "ram": 33971532,
-   "size": 820,
+   "size": 104,
    "status": "unclaimed"
+  },
+  {
+   "name": "sub_02065DB4",
+   "ram": 33971636,
+   "size": 716,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "sub_02066080",
    "ram": 33972352,
-   "size": 848,
+   "size": 220,
    "status": "unclaimed"
+  },
+  {
+   "name": "sub_0206615C",
+   "ram": 33972572,
+   "size": 548,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02066380",
+   "ram": 33973120,
+   "size": 80,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "sub_020663D0",
@@ -11031,20 +16940,41 @@
   {
    "name": "sub_02066620",
    "ram": 33973792,
-   "size": 296,
+   "size": 288,
    "status": "unclaimed"
+  },
+  {
+   "name": "sub_02066740",
+   "ram": 33974080,
+   "size": 8,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "sub_02066748",
    "ram": 33974088,
-   "size": 304,
+   "size": 12,
    "status": "unclaimed"
+  },
+  {
+   "name": "sub_02066754",
+   "ram": 33974100,
+   "size": 292,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "NNSi_G2dGetCellTransferState",
    "ram": 33974392,
    "size": 24,
    "status": "matched_sdk"
+  },
+  {
+   "name": "sub_02066890",
+   "ram": 33974416,
+   "size": 164,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "sub_02066934",
@@ -11095,15 +17025,67 @@
    "status": "matched_sdk"
   },
   {
+   "name": "sub_02066E20",
+   "ram": 33975840,
+   "size": 1312,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02067340",
+   "ram": 33977152,
+   "size": 1624,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02067998",
+   "ram": 33978776,
+   "size": 200,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02067A60",
+   "ram": 33978976,
+   "size": 76,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02067AAC",
+   "ram": 33979052,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
    "name": "sub_02067AB8",
    "ram": 33979064,
-   "size": 112,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02067AC0",
+   "ram": 33979072,
+   "size": 104,
    "status": "unclaimed"
   },
   {
    "name": "sub_02067B28",
    "ram": 33979176,
-   "size": 40,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02067B40",
+   "ram": 33979200,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02067B48",
+   "ram": 33979208,
+   "size": 8,
    "status": "unclaimed"
   },
   {
@@ -11121,7 +17103,13 @@
   {
    "name": "sub_02067B78",
    "ram": 33979256,
-   "size": 312,
+   "size": 44,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02067BA4",
+   "ram": 33979300,
+   "size": 268,
    "status": "unclaimed"
   },
   {
@@ -11139,7 +17127,13 @@
   {
    "name": "sub_02067D14",
    "ram": 33979668,
-   "size": 412,
+   "size": 180,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02067DC8",
+   "ram": 33979848,
+   "size": 232,
    "status": "unclaimed"
   },
   {
@@ -11161,9 +17155,53 @@
    "status": "matched_sdk"
   },
   {
+   "name": "sub_02067FE4",
+   "ram": 33980388,
+   "size": 76,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02068030",
+   "ram": 33980464,
+   "size": 172,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020680DC",
+   "ram": 33980636,
+   "size": 116,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02068150",
+   "ram": 33980752,
+   "size": 148,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020681E4",
+   "ram": 33980900,
+   "size": 248,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
    "name": "sub_020682DC",
    "ram": 33981148,
-   "size": 1852,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020682F8",
+   "ram": 33981176,
+   "size": 312,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02068430",
+   "ram": 33981488,
+   "size": 1512,
    "status": "unclaimed"
   },
   {
@@ -11175,7 +17213,20 @@
   {
    "name": "sub_02068A68",
    "ram": 33983080,
-   "size": 1372,
+   "size": 1040,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02068E78",
+   "ram": 33984120,
+   "size": 40,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02068EA0",
+   "ram": 33984160,
+   "size": 292,
    "status": "unclaimed"
   },
   {
@@ -11187,13 +17238,44 @@
   {
    "name": "sub_02069128",
    "ram": 33984808,
-   "size": 2000,
+   "size": 184,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020691E0",
+   "ram": 33984992,
+   "size": 760,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020694D8",
+   "ram": 33985752,
+   "size": 180,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0206958C",
+   "ram": 33985932,
+   "size": 876,
    "status": "unclaimed"
   },
   {
    "name": "sub_020698F8",
    "ram": 33986808,
-   "size": 796,
+   "size": 460,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02069AC4",
+   "ram": 33987268,
+   "size": 220,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_02069BA0",
+   "ram": 33987488,
+   "size": 116,
    "status": "unclaimed"
   },
   {
@@ -11383,6 +17465,12 @@
    "status": "matched_sdk"
   },
   {
+   "name": "sub_0206CABE",
+   "ram": 33999550,
+   "size": 4226,
+   "status": "unclaimed"
+  },
+  {
    "name": "NNS_G3dGeSetBuffer",
    "ram": 34003776,
    "size": 32,
@@ -11515,6 +17603,13 @@
    "status": "matched_sdk"
   },
   {
+   "name": "sub_0206EBB8",
+   "ram": 34007992,
+   "size": 152,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
    "name": "getMdlScale_",
    "ram": 34008144,
    "size": 144,
@@ -11529,8 +17624,57 @@
   {
    "name": "sub_0206EE60",
    "ram": 34008672,
-   "size": 5140,
+   "size": 948,
    "status": "unclaimed"
+  },
+  {
+   "name": "sub_0206F214",
+   "ram": 34009620,
+   "size": 344,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_0206F36C",
+   "ram": 34009964,
+   "size": 348,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_0206F4C8",
+   "ram": 34010312,
+   "size": 488,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_0206F6B0",
+   "ram": 34010800,
+   "size": 404,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_0206F844",
+   "ram": 34011204,
+   "size": 1048,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_0206FC5C",
+   "ram": 34012252,
+   "size": 836,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_0206FFA0",
+   "ram": 34013088,
+   "size": 724,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "GetMatColAnmuAlphaValue_",
@@ -11559,7 +17703,13 @@
   {
    "name": "FUN_02072758",
    "ram": 34023256,
-   "size": 60,
+   "size": 48,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02072788",
+   "ram": 34023304,
+   "size": 12,
    "status": "unclaimed"
   },
   {
@@ -11757,8 +17907,15 @@
   {
    "name": "sub_02072FA8",
    "ram": 34025384,
-   "size": 64,
+   "size": 32,
    "status": "unclaimed"
+  },
+  {
+   "name": "sub_02072FC8",
+   "ram": 34025416,
+   "size": 32,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "sub_02072FE8",
@@ -11775,7 +17932,19 @@
   {
    "name": "sub_02073038",
    "ram": 34025528,
-   "size": 96,
+   "size": 32,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02073058",
+   "ram": 34025560,
+   "size": 32,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02073078",
+   "ram": 34025592,
+   "size": 32,
    "status": "unclaimed"
   },
   {
@@ -12547,6 +18716,13 @@
    "status": "matched_sdk"
   },
   {
+   "name": "sub_020762F4",
+   "ram": 34038516,
+   "size": 80,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
    "name": "CARDi_ICInvalidateSmart",
    "ram": 34038596,
    "size": 28,
@@ -12585,8 +18761,15 @@
   {
    "name": "FUN_02076B2C",
    "ram": 34040620,
-   "size": 84,
+   "size": 64,
    "status": "unclaimed"
+  },
+  {
+   "name": "sub_02076B6C",
+   "ram": 34040684,
+   "size": 20,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "FUN_02076B80",
@@ -12597,8 +18780,15 @@
   {
    "name": "FUN_02076B8C",
    "ram": 34040716,
-   "size": 48,
+   "size": 12,
    "status": "unclaimed"
+  },
+  {
+   "name": "sub_02076B98",
+   "ram": 34040728,
+   "size": 36,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "CARDi_SetRomOp",
@@ -12647,6 +18837,13 @@
    "ram": 34041420,
    "size": 48,
    "status": "matched_sdk"
+  },
+  {
+   "name": "sub_02077008",
+   "ram": 34041864,
+   "size": 124,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "sub_02077084",
@@ -13929,7 +20126,67 @@
   {
    "name": "sub_0207DA8C",
    "ram": 34069132,
-   "size": 1236,
+   "size": 108,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0207DAF8",
+   "ram": 34069240,
+   "size": 36,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_0207DB1C",
+   "ram": 34069276,
+   "size": 152,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_0207DBB4",
+   "ram": 34069428,
+   "size": 228,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_0207DC98",
+   "ram": 34069656,
+   "size": 48,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_0207DCC8",
+   "ram": 34069704,
+   "size": 132,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_0207DD4C",
+   "ram": 34069836,
+   "size": 228,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_0207DE30",
+   "ram": 34070064,
+   "size": 44,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0207DE5C",
+   "ram": 34070108,
+   "size": 112,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0207DECC",
+   "ram": 34070220,
+   "size": 148,
    "status": "unclaimed"
   },
   {
@@ -14283,8 +20540,22 @@
   {
    "name": "FUN_020801F8",
    "ram": 34079224,
-   "size": 1172,
+   "size": 156,
    "status": "unclaimed"
+  },
+  {
+   "name": "sub_02080294",
+   "ram": 34079380,
+   "size": 376,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_0208040C",
+   "ram": 34079756,
+   "size": 640,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "sub_0208068C",
@@ -14409,7 +20680,13 @@
   {
    "name": "sub_02080C34",
    "ram": 34081844,
-   "size": 48,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02080C44",
+   "ram": 34081860,
+   "size": 32,
    "status": "unclaimed"
   },
   {
@@ -14895,7 +21172,13 @@
   {
    "name": "sub_02084330",
    "ram": 34095920,
-   "size": 132,
+   "size": 46,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0208435E",
+   "ram": 34095966,
+   "size": 86,
    "status": "unclaimed"
   },
   {
@@ -15087,7 +21370,13 @@
   {
    "name": "sub_02084F68",
    "ram": 34099048,
-   "size": 64,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02084F80",
+   "ram": 34099072,
+   "size": 40,
    "status": "unclaimed"
   },
   {
@@ -15613,6 +21902,12 @@
    "status": "matched_sdk"
   },
   {
+   "name": "sub_02086C70",
+   "ram": 34106480,
+   "size": 76,
+   "status": "unclaimed"
+  },
+  {
    "name": "OS_IsOnVram",
    "ram": 34106556,
    "size": 36,
@@ -15993,8 +22288,15 @@
   {
    "name": "FUN_02087B14",
    "ram": 34110228,
-   "size": 100,
+   "size": 12,
    "status": "matched:main/c_os_systemwork"
+  },
+  {
+   "name": "sub_02087B20",
+   "ram": 34110240,
+   "size": 88,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "OS_InitReset",
@@ -16025,6 +22327,18 @@
    "ram": 34110728,
    "size": 20,
    "status": "matched_sdk"
+  },
+  {
+   "name": "sub_02087DC4",
+   "ram": 34110916,
+   "size": 192,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02087E84",
+   "ram": 34111108,
+   "size": 28,
+   "status": "unclaimed"
   },
   {
    "name": "sub_02087EA0",
@@ -17140,13 +23454,262 @@
   {
    "name": "FUN_0208CC78",
    "ram": 34131064,
-   "size": 468,
+   "size": 284,
    "status": "unclaimed"
+  },
+  {
+   "name": "sub_0208CD94",
+   "ram": 34131348,
+   "size": 184,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "FUN_0208CE4C",
    "ram": 34131532,
-   "size": 16552,
+   "size": 272,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0208CF5C",
+   "ram": 34131804,
+   "size": 40,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0208CF84",
+   "ram": 34131844,
+   "size": 84,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0208CFD8",
+   "ram": 34131928,
+   "size": 1840,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_0208D708",
+   "ram": 34133768,
+   "size": 44,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0208D734",
+   "ram": 34133812,
+   "size": 84,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0208D788",
+   "ram": 34133896,
+   "size": 88,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0208D7E0",
+   "ram": 34133984,
+   "size": 84,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_0208D834",
+   "ram": 34134068,
+   "size": 2012,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0208E010",
+   "ram": 34136080,
+   "size": 40,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0208E038",
+   "ram": 34136120,
+   "size": 640,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0208E2B8",
+   "ram": 34136760,
+   "size": 112,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0208E328",
+   "ram": 34136872,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0208E340",
+   "ram": 34136896,
+   "size": 96,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0208E3A0",
+   "ram": 34136992,
+   "size": 172,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0208E44C",
+   "ram": 34137164,
+   "size": 112,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0208E4BC",
+   "ram": 34137276,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0208E4CC",
+   "ram": 34137292,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0208E4E8",
+   "ram": 34137320,
+   "size": 68,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0208E52C",
+   "ram": 34137388,
+   "size": 1144,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0208E9A4",
+   "ram": 34138532,
+   "size": 72,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0208E9EC",
+   "ram": 34138604,
+   "size": 48,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0208EA1C",
+   "ram": 34138652,
+   "size": 48,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0208EA4C",
+   "ram": 34138700,
+   "size": 52,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0208EA80",
+   "ram": 34138752,
+   "size": 32,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0208EAA0",
+   "ram": 34138784,
+   "size": 108,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0208EB0C",
+   "ram": 34138892,
+   "size": 296,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0208EC34",
+   "ram": 34139188,
+   "size": 112,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0208ECA4",
+   "ram": 34139300,
+   "size": 892,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0208F020",
+   "ram": 34140192,
+   "size": 1368,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0208F578",
+   "ram": 34141560,
+   "size": 1200,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0208FA28",
+   "ram": 34142760,
+   "size": 652,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0208FCB4",
+   "ram": 34143412,
+   "size": 920,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209004C",
+   "ram": 34144332,
+   "size": 610,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020902AE",
+   "ram": 34144942,
+   "size": 1610,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020908F8",
+   "ram": 34146552,
+   "size": 208,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020909C8",
+   "ram": 34146760,
+   "size": 258,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02090ACA",
+   "ram": 34147018,
+   "size": 162,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02090B6C",
+   "ram": 34147180,
+   "size": 860,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02090EC8",
+   "ram": 34148040,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02090ED8",
+   "ram": 34148056,
+   "size": 28,
    "status": "unclaimed"
   },
   {
@@ -17223,21 +23786,612 @@
    "mode": "arm"
   },
   {
+   "name": "sub_02091374",
+   "ram": 34149236,
+   "size": 72,
+   "status": "unclaimed"
+  },
+  {
    "name": "sub_020913BC",
    "ram": 34149308,
    "size": 20,
    "status": "matched:main/c_env_system"
   },
   {
+   "name": "sub_020913D0",
+   "ram": 34149328,
+   "size": 24,
+   "status": "matched:main/msl_alloc"
+  },
+  {
+   "name": "sub_020913E8",
+   "ram": 34149352,
+   "size": 180,
+   "status": "matched:main/msl_alloc"
+  },
+  {
+   "name": "sub_0209149C",
+   "ram": 34149532,
+   "size": 136,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02091524",
+   "ram": 34149668,
+   "size": 100,
+   "status": "unclaimed"
+  },
+  {
    "name": "FUN_02091588",
    "ram": 34149768,
-   "size": 43652,
+   "size": 12,
    "status": "unclaimed"
+  },
+  {
+   "name": "sub_02091594",
+   "ram": 34149780,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02091598",
+   "ram": 34149784,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209159C",
+   "ram": 34149788,
+   "size": 40,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020915C4",
+   "ram": 34149828,
+   "size": 140,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02091650",
+   "ram": 34149968,
+   "size": 388,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020917D4",
+   "ram": 34150356,
+   "size": 180,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02091888",
+   "ram": 34150536,
+   "size": 724,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02091B5C",
+   "ram": 34151260,
+   "size": 352,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02091CBC",
+   "ram": 34151612,
+   "size": 392,
+   "status": "matched:main/msl_file_pos"
+  },
+  {
+   "name": "sub_02091E44",
+   "ram": 34152004,
+   "size": 448,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02092004",
+   "ram": 34152452,
+   "size": 250,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020920FE",
+   "ram": 34152702,
+   "size": 2,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02092100",
+   "ram": 34152704,
+   "size": 62,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209213E",
+   "ram": 34152766,
+   "size": 6,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02092144",
+   "ram": 34152772,
+   "size": 148,
+   "status": "matched:main/msl_math"
+  },
+  {
+   "name": "sub_020921D8",
+   "ram": 34152920,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020921F4",
+   "ram": 34152948,
+   "size": 168,
+   "status": "matched:main/msl_math"
+  },
+  {
+   "name": "sub_0209229C",
+   "ram": 34153116,
+   "size": 20,
+   "status": "matched:main/msl_mbstring"
+  },
+  {
+   "name": "sub_020922B0",
+   "ram": 34153136,
+   "size": 28,
+   "status": "matched:main/msl_mbstring"
+  },
+  {
+   "name": "sub_020922CC",
+   "ram": 34153164,
+   "size": 120,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02092344",
+   "ram": 34153284,
+   "size": 108,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020923B0",
+   "ram": 34153392,
+   "size": 20,
+   "status": "matched:main/msl_mem"
+  },
+  {
+   "name": "sub_020923C4",
+   "ram": 34153412,
+   "size": 44,
+   "status": "matched:main/msl_mem"
+  },
+  {
+   "name": "sub_020923F0",
+   "ram": 34153456,
+   "size": 64,
+   "status": "matched:main/msl_mem"
+  },
+  {
+   "name": "sub_02092430",
+   "ram": 34153520,
+   "size": 172,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020924DC",
+   "ram": 34153692,
+   "size": 1292,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020929E8",
+   "ram": 34154984,
+   "size": 592,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02092C38",
+   "ram": 34155576,
+   "size": 724,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02092F0C",
+   "ram": 34156300,
+   "size": 1196,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020933B8",
+   "ram": 34157496,
+   "size": 276,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020934CC",
+   "ram": 34157772,
+   "size": 1808,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02093BDC",
+   "ram": 34159580,
+   "size": 1088,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209401C",
+   "ram": 34160668,
+   "size": 1132,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02094488",
+   "ram": 34161800,
+   "size": 68,
+   "status": "matched:main/msl_printf"
+  },
+  {
+   "name": "sub_020944CC",
+   "ram": 34161868,
+   "size": 456,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02094694",
+   "ram": 34162324,
+   "size": 52,
+   "status": "matched:main/msl_rand"
+  },
+  {
+   "name": "sub_020946C8",
+   "ram": 34162376,
+   "size": 136,
+   "status": "matched:main/msl_rand"
+  },
+  {
+   "name": "sub_02094750",
+   "ram": 34162512,
+   "size": 40,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02094778",
+   "ram": 34162552,
+   "size": 4,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209477C",
+   "ram": 34162556,
+   "size": 28,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02094798",
+   "ram": 34162584,
+   "size": 200,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02094860",
+   "ram": 34162784,
+   "size": 128,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020948E0",
+   "ram": 34162912,
+   "size": 276,
+   "status": "matched:main/msl_string"
+  },
+  {
+   "name": "sub_020949F4",
+   "ram": 34163188,
+   "size": 52,
+   "status": "matched:main/msl_string"
+  },
+  {
+   "name": "sub_02094A28",
+   "ram": 34163240,
+   "size": 248,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02094B20",
+   "ram": 34163488,
+   "size": 108,
+   "status": "matched:main/msl_string"
+  },
+  {
+   "name": "sub_02094B8C",
+   "ram": 34163596,
+   "size": 4016,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02095B3C",
+   "ram": 34167612,
+   "size": 1224,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02096004",
+   "ram": 34168836,
+   "size": 1284,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02096508",
+   "ram": 34170120,
+   "size": 112,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02096578",
+   "ram": 34170232,
+   "size": 28,
+   "status": "matched:main/msl_wstring"
+  },
+  {
+   "name": "sub_02096594",
+   "ram": 34170260,
+   "size": 32,
+   "status": "matched:main/msl_wstring"
+  },
+  {
+   "name": "sub_020965B4",
+   "ram": 34170292,
+   "size": 108,
+   "status": "matched:main/msl_fp_ansi"
+  },
+  {
+   "name": "sub_02096620",
+   "ram": 34170400,
+   "size": 80,
+   "status": "matched:main/msl_fp_ansi"
+  },
+  {
+   "name": "sub_02096670",
+   "ram": 34170480,
+   "size": 64,
+   "status": "matched:main/msl_fp_ansi"
+  },
+  {
+   "name": "sub_020966B0",
+   "ram": 34170544,
+   "size": 196,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02096774",
+   "ram": 34170740,
+   "size": 384,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020968F4",
+   "ram": 34171124,
+   "size": 156,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02096990",
+   "ram": 34171280,
+   "size": 896,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02096D10",
+   "ram": 34172176,
+   "size": 224,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02096DF0",
+   "ram": 34172400,
+   "size": 224,
+   "status": "matched:main/msl_fp_ansi"
+  },
+  {
+   "name": "sub_02096ED0",
+   "ram": 34172624,
+   "size": 672,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02097170",
+   "ram": 34173296,
+   "size": 384,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020972F0",
+   "ram": 34173680,
+   "size": 172,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209739C",
+   "ram": 34173852,
+   "size": 1524,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02097990",
+   "ram": 34175376,
+   "size": 4532,
+   "status": "matched:main/msl_math"
+  },
+  {
+   "name": "sub_02098B44",
+   "ram": 34179908,
+   "size": 1760,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_02099224",
+   "ram": 34181668,
+   "size": 792,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209953C",
+   "ram": 34182460,
+   "size": 2992,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209A0EC",
+   "ram": 34185452,
+   "size": 636,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209A368",
+   "ram": 34186088,
+   "size": 412,
+   "status": "matched:main/msl_copysign"
+  },
+  {
+   "name": "sub_0209A504",
+   "ram": 34186500,
+   "size": 32,
+   "status": "matched:main/msl_fabs"
+  },
+  {
+   "name": "sub_0209A524",
+   "ram": 34186532,
+   "size": 452,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209A6E8",
+   "ram": 34186984,
+   "size": 192,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209A7A8",
+   "ram": 34187176,
+   "size": 984,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209AB80",
+   "ram": 34188160,
+   "size": 132,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209AC04",
+   "ram": 34188292,
+   "size": 816,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209AF34",
+   "ram": 34189108,
+   "size": 948,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209B2E8",
+   "ram": 34190056,
+   "size": 1128,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209B750",
+   "ram": 34191184,
+   "size": 64,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209B790",
+   "ram": 34191248,
+   "size": 60,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209B7CC",
+   "ram": 34191308,
+   "size": 152,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209B864",
+   "ram": 34191460,
+   "size": 152,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209B8FC",
+   "ram": 34191612,
+   "size": 164,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209B9A0",
+   "ram": 34191776,
+   "size": 156,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209BA3C",
+   "ram": 34191932,
+   "size": 140,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209BAC8",
+   "ram": 34192072,
+   "size": 624,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209BD38",
+   "ram": 34192696,
+   "size": 132,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209BDBC",
+   "ram": 34192828,
+   "size": 72,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_0209BE04",
+   "ram": 34192900,
+   "size": 72,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209BE4C",
+   "ram": 34192972,
+   "size": 16,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_0209BE5C",
+   "ram": 34192988,
+   "size": 432,
+   "status": "unclaimed",
+   "mode": "arm"
   },
   {
    "name": "FUN_0209C00C",
    "ram": 34193420,
-   "size": 72,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209C018",
+   "ram": 34193432,
+   "size": 60,
    "status": "unclaimed"
   },
   {
@@ -17273,7 +24427,31 @@
   {
    "name": "sub_0209C494",
    "ram": 34194580,
-   "size": 1224,
+   "size": 116,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209C508",
+   "ram": 34194696,
+   "size": 76,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209C554",
+   "ram": 34194772,
+   "size": 140,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209C5E0",
+   "ram": 34194912,
+   "size": 412,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209C77C",
+   "ram": 34195324,
+   "size": 480,
    "status": "unclaimed"
   },
   {
@@ -17321,7 +24499,139 @@
   {
    "name": "func_0209D820",
    "ram": 34199584,
-   "size": 46342,
+   "size": 48,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209D850",
+   "ram": 34199632,
+   "size": 3092,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209E464",
+   "ram": 34202724,
+   "size": 10,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209E46E",
+   "ram": 34202734,
+   "size": 4886,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209F784",
+   "ram": 34207620,
+   "size": 330,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209F8CE",
+   "ram": 34207950,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209F8DE",
+   "ram": 34207966,
+   "size": 16,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209F8EE",
+   "ram": 34207982,
+   "size": 58,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209F928",
+   "ram": 34208040,
+   "size": 22,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209F93E",
+   "ram": 34208062,
+   "size": 22,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209F954",
+   "ram": 34208084,
+   "size": 24,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209F96C",
+   "ram": 34208108,
+   "size": 60,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209F9A8",
+   "ram": 34208168,
+   "size": 140,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209FA34",
+   "ram": 34208308,
+   "size": 8,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209FA3C",
+   "ram": 34208316,
+   "size": 222,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_0209FB1A",
+   "ram": 34208538,
+   "size": 2426,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020A0494",
+   "ram": 34210964,
+   "size": 4576,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020A1674",
+   "ram": 34215540,
+   "size": 768,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020A1974",
+   "ram": 34216308,
+   "size": 2,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020A1976",
+   "ram": 34216310,
+   "size": 34,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020A1998",
+   "ram": 34216344,
+   "size": 2,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020A199A",
+   "ram": 34216346,
+   "size": 17170,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_020A5CAC",
+   "ram": 34233516,
+   "size": 12410,
    "status": "unclaimed"
   },
   {
@@ -28649,13 +35959,13 @@
    "name": "sub_021588C0",
    "ram": 34965696,
    "size": 16,
-   "status": "unclaimed"
+   "status": "matched:ov010/gen_tmp"
   },
   {
    "name": "func_021588D0",
    "ram": 34965712,
    "size": 12,
-   "status": "unclaimed"
+   "status": "matched:ov010/gen_tmp"
   },
   {
    "name": "func_021588DC",
@@ -30659,7 +37969,7 @@
    "name": "func_0215DE44",
    "ram": 34987588,
    "size": 20,
-   "status": "unclaimed"
+   "status": "matched:ov010/gen_tmp"
   },
   {
    "name": "func_0215DE58",
@@ -31769,7 +39079,7 @@
    "name": "sub_02161E78",
    "ram": 35004024,
    "size": 12,
-   "status": "unclaimed"
+   "status": "matched:ov010/gen_tmp"
   },
   {
    "name": "func_02161E84",
@@ -31835,7 +39145,7 @@
    "name": "func_021620A0",
    "ram": 35004576,
    "size": 16,
-   "status": "unclaimed"
+   "status": "matched:ov010/gen_tmp"
   },
   {
    "name": "func_021620B0",
@@ -36203,7 +43513,7 @@
    "name": "sub_0216D88C",
    "ram": 35051660,
    "size": 16,
-   "status": "unclaimed"
+   "status": "matched:ov010/gen_tmp"
   },
   {
    "name": "sub_0216D89C",
@@ -51943,7 +59253,7 @@
    "name": "func_02187F00",
    "ram": 35159808,
    "size": 208,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_mapctl"
   },
   {
    "name": "func_02187FD0",
@@ -51973,7 +59283,7 @@
    "name": "func_021880C8",
    "ram": 35160264,
    "size": 272,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_mapctl"
   },
   {
    "name": "func_021881D8",
@@ -52195,7 +59505,7 @@
    "name": "func_02188CFC",
    "ram": 35163388,
    "size": 36,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_fieldsys"
   },
   {
    "name": "sub_02188D20",
@@ -52267,7 +59577,7 @@
    "name": "sub_02188DA0",
    "ram": 35163552,
    "size": 16,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_fieldsys"
   },
   {
    "name": "func_02188DB0",
@@ -52339,7 +59649,7 @@
    "name": "func_02189140",
    "ram": 35164480,
    "size": 20,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_fieldsys"
   },
   {
    "name": "func_02189154",
@@ -52417,13 +59727,13 @@
    "name": "func_021895BC",
    "ram": 35165628,
    "size": 20,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_fieldsys"
   },
   {
    "name": "sub_021895D0",
    "ram": 35165648,
    "size": 12,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_fieldsys"
   },
   {
    "name": "sub_021895DC",
@@ -52465,13 +59775,13 @@
    "name": "sub_02189758",
    "ram": 35166040,
    "size": 12,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_fieldsys"
   },
   {
    "name": "func_02189764",
    "ram": 35166052,
    "size": 60,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_fieldsys"
   },
   {
    "name": "func_021897A0",
@@ -52495,7 +59805,7 @@
    "name": "func_02189998",
    "ram": 35166616,
    "size": 44,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_fieldsys"
   },
   {
    "name": "func_021899C4",
@@ -52615,19 +59925,19 @@
    "name": "func_02189ACC",
    "ram": 35166924,
    "size": 28,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_fieldsys"
   },
   {
    "name": "func_02189AE8",
    "ram": 35166952,
    "size": 28,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_fieldsys"
   },
   {
    "name": "sub_02189B04",
    "ram": 35166980,
    "size": 36,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_fieldsys"
   },
   {
    "name": "sub_02189B28",
@@ -52705,7 +60015,7 @@
    "name": "func_0218A728",
    "ram": 35170088,
    "size": 16,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_fieldsys"
   },
   {
    "name": "func_0218A738",
@@ -52717,7 +60027,7 @@
    "name": "func_0218A76C",
    "ram": 35170156,
    "size": 24,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_fieldsys"
   },
   {
    "name": "func_0218A784",
@@ -53852,25 +61162,25 @@
    "name": "func_0218E018",
    "ram": 35184664,
    "size": 204,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_camera"
   },
   {
    "name": "func_0218E0E4",
    "ram": 35184868,
    "size": 32,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_camera"
   },
   {
    "name": "func_0218E104",
    "ram": 35184900,
    "size": 32,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_camera"
   },
   {
    "name": "func_0218E124",
    "ram": 35184932,
    "size": 20,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_camera"
   },
   {
    "name": "sub_0218E138",
@@ -53882,19 +61192,19 @@
    "name": "func_0218E13C",
    "ram": 35184956,
    "size": 36,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_camera"
   },
   {
    "name": "func_0218E160",
    "ram": 35184992,
    "size": 28,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_camera"
   },
   {
    "name": "sub_0218E17C",
    "ram": 35185020,
    "size": 12,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_camera"
   },
   {
    "name": "sub_0218E188",
@@ -53918,13 +61228,13 @@
    "name": "sub_0218E284",
    "ram": 35185284,
    "size": 20,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_camera"
   },
   {
    "name": "sub_0218E298",
    "ram": 35185304,
    "size": 28,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_camera"
   },
   {
    "name": "func_0218E2B4",
@@ -53960,25 +61270,25 @@
    "name": "func_0218E58C",
    "ram": 35186060,
    "size": 20,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_camera"
   },
   {
    "name": "func_0218E5A0",
    "ram": 35186080,
    "size": 24,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_camera"
   },
   {
    "name": "func_0218E5B8",
    "ram": 35186104,
    "size": 24,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_camera"
   },
   {
    "name": "func_0218E5D0",
    "ram": 35186128,
    "size": 28,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_camera"
   },
   {
    "name": "sub_0218E5EC",
@@ -53996,7 +61306,7 @@
    "name": "sub_0218E5FC",
    "ram": 35186172,
    "size": 20,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_camera"
   },
   {
    "name": "func_0218E610",
@@ -54026,7 +61336,7 @@
    "name": "func_0218E73C",
    "ram": 35186492,
    "size": 40,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_camera"
   },
   {
    "name": "func_0218E764",
@@ -54104,43 +61414,55 @@
    "name": "sub_0218EC90",
    "ram": 35187856,
    "size": 36,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_camera"
   },
   {
    "name": "sub_0218ECB4",
    "ram": 35187892,
    "size": 16,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_camera"
   },
   {
    "name": "sub_0218ECC4",
    "ram": 35187908,
    "size": 16,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_camera"
   },
   {
    "name": "sub_0218ECD4",
    "ram": 35187924,
    "size": 16,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_camera"
   },
   {
    "name": "sub_0218ECE4",
    "ram": 35187940,
    "size": 16,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_camera"
   },
   {
    "name": "sub_0218ECF4",
    "ram": 35187956,
    "size": 16,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_camera"
   },
   {
    "name": "sub_0218ED04",
    "ram": 35187972,
-   "size": 40,
-   "status": "unclaimed"
+   "size": 16,
+   "status": "matched:ov021/fld_camera"
+  },
+  {
+   "name": "sub_0218ED14",
+   "ram": 35187988,
+   "size": 12,
+   "status": "matched:ov021/fld_camera"
+  },
+  {
+   "name": "sub_0218ED20",
+   "ram": 35188000,
+   "size": 12,
+   "status": "matched:ov021/fld_camera"
   },
   {
    "name": "sub_0218ED2C",
@@ -54230,7 +61552,7 @@
    "name": "sub_0218F050",
    "ram": 35188816,
    "size": 12,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_camera"
   },
   {
    "name": "sub_0218F05C",
@@ -54248,31 +61570,31 @@
    "name": "sub_0218F0D4",
    "ram": 35188948,
    "size": 20,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_camera"
   },
   {
    "name": "sub_0218F0E8",
    "ram": 35188968,
    "size": 16,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_camera"
   },
   {
    "name": "sub_0218F0F8",
    "ram": 35188984,
    "size": 28,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_camera"
   },
   {
    "name": "func_0218F114",
    "ram": 35189012,
    "size": 32,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_camera"
   },
   {
    "name": "func_0218F134",
    "ram": 35189044,
    "size": 24,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_camera"
   },
   {
    "name": "func_0218F14C",
@@ -54284,13 +61606,13 @@
    "name": "sub_0218F18C",
    "ram": 35189132,
    "size": 16,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_camera"
   },
   {
    "name": "sub_0218F19C",
    "ram": 35189148,
    "size": 16,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_camera"
   },
   {
    "name": "sub_0218F1AC",
@@ -54422,7 +61744,7 @@
    "name": "func_0218FDD4",
    "ram": 35192276,
    "size": 28,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_camera"
   },
   {
    "name": "func_0218FDF0",
@@ -54434,7 +61756,7 @@
    "name": "sub_0218FE40",
    "ram": 35192384,
    "size": 16,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_camera"
   },
   {
    "name": "sub_0218FE50",
@@ -54489,13 +61811,13 @@
    "name": "func_0218FF00",
    "ram": 35192576,
    "size": 32,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_camera"
   },
   {
    "name": "func_0218FF20",
    "ram": 35192608,
    "size": 16,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_camera"
   },
   {
    "name": "func_0218FF30",
@@ -54579,19 +61901,19 @@
    "name": "func_021901EC",
    "ram": 35193324,
    "size": 132,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "sub_02190270",
    "ram": 35193456,
    "size": 12,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "func_0219027C",
    "ram": 35193468,
    "size": 40,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "sub_021902A4",
@@ -54603,7 +61925,7 @@
    "name": "sub_021902AC",
    "ram": 35193516,
    "size": 16,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "func_021902BC",
@@ -54615,25 +61937,25 @@
    "name": "func_02190344",
    "ram": 35193668,
    "size": 52,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "func_02190378",
    "ram": 35193720,
    "size": 32,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "func_02190398",
    "ram": 35193752,
    "size": 52,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "sub_021903CC",
    "ram": 35193804,
    "size": 20,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "func_021903E0",
@@ -54645,19 +61967,25 @@
    "name": "func_0219047C",
    "ram": 35193980,
    "size": 20,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "sub_02190490",
    "ram": 35194000,
    "size": 12,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "sub_0219049C",
    "ram": 35194012,
-   "size": 16,
-   "status": "unclaimed"
+   "size": 12,
+   "status": "matched:ov021/fld_msgbg"
+  },
+  {
+   "name": "sub_021904A8",
+   "ram": 35194024,
+   "size": 4,
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "sub_021904AC",
@@ -54669,7 +61997,7 @@
    "name": "func_021904B0",
    "ram": 35194032,
    "size": 24,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "sub_021904C8",
@@ -54681,13 +62009,13 @@
    "name": "sub_021904D0",
    "ram": 35194064,
    "size": 12,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "sub_021904DC",
    "ram": 35194076,
    "size": 16,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "func_021904EC",
@@ -54699,7 +62027,7 @@
    "name": "func_02190538",
    "ram": 35194168,
    "size": 24,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "func_02190550",
@@ -54723,7 +62051,7 @@
    "name": "func_02190604",
    "ram": 35194372,
    "size": 24,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "sub_0219061C",
@@ -54735,7 +62063,7 @@
    "name": "func_02190620",
    "ram": 35194400,
    "size": 28,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "func_0219063C",
@@ -54765,55 +62093,55 @@
    "name": "func_02190708",
    "ram": 35194632,
    "size": 32,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "func_02190728",
    "ram": 35194664,
    "size": 24,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "func_02190740",
    "ram": 35194688,
    "size": 24,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "func_02190758",
    "ram": 35194712,
    "size": 12,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "func_02190764",
    "ram": 35194724,
    "size": 24,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "sub_0219077C",
    "ram": 35194748,
    "size": 12,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "sub_02190788",
    "ram": 35194760,
    "size": 12,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "func_02190794",
    "ram": 35194772,
    "size": 20,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "func_021907A8",
    "ram": 35194792,
    "size": 24,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "sub_021907C0",
@@ -54831,13 +62159,19 @@
    "name": "func_0219082C",
    "ram": 35194924,
    "size": 24,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "func_02190844",
    "ram": 35194948,
-   "size": 28,
-   "status": "unclaimed"
+   "size": 16,
+   "status": "matched:ov021/fld_msgbg"
+  },
+  {
+   "name": "sub_02190854",
+   "ram": 35194964,
+   "size": 12,
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "func_02190860",
@@ -54849,19 +62183,19 @@
    "name": "func_02190938",
    "ram": 35195192,
    "size": 40,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "func_02190960",
    "ram": 35195232,
    "size": 28,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "func_0219097C",
    "ram": 35195260,
    "size": 12,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "func_02190988",
@@ -54873,7 +62207,7 @@
    "name": "func_021909BC",
    "ram": 35195324,
    "size": 40,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "func_021909E4",
@@ -54885,7 +62219,7 @@
    "name": "sub_02190A14",
    "ram": 35195412,
    "size": 12,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "sub_02190A20",
@@ -54929,13 +62263,13 @@
    "name": "sub_02190B08",
    "ram": 35195656,
    "size": 20,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "func_02190B1C",
    "ram": 35195676,
    "size": 16,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "func_02190B2C",
@@ -54953,7 +62287,7 @@
    "name": "func_02190C78",
    "ram": 35196024,
    "size": 28,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "func_02190C94",
@@ -54977,7 +62311,7 @@
    "name": "func_02190D48",
    "ram": 35196232,
    "size": 20,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_msgbg"
   },
   {
    "name": "func_02190D5C",
@@ -64968,13 +72302,13 @@
    "name": "func_021A9ED8",
    "ram": 35299032,
    "size": 80,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_encount"
   },
   {
    "name": "func_021A9F28",
    "ram": 35299112,
    "size": 24,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_encount"
   },
   {
    "name": "func_021A9F40",
@@ -65004,25 +72338,25 @@
    "name": "func_021AA304",
    "ram": 35300100,
    "size": 88,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_encount"
   },
   {
    "name": "func_021AA35C",
    "ram": 35300188,
    "size": 132,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_encount"
   },
   {
    "name": "sub_021AA3E0",
    "ram": 35300320,
    "size": 28,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_encount"
   },
   {
    "name": "func_021AA3FC",
    "ram": 35300348,
    "size": 48,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_encount"
   },
   {
    "name": "func_021AA42C",
@@ -65052,25 +72386,25 @@
    "name": "func_021AA69C",
    "ram": 35301020,
    "size": 68,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_encount"
   },
   {
    "name": "func_021AA6E0",
    "ram": 35301088,
    "size": 24,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_encount"
   },
   {
    "name": "func_021AA6F8",
    "ram": 35301112,
    "size": 48,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_encount"
   },
   {
    "name": "func_021AA728",
    "ram": 35301160,
    "size": 80,
-   "status": "unclaimed"
+   "status": "matched:ov021/fld_encount"
   },
   {
    "name": "sub_021AA778",
@@ -99658,7 +106992,7 @@
    "name": "func_021D1BD0",
    "ram": 35462096,
    "size": 112,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D1BD0"
   },
   {
    "name": "func_021D1C40",
@@ -99670,13 +107004,13 @@
    "name": "func_021D1CAC",
    "ram": 35462316,
    "size": 72,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D1BD0"
   },
   {
    "name": "func_021D1CF4",
    "ram": 35462388,
    "size": 256,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D1BD0"
   },
   {
    "name": "func_021D1DF4",
@@ -99688,31 +107022,31 @@
    "name": "func_021D1E6C",
    "ram": 35462764,
    "size": 72,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D1BD0"
   },
   {
    "name": "func_021D1EB4",
    "ram": 35462836,
    "size": 92,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D1BD0"
   },
   {
    "name": "func_021D1F10",
    "ram": 35462928,
    "size": 72,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D1BD0"
   },
   {
    "name": "func_021D1F58",
    "ram": 35463000,
    "size": 92,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D1BD0"
   },
   {
    "name": "func_021D1FB4",
    "ram": 35463092,
    "size": 76,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D1FB4"
   },
   {
    "name": "func_021D2000",
@@ -99724,139 +107058,139 @@
    "name": "func_021D2030",
    "ram": 35463216,
    "size": 140,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D1FB4"
   },
   {
    "name": "func_021D20BC",
    "ram": 35463356,
    "size": 80,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D1FB4"
   },
   {
    "name": "func_021D210C",
    "ram": 35463436,
    "size": 80,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D1FB4"
   },
   {
    "name": "func_021D215C",
    "ram": 35463516,
    "size": 120,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D1FB4"
   },
   {
    "name": "func_021D21D4",
    "ram": 35463636,
    "size": 96,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D1FB4"
   },
   {
    "name": "func_021D2234",
    "ram": 35463732,
    "size": 68,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D2234"
   },
   {
    "name": "func_021D2278",
    "ram": 35463800,
    "size": 168,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D1FB4"
   },
   {
    "name": "func_021D2320",
    "ram": 35463968,
    "size": 84,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D1FB4"
   },
   {
    "name": "func_021D2374",
    "ram": 35464052,
    "size": 68,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D2234"
   },
   {
    "name": "func_021D23B8",
    "ram": 35464120,
    "size": 108,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D1FB4"
   },
   {
    "name": "func_021D2424",
    "ram": 35464228,
    "size": 108,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D1FB4"
   },
   {
    "name": "func_021D2490",
    "ram": 35464336,
    "size": 128,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D2490"
   },
   {
    "name": "func_021D2510",
    "ram": 35464464,
    "size": 112,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D2490"
   },
   {
    "name": "func_021D2580",
    "ram": 35464576,
    "size": 68,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D2234"
   },
   {
    "name": "func_021D25C4",
    "ram": 35464644,
    "size": 100,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D2490"
   },
   {
    "name": "func_021D2628",
    "ram": 35464744,
    "size": 68,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D2234"
   },
   {
    "name": "func_021D266C",
    "ram": 35464812,
    "size": 148,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D2490"
   },
   {
    "name": "func_021D2700",
    "ram": 35464960,
    "size": 276,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D2700"
   },
   {
    "name": "func_021D2814",
    "ram": 35465236,
    "size": 56,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D2234"
   },
   {
    "name": "func_021D284C",
    "ram": 35465292,
    "size": 96,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D2490"
   },
   {
    "name": "func_021D28AC",
    "ram": 35465388,
    "size": 132,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D2490"
   },
   {
    "name": "func_021D2930",
    "ram": 35465520,
    "size": 96,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D2490"
   },
   {
    "name": "func_021D2990",
    "ram": 35465616,
    "size": 12,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D2234"
   },
   {
    "name": "func_021D299C",
@@ -99868,13 +107202,13 @@
    "name": "func_021D29CC",
    "ram": 35465676,
    "size": 84,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D2490"
   },
   {
    "name": "func_021D2A20",
    "ram": 35465760,
    "size": 604,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D2A20"
   },
   {
    "name": "func_021D2C7C",
@@ -99892,49 +107226,49 @@
    "name": "func_021D2FD8",
    "ram": 35467224,
    "size": 352,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D2FD8"
   },
   {
    "name": "func_021D3138",
    "ram": 35467576,
    "size": 104,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D3138"
   },
   {
    "name": "func_021D31A0",
    "ram": 35467680,
    "size": 172,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D3138"
   },
   {
    "name": "func_021D324C",
    "ram": 35467852,
    "size": 148,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D3138"
   },
   {
    "name": "func_021D32E0",
    "ram": 35468000,
    "size": 364,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D32E0"
   },
   {
    "name": "func_021D344C",
    "ram": 35468364,
    "size": 100,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D3138"
   },
   {
    "name": "func_021D34B0",
    "ram": 35468464,
    "size": 56,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D3138"
   },
   {
    "name": "func_021D34E8",
    "ram": 35468520,
    "size": 112,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D3138"
   },
   {
    "name": "sub_021D3558",
@@ -99947,25 +107281,25 @@
    "name": "func_021D3568",
    "ram": 35468648,
    "size": 96,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D3138"
   },
   {
    "name": "func_021D35C8",
    "ram": 35468744,
    "size": 104,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D3138"
   },
   {
    "name": "func_021D3630",
    "ram": 35468848,
    "size": 88,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D3630"
   },
   {
    "name": "func_021D3688",
    "ram": 35468936,
    "size": 68,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D3630"
   },
   {
    "name": "func_021D36CC",
@@ -100031,7 +107365,7 @@
    "name": "func_021D381C",
    "ram": 35469340,
    "size": 120,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D381C"
   },
   {
    "name": "func_021D3894",
@@ -100055,7 +107389,7 @@
    "name": "func_021D38E0",
    "ram": 35469536,
    "size": 32,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D381C"
   },
   {
    "name": "func_021D3900",
@@ -100073,7 +107407,7 @@
    "name": "func_021D3934",
    "ram": 35469620,
    "size": 84,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D381C"
   },
   {
    "name": "func_021D3988",
@@ -100085,7 +107419,7 @@
    "name": "func_021D39A8",
    "ram": 35469736,
    "size": 104,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D381C"
   },
   {
    "name": "sub_021D3A10",
@@ -100104,7 +107438,7 @@
    "name": "func_021D3A40",
    "ram": 35469888,
    "size": 60,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D381C"
   },
   {
    "name": "func_021D3A7C",
@@ -100146,7 +107480,7 @@
    "name": "func_021D3B28",
    "ram": 35470120,
    "size": 52,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D381C"
   },
   {
    "name": "func_021D3B5C",
@@ -100158,7 +107492,7 @@
    "name": "func_021D3B74",
    "ram": 35470196,
    "size": 20,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D3B74"
   },
   {
    "name": "func_021D3B88",
@@ -100230,7 +107564,7 @@
    "name": "func_021D3CC8",
    "ram": 35470536,
    "size": 52,
-   "status": "unclaimed"
+   "status": "matched:ov093/bs_021D3B74"
   },
   {
    "name": "func_021D3CFC",
@@ -138270,8 +145604,16 @@
   {
    "name": "sub_021D6328",
    "ram": 35480360,
-   "size": 792,
-   "status": "unclaimed"
+   "size": 552,
+   "status": "unclaimed",
+   "mode": "arm"
+  },
+  {
+   "name": "sub_021D6550",
+   "ram": 35480912,
+   "size": 240,
+   "status": "unclaimed",
+   "mode": "arm"
   }
  ],
  "ov116": [
@@ -165215,7 +172557,25 @@
   {
    "name": "func_021C4B9C",
    "ram": 35408796,
-   "size": 11464,
+   "size": 9178,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_021C6F76",
+   "ram": 35417974,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_021C6F82",
+   "ram": 35417986,
+   "size": 12,
+   "status": "unclaimed"
+  },
+  {
+   "name": "sub_021C6F8E",
+   "ram": 35417998,
+   "size": 2262,
    "status": "unclaimed"
   },
   {

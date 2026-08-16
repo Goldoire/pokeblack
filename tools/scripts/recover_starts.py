@@ -146,7 +146,21 @@ def repair_module(mod, rows, data, base, tri_rows, verified, sdk):
     kind = {t["ram"]: t.get("kind") for t in tri_rows}
     mode = {t["ram"]: t.get("mode") for t in tri_rows}
     for r in rows:
-        if kind.get(r["ram"]) == "data" and r["size"]:
+        # `kind: data` from triage is a HEURISTIC, and it fails in one
+        # direction that matters here: classify() calls a blob data when more
+        # than an eighth of it fails to decode, and any multi-kilobyte fused
+        # row trips that on its literal pools alone. So the bigger the fused
+        # row -- i.e. the more code it hides -- the more likely it is to be
+        # mislabelled, and then skipped by exactly the pass that would break
+        # it up. main's 0x02091588 was one 43652-byte "data" row over the
+        # whole MSL region, and nothing had ever looked inside it.
+        #
+        # An explicit `status: "data"` is a declaration and is always honoured.
+        # A heuristic `kind: data` is honoured only for small rows, where it is
+        # usually right (ov094's 0x02209F30 jump table is 4080 bytes).
+        if r["status"] == "data" and r["size"]:
+            continue                        # already added above
+        if kind.get(r["ram"]) == "data" and r["size"] and r["size"] <= 0x2000:
             dead.append((r["ram"], r["ram"] + r["size"]))
     protected.sort()
     dead.sort()
@@ -178,7 +192,12 @@ def repair_module(mod, rows, data, base, tri_rows, verified, sdk):
     # callsite: decode only inside known code extents, in their own mode
     for i, r in enumerate(rows):
         k = kind.get(r["ram"])
-        if k in ("data", "oob", None) or r["status"] == "data":
+        if k in ("oob", None) or r["status"] == "data":
+            continue
+        # Same asymmetry as above: a large heuristic-"data" row is far more
+        # likely to be fused code than real rodata, and refusing to decode it
+        # is what kept it invisible.
+        if k == "data" and (r["size"] or 0) <= 0x2000:
             continue
         lo = r["ram"] - base
         hi = min(lo + (r["size"] or 0),

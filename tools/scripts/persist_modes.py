@@ -95,8 +95,64 @@ def intra_module_votes(data, base, rows, modes):
     return {a: next(iter(m)) for a, m in votes.items() if len(m) == 1}
 
 
+def sync_triage():
+    """Bring triage.json into line with the claim table WITHOUT regenerating it.
+
+    New claim rows (recover_starts adds thousands) need a triage entry or the
+    verifier has no mode for them. Adding one is not free: an entry in _MODES
+    OVERRIDES the `_enclosing()` fallback the verifier would otherwise use, so
+    a wrongly-defaulted mode is worse than no entry at all. Defaulting the
+    1198 rows of one wave to "thumb" cost 5 verified functions and 4824 bytes
+    until they were re-derived from the bytes -- do not shortcut this.
+
+    Order of authority: an explicit `mode` on the claim row, then classify()
+    on the actual bytes. Derived `kind: "callsite"` stubs are never touched.
+    """
+    manifest = json.load(open(os.path.join(REF, "manifest.json")))
+    fns = json.load(open(os.path.join(REF, "functions.json")))
+    tri = json.load(open(os.path.join(REF, "triage.json")))
+    added = changed = 0
+    for mod, rows in fns.items():
+        if mod not in manifest or mod not in tri:
+            continue
+        data = open(os.path.join(REF, mod + ".bin"), "rb").read()
+        base = manifest[mod]["ram"]
+        by = {}
+        for t in tri[mod]:
+            if t.get("kind") != "callsite":
+                by.setdefault(t["ram"], t)
+        for r in rows:
+            off = r["ram"] - base
+            if off < 0 or off >= len(data):
+                continue
+            blob = data[off:off + min(r["size"] or 8, len(data) - off)]
+            mode, kind = triage.classify(blob)
+            if r.get("mode") in ("arm", "thumb"):
+                mode = r["mode"]
+                if kind not in ("data", "veneer", "trivial"):
+                    kind = mode
+            if r["status"] == "data":
+                kind = "data"
+            t = by.get(r["ram"])
+            if t is None:
+                tri[mod].append(dict(name=r["name"], ram=r["ram"],
+                                     size=r["size"], status=r["status"],
+                                     mode=mode, kind=kind))
+                added += 1
+            elif t.get("mode") != mode or t.get("kind") != kind:
+                t["mode"], t["kind"] = mode, kind
+                changed += 1
+    for mod in tri:
+        tri[mod].sort(key=lambda t: t["ram"])
+    json.dump(tri, open(os.path.join(REF, "triage.json"), "w"))
+    print(f"triage.json synced in place: {added} rows added, {changed} updated")
+
+
 def main():
     write = "--write" in sys.argv
+    if "--sync-triage" in sys.argv:
+        sync_triage()
+        return
     manifest = json.load(open(os.path.join(REF, "manifest.json")))
     fns = json.load(open(os.path.join(REF, "functions.json")))
     tri = json.load(open(os.path.join(REF, "triage.json")))

@@ -39,12 +39,23 @@
  * NOT the same object as `BattleSlotRecord` (0x1C) further down. The names are
  * similar and the types are unrelated.
  *
+ * WAVE 4: BattleScriptCtx is now IDENTIFIED -- it is the element type of
+ * BattleSystem::unk_010[4], the per-battler controller, so that array is
+ * typed rather than void*. Nine of its fields moved INFERRED -> PROVEN, and
+ * +0x058 turned out to be an embedded 0x54-byte text-format buffer rather
+ * than a pointer. The 92-entry opcode map below is a NAMING PROPOSAL: the
+ * handlers stay spelled sub_<ram> because that spelling is what the verifier
+ * resolves, so renaming them would silently mask every call site.
+ *
  * ACTION: src/ov093/*.c include src/ov093/battle.h today. Switch them to
  * "ov093.h" and delete battle.h -- while it exists it wins the quoted-include
  * search and shadows this file.
  */
 
+
 typedef struct BattleCore BattleCore;
+typedef struct BattleScriptCtx BattleScriptCtx;
+typedef struct BattleSystem BattleSystem;
 
 /* ---------------------------------------------------------------------------
  * BattleRecord -- 0x18. 0x021BA6C0 copies one whole with three ldm/stm
@@ -92,45 +103,131 @@ typedef struct BattleQueue {
 /* ---------------------------------------------------------------------------
  * BattleScriptCtx -- the context a battle-script opcode handler runs against.
  *
- * The opcode table at 0x021F01B0 is {handler, opcode-id} pairs and every
- * handler has the shape
- *     int op(BattleScriptCtx *ctx, void *a1, u32 *args);   // always returns 1
- * 0x021D36CC and 16 siblings (evidence.py's four accessor runs at 0x021D36CC,
- * 0x021D3894, 0x021D3A20 and 0x021D3C0C) all read +0x04 and hand it to
- * sub_021B9934 as its first argument.
+ * The opcode table at 0x021F00E0..0x021F03C0 is 92 {handler, opcode-id} pairs,
+ * ids 1..93 with no duplicates, and every handler has the shape
  *
- * sub_021B9934 is byte-for-byte identical to sub_021B9940 -- twelve bytes,
- * `ldr r0,[r0, i*4 + 0x84]`, emitted twice back to back at 0x021B9934 and
- * 0x021B9940 -- and sub_021B9940 is matched N/N OK as
- * `BattleQueue::unk_84[i]`. 0x021B9358 calls sub_021B9934 with BattleSystem+
- * 0xC8 and BattleSystem+0x1B0, exactly as 0x021B92D4 calls sub_021B9940. So
- * +0x04 holds one of BattleSystem::unk_0C8[2].
+ *     int op(BattleScriptCtx *ctx, u32 *state, const u32 *args);
+ *
+ * The SECOND parameter is not an object: it is a pointer to the script's
+ * per-command step counter.  A one-shot opcode ignores it and returns 1; a
+ * multi-frame opcode switches on *state, bumps it between phases, returns 0
+ * for "call me again next frame" and 1 only when it is finished.  0x021D3630,
+ * 0x021D3688 and 58 more are matched N/N OK on that reading.
+ *
+ * `args` is const in the five handlers that push a stack argument
+ * (0x021D3A40, 0x021D3B28, 0x021D2FD8, 0x021D3CC8): only the const qualifier
+ * lets CW prove the next argument load cannot alias the outgoing-argument
+ * store, which is what the ROM's instruction order requires.  It is harmless
+ * everywhere else.
+ *
+ * WHAT THE OBJECT IS.  0x021D3C44 answers it: when args[0] equals the byte at
+ * +0x1A6 it calls sub_021CD9F4(ctx, ...), and otherwise it calls
+ * sub_021B9B10(ctx->unk_00, args[0], ...) -- and sub_021B9B10 (matched, in
+ * src/ov093/unk_021B9AC8.c) is exactly `sub_021CD9F4(bsys->unk_010[a1], a2)`.
+ * So a BattleScriptCtx IS one of BattleSystem::unk_010[4]: the per-battler
+ * controller.  +0x000 is its BattleSystem back-pointer and +0x1A6 is its own
+ * battler index -- "if this command is addressed to me, run it here, else hand
+ * it to the controller that owns that battler".
  * ------------------------------------------------------------------------- */
-typedef struct BattleScriptCtx {
-    u32 unk_00;                     // +0x00 INFERRED (read 4B by 50 handlers)
-    BattleQueue *unk_04;            // +0x04 PROVEN  -- 021D36CC and 23 siblings
+struct BattleScriptCtx {
+    BattleSystem *unk_00;           // +0x00 PROVEN  -- 021D3630, 021D3688, 021D3C44
+    BattleQueue *unk_04;            // +0x04 PROVEN  -- 021D36CC and 30 siblings
     u8 filler_08[0x034 - 0x008];    // +0x08 INFERRED
-    void *unk_034;                  // +0x34 INFERRED (021D3B74)
+    /*
+     * The 0x021EFxxx object: sub_021EF9C0/9C8/9F4/FA94/FAD8/FB34/FC78 all take
+     * it as their first argument and nothing else in ov093 does.
+     */
+    void *unk_034;                  // +0x34 PROVEN  -- 021D3B74, 021D3B88, 021D3D1C
     u8 filler_038[0x054 - 0x038];   // +0x38 INFERRED
-    void *unk_054;                  // +0x54 INFERRED (44 handlers read it)
-    void *unk_058;                  // +0x58 INFERRED
-    u8 filler_05C[0x0AC - 0x05C];   // +0x5C INFERRED
+    /*
+     * The battle view / message controller (the 0x021EAxxx family, ov094's
+     * btlv_effect).  Roughly forty of the ninety-two opcodes are "hand it a
+     * job in phase 0, poll it in phase 1".
+     */
+    void *unk_054;                  // +0x54 PROVEN  -- 021D3688 and ~40 more
+    /*
+     * NOT a pointer -- an embedded object.  0x021D1BD0, 0x021D1CF4, 0x021D3138
+     * and 0x021D2A20 form `ctx + 0x58` and pass it to sub_021EAF18 /
+     * sub_021EAF50 (append a token / a value) and then to sub_021EA614 (show
+     * the assembled string), so it is the text-format buffer.  Its extent is
+     * bounded above by the next proven offset, +0xAC.
+     */
+    u8 unk_058[0x0AC - 0x058];      // +0x58 PROVEN as an address -- 021D1BD0
     void *unk_0AC;                  // +0xAC INFERRED (5 handlers)
     u8 filler_0B0[0x134 - 0x0B0];   // +0xB0 INFERRED
-    void *unk_134;                  // +0x134 INFERRED
-    void *unk_138;                  // +0x138 INFERRED
-    void *unk_13C;                  // +0x13C INFERRED (021D3934, as 0x4F << 2)
-    void *unk_140;                  // +0x140 INFERRED
+    u32 unk_134;                    // +0x134 PROVEN  -- 021D215C (as 0x4D << 2)
+    u32 unk_138;                    // +0x138 PROVEN  -- 021D3934
+    u32 unk_13C;                    // +0x13C PROVEN  -- 021D3934 (as 0x4F << 2)
+    u32 unk_140;                    // +0x140 PROVEN  -- 021D3934
     u8 filler_144[0x1A6 - 0x144];   // +0x144 INFERRED
-    u8 unk_1A6;                     // +0x1A6 INFERRED
-} BattleScriptCtx;                  // >= 0x1A7
+    u8 unk_1A6;                     // +0x1A6 PROVEN  -- 021D3C44, 021D1CF4
+};                                  // >= 0x1A7
 
 /*
  * Sweeping all 92 opcode handlers for constant-offset loads off their first
  * argument gives exactly eleven distinct offsets -- 0x000, 0x004, 0x034,
- * 0x054, 0x058, 0x0AC, 0x134, 0x138, 0x13C, 0x140 and 0x1A6 -- which is why
- * everything between them is filler rather than a guess.
- */
+ * 0x054, 0x058, 0x0AC, 0x134, 0x138, 0x13C, 0x140 and 0x1A6.  All eleven are
+ * now dereferenced by at least one function that verifies N/N OK except
+ * +0x0AC, so everything between them is still filler rather than a guess.
+ *
+ * ---------------------------------------------------------------------------
+ * OPCODE MAP.  id -> handler, and what the handler demonstrably does.  Names
+ * are deliberately left as addresses (the verifier resolves a function by its
+ * sub_<ram> spelling), so this table is the naming proposal, not a rename.
+ *
+ *   1  021D3688  start an actor animation on unk_054, wait for it (EA788/798)
+ *   2..4   021D36CC/36EC/377C   per-battler setters (5F90 / 5FA4 / 5FB8)
+ *   5..11  021D370C..37FC      per-battler setters, 2-3 byte arguments
+ *   12 021D381C  eight-slot bulk setter: 5EA8(p, i, args[i]) for i = 1..7
+ *   13..19 021D3894..3934      per-battler setters; 19 reorders the queue from
+ *                              ctx->unk_138/13C/140 then 63EC + 6580
+ *   20 021D3D2C  5970          21 021D3988  66B0      22 021D3D50  67D8
+ *   23 021D39A8  double loop over args[0] battler slots x args[1] entries
+ *   24..33 021D3A20..3B5C      per-battler setters
+ *   34 021D3B74  EF9F4(ctx->unk_034, args[0], {args[1]} by value, 0)
+ *   35..37 021D3B88..3B9C      unk_034 setters
+ *   38..47 021D3BC0..3D1C      per-battler setters and message forwarding; 42
+ *                              is the "is this my battler" fork, 46 builds a
+ *                              7-byte parameter block on the stack
+ *   48..53 021D1FB4..21D4      print / animate on unk_054, then wait
+ *   54 021D2234  8D8C -> 8E70 -> 021F81D0, one-shot
+ *   55 021D1CF4  three-phase: build a name string into unk_058 with one of
+ *                three prefixes (8CE8 / 9F70 / own battler), show it, then
+ *                EA488 and EA4C4
+ *   56 021D2424, 62 021D23B8   EA7C8 / EA7D8 then EA7E8 wait
+ *   57 021D2278  three-phase print with a 0201BD28 allocation
+ *   58 021D2320  EA40C/EA428 then 646C
+ *   59 021D2374, 66 021D2580, 68 021D2628, 53 021D21D4  EA384/EA3A0 family
+ *   60 021D1BD0  format a string via 1C40 + EAF18/EAF50 and show it
+ *   61 021D1CAC  EA458/EA478
+ *   63 021D29CC  add args[1..6] to six mon fields (_021EFF88), clamped to 255
+ *   64 021D2490  three-phase: EF9C0, a sound from _021EFFAE[i].unk_02, then
+ *                the paired message id _021EFFAE[i].unk_00
+ *   65 021D2510  map args[0] in 1..4 to message ids 0x59/0x5A/0x5C/0x5B
+ *   67 021D3D1C  EFC78(ctx->unk_034, 0, 0)
+ *   69 021D266C  swap two battler slots and tell the view (EA904/EA950)
+ *   70 021D2A20  fourteen-phase send-out sequence, owns _021F3B64
+ *   71 021D2FD8  five-phase faint/return sequence
+ *   72 021D3138  021F7D44 then a 0x43 message
+ *   73 021D31A0  9C50 + EAA6C, then one of four messages 0x26..0x29
+ *   74 021D324C  four-phase actor swap (EA768/778/7A8/7B8 + 66D0)
+ *   75 021D32E0  seven-phase two-battler swap, owns _021F3B64+4
+ *   76 021D344C  6C2C then EA868/EA878
+ *   77 021D34B0  021F7998(args[0]) then wait
+ *   78 021D34E8  EA3B8/EA3D4 gated on 3558(args[1])
+ *   79 021D3568  EA3E8/EA3F8 on a pair of battlers
+ *   80 021D35C8  66D8 then EA888/EA8A4
+ *   81 021D2700  four-phase double swap (the two halves are the same code)
+ *   82 021D2814  021F7E94 then wait
+ *   83 021D284C  021F7EA4 with a 021F88BC bracket
+ *   84 021D28AC  6C50 then EA8B4/EA8D4
+ *   85 021D2930  EA1B8/EA1F0 with a 7AD4 lookup
+ *   86 021D2990  021F878C(args[0]), one-shot
+ *   87 021D25C4  EA838/EA850
+ *   88 021D3630  like id 1 but EA768/EA778 with flag 1
+ *   89 021D1F58, 91 021D1EB4  print with an extra 020061E4 sound at the end
+ *   92 021D1E6C, 93 021D1F10  plain print-and-wait (EA678 / EA694)
+ * ------------------------------------------------------------------------- */
 
 /* ---------------------------------------------------------------------------
  * BattleSystem -- >= 0x474. The object every ov093 entry point takes.
@@ -144,12 +241,20 @@ typedef struct BattleScriptCtx {
  * 0xC08 and 0xBD0 bytes and none of them writes this shape), so it is built by
  * whichever overlay sets a battle up and hands the pointer in.
  * ------------------------------------------------------------------------- */
-typedef struct BattleSystem {
+struct BattleSystem {
     BattleCore *core;               // +0x000 PROVEN  -- 021B8588 and ~60 more
     void *unk_004;                  // +0x004 INFERRED (read as 4B by 021B6A70)
     void *unk_008;                  // +0x008 PROVEN  -- 021BA238
     void *unk_00C;                  // +0x00C INFERRED
-    void *unk_010[4];               // +0x010 PROVEN  -- 021B8548, 021B9B10
+    /*
+     * IDENTIFIED (wave 4): these are the four per-battler controllers.
+     * sub_021B9B10 (matched) is exactly sub_021CD9F4(bsys->unk_010[a1], a2),
+     * and 0x021D3C44 calls sub_021CD9F4(ctx, ...) directly when the command
+     * is addressed to ctx's own battler (args[0] == ctx->unk_1A6) and routes
+     * it through sub_021B9B10 otherwise. Same callee, same object: a
+     * BattleScriptCtx IS one of these slots.
+     */
+    BattleScriptCtx *unk_010[4];    // +0x010 PROVEN  -- 021B8548, 021B9B10
     BattleSystemSlot unk_020[4];    // +0x020 PROVEN  -- 021B9F70 and 7 more
     void *unk_0C0;                  // +0x0C0 PROVEN  -- 021B871C
     u8 unk_0C4[4];                  // +0x0C4 PROVEN  -- 021B8564 (|| unk_010)
@@ -197,7 +302,7 @@ typedef struct BattleSystem {
     u8 unk_473_5 : 1;
     u8 unk_473_6 : 1;               // 021B919C
     u8 unk_473_7 : 1;
-} BattleSystem;                     // >= 0x474
+};                                  // >= 0x474
 
 /* ---------------------------------------------------------------------------
  * BattleCore -- >= 0xB4. Hangs off BattleSystem+0x000.

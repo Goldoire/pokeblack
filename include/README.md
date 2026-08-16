@@ -51,7 +51,7 @@ checks the branch word. Never declare a prototype under a friendly name alone.
 | `global.h` | **verified by construction** | umbrella: `<nitro.h>` + `<nnsys.h>` + `types.h`; start new files with this |
 | `heap.h` | **read-from-ROM** | GameFreak heap layer, every offset cited by address |
 | `pokemon.h` | **proven twice over** | `Pokemon` / `BoxPokemon` / `Party` + the MON_DATA_* map |
-| `ov021.h` | **proven-by-match** | `FieldSystem` 0x154, `FieldPlayer`, `FieldCamera` |
+| `ov021.h` | **proven-by-match** | the whole field system: `FieldSystem`, `FieldPlayer`, `FieldCamera`, `FieldEncount`, `MsgBg` |
 | `g_clact.h` | **proven-by-match** | `clact.c`, the 2D sprite system |
 | `main_types.h` | **proven-by-match** | `MainRec` `MainSub` `Fifo` and the three main globals |
 | `ov009.h` `ov010.h` `ov093.h` `ov094.h` `ov114.h` `ov119.h` `ov135.h` `ov170.h` | **proven-by-match** | per-module models, see the reconciliation section |
@@ -516,3 +516,140 @@ Two spot checks landed on facts derived independently by other agents:
 | `src/ov114/unk_021B9D8C.c` | can migrate now — `Ov114Sock::unk_28` exists |
 | ov170 `unk_021DCDB8.c`, `unk_021E2020.c`, `unk_021E8F60.c` | can migrate now — use `panel->anim.unk10` / `.unk14` |
 | `src/ov009/dwc_rapcommon.c` | compile `--thumb` (88/88, vs 84/88 as ARM) |
+
+
+---
+
+# Wave 4
+
+## Promoted
+
+- **`ov021.h` rebuilt from all five `src/ov021/fld_*.h`** — adds `FieldEncount`
+  0x14, `FieldEncountStep` 0x0C, `FieldEncountInfo`, `MsgBg` 0x17C and the
+  message-layer records, and `FieldCamera` went from mostly filler to mostly
+  proven: seven contiguous `VecFx32` at 0x24..0x6C each pinned by a whole-struct
+  ldm/stm copy, three parallel mode-dispatch tables, and a 4 x 0x18 entry table
+  at +0x88 whose count byte sits at +0xE8. `FieldSystem` gained `FieldSysBuf` at
+  +0x118.
+- **`ov093.h`: `BattleScriptCtx` is identified.** It IS one of
+  `BattleSystem::unk_010[4]` — the per-battler controller — so that array is now
+  `BattleScriptCtx *[4]` rather than `void *[4]`. The proof chains two matched
+  functions: `sub_021B9B10` is exactly `sub_021CD9F4(bsys->unk_010[a1], a2)`,
+  and `0x021D3C44` calls `sub_021CD9F4(ctx, ...)` directly when the command is
+  addressed to `ctx`'s own battler (`args[0] == ctx->unk_1A6`) and routes it
+  through `sub_021B9B10` otherwise. Same callee, same object. `+0x058` is an
+  embedded 0x54-byte text-format buffer, not a pointer.
+
+  The 92-entry opcode map in that header is a **naming proposal only**. The
+  handlers stay spelled `sub_<ram>` because that spelling is what
+  `verify_functions.py` resolves — renaming them would silently mask every call
+  site and turn real checks into free passes.
+
+### The MsgBg conflict is recorded, not resolved
+
+`0x02190708` writes a u16 at `+0x06` of its first argument, which cannot
+coexist with `MsgBgWinSet::win` being a pointer at `+0x04`. The worker read the
+argument as a `MsgBg` (whose `+0x06` is free) and that reading verifies, so it
+is what the header records — but that is one function's argument type inferred
+from a field being available, which is weaker than everything around it.
+`MsgBgWinSet` and `MsgBg` stay separate and neither absorbs the other. Resolve
+it with a call site that types `0x02190708`'s first argument, not a preference.
+
+### One more SDK type reclaimed
+
+`src/ov021/fld_encount.h` transcribed `RTCTime` as three `s32`. That is the
+SDK's own `RTCTime` (`<nitro/rtc/ARM9/api.h>`, three `u32`, same 0x0C layout),
+which arrives via `global.h` — so redeclaring it is a hard compile error. Third
+time this pattern has appeared, after `TPData` and `OSMutex`: **when a worker's
+byte-run or scalar triple has the same shape as an SDK type, it usually is that
+type**, and using it makes the layout verified by construction. Worth checking
+before adding any new struct that looks like an SDK one.
+
+## The 43 KB hole: heuristic `kind: data` was hiding the whole MSL region
+
+`main 0x02091588` was a **single claim row of 43,652 bytes** covering
+0x02091588..0x0209C00C, triaged `kind: data`. It is clean ARM code — MSL.
+
+The cause is a systematic asymmetry in `triage.classify()`: it calls a blob
+data when more than an eighth of it fails to decode, and *any* multi-kilobyte
+fused row trips that on its literal pools alone. So **the more code a fused row
+hides, the more likely it is to be labelled data** — and `recover_starts.py`
+skipped `data` rows, which is exactly the pass that would have broken it up.
+Nothing had ever looked inside it.
+
+The guard is now asymmetric to match:
+
+- an explicit `status: "data"` is a *declaration* and is always honoured;
+- a heuristic `kind: data` is honoured only for rows `<= 0x2000` bytes, where
+  it is usually right (ov094's 0x02209F30 jump table is 4080 bytes).
+
+Result: the MSL region went from **1 row to 77**, the recovery pass added
+**1,193 starts** repo-wide, and 29 already-verified functions that had no row
+got credit. 32,076 -> 33,269 rows; 4.35% -> 4.50%.
+
+## `verify_data.py` — and the trap it comes with
+
+`verify_functions.py` filters on STT_FUNC, so a `.data`/`.rodata` definition
+was invisible: you could write the bytes, compile, and nothing would tell you
+whether they were right. `tools/scripts/verify_data.py` is the same judge for
+STT_OBJECT symbols, sharing the ELF reader, the name->address rule, the
+relocation model and the masking discipline so the two cannot drift.
+
+Two deliberate differences: a symbol in `.bss` is reported **UNPROVABLE**, never
+as a pass (there are no bytes to compare, in the object or in the ROM —
+`errno` at 0x02153FAC is the live case); and only `R_ARM_ABS32` is applied,
+since data does not branch.
+
+**It does not feed `progress.py`.** "Functions verified" is the headline metric
+and its meaning should not change because data started counting.
+
+**The trap, and it is a real one.** For code, a match means something because
+the C is an independent derivation — the compiler chose the encoding and the
+ROM agreed, and you cannot fake the compiler. For data there is no compiler in
+the loop: paste a byte table out of `main.bin` into a `const u8 _020A60DC[512]`
+and this tool reports 512/512 OK having compared the ROM to itself. That is a
+transcription, not a match. A data object is genuinely matched only when its
+definition comes from elsewhere — real library source, or a generator that
+derives the table from its inputs. Transcribed tables are useful as
+placeholders that stay correct under later edits; mark those
+`transcribed:<who>`, never `matched:`.
+
+This is why **the ~1,500 MSL data bytes are not claimed here.** `lib/MSL_C` is
+not in the tree, so those definitions cannot be independently derived in-repo.
+They are located in `build/reference/msl_matches.json`, named in `symbols.txt`
+so references resolve, and explicitly marked NOT verified.
+
+Today the tool finds 2 verified data objects (22 bytes, ov016) that nothing had
+ever checked, and correctly refuses to score 5 `.bss` symbols.
+
+## MSL region facts (recorded so nobody re-runs the sweep)
+
+| range | what |
+|---|---|
+| `0x020913D0`-`0x0209A524` | MSL |
+| `0x0209A524`-`0x0209D850` | CodeWarrior runtime |
+| `0x020A60DC` +512 | the ctype tables, one contiguous block (`__lower_mapC`, `__upper_mapC`, `__msl_digit`) |
+
+Black links the **same MSL as pret but a different build**, so only the
+coincidentally byte-identical subset is ever claimable. 25 functions verified;
+the rest is not a matter of trying harder.
+
+## triage.json: sync, never regenerate
+
+`persist_modes.py --sync-triage` brings triage.json into line with the claim
+table in place. Adding a triage entry for a new claim row is **not free**: an
+entry in `_MODES` overrides the `_enclosing()` fallback the verifier would
+otherwise use, so a wrongly-defaulted mode is worse than no entry at all.
+Defaulting one wave's 1,198 new rows to `thumb` cost 5 verified functions and
+4,824 bytes until they were re-derived from the bytes. Order of authority:
+explicit `mode` on the claim row, then `classify()` on the actual bytes.
+
+## Actions for workers (wave 4)
+
+| file / module | change |
+|---|---|
+| `src/ov021/fld_*.h` (all five) | delete; `#include "ov021.h"` |
+| `src/ov093/battle.h` | delete; `#include "ov093.h"` |
+| `src/ov021/*.c` using `RTCTime` | delete the local one; the SDK's is in scope via `global.h` |
+| ov093 | `BattleSystem::unk_010[4]` is now `BattleScriptCtx *[4]` — drop the casts |
+| anyone writing data | `tools/scripts/verify_data.py`, and read its header before claiming a byte |
